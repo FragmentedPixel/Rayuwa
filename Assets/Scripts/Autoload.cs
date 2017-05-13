@@ -19,6 +19,7 @@ public class Autoload : MonoBehaviour
     private void PlayIntroSound()
     {
         audioS = GetComponent<AudioSource>();
+		audioS.volume = 0.5f;
         audioS.PlayOneShot(introSound);
     }
 
