@@ -46,10 +46,10 @@ public class Agent : MonoBehaviour {
 			}
 		}
 	}
-	bool followingPath;
+
 	IEnumerator FollowPath() {
 
-		followingPath = true;
+		bool followingPath = true;
 		int pathIndex = 0;
 		transform.LookAt (path.lookPoints [0]);
 
@@ -90,17 +90,4 @@ public class Agent : MonoBehaviour {
 			path.DrawWithGizmos ();
 		}
 	}
-
-
-	public bool HasReachedDest()
-	{
-		return !followingPath;
-	}
-
-	public void SetNewDestination(Transform destTransform)
-	{
-		target = destTransform;
-		PathRequestManager.RequestPath (new PathRequest(transform.position, target.position, OnPathFound));
-	}
-
 }
