@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public  class Attack : iEnemyState  
+public  class AttackState : iEnemyState  
 {
-	public Attack (EnemyController eController):base(eController)
-	{
-	}
+    #region Constructor
+    public AttackState (EnemyController eController):base(eController)
+	{	}
+    #endregion
 
-	public override void Update ()
+    #region State Methods
+    public override void Update ()
 	{
 		if (controller.target == null)
 			ToPatrol ();
@@ -19,8 +21,14 @@ public  class Attack : iEnemyState
 	{
 		
 	}
+    #endregion
 
-	public override void ToAttack ()
+    #region Methods
+
+    #endregion
+
+    #region Transitions
+    public override void ToAttack ()
 	{
 		controller.currentState = controller.attack;
 	}
@@ -32,5 +40,5 @@ public  class Attack : iEnemyState
 	{
 		controller.currentState = controller.patrol;	
 	}
-
+    #endregion
 }

@@ -124,3 +124,7 @@ MonoBehaviour:
     Key: Assets/A Star/Models
     SmallIcon: {fileID: 2800000, guid: 268edea26d8cd504da659cc71a1d8549, type: 3}
     LargeIcon: {fileID: 2800000, guid: e69e4447e8078c441b3a955855f4f080, type: 3}
+  - Type: 1
+    Key: Assets/Enemys
+    SmallIcon: {fileID: 2800000, guid: 92b0bc9ddf47e7c439b816e4f3358617, type: 3}
+    LargeIcon: {fileID: 2800000, guid: 3e9903716db29884db10c4761158194a, type: 3}

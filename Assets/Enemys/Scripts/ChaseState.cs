@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public  class Chase : iEnemyState  
+public  class ChaseState : iEnemyState  
 {
-	public Chase (EnemyController eController):base(eController)
+    #region Constructor
+    public ChaseState (EnemyController eController):base(eController)
 	{
 	}
+    #endregion
 
-	public override void Update ()
+    #region State Methods
+    public override void Update ()
 	{
 		if (Vector3.Distance (controller.target.transform.position, controller.transform.position) < controller.attackDistance)
 			ToAttack ();
@@ -19,10 +22,14 @@ public  class Chase : iEnemyState
 	{
 
 	}
+    #endregion
 
+    #region Methods
 
+    #endregion
 
-	public override void ToAttack ()
+    #region Transitions
+    public override void ToAttack ()
 	{
 		controller.currentState = controller.attack;
 	}
@@ -34,5 +41,5 @@ public  class Chase : iEnemyState
 	{
 		controller.currentState = controller.patrol;	
 	}
-
+    #endregion
 }

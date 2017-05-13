@@ -6,17 +6,21 @@ public abstract  class iEnemyState
 {
 	public EnemyController controller;
 
-	public iEnemyState (EnemyController eController)
+    #region Constructor
+    public iEnemyState (EnemyController eController)
 	{
 		controller = eController;
 	}
+    #endregion
 
-	public abstract void Update ();
-
+    #region Methods
+    public abstract void Update ();
 	public abstract void OnTriggerEnter (Collider other);
+    #endregion
 
-	public abstract void ToAttack ();
+    #region Transitions
+    public abstract void ToAttack ();
 	public abstract void ToChase ();
 	public abstract void ToPatrol ();
-
+    #endregion
 }
