@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class SettingsManager : MonoBehaviour
 {
+    #region Variabiles
     [Header("UI Elements")]
     public Slider volumeSlider;
     public Dropdown qualityDropDown;
@@ -14,6 +15,7 @@ public class SettingsManager : MonoBehaviour
     [Header("Default Values")]
     public float defaultVolume = .8f;
     public bool defaultFullscreen;
+    #endregion
 
     #region Initialization
     private void Awake()

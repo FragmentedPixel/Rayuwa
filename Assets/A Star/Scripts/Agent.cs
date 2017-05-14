@@ -14,7 +14,8 @@ public class Agent : MonoBehaviour {
 
 	aPath path;
 
-	void Start() {
+	void Start()
+    {
 		StartCoroutine (UpdatePath ());
 	}
 
@@ -27,28 +28,33 @@ public class Agent : MonoBehaviour {
 		}
 	}
 
-	IEnumerator UpdatePath() {
-
-		if (Time.timeSinceLevelLoad < .3f) {
+	IEnumerator UpdatePath()
+    {
+		if (Time.timeSinceLevelLoad < .3f)
+        {
 			yield return new WaitForSeconds (.3f);
 		}
+
 		PathRequestManager.RequestPath (new PathRequest(transform.position, target.position, OnPathFound));
 
 		float sqrMoveThreshold = pathUpdateMoveThreshold * pathUpdateMoveThreshold;
 		Vector3 targetPosOld = target.position;
 
-		while (true) {
+		while (true)
+        {
 			yield return new WaitForSeconds (minPathUpdateTime);
-			print (((target.position - targetPosOld).sqrMagnitude) + "    " + sqrMoveThreshold);
-			if ((target.position - targetPosOld).sqrMagnitude > sqrMoveThreshold) {
+
+			if ( target != null && ((target.position - targetPosOld).sqrMagnitude > sqrMoveThreshold))
+            {
 				PathRequestManager.RequestPath (new PathRequest(transform.position, target.position, OnPathFound));
 				targetPosOld = target.position;
 			}
 		}
 	}
-	bool followingPath;
-	IEnumerator FollowPath() {
 
+	bool followingPath;
+	private IEnumerator FollowPath()
+    {
 		followingPath = true;
 		int pathIndex = 0;
 		transform.LookAt (path.lookPoints [0]);
@@ -102,5 +108,10 @@ public class Agent : MonoBehaviour {
 		target = destTransform;
 		PathRequestManager.RequestPath (new PathRequest(transform.position, target.position, OnPathFound));
 	}
+
+    public void Stop()
+    {
+        followingPath = false;
+    }
 
 }
