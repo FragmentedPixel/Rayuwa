@@ -16,8 +16,7 @@ public class PathRequestManager : MonoBehaviour {
 		pathfinding = GetComponent<Pathfinding>();
 	}
 
-	void Update()
-    {
+	void Update() {
 		if (results.Count > 0) {
 			int itemsInQueue = results.Count;
 			lock (results) {
@@ -30,8 +29,7 @@ public class PathRequestManager : MonoBehaviour {
 	}
 
 	public static void RequestPath(PathRequest request) {
-		ThreadStart threadStart = delegate 
-        {
+		ThreadStart threadStart = delegate {
 			instance.pathfinding.FindPath (request, instance.FinishedProcessingPath);
 		};
 		threadStart.Invoke ();
