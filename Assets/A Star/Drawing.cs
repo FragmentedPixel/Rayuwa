@@ -54,7 +54,7 @@ public class Drawing : MonoBehaviour
     
     private void DrawWithMouse()
     {
-        DrawShortest();
+        //DrawShortest();
     }
 
     private void DrawCurrentPath()
