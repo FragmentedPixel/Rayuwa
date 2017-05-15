@@ -156,6 +156,12 @@ public class Agent : MonoBehaviour
     {
         followingPath = false;
     }
+
+    public void Resume()
+    {
+        StopCoroutine("FollowPath");
+        StartCoroutine("FollowPath");
+    }
     #endregion
 
 }

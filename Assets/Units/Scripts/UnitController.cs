@@ -44,6 +44,7 @@ public class UnitController : MonoBehaviour
     private void Start()
     {
         agent = GetComponent<Agent>();
+        agent.SetNewDestination(GameObject.Find("Castel").transform);
     }
     #endregion
 
@@ -75,7 +76,8 @@ public class UnitController : MonoBehaviour
     public void StartBattle()
     {
         battleStarted = true;
-        agent.SetNewDestination(target);
+        currentState = battleState;
+        agent.Resume();
     }
     public void LookAtTarget()
     {
