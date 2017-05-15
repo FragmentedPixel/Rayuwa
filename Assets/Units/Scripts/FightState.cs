@@ -13,12 +13,14 @@ public class FightState : iUnitState
     #region State Methods
     public override void Update()
     {
-
+        if (controller.agent.target != controller.target)
+            controller.agent.target = controller.target;
     }
 
     public override void OnTriggerEnter(Collider other)
     {
-        
+        if (other.CompareTag("Player"))
+            ToAggroState();
     }
     #endregion
 

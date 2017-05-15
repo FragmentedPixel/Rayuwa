@@ -13,7 +13,15 @@ public class BattleState : iUnitState
     #region State Methods
     public override void Update()
     {
-        throw new NotImplementedException();
+        if (controller.agent.target != controller.target)
+            controller.agent.target = controller.target;
+
+        controller.LookAtTarget();
+
+        float distance = Vector3.Distance(controller.transform.position, controller.target.position);
+        if (distance < controller.fightRange)
+            ToAggroState();
+
     }
 
     public override void OnTriggerEnter(Collider other)
