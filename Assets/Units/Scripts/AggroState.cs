@@ -13,6 +13,7 @@ public class AggroState : iUnitState
     #region State Methods
     public override void Update()
     {
+        controller.debugCube.material.color = Color.yellow;
         if (controller.target != null)
             AggroTarget();
         else

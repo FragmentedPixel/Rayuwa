@@ -5,6 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(Agent))]
 public class UnitController : MonoBehaviour
 {
+    public MeshRenderer debugCube;
+
     #region Variabiles
     #region States
     public iUnitState currentState;
@@ -17,7 +19,7 @@ public class UnitController : MonoBehaviour
 
     #region Targeting
     public Transform target;
-    public List<Transform> targetsInRange;
+    public List<Transform> targetsInRange = new List<Transform>();
     public Agent agent;
     #endregion
 
@@ -52,17 +54,18 @@ public class UnitController : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         EnemyHealth enemyHealth = other.GetComponent<EnemyHealth>();
-        if (enemyHealth == null || !targetsInRange.Contains(enemyHealth.transform))
+        Debug.Log(other.gameObject.name);
+        if (enemyHealth == null || targetsInRange.Contains(enemyHealth.transform))
             return;
-        
+
         targetsInRange.Add(enemyHealth.transform);
         currentState.OnTriggerEnter(enemyHealth.transform);
     }
     private void OnTriggerExit(Collider other)
     {
-
+        Debug.Log("nu");
         EnemyHealth enemyHealth = other.GetComponent<EnemyHealth>();
-        if (enemyHealth == null || targetsInRange.Contains(enemyHealth.transform))
+        if (enemyHealth == null || !targetsInRange.Contains(enemyHealth.transform))
             return;
         else
             targetsInRange.Remove(enemyHealth.transform);

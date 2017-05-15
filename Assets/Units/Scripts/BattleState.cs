@@ -13,6 +13,7 @@ public class BattleState : iUnitState
     #region State Methods
     public override void Update()
     {
+        controller.debugCube.material.color = Color.magenta;
         Debug.Log("Make sure to follow current path");
     }
 

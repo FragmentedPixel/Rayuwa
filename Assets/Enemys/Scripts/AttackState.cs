@@ -6,6 +6,7 @@ public  class AttackState : iEnemyState
 {
 	private UnitHealth unitHealth;
 	private float lastAttack = Time.time;
+
     #region Constructor
     public AttackState (EnemyController eController):base(eController)
 	{	}

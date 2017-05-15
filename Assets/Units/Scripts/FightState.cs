@@ -15,6 +15,9 @@ public class FightState : iUnitState
     #region State Methods
     public override void Update()
     {
+
+        controller.debugCube.material.color = Color.red;
+
         if (controller.target != null)
             FightTarget();
         else
@@ -38,6 +41,7 @@ public class FightState : iUnitState
     public void HitTarget()
     {
         Debug.Log("Attack pls");
+        controller.target.GetComponent<EnemyHealth>().Hit(10f);
     }
     #endregion
 }
