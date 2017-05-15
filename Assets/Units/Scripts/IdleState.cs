@@ -13,34 +13,13 @@ public class IdleState : iUnitState
     #region State Methods
     public override void Update()
     {
-        if (controller.fightStarted)
+        if (controller.battleStarted)
             ToBattleState();
     }
 
-    public override void OnTriggerEnter(Collider other)
+    public override void OnTriggerEnter(Transform newTarget)
     {
-
-    }
-    #endregion
-
-    #region Methods
-
-    #endregion
-
-    #region Transitions
-    public override void ToAggroState()
-    {
-        controller.currentState = controller.aggroState;
-    }
-
-    public override void ToBattleState()
-    {
-        controller.currentState = controller.battleState;
-    }
-
-    public override void ToFighttate()
-    {
-        controller.currentState = controller.fightState;
+        controller.CheckNewTarget(newTarget);
     }
     #endregion
 }

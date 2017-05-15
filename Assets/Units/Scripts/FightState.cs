@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class FightState : iUnitState
 {
+    private float currentTime;
+
     #region Constructor
     public FightState(UnitController controller) : base(controller)
     { }
@@ -13,35 +15,29 @@ public class FightState : iUnitState
     #region State Methods
     public override void Update()
     {
-        if (controller.agent.target != controller.target)
-            controller.agent.target = controller.target;
+        if (controller.target != null)
+            FightTarget();
+        else
+            controller.UpdateTarget();
     }
 
-    public override void OnTriggerEnter(Collider other)
+    public override void OnTriggerEnter(Transform newTarget)
     {
-        if (other.CompareTag("Player"))
-            ToAggroState();
     }
     #endregion
 
     #region Methods
-
-    #endregion
-
-    #region Transitions
-    public override void ToAggroState()
+    private void FightTarget()
     {
-        controller.currentState = controller.aggroState;
+        if (currentTime > controller.fightCooldown)
+            currentTime += Time.deltaTime;
+        else
+            HitTarget();
     }
 
-    public override void ToBattleState()
+    public void HitTarget()
     {
-        controller.currentState = controller.battleState;
-    }
-
-    public override void ToFighttate()
-    {
-        controller.currentState = controller.fightState;
+        Debug.Log("Attack pls");
     }
     #endregion
 }

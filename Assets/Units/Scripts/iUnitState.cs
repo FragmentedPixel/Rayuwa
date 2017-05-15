@@ -12,9 +12,24 @@ public abstract class iUnitState
     }
 
     public abstract void Update();
-    public abstract void OnTriggerEnter(Collider other);
+    public abstract void OnTriggerEnter(Transform newTarget);
 
-    public abstract void ToBattleState();
-    public abstract void ToAggroState();
-    public abstract void ToFighttate();
+    #region Transition
+    public void ToIdleState()
+    {
+        controller.currentState = controller.idleState;
+    }
+    public void ToBattleState()
+    {
+        controller.currentState = controller.battleState;
+    }
+    public void ToAggroState()
+    {
+        controller.currentState = controller.aggroState;
+    }
+    public void ToFightState()
+    {
+        controller.currentState = controller.fightState;
+    }
+    #endregion
 }

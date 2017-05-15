@@ -13,40 +13,26 @@ public class AggroState : iUnitState
     #region State Methods
     public override void Update()
     {
-        if (controller.agent.target != controller.target)
-            controller.agent.target = controller.target;
-
-        float distance = Vector3.Distance(controller.transform.position, controller.target.position);
-        if (distance < controller.fightRange)
-            ToFighttate();
-
-        controller.LookAtTarget();
+        if (controller.target != null)
+            AggroTarget();
+        else
+            controller.UpdateTarget();
     }
 
-    public override void OnTriggerEnter(Collider other)
+    public override void OnTriggerEnter(Transform newTarget)
     {
-        throw new NotImplementedException();
+
     }
     #endregion
 
     #region Methods
-
-    #endregion
-
-    #region Transitions
-    public override void ToAggroState()
+    private void AggroTarget()
     {
-        controller.currentState = controller.aggroState;
-    }
+        controller.LookAtTarget();
 
-    public override void ToBattleState()
-    {
-        controller.currentState = controller.battleState;
-    }
-
-    public override void ToFighttate()
-    {
-        controller.currentState = controller.fightState;
+        float distance = Vector3.Distance(controller.transform.position, controller.target.position);
+        if (distance < controller.fightRange)
+            ToFightState();
     }
     #endregion
 }
