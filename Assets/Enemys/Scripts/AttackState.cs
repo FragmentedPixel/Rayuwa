@@ -4,7 +4,8 @@ using UnityEngine;
 
 public  class AttackState : iEnemyState  
 {
-	private EnemyHealth enemyHealth;
+	private UnitHealth unitHealth;
+	private float lastAttack = Time.time;
     #region Constructor
     public AttackState (EnemyController eController):base(eController)
 	{	}
@@ -14,13 +15,17 @@ public  class AttackState : iEnemyState
     public override void Update ()
 	{
 		if (controller.target == null)
+		{
 			ToPatrol ();
+			return;
+		}
 		if (Vector3.Distance (controller.target.transform.position, controller.transform.position) > controller.attackDistance)
 			ToChase ();
-		else
+		else if(lastAttack+controller.attackSpeed<Time.time)
 		{
-			enemyHealth = controller.target.GetComponent<EnemyHealth> ();
-			enemyHealth.Hit (controller.attackDmg);
+			lastAttack = Time.time;
+			unitHealth = controller.target.GetComponent<UnitHealth> ();
+			unitHealth.Hit (controller.attackDmg);
 		}
 	}
 	public override void OnTriggerEnter (Collider other)

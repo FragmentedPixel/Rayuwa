@@ -20,7 +20,7 @@ public class PatrolState : iEnemyState
 
     public override void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Unit"))
         {
             controller.agent.SetNewDestination(other.transform);
             controller.target = other.transform;

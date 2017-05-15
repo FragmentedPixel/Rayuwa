@@ -1,9 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+[RequireComponent(typeof(Agent))]
 public class EnemyController : MonoBehaviour
 {
+	
     #region Variabiles
 
     [HideInInspector] public Agent agent;
@@ -17,6 +18,7 @@ public class EnemyController : MonoBehaviour
 
 	[Header("Attack")]
 	public float attackDmg = 5;
+	public float attackSpeed= 1*1000;
 
     #region States
     public iEnemyState currentState;

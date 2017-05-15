@@ -19,6 +19,10 @@ public class EnemyHealth : MonoBehaviour {
 	public void Hit(float damage)
 	{
 		currentHealth -= damage;
+		if (currentHealth <= 0)
+		{
+			Destroy (transform.parent.gameObject);
+		}
 		Debug.Log (currentHealth);
 	}
 }
