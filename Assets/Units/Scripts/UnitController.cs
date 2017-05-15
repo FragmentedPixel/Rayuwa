@@ -54,7 +54,6 @@ public class UnitController : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         EnemyHealth enemyHealth = other.GetComponent<EnemyHealth>();
-        Debug.Log(other.gameObject.name);
         if (enemyHealth == null || targetsInRange.Contains(enemyHealth.transform))
             return;
 
@@ -63,7 +62,6 @@ public class UnitController : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        Debug.Log("nu");
         EnemyHealth enemyHealth = other.GetComponent<EnemyHealth>();
         if (enemyHealth == null || !targetsInRange.Contains(enemyHealth.transform))
             return;
@@ -76,6 +74,7 @@ public class UnitController : MonoBehaviour
     public void StartBattle()
     {
         battleStarted = true;
+        agent.SetNewDestination(target);
     }
     public void LookAtTarget()
     {

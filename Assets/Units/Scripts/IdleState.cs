@@ -14,6 +14,8 @@ public class IdleState : iUnitState
     public override void Update()
     {
         controller.debugCube.material.color = Color.blue;
+        controller.agent.Stop();
+
         if (controller.battleStarted)
             ToBattleState();
     }
