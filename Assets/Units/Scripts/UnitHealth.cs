@@ -8,12 +8,11 @@ public class UnitHealth : MonoBehaviour {
 	public float MaxHealth=500;
 	private float currentHealth;
 	public Image background;
-	private Image healthImage;
+	public Image healthImage;
 	private Canvas canvas;
 	// Use this for initialization
 	void Start () 
 	{
-		healthImage = background.GetComponentInChildren<Image> ();
 		canvas = background.GetComponentInParent<Canvas>();
 
 		currentHealth = MaxHealth;	

@@ -26,7 +26,8 @@ public class UnitController : MonoBehaviour
     #region Parameters
     public bool battleStarted = false;
     public float fightRange = 5f;
-    public float fightCooldown = 3f;
+    public float fightCooldown = 1f;
+	public float fightDamage = 10f;
     #endregion
     #endregion
 

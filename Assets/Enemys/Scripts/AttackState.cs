@@ -4,7 +4,6 @@ using UnityEngine;
 
 public  class AttackState : iEnemyState  
 {
-	private UnitHealth unitHealth;
 	private float lastAttack = Time.time;
 
     #region Constructor
@@ -25,8 +24,7 @@ public  class AttackState : iEnemyState
 		else if(lastAttack+controller.attackSpeed<Time.time)
 		{
 			lastAttack = Time.time;
-			unitHealth = controller.target.GetComponent<UnitHealth> ();
-			unitHealth.Hit (controller.attackDmg);
+			HitTarget ();
 		}
 	}
 	public override void OnTriggerEnter (Collider other)
@@ -36,7 +34,10 @@ public  class AttackState : iEnemyState
     #endregion
 
     #region Methods
-
+	public void HitTarget()
+	{
+		controller.target.GetComponent<UnitHealth> ().Hit (controller.attackDmg);
+	}
     #endregion
 
     #region Transitions

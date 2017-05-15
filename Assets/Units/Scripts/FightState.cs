@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class FightState : iUnitState
 {
-    private float currentTime;
+	private float lastAttack = Time.time;
 
     #region Constructor
     public FightState(UnitController controller) : base(controller)
@@ -32,16 +32,18 @@ public class FightState : iUnitState
     #region Methods
     private void FightTarget()
     {
-        if (currentTime > controller.fightCooldown)
-            currentTime += Time.deltaTime;
-        else
+		if (Vector3.Distance (controller.target.transform.position, controller.transform.position) > controller.fightRange)
+			ToAggroState ();
+		else if(lastAttack+controller.fightCooldown<Time.time)
+		{
+			lastAttack = Time.time;
             HitTarget();
+		}
     }
 
     public void HitTarget()
     {
-        Debug.Log("Attack pls");
-        controller.target.GetComponent<EnemyHealth>().Hit(10f);
+		controller.target.GetComponent<EnemyHealth>().Hit(controller.fightDamage);
     }
     #endregion
 }
