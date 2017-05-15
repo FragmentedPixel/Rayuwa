@@ -4,6 +4,7 @@ using UnityEngine;
 
 public  class AttackState : iEnemyState  
 {
+	private EnemyHealth enemyHealth;
     #region Constructor
     public AttackState (EnemyController eController):base(eController)
 	{	}
@@ -16,6 +17,11 @@ public  class AttackState : iEnemyState
 			ToPatrol ();
 		if (Vector3.Distance (controller.target.transform.position, controller.transform.position) > controller.attackDistance)
 			ToChase ();
+		else
+		{
+			enemyHealth = controller.target.GetComponent<EnemyHealth> ();
+			enemyHealth.Hit (controller.attackDmg);
+		}
 	}
 	public override void OnTriggerEnter (Collider other)
 	{

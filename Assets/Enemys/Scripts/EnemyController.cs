@@ -15,11 +15,15 @@ public class EnemyController : MonoBehaviour
     public Transform target;
 	public float attackDistance = 1;
 
+	[Header("Attack")]
+	public float attackDmg = 5;
+
     #region States
     public iEnemyState currentState;
     public AttackState attack;
     public ChaseState chase;
     public PatrolState patrol;
+
     #endregion
 
     #endregion
