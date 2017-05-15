@@ -14,7 +14,6 @@ public class BattleState : iUnitState
     public override void Update()
     {
         controller.debugCube.material.color = Color.magenta;
-        Debug.Log("Make sure to follow current path");
     }
 
     public override void OnTriggerEnter(Transform newTarget)
