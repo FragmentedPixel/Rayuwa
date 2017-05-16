@@ -4,29 +4,37 @@ using UnityEngine;
 
 public class UnitsManager : MonoBehaviour
 {
-	public int unitCount=5;
 	public List<Transform> points;
-	public GameObject units;
+    public Unit[] units;
 
-	public void Start()
+    public void Start()
 	{
+        units = UnitsData.instance.units;
 		Spawn ();
 	}
 
     public void Spawn()
     {
-		for (int i = 0; i < points.Count; i++)
-		{
-			Transform temp = points [i];
-			int randomIndex = Random.Range (i, points.Count);
-			points [i] = points [randomIndex];
-			points [randomIndex] = temp;
-		}
-		for(int i =0;i<unitCount;i++)
-		{
-			Instantiate(units,points[i].position,Quaternion.identity,transform);
-		}
+        SuffleSpawnPoints();
+        int spawnIndex = 0;
+
+        foreach (Unit unit in units)
+        {
+            for (int i = 0; i < unit.count; i++)
+                Instantiate(unit.prefab, points[spawnIndex++].position, Quaternion.identity, transform);
+        }
      }
+
+    private void SuffleSpawnPoints()
+    {
+        for (int i = 0; i < points.Count; i++)
+        {
+            Transform temp = points[i];
+            int randomIndex = Random.Range(i, points.Count);
+            points[i] = points[randomIndex];
+            points[randomIndex] = temp;
+        }
+    }
 
     public void StartBattle()
     {

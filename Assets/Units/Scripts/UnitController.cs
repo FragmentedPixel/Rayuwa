@@ -89,17 +89,22 @@ public class UnitController : MonoBehaviour
         float distance = int.MaxValue;
         for(int i = 0; i < targetsInRange.Count; i++)
         {
-            if(targetsInRange[i] == null)
+            Debug.Log(targetsInRange.Count);
+
+            if (targetsInRange[i] == null)
             {
                 targetsInRange.Remove(targetsInRange[i]);
                 i--;
             }
-
-            float newDistance = Vector3.Distance(transform.position, targetsInRange[i].position);
-            if(newDistance < distance)
+            else
             {
-                target = targetsInRange[i];
-                distance = newDistance;
+
+                float newDistance = Vector3.Distance(transform.position, targetsInRange[i].position);
+                if (newDistance < distance)
+                {
+                    target = targetsInRange[i];
+                    distance = newDistance;
+                }
             }
         }
 
@@ -115,6 +120,7 @@ public class UnitController : MonoBehaviour
     }
     public void CheckNewTarget(Transform newTarget)
     {
+        
         agent.SetNewDestination(newTarget);
         target = newTarget;
 
