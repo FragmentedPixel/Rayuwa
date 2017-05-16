@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 114521260791742948}
   - component: {fileID: 135937342478058102}
   - component: {fileID: 114094504376476290}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Unit Purple
   m_TagString: Untagged
   m_Icon: {fileID: 0}

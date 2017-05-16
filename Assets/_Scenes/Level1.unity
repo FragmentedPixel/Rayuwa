@@ -2462,10 +2462,6 @@ Prefab:
       propertyPath: WayPointParent
       value: 
       objectReference: {fileID: 219159699}
-    - target: {fileID: 1308093865927632, guid: ed2fe6da22748d64fa7c7e8dee6c2838, type: 2}
-      propertyPath: m_Layer
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ed2fe6da22748d64fa7c7e8dee6c2838, type: 2}
   m_IsPrefabParent: 0
@@ -4634,6 +4630,11 @@ Prefab:
         type: 2}
       propertyPath: m_Radius
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 135742838863070358, guid: ccd4db20c3cd25749ad7c3e177324b0a,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ccd4db20c3cd25749ad7c3e177324b0a, type: 2}

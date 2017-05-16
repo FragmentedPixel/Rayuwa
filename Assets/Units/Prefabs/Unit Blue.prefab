@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 114054324753062440}
   - component: {fileID: 135742838863070358}
   - component: {fileID: 114980552856718328}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Unit Blue
   m_TagString: Untagged
   m_Icon: {fileID: 0}

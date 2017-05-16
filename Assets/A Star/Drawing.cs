@@ -34,7 +34,7 @@ public class Drawing : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit))
         {
-            Agent newAgent = hit.transform.GetComponent<Agent>();
+			Agent newAgent = hit.transform.parent.GetComponent<Agent>();
             if (newAgent != null)
             {
                 unitAgent = newAgent;
