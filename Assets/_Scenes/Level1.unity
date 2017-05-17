@@ -563,6 +563,25 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 98655585}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &138582405 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1481103077100314, guid: f62e04861d58fa7478a16b54b773dc9a,
+    type: 2}
+  m_PrefabInternal: {fileID: 313494764}
+--- !u!64 &138582409
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 138582405}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300006, guid: 84c6bf8a34715e0439e019bf28870b1f, type: 3}
 --- !u!1 &139990704
 GameObject:
   m_ObjectHideFlags: 0
@@ -1093,6 +1112,11 @@ Prefab:
     - target: {fileID: 1481103077100314, guid: f62e04861d58fa7478a16b54b773dc9a, type: 2}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 23367517642095200, guid: f62e04861d58fa7478a16b54b773dc9a,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f62e04861d58fa7478a16b54b773dc9a, type: 2}
@@ -4021,7 +4045,7 @@ Prefab:
     - target: {fileID: 114506038193766910, guid: d3ed5fd9a0a3e6d40a051064ed4a73ac,
         type: 2}
       propertyPath: displayGridGizmos
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d3ed5fd9a0a3e6d40a051064ed4a73ac, type: 2}
@@ -4602,6 +4626,25 @@ Transform:
   m_Father: {fileID: 1186915995}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: -114.545006, z: 0}
+--- !u!1 &1653727339 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1271828391428144, guid: f62e04861d58fa7478a16b54b773dc9a,
+    type: 2}
+  m_PrefabInternal: {fileID: 313494764}
+--- !u!64 &1653727343
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1653727339}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300004, guid: 84c6bf8a34715e0439e019bf28870b1f, type: 3}
 --- !u!1 &1656580996
 GameObject:
   m_ObjectHideFlags: 0
