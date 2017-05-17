@@ -22,7 +22,7 @@ public class PatrolState : iEnemyState
     {
         if (other.CompareTag("Unit"))
         {
-            controller.agent.SetNewDestination(other.transform);
+            controller.agent.MoveToDestination(other.transform.position);
             controller.target = other.transform;
             ToChase();
         }
@@ -35,7 +35,7 @@ public class PatrolState : iEnemyState
         if (controller.agent.HasReachedDest())
         {
             wayIndex = (wayIndex + 1) % controller.WayPointParent.childCount;
-            controller.agent.SetNewDestination(controller.WayPointParent.GetChild(wayIndex));
+            controller.agent.MoveToDestination(controller.WayPointParent.GetChild(wayIndex).position);
         }
     }
     #endregion

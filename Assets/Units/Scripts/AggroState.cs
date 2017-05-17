@@ -30,9 +30,8 @@ public class AggroState : iUnitState
     private void AggroTarget()
     {
         controller.LookAtTarget();
-
-        float distance = Vector3.Distance(controller.transform.position, controller.target.position);
-        if (distance < controller.fightRange)
+        
+        if (controller.DistanceToTarget() < controller.fightRange)
             ToFightState();
     }
     #endregion

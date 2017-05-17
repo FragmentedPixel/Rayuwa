@@ -6,6 +6,7 @@ using UnityEngine;
 public class UnitController : MonoBehaviour
 {
     public MeshRenderer debugCube;
+    public Vector3 oldDestination;
 
     #region Variabiles
     #region States
@@ -44,7 +45,7 @@ public class UnitController : MonoBehaviour
     private void Start()
     {
         agent = GetComponent<Agent>();
-        agent.SetNewDestination(GameObject.Find("Castel").transform);
+        agent.MoveToDestination(GameObject.Find("Castel").transform.position);
     }
     #endregion
 
@@ -110,21 +111,31 @@ public class UnitController : MonoBehaviour
 
         if ((target == null) && (!battleStarted))
             currentState.ToIdleState();
-        else if(target == null)
+        else if (target == null)
+        {
+            if(oldDestination != null)
+            agent.MoveToDestination(oldDestination);
             currentState.ToBattleState();
+        }
         else if (distance > fightRange)
             currentState.ToAggroState();
         else
             currentState.ToFightState();
 
     }
+    public float DistanceToTarget()
+    {
+        float distance = Vector3.Distance(transform.position, target.position);
+        return distance;
+    }
     public void CheckNewTarget(Transform newTarget)
     {
-        
-        agent.SetNewDestination(newTarget);
+        oldDestination = agent.destination;
+        agent.MoveToDestination(newTarget.position);
+
         target = newTarget;
 
-        float distance = Vector3.Distance(transform.position, target.position);
+        float distance = DistanceToTarget();
         if (distance < fightRange)
             currentState.ToFightState();
         else

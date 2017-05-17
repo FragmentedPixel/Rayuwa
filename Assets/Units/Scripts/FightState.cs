@@ -32,18 +32,16 @@ public class FightState : iUnitState
     #region Methods
     private void FightTarget()
     {
-		if (Vector3.Distance (controller.target.transform.position, controller.transform.position) > controller.fightRange)
+		if (controller.DistanceToTarget() > controller.fightRange)
 			ToAggroState ();
 		else if(lastAttack+controller.fightCooldown<Time.time)
-		{
-			lastAttack = Time.time;
             HitTarget();
-		}
     }
 
     public void HitTarget()
     {
-		controller.target.GetComponent<EnemyHealth>().Hit(controller.fightDamage);
+        lastAttack = Time.time;
+        controller.target.GetComponent<EnemyHealth>().Hit(controller.fightDamage);
     }
     #endregion
 }

@@ -14,6 +14,9 @@ public class BattleState : iUnitState
     public override void Update()
     {
         controller.debugCube.material.color = Color.magenta;
+
+        if (controller.target != null)
+            controller.agent.MoveToDestination(controller.target.position);
     }
 
     public override void OnTriggerEnter(Transform newTarget)

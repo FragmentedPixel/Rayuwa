@@ -1947,8 +1947,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: -67.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1231129980}
   - {fileID: 2059169918}
+  - {fileID: 1231129980}
   - {fileID: 289788547}
   - {fileID: 1186915995}
   - {fileID: 1701127314}
@@ -3018,7 +3018,7 @@ Transform:
   - {fileID: 726624583}
   - {fileID: 1187559019}
   m_Father: {fileID: 856669041}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1241400988
 Prefab:
@@ -4585,7 +4585,7 @@ Transform:
   - {fileID: 1656581000}
   - {fileID: 1150473093}
   m_Father: {fileID: 856669041}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2094948509
 Prefab:

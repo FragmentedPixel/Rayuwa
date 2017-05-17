@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 77b85546f375a00408b5563b7646a825
+timeCreated: 1495041513
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Kingthings Xander Outline
+  fontNames:
+  - Kingthings Xander Outline
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
