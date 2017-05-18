@@ -111,7 +111,7 @@ GameObject:
   - component: {fileID: 114980552856718328}
   m_Layer: 2
   m_Name: Unit Blue
-  m_TagString: Untagged
+  m_TagString: Unit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -316,7 +316,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f405937fb69e244198911aebaac9bf00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destination: {fileID: 0}
+  destination: {x: 0, y: 0, z: 0}
   speed: 2
   turnSpeed: 3
   turnDst: 0
@@ -438,6 +438,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugCube: {fileID: 23266916888634604}
+  oldDestination: {x: 0, y: 0, z: 0}
   target: {fileID: 0}
   targetsInRange: []
   agent: {fileID: 0}
