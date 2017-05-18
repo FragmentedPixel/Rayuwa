@@ -36,9 +36,8 @@ public class Drawing : MonoBehaviour
 
     private void Start()
     {
-
         allUnits = FindObjectsOfType<UnitHealth>().ToList();
-        selectedunits = allUnits;
+        selectedunits = FindObjectsOfType<UnitHealth>().ToList();
     }
 
     #region GUI
@@ -57,7 +56,6 @@ public class Drawing : MonoBehaviour
     {
         if(selectedunits.Count > 0)
         {
-
             if (Input.GetMouseButtonDown(1))
                 DrawShortest();
 
@@ -141,6 +139,7 @@ public class Drawing : MonoBehaviour
         for (int i = 0; i < allUnits.Count; i++)
         {
             UnitHealth UnitObj = allUnits[i] as UnitHealth;
+
             if ((!unitsInDrag.Contains(UnitObj)) && (UnitWithinDrag(ScreenPosition(UnitObj.gameObject))))
                 unitsInDrag.Add(UnitObj);
         }
@@ -231,6 +230,8 @@ public class Drawing : MonoBehaviour
 
         foreach (UnitHealth unitAgent in selectedunits)
         {
+            if (unitAgent.transform.parent.GetComponent<Agent>().path == null)
+                continue;
             List<Node> pathNodes = unitAgent.transform.parent.GetComponent<Agent>().path.nodes;
             foreach (Node node in pathNodes)
                 Instantiate(wayPoint, node.worldPosition, Quaternion.identity, transform);
