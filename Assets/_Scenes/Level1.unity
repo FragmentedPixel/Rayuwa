@@ -4302,22 +4302,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1019061122}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1022497993 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1611130376019144, guid: ed2fe6da22748d64fa7c7e8dee6c2838,
-    type: 2}
-  m_PrefabInternal: {fileID: 2005510703}
---- !u!114 &1022497995
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1022497993}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1378fe3ad901044ead0268a17361dd9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1049906387
 GameObject:
   m_ObjectHideFlags: 0
@@ -5011,6 +4995,12 @@ Prefab:
       propertyPath: displayGridGizmos
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114506038193766910, guid: d3ed5fd9a0a3e6d40a051064ed4a73ac,
+        type: 2}
+      propertyPath: wayPointPrefab
+      value: 
+      objectReference: {fileID: 1843856094298706, guid: 9f0f80300ccdbe74d9502689403d69ff,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d3ed5fd9a0a3e6d40a051064ed4a73ac, type: 2}
   m_IsPrefabParent: 0
@@ -7105,7 +7095,8 @@ Prefab:
       propertyPath: m_Name
       value: Enemy (7)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114626532511610182, guid: ed2fe6da22748d64fa7c7e8dee6c2838, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: ed2fe6da22748d64fa7c7e8dee6c2838, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &2005510704 stripped

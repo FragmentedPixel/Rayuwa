@@ -28,12 +28,16 @@ public class Drawing : MonoBehaviour
     #region Showing Path
     public GameObject wayPointPrefab;
     public LayerMask walkableMask;
+    private Grid grid;
     #endregion
+
     #endregion
 
     #region Initialization
     private void Start()
     {
+        grid = FindObjectOfType<Grid>();
+
         allAgents = FindObjectsOfType<Agent>().ToList();
 
         for (int i = 0; i < allAgents.Count; i++)
@@ -248,13 +252,13 @@ public class Drawing : MonoBehaviour
     
     private void DrawWithMouse()
     {
-        //DrawShortest();
+        //TODO: PLS ADD BUT LATER
     }
 
     private void DrawSelectedPaths()
     {
-        foreach (Transform child in transform)
-            Destroy(child.gameObject);
+        foreach (Node node in grid.grid)
+            node.Deactivate();
 
         if (selectedAgents.Count <= 0)
             return;
@@ -267,10 +271,7 @@ public class Drawing : MonoBehaviour
 
             List<Node> pathNodes = selectedAgents[i].GetComponent<Agent>().path.nodes;
             foreach (Node node in pathNodes)
-            {
-                GameObject point = Instantiate(wayPointPrefab, node.worldPosition, Quaternion.identity, transform);
-                point.GetComponent<MeshRenderer>().material.color = selectedAgents[i].pathColor;
-            }
+                node.Activate(selectedAgents[i].pathColor);
         }
     }
     #endregion
