@@ -9,9 +9,15 @@ public class UnitsOptions : MonoBehaviour
     public Transform panel;
 
     public GameObject unitRowPrefab;
+    public AudioClip clickSound;
+
+    private AudioSource audioS;
 
     private void Start()
     {
+        audioS = GetComponent<AudioSource>();
+        audioS.volume = PlayerPrefsManager.GetMasterVolume();
+
         Unit[] units = UnitsData.instance.units;
 
         foreach (Unit unit in units)
@@ -38,6 +44,11 @@ public class UnitsOptions : MonoBehaviour
         unitsCountText.text = value.ToString();
         unitsCountText.color = Color.Lerp(Color.yellow, Color.red, value / UnitsData.instance.maxUnits);
     }
+
+    public void PlaySound()
+    {
+        audioS.PlayOneShot(clickSound);
+    }
 }
 
 public class UnitRow
@@ -54,18 +65,20 @@ public class UnitRow
         unit = _unit;
 
         name = row.transform.GetChild(0).GetComponent<Text>();
-        add = row.transform.GetChild(1).GetComponent<Button>();
-        remove = row.transform.GetChild(2).GetComponent<Button>();
-        count = row.transform.GetChild(3).GetComponent<Text>();
+        remove = row.transform.GetChild(1).GetComponent<Button>();
+        count = row.transform.GetChild(2).GetComponent<Text>();
+        add = row.transform.GetChild(3).GetComponent<Button>();
 
         name.text = unit.prefab.name;
-        add.onClick.AddListener(delegate { Add(); });
         remove.onClick.AddListener(delegate { Remove(); });
         count.text = unit.count.ToString();
+        add.onClick.AddListener(delegate { Add(); });
     }
 
     public void Add()
     {
+        Object.FindObjectOfType<UnitsOptions>().PlaySound();
+
         if(UnitsData.instance.canAddUnits)
             unit.count = Mathf.Clamp(unit.count + 1, 0, UnitsData.instance.maxUnits);
         count.text = unit.count.ToString();
@@ -73,6 +86,8 @@ public class UnitRow
 
     public void Remove()
     {
+        Object.FindObjectOfType<UnitsOptions>().PlaySound();
+
         unit.count = Mathf.Clamp(unit.count - 1, 0, UnitsData.instance.maxUnits);
         count.text = unit.count.ToString();
     }

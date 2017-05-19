@@ -8,6 +8,7 @@ public class Grid : MonoBehaviour
     [Header("Grid")]
 	public bool displayGridGizmos;
     public Vector2 gridWorldSize;
+    public GameObject wayPointPrefab;
 
     [Space(7f)]
     public float nodeRadius;
@@ -17,7 +18,7 @@ public class Grid : MonoBehaviour
     public LayerMask unwalkableMask;
     public LayerMask walkableMask;
 
-	private Node[,] grid;
+	public Node[,] grid;
 
 	private float nodeDiameter;
     private int gridSizeX, gridSizeY;
@@ -65,7 +66,7 @@ public class Grid : MonoBehaviour
 				if (!walkable)
 					movementPenalty += obstacleProximityPenalty;
 
-				grid[x,y] = new Node(walkable,worldPoint, x,y, movementPenalty);
+				grid[x,y] = new Node(walkable,worldPoint, x,y, movementPenalty, wayPointPrefab);
 			}
 		}
 

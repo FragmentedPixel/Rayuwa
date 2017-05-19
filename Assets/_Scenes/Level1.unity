@@ -4995,6 +4995,12 @@ Prefab:
       propertyPath: displayGridGizmos
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114506038193766910, guid: d3ed5fd9a0a3e6d40a051064ed4a73ac,
+        type: 2}
+      propertyPath: wayPointPrefab
+      value: 
+      objectReference: {fileID: 1843856094298706, guid: 9f0f80300ccdbe74d9502689403d69ff,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d3ed5fd9a0a3e6d40a051064ed4a73ac, type: 2}
   m_IsPrefabParent: 0

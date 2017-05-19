@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 65499226367717074}
   - component: {fileID: 54883403116191080}
   - component: {fileID: 114212151374995618}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: UnitHealth
   m_TagString: Unit
   m_Icon: {fileID: 0}
@@ -220,6 +220,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!23 &23138350368812936
 MeshRenderer:
@@ -251,6 +252,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!33 &33457824147658704
 MeshFilter:
@@ -376,6 +378,7 @@ MonoBehaviour:
   turnSpeed: 3
   turnDst: 0
   stoppingDst: 1
+  pathColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &114648754978443986
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -477,7 +480,7 @@ Canvas:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1918615421415316}
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_RenderMode: 2
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
@@ -486,6 +489,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0

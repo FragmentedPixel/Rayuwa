@@ -9,6 +9,7 @@ public class Node : IHeapItem<Node>
 	public int gridX;
 	public int gridY;
 	public int movementPenalty;
+    public MeshRenderer wayPoint;
     #endregion
 
     #region Costs + index
@@ -19,13 +20,16 @@ public class Node : IHeapItem<Node>
     #endregion
 
     #region Constructor
-    public Node(bool _walkable, Vector3 _worldPos, int _gridX, int _gridY, int _penalty)
+    public Node(bool _walkable, Vector3 _worldPos, int _gridX, int _gridY, int _penalty, GameObject _wayPoint)
     {
 		walkable = _walkable;
 		worldPosition = _worldPos;
 		gridX = _gridX;
 		gridY = _gridY;
 		movementPenalty = _penalty;
+
+        GameObject point = GameObject.Instantiate(_wayPoint, worldPosition, Quaternion.identity);
+        wayPoint = point.GetComponent<MeshRenderer>();
 	}
     #endregion
 
@@ -35,7 +39,6 @@ public class Node : IHeapItem<Node>
                             get { return heapIndex;	}
                             set { heapIndex = value;}
                          }
-
 	public int CompareTo(Node nodeToCompare) {
 		int compare = fCost.CompareTo(nodeToCompare.fCost);
 		if (compare == 0) {
@@ -43,5 +46,18 @@ public class Node : IHeapItem<Node>
 		}
 		return -compare;
 	}
+    #endregion
+
+    #region Methods
+    public void Activate(Color color)
+    {
+        wayPoint.enabled = true;
+        wayPoint.material.color = color;
+    }
+
+    public void Deactivate()
+    {
+        wayPoint.enabled = false;
+    }
     #endregion
 }

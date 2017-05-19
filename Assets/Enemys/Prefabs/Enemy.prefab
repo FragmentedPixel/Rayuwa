@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 65876280263446558}
   - component: {fileID: 54408715169594910}
   - component: {fileID: 114850991224329696}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: EnemyHealth
   m_TagString: Enemy
   m_Icon: {fileID: 0}

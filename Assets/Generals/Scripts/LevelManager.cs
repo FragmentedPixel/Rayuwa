@@ -11,6 +11,7 @@ public class LevelManager : MonoBehaviour
     private void Start()
     {
         audioS = GetComponent<AudioSource>();
+        audioS.volume = PlayerPrefsManager.GetMasterVolume();
     }
 
     public void ChangeScene(string scene)

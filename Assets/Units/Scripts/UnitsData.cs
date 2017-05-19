@@ -6,8 +6,10 @@ using System;
 public class UnitsData : MonoBehaviour
 {
     public static UnitsData instance;
-    public int maxUnits;
 
+    public int maxUnits;
+    public int unitTypes;
+    
     public Unit[] units;
 
     private void Start()
