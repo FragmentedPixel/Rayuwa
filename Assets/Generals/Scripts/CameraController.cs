@@ -6,7 +6,7 @@ public class CameraController : MonoBehaviour {
 	public float speed = 10.0F;
 	private Vector3 startPosition;
 	public float Z_Boundary=50f;
-    public screenWidth;
+    public int screenWidth;
 	void Start () 
 	{
 		startPosition = transform.position;
