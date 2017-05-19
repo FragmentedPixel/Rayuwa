@@ -6,6 +6,7 @@ public class CameraController : MonoBehaviour {
 	public float speed = 10.0F;
 	private Vector3 startPosition;
 	public float Z_Boundary=50f;
+    public screenWidth;
 	void Start () 
 	{
 		startPosition = transform.position;
@@ -17,7 +18,11 @@ public class CameraController : MonoBehaviour {
 	{
 		float movement = Input.GetAxis("Horizontal") * speed;
 		movement *= Time.deltaTime;
-		movement += transform.position.z;
+        if (movement == 0)
+            Debug.Log(Input.mousePosition);
+        movement += transform.position.z;
+
+        
 
 		if(movement>startPosition.z&&movement<startPosition.z+Z_Boundary)
 			transform.position += new Vector3 (0,0,movement-transform.position.z);
