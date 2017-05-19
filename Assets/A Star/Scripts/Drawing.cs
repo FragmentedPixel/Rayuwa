@@ -52,8 +52,11 @@ public class Drawing : MonoBehaviour
     #region GUI
     private void OnGUI()
     {
+        if (Unsigned(boxWidth) < dragThreshhold)
+            return;
+
         if (isdragging)
-            GUI.Box(new Rect(boxLeft, boxTop, boxWidth, boxHeight), "Stiu ca nu arata bine cutia, dar jur ca remediem asta.");
+            GUI.Box(new Rect(boxLeft, boxTop, boxWidth, boxHeight),"Eok");
     }
     #endregion
 
@@ -92,13 +95,12 @@ public class Drawing : MonoBehaviour
         {
             mouseDownPoint = mouseCurrentPoint;
             Agent hitAgent = GetAgentFromTransform(hit.transform);
-            if (hitAgent != null)
-            {
-                if (!Input.GetKey(KeyCode.LeftShift) && !Input.GetKey(KeyCode.RightShift))
-                    selectedAgents.Clear();
 
+            if (!Input.GetKey(KeyCode.LeftShift) && !Input.GetKey(KeyCode.RightShift))
+                selectedAgents.Clear();
+
+            if (hitAgent != null)
                 selectedAgents.Add(hitAgent);
-            }
         }
 
         if (isdragging)
@@ -226,11 +228,22 @@ public class Drawing : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
-        if (!Physics.Raycast(ray, out hit, walkableMask))
+        if (!Physics.Raycast(ray, out hit))
             return;
 
-        foreach (Agent unitAgent in selectedAgents)
-            unitAgent.GetComponent<Agent>().MoveToDestination(hit.point);
+        EnemyHealth targetHealth = hit.transform.GetComponent<EnemyHealth>();
+        if(targetHealth)
+        {
+            foreach (Agent unitAgent in selectedAgents)
+                unitAgent.GetComponent<UnitController>().CheckNewTarget(targetHealth.transform);
+        }
+        else
+        {
+            foreach (Agent unitAgent in selectedAgents)
+                unitAgent.MoveToDestination(hit.point);
+        }
+
+        
     }
     
     private void DrawWithMouse()
@@ -254,7 +267,10 @@ public class Drawing : MonoBehaviour
 
             List<Node> pathNodes = selectedAgents[i].GetComponent<Agent>().path.nodes;
             foreach (Node node in pathNodes)
-                Instantiate(wayPointPrefab, node.worldPosition, Quaternion.identity, transform);
+            {
+                GameObject point = Instantiate(wayPointPrefab, node.worldPosition, Quaternion.identity, transform);
+                point.GetComponent<MeshRenderer>().material.color = selectedAgents[i].pathColor;
+            }
         }
     }
     #endregion

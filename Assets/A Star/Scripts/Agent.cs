@@ -15,6 +15,7 @@ public class Agent : MonoBehaviour
     #endregion
 
     #region Path + Following
+    public Color pathColor;
     public aPath path;
     private bool followingPath;
     #endregion
@@ -24,6 +25,8 @@ public class Agent : MonoBehaviour
     #region Initialization
     private void Start()
     {
+        pathColor = new Color(Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f));
+
         if (destination != null)
             PathRequestManager.RequestPath(new PathRequest(transform.position, destination, OnPathFound));
 	}

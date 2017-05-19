@@ -3174,6 +3174,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   Z_Boundary: 160
+  screenWidth: 0
 --- !u!1 &816769014
 GameObject:
   m_ObjectHideFlags: 0
