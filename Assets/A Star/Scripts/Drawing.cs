@@ -6,66 +6,55 @@ using UnityEngine.UI;
 using System.Linq;
 
 public class Drawing : MonoBehaviour
-{   
+{
+
+
     #region Variabiles
     #region Dragging
-    public bool isdragging;
-    public float dragThreshhold = 10f;
-    private Vector2 mouseDownPoint, mouseCurrentPoint;
+    public bool IsDragging;
+    private Vector3 MouseDownPoint, CurrentDownPoint;
     #endregion
 
     #region UnitsLists
-    public List<Agent> allAgents = new List<Agent>();
-    public List<Agent> agentsInDrag = new List<Agent>();
-    public List<Agent> selectedAgents = new List<Agent>();
+    public List<UnitHealth> allUnits = new List<UnitHealth>();
+    public List<UnitHealth> unitsInDrag = new List<UnitHealth>();
+    public List<UnitHealth> selectedunits = new List<UnitHealth>();
     #endregion
 
     #region Box
-    private float boxWidth, boxHeight, boxLeft, boxTop;
-    private Vector2 boxStart, boxFinish;
+    private float BoxWidth, BoxHeight, BoxLeft, BoxTop;
+    private Vector2 BoxStart, BoxFinish;
+    public Texture2D boxTexture;
     #endregion
 
     #region Showing Path
-    public GameObject wayPointPrefab;
+    public GameObject wayPoint;
+    public Text unitName;
     public LayerMask walkableMask;
     #endregion
     #endregion
 
-    #region Initialization
     private void Start()
     {
-        allAgents = FindObjectsOfType<Agent>().ToList();
-
-        for (int i = 0; i < allAgents.Count; i++)
-            if (allAgents[i].GetComponent<EnemyController>())
-            {
-                allAgents.Remove(allAgents[i]);
-                i--;
-            }
-
-        selectedAgents = new List<Agent>();
-        foreach (Agent a in allAgents)
-            selectedAgents.Add(a);
+        allUnits = FindObjectsOfType<UnitHealth>().ToList();
+        selectedunits = FindObjectsOfType<UnitHealth>().ToList();
     }
-    #endregion
 
     #region GUI
     private void OnGUI()
     {
-        if (isdragging)
-            GUI.Box(new Rect(boxLeft, boxTop, boxWidth, boxHeight), "Stiu ca nu arata bine cutia, dar jur ca remediem asta.");
+        if(boxTexture!= null)
+            GUI.skin.box.normal.background = boxTexture;
+
+        if (IsDragging)
+            GUI.Box(new Rect(BoxLeft, BoxTop, BoxWidth, BoxHeight), "Cred ca ne trebuie ceva mai frumos aici.");
     }
     #endregion
 
-    #region Updates
+    #region
     private void Update()
     {
-        CheckForUnitsUpdates();
-        DrawSelectedPaths();
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-
-        if (selectedAgents.Count > 0)
+        if(selectedunits.Count > 0)
         {
             if (Input.GetMouseButtonDown(1))
                 DrawShortest();
@@ -74,98 +63,91 @@ public class Drawing : MonoBehaviour
                 DrawWithMouse();
         }
 
+        DrawCurrentPath();
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+
         if (!Physics.Raycast(ray, out hit))
             return;
 
-        mouseCurrentPoint = Input.mousePosition;
+        CurrentDownPoint = hit.point;
 
         if ((Input.GetMouseButton(0)) && (CheckIfMouseIsDragging()))
-            isdragging = true;
+            IsDragging = true;
 
         if (Input.GetMouseButtonUp(0))
         {
             PutUnitsFromDragIntoSelectedUnits();
-            isdragging = false;
+            IsDragging = false;
         }
 
+        //Down Comands
         if (Input.GetMouseButtonDown(0))
-        {
-            mouseDownPoint = mouseCurrentPoint;
-            Agent hitAgent = GetAgentFromTransform(hit.transform);
-            if (hitAgent != null)
-            {
-                if (!Input.GetKey(KeyCode.LeftShift) && !Input.GetKey(KeyCode.RightShift))
-                    selectedAgents.Clear();
+            MouseDownPoint = hit.point;
 
-                selectedAgents.Add(hitAgent);
-            }
+        if (Input.GetMouseButtonDown(0) && selectedunits.Count <= 0 && (hit.transform.tag == "Unit"))
+            selectedunits.Add(hit.transform.GetComponent<UnitHealth>());
+
+        if (Input.GetMouseButtonDown(0) && (selectedunits.Count > 0) && !Input.GetKey(KeyCode.LeftShift) && !Input.GetKey(KeyCode.RightShift))
+        {
+            selectedunits.Clear();
+            if (hit.transform.tag == "Unit")
+                selectedunits.Add(hit.transform.GetComponent<UnitHealth>());
         }
 
-        if (isdragging)
+        if (Input.GetMouseButtonDown(0) && Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+        {
+            if (hit.transform.tag == "Unit")
+                selectedunits.Add(hit.transform.GetComponent<UnitHealth>());
+        }
+
+        //End down comands
+
+        if (IsDragging)
             UpdateBox();
     }
 
     private void UpdateBox()
     {
-        boxWidth = mouseDownPoint.x - mouseCurrentPoint.x;
-        boxHeight = mouseDownPoint.y - mouseCurrentPoint.y;
-        boxLeft = Input.mousePosition.x;
-        boxTop = (Screen.height - Input.mousePosition.y) - boxHeight;
+        BoxWidth = Camera.main.WorldToScreenPoint(MouseDownPoint).x - Camera.main.WorldToScreenPoint(CurrentDownPoint).x;
+        BoxHeight = Camera.main.WorldToScreenPoint(MouseDownPoint).y - Camera.main.WorldToScreenPoint(CurrentDownPoint).y;
+        BoxLeft = Input.mousePosition.x;
+        BoxTop = (Screen.height - Input.mousePosition.y) - BoxHeight;
 
-        if (boxWidth > 0f && boxHeight < 0f)
-            boxStart = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
-        else if (boxWidth > 0f && boxHeight > 0f)
-            boxStart = new Vector2(Input.mousePosition.x, Input.mousePosition.y + boxHeight);
-        else if (boxWidth < 0f && boxHeight < 0f)
-            boxStart = new Vector2(Input.mousePosition.x + boxWidth, Input.mousePosition.y);
-        else if (boxWidth < 0f && boxHeight > 0f)
-            boxStart = new Vector2(Input.mousePosition.x + boxWidth, Input.mousePosition.y + boxHeight);
+        if (BoxWidth > 0f && BoxHeight < 0f)
+            BoxStart = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+        else if (BoxWidth > 0f && BoxHeight > 0f)
+            BoxStart = new Vector2(Input.mousePosition.x, Input.mousePosition.y + BoxHeight);
+        else if (BoxWidth < 0f && BoxHeight < 0f)
+            BoxStart = new Vector2(Input.mousePosition.x + BoxWidth, Input.mousePosition.y);
+        else if (BoxWidth < 0f && BoxHeight > 0f)
+            BoxStart = new Vector2(Input.mousePosition.x + BoxWidth, Input.mousePosition.y + BoxHeight);
 
-        boxFinish = new Vector2(boxStart.x + Unsigned(boxWidth), boxStart.y - Unsigned(boxHeight));
+        BoxFinish = new Vector2(BoxStart.x + Unsigned(BoxWidth), BoxStart.y - Unsigned(BoxHeight));
     }
-   
+    #endregion
+
+    #region UnitInDrag Update
+
     private void LateUpdate()
     {
-        agentsInDrag.Clear();
+        unitsInDrag.Clear();
 
-        if ((!isdragging) || (allAgents.Count <= 0))
+        if ((!IsDragging) || (allUnits.Count <= 0))
             return;
 
-        for (int i = 0; i < allAgents.Count; i++)
+        for (int i = 0; i < allUnits.Count; i++)
         {
-            Agent UnitObj = allAgents[i] as Agent;
+            UnitHealth UnitObj = allUnits[i] as UnitHealth;
 
-            if ((!agentsInDrag.Contains(UnitObj)) && (UnitWithinDrag(ScreenPosition(UnitObj.gameObject))))
-                agentsInDrag.Add(UnitObj);
+            if ((!unitsInDrag.Contains(UnitObj)) && (UnitWithinDrag(ScreenPosition(UnitObj.gameObject))))
+                unitsInDrag.Add(UnitObj);
         }
     }
 
     #endregion
 
     #region Utility
-    private void CheckForUnitsUpdates()
-    {
-        for(int i = 0; i < allAgents.Count; i++)
-        {
-            Agent agent = allAgents[i];
-
-            if(agent == null)
-            {
-                allAgents.Remove(agent);
-                if (selectedAgents.Contains(agent))
-                    selectedAgents.Remove(agent);
-            }
-        }
-    }
-
-    private Agent GetAgentFromTransform(Transform t)
-    {
-        UnitHealth unitHealth = t.GetComponent<UnitHealth>();
-        if (unitHealth == null)
-            return null;
-        else
-            return unitHealth.transform.parent.GetComponent<Agent>();
-    }
 
     float Unsigned(float val)
     {
@@ -174,8 +156,8 @@ public class Drawing : MonoBehaviour
 
     private bool CheckIfMouseIsDragging()
     {
-        if (mouseCurrentPoint.x - dragThreshhold >= mouseDownPoint.x || mouseCurrentPoint.y - dragThreshhold >= mouseDownPoint.y  ||
-            mouseCurrentPoint.x < mouseDownPoint.x - dragThreshhold || mouseCurrentPoint.y < mouseDownPoint.y - dragThreshhold)
+        if (CurrentDownPoint.x - 2 >= MouseDownPoint.x || CurrentDownPoint.y - 2 >= MouseDownPoint.y || CurrentDownPoint.z - 2 >= MouseDownPoint.z ||
+            CurrentDownPoint.x < MouseDownPoint.x - 2 || CurrentDownPoint.y < MouseDownPoint.y - 2 || CurrentDownPoint.z < MouseDownPoint.z - 2)
             return true;
         else
             return false;
@@ -191,7 +173,7 @@ public class Drawing : MonoBehaviour
 
     public bool UnitWithinDrag(Vector2 UnitScreenPos)
     {
-        if ((UnitScreenPos.x > boxStart.x && UnitScreenPos.y < boxStart.y) && (UnitScreenPos.x < boxFinish.x && UnitScreenPos.y > boxFinish.y))
+        if ((UnitScreenPos.x > BoxStart.x && UnitScreenPos.y < BoxStart.y) && (UnitScreenPos.x < BoxFinish.x && UnitScreenPos.y > BoxFinish.y))
             return true;
         else
             return false;
@@ -204,18 +186,18 @@ public class Drawing : MonoBehaviour
 
     public void PutUnitsFromDragIntoSelectedUnits()
     {
-        if (agentsInDrag.Count <= 0)
+        if (unitsInDrag.Count <= 0)
             return;
 
-        selectedAgents.Clear();
+        selectedunits.Clear();
 
-        for (int i = 0; i < agentsInDrag.Count; i++)
+        for (int i = 0; i < unitsInDrag.Count; i++)
         {
-            if (!selectedAgents.Contains(agentsInDrag[i]))
-                selectedAgents.Add(agentsInDrag[i]);
+            if (!selectedunits.Contains(unitsInDrag[i]))
+                selectedunits.Add(unitsInDrag[i]);
         }
 
-        agentsInDrag.Clear();
+        unitsInDrag.Clear();
     }
 
     #endregion
@@ -229,8 +211,8 @@ public class Drawing : MonoBehaviour
         if (!Physics.Raycast(ray, out hit, walkableMask))
             return;
 
-        foreach (Agent unitAgent in selectedAgents)
-            unitAgent.GetComponent<Agent>().MoveToDestination(hit.point);
+        foreach (UnitHealth unitAgent in selectedunits)
+            unitAgent.transform.parent.GetComponent<Agent>().MoveToDestination(hit.point);
     }
     
     private void DrawWithMouse()
@@ -238,23 +220,21 @@ public class Drawing : MonoBehaviour
         //DrawShortest();
     }
 
-    private void DrawSelectedPaths()
+    private void DrawCurrentPath()
     {
         foreach (Transform child in transform)
             Destroy(child.gameObject);
 
-        if (selectedAgents.Count <= 0)
+        if (selectedunits.Count <= 0)
             return;
 
-        for(int i = 0; i < selectedAgents.Count; i++)
+        foreach (UnitHealth unitAgent in selectedunits)
         {
-            
-            if (selectedAgents[i].GetComponent<Agent>().path == null)
+            if (unitAgent.transform.parent.GetComponent<Agent>().path == null)
                 continue;
-
-            List<Node> pathNodes = selectedAgents[i].GetComponent<Agent>().path.nodes;
+            List<Node> pathNodes = unitAgent.transform.parent.GetComponent<Agent>().path.nodes;
             foreach (Node node in pathNodes)
-                Instantiate(wayPointPrefab, node.worldPosition, Quaternion.identity, transform);
+                Instantiate(wayPoint, node.worldPosition, Quaternion.identity, transform);
         }
     }
     #endregion

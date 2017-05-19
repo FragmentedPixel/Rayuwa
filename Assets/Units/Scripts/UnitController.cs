@@ -90,6 +90,8 @@ public class UnitController : MonoBehaviour
         float distance = int.MaxValue;
         for(int i = 0; i < targetsInRange.Count; i++)
         {
+            Debug.Log(targetsInRange.Count);
+
             if (targetsInRange[i] == null)
             {
                 targetsInRange.Remove(targetsInRange[i]);

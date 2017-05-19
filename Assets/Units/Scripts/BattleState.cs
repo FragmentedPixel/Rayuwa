@@ -13,7 +13,7 @@ public class BattleState : iUnitState
     #region State Methods
     public override void Update()
     {
-        controller.debugCube.material.color = Color.green;
+        controller.debugCube.material.color = Color.magenta;
 
         if (controller.target != null)
             controller.agent.MoveToDestination(controller.target.position);

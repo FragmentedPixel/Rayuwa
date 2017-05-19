@@ -32,9 +32,7 @@ public class FightState : iUnitState
     #region Methods
     private void FightTarget()
     {
-        controller.agent.MoveToDestination(controller.target.position);
-
-        if (controller.DistanceToTarget() > controller.fightRange)
+		if (controller.DistanceToTarget() > controller.fightRange)
 			ToAggroState ();
 		else if(lastAttack+controller.fightCooldown<Time.time)
             HitTarget();

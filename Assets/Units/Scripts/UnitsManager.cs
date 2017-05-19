@@ -1,16 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class UnitsManager : MonoBehaviour
 {
-    public Transform spawnPointsParent;
+	public List<Transform> points;
+    public Unit[] units;
 
-	private List<Transform> spawnPoints;
-    private Unit[] units;
-
-    #region Initialization
     public void Start()
 	{
         units = UnitsData.instance.units;
@@ -19,34 +15,27 @@ public class UnitsManager : MonoBehaviour
 
     public void Spawn()
     {
-        spawnPoints = new List<Transform>();
-
-        foreach (Transform t in spawnPointsParent)
-            spawnPoints.Add(t);
-
         SuffleSpawnPoints();
         int spawnIndex = 0;
 
         foreach (Unit unit in units)
         {
             for (int i = 0; i < unit.count; i++)
-                Instantiate(unit.prefab, spawnPoints[spawnIndex++].position, Quaternion.identity, transform);
+                Instantiate(unit.prefab, points[spawnIndex++].position, Quaternion.identity, transform);
         }
      }
 
     private void SuffleSpawnPoints()
     {
-        for (int i = 0; i < spawnPoints.Count; i++)
+        for (int i = 0; i < points.Count; i++)
         {
-            Transform temp = spawnPoints[i];
-            int randomIndex = Random.Range(i, spawnPoints.Count);
-            spawnPoints[i] = spawnPoints[randomIndex];
-            spawnPoints[randomIndex] = temp;
+            Transform temp = points[i];
+            int randomIndex = Random.Range(i, points.Count);
+            points[i] = points[randomIndex];
+            points[randomIndex] = temp;
         }
     }
-    #endregion
 
-    #region Methods
     public void StartBattle()
     {
        UnitController[] controllers = FindObjectsOfType<UnitController>();
@@ -54,20 +43,6 @@ public class UnitsManager : MonoBehaviour
 		foreach(UnitController controller in controllers)
           	 controller.StartBattle();
     }
-    #endregion
 
-    #region Loosing
-    public Canvas loosCanvas;
 
-    private void Update()
-    {
-        if (transform.childCount <= 0)
-            LostGame();
-    }
-
-    private void LostGame()
-    {
-        loosCanvas.enabled = true;
-    }
-    #endregion
 }
