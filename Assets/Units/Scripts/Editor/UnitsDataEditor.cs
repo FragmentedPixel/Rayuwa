@@ -26,7 +26,7 @@ public class UnitsDataEditor : Editor
         {
             EditorGUILayout.BeginHorizontal();
             script.units[i].prefab = EditorGUILayout.ObjectField(script.units[i].prefab, typeof(GameObject)) as GameObject;
-            EditorGUILayout.EndHorizontal()
+            EditorGUILayout.EndHorizontal();
         }
     }
 
