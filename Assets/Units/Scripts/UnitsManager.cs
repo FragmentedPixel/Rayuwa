@@ -12,10 +12,13 @@ public class UnitsManager : MonoBehaviour
 
     #region Initialization
     public void Start()
-	{
-        units = UnitsData.instance.units;
-		Spawn ();
-	}
+    {
+        if (UnitsData.instance)
+        {
+            units = UnitsData.instance.units;
+            Spawn();
+        }
+    }
 
     public void Spawn()
     {

@@ -7,7 +7,7 @@ public class Agent : MonoBehaviour
     #region Variabiles
 
     #region Walking Paramters
-    public Vector3 destination;
+    [HideInInspector] public Vector3 destination;
 	public float speed = 20;
 	public float turnSpeed = 3;
 	public float turnDst = 5;
@@ -15,7 +15,7 @@ public class Agent : MonoBehaviour
     #endregion
 
     #region Path + Following
-    public Color pathColor;
+    [HideInInspector]public Color pathColor;
     public aPath path;
     private bool followingPath;
     #endregion
