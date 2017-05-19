@@ -13,7 +13,7 @@ public class IdleState : iUnitState
     #region State Methods
     public override void Update()
     {
-        controller.debugCube.material.color = Color.blue;
+        controller.debugCube.material.color = Color.white;
         controller.agent.Stop();
 
         if (controller.battleStarted)
