@@ -9,7 +9,7 @@ public class Node : IHeapItem<Node>
 	public int gridX;
 	public int gridY;
 	public int movementPenalty;
-    public MeshRenderer wayPoint;
+    public MeshRenderer pointRenderer;
     #endregion
 
     #region Costs + index
@@ -28,8 +28,7 @@ public class Node : IHeapItem<Node>
 		gridY = _gridY;
 		movementPenalty = _penalty;
 
-        GameObject point = GameObject.Instantiate(_wayPoint, worldPosition, Quaternion.identity);
-        wayPoint = point.GetComponent<MeshRenderer>();
+        pointRenderer = _wayPoint.GetComponent<MeshRenderer>();
 	}
     #endregion
 
@@ -51,13 +50,13 @@ public class Node : IHeapItem<Node>
     #region Methods
     public void Activate(Color color)
     {
-        wayPoint.enabled = true;
-        wayPoint.material.color = color;
+        pointRenderer.enabled = true;
+        pointRenderer.material.color = color;
     }
 
     public void Deactivate()
     {
-        wayPoint.enabled = false;
+        pointRenderer.enabled = false;
     }
     #endregion
 }

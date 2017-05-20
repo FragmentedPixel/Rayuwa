@@ -30,7 +30,7 @@ public class UnitsOptions : MonoBehaviour
             return;
 
         GameObject row = Instantiate(unitRowPrefab, panel);
-        UnitRow unitRow = new UnitRow(unit, row);
+        new UnitRow(unit, row);
     }
 
     private void Update()

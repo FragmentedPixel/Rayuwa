@@ -66,7 +66,9 @@ public class Grid : MonoBehaviour
 				if (!walkable)
 					movementPenalty += obstacleProximityPenalty;
 
-				grid[x,y] = new Node(walkable,worldPoint, x,y, movementPenalty, wayPointPrefab);
+                GameObject point = Instantiate(wayPointPrefab, worldPoint, Quaternion.identity, transform);
+
+				grid[x,y] = new Node(walkable,worldPoint, x,y, movementPenalty, point);
 			}
 		}
 

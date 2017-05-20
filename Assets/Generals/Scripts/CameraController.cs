@@ -11,6 +11,7 @@ public class CameraController : MonoBehaviour {
     private float screenMoveSize;
 	void Start () 
 	{
+        screenPercent = PlayerPrefsManager.GetScrollBoundray();
 		startPosition = transform.position;
         screenMoveSize = Screen.width* screenPercent;
 	}

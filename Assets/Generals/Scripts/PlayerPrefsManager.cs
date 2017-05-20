@@ -9,6 +9,7 @@ public class PlayerPrefsManager : MonoBehaviour
     const string QUALITY_LEVEL_KEY = "quality_level";
     const string RESOLUTION_KEY = "resolution_choice";
     const string FULLSCREEN_KEY = "fullscreen_choice";
+    const string SCROLL_BOUNDRAY_KEY = "scroll_boundray";
 
     public static void SetMasterVolume(float volume)
     {
@@ -49,5 +50,15 @@ public class PlayerPrefsManager : MonoBehaviour
     public static bool GetFullScreen()
     {
         return (PlayerPrefs.GetInt(FULLSCREEN_KEY, 1) == 1);
+    }
+
+    public static void SetScrollBoundray(float value)
+    {
+        PlayerPrefs.SetFloat(SCROLL_BOUNDRAY_KEY, value);
+    }
+
+    public static float GetScrollBoundray()
+    {
+        return PlayerPrefs.GetFloat(SCROLL_BOUNDRAY_KEY, .15f);
     }
 }

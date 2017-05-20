@@ -32,6 +32,8 @@ public class PatrolState : iEnemyState
     #region Methods
     private void Patrol()
     {
+        controller.transform.GetChild(0).GetComponent<Animator>().SetBool("Walking", true);
+
         if (controller.agent.HasReachedDest())
         {
             wayIndex = (wayIndex + 1) % controller.WayPointParent.childCount;

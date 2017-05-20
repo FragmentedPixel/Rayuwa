@@ -10,15 +10,18 @@ public class SettingsManager : MonoBehaviour
     public Dropdown qualityDropDown;
     public Dropdown resolutionsDropDown;
     public Toggle fullScreenCheckBox;
+    public Slider scrollSlider;
 
     [Header("Default Values")]
     public float defaultVolume = .8f;
     public bool defaultFullscreen;
+    public float scrollValue = .15f;
 
     #region Initialization
     private void Awake()
     {
         volumeSlider.value = PlayerPrefsManager.GetMasterVolume();
+        scrollSlider.value = PlayerPrefsManager.GetScrollBoundray();
         fullScreenCheckBox.isOn = PlayerPrefsManager.GetFullScreen();
 
         SetUpQuality();
@@ -73,6 +76,11 @@ public class SettingsManager : MonoBehaviour
         PlayerPrefsManager.SetFullScreen(newFull);
 
         Screen.SetResolution(Screen.currentResolution.width, Screen.currentResolution.height, newFull);
+    }
+    public void OnScrollBoundrayChanged()
+    {
+        float value = scrollSlider.value;
+        PlayerPrefsManager.SetScrollBoundray(value);
     }
     #endregion
 

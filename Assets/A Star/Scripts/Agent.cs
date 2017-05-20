@@ -27,7 +27,7 @@ public class Agent : MonoBehaviour
     {
         pathColor = new Color(Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f));
 
-        if (destination != null)
+        if (destination != Vector3.zero)
             PathRequestManager.RequestPath(new PathRequest(transform.position, destination, OnPathFound));
 	}
     #endregion
@@ -49,41 +49,49 @@ public class Agent : MonoBehaviour
     private IEnumerator FollowPath()
     {
 
-		followingPath = true;
-		int pathIndex = 0;
-		transform.LookAt (path.lookPoints [0]);
+        followingPath = true;
+        int pathIndex = 0;
+        transform.LookAt(path.lookPoints[0]);
 
-		float speedPercent = 1;
+        float speedPercent = 1;
 
-		while (followingPath) {
-			Vector2 pos2D = new Vector2 (transform.position.x, transform.position.z);
-			while (path.turnBoundaries [pathIndex].HasCrossedLine (pos2D)) {
-				if (pathIndex == path.finishLineIndex) {
-					followingPath = false;
-					break;
-				} else {
-					pathIndex++;
-				}
-			}
+        while (followingPath)
+        {
+            Vector2 pos2D = new Vector2(transform.position.x, transform.position.z);
+            while (path.turnBoundaries[pathIndex].HasCrossedLine(pos2D))
+            {
+                if (pathIndex == path.finishLineIndex)
+                {
+                    followingPath = false;
+                    break;
+                }
+                else
+                {
+                    pathIndex++;
+                }
+            }
 
-			if (followingPath) {
+            if (followingPath)
+            {
 
-				if (pathIndex >= path.slowDownIndex && stoppingDst > 0) {
-					speedPercent = Mathf.Clamp01 (path.turnBoundaries [path.finishLineIndex].DistanceFromPoint (pos2D) / stoppingDst);
-					if (speedPercent < 0.01f) {
-						followingPath = false;
-					}
-				}
+                if (pathIndex >= path.slowDownIndex && stoppingDst > 0)
+                {
+                    speedPercent = Mathf.Clamp01(path.turnBoundaries[path.finishLineIndex].DistanceFromPoint(pos2D) / stoppingDst);
+                    if (speedPercent < 0.01f)
+                    {
+                        followingPath = false;
+                    }
+                }
 
-				Quaternion targetRotation = Quaternion.LookRotation (path.lookPoints [pathIndex] - transform.position);
-				transform.rotation = Quaternion.Lerp (transform.rotation, targetRotation, Time.deltaTime * turnSpeed);
-				transform.Translate (Vector3.forward * Time.deltaTime * speed * speedPercent, Space.Self);
-			}
+                Quaternion targetRotation = Quaternion.LookRotation(path.lookPoints[pathIndex] - transform.position);
+                transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * turnSpeed);
+                transform.Translate(Vector3.forward * Time.deltaTime * speed * speedPercent, Space.Self);
+            }
 
-			yield return null;
+            yield return null;
 
-		}
-	}
+        }
+    }
     #endregion
 
     #region Gizmos

@@ -111,7 +111,7 @@ public class UnitController : MonoBehaviour
             currentState.ToIdleState();
         else if (target == null)
         {
-            if(oldDestination != null)
+            if(oldDestination != Vector3.zero)
             agent.MoveToDestination(oldDestination);
             currentState.ToBattleState();
         }

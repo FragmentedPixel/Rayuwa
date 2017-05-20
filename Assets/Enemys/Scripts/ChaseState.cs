@@ -13,7 +13,10 @@ public  class ChaseState : iEnemyState
     #region State Methods
     public override void Update ()
 	{
-		if (Vector3.Distance (controller.target.transform.position, controller.transform.position) < controller.attackDistance)
+        controller.transform.GetChild(0).GetComponent<Animator>().SetBool("Walking", true);
+
+
+        if (Vector3.Distance (controller.target.transform.position, controller.transform.position) < controller.attackDistance)
 			ToAttack ();
 
 	}

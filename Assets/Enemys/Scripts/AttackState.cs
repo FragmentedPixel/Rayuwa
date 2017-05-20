@@ -14,7 +14,10 @@ public  class AttackState : iEnemyState
     #region State Methods
     public override void Update ()
 	{
-		if (controller.target == null)
+        controller.transform.GetChild(0).GetComponent<Animator>().SetBool("Walking", false);
+
+
+        if (controller.target == null)
 		{
 			ToPatrol ();
 			return;
@@ -36,6 +39,7 @@ public  class AttackState : iEnemyState
     #region Methods
 	public void HitTarget()
 	{
+        controller.transform.GetChild(0).GetComponent<Animator>().SetTrigger("Attack");
 		controller.target.GetComponent<UnitHealth> ().Hit (controller.attackDmg);
 	}
     #endregion

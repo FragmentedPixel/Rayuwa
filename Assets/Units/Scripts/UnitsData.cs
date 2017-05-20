@@ -8,9 +8,7 @@ public class UnitsData : MonoBehaviour
     public static UnitsData instance;
 
     public int maxUnits;
-    public int unitTypes;
-    
-    public Unit[] units;
+    public List<Unit> unitsList;
 
     private void Start()
     {
@@ -18,7 +16,9 @@ public class UnitsData : MonoBehaviour
         DontDestroyOnLoad(this);
     }
 
+    public Unit[] units{get { return unitsList.ToArray(); }    }
     public bool canAddUnits { get { return GetCurrentUnitsCount() < maxUnits; } }
+
     private int GetCurrentUnitsCount()
     {
         int value = 0;
@@ -32,6 +32,13 @@ public class UnitsData : MonoBehaviour
 [Serializable]
 public class Unit
 {
+    public Unit()
+    {
+        prefab = null;
+        unlocked = false;
+        count = 0;
+    }
+
     public GameObject prefab;
     public bool unlocked;
     public int count;
