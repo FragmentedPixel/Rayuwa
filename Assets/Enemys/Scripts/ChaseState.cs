@@ -16,8 +16,8 @@ public  class ChaseState : iEnemyState
         controller.transform.GetChild(0).GetComponent<Animator>().SetBool("Walking", true);
 
 
-        if (Vector3.Distance (controller.target.transform.position, controller.transform.position) < controller.attackDistance)
-			ToAttack ();
+        if (Vector3.Distance (controller.target.transform.position, controller.transform.position) < controller.attackRange)
+			ToAttackState ();
 
 	}
 
@@ -31,18 +31,4 @@ public  class ChaseState : iEnemyState
 
     #endregion
 
-    #region Transitions
-    public override void ToAttack ()
-	{
-		controller.currentState = controller.attack;
-	}
-	public override void ToChase ()
-	{
-		controller.currentState = controller.chase;	
-	}
-	public override void ToPatrol ()
-	{
-		controller.currentState = controller.patrol;	
-	}
-    #endregion
 }

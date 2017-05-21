@@ -18,9 +18,18 @@ public abstract  class iEnemyState
 	public abstract void OnTriggerEnter (Collider other);
     #endregion
 
-    #region Transitions
-    public abstract void ToAttack ();
-	public abstract void ToChase ();
-	public abstract void ToPatrol ();
+    #region Transition
+    public void ToAttackState()
+    {
+        controller.currentState = controller.attackState;
+    }
+    public void ToPatrolState()
+    {
+        controller.currentState = controller.patrolState;
+    }
+    public void ToChaseState()
+    {
+        controller.currentState = controller.chaseState;
+    }
     #endregion
 }

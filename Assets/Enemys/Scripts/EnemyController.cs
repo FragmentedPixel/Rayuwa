@@ -4,27 +4,30 @@ using UnityEngine;
 [RequireComponent(typeof(Agent))]
 public class EnemyController : MonoBehaviour
 {
-	
+
     #region Variabiles
 
+    #region Targeting
     [HideInInspector] public Agent agent;
+    [HideInInspector] public Transform target;
+    private List<Transform> targetsInRange = new List<Transform>();
+    #endregion
 
+    #region Parameters
     [Header("Patroling")]
     public Transform WayPointParent;
-    
-    [Header("Targeting")]
-    public Transform target;
-	public float attackDistance = 1;
 
 	[Header("Attack")]
-	public float attackDmg = 5;
-	public float attackSpeed= 1*1000;
+    public float attackRange = 3f;
+    public float attackSpeed = 1f;
+    public float attackDmg = 10f;
+    #endregion
 
     #region States
     public iEnemyState currentState;
-    public AttackState attack;
-    public ChaseState chase;
-    public PatrolState patrol;
+    public AttackState attackState;
+    public ChaseState chaseState;
+    public PatrolState patrolState;
 
     #endregion
 
@@ -33,15 +36,17 @@ public class EnemyController : MonoBehaviour
     #region Initialization
     private void Awake()
 	{
-		attack = new AttackState (this);
-		chase = new ChaseState (this);
-		patrol = new PatrolState (this);
-	}
+		attackState = new AttackState (this);
+		chaseState = new ChaseState (this);
+		patrolState = new PatrolState (this);
+
+        currentState = patrolState;
+
+    }
 
     private void Start()
     {
         agent = GetComponent<Agent>();
-        currentState = patrol;
     }
     #endregion
 

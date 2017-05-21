@@ -24,7 +24,7 @@ public class PatrolState : iEnemyState
         {
             controller.agent.MoveToDestination(other.transform.position);
             controller.target = other.transform;
-            ToChase();
+            ToChaseState();
         }
     }
     #endregion
@@ -42,20 +42,4 @@ public class PatrolState : iEnemyState
     }
     #endregion
 
-    #region Transitions
-
-    public override void ToAttack ()
-	{
-		controller.currentState = controller.attack;
-	}
-	public override void ToChase ()
-	{
-		controller.currentState = controller.chase;	
-	}
-	public override void ToPatrol ()
-	{
-		controller.currentState = controller.patrol;	
-	}
-
-    #endregion
 }

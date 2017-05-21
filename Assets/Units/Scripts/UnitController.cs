@@ -9,6 +9,22 @@ public class UnitController : MonoBehaviour
     public Vector3 oldDestination;
 
     #region Variabiles
+
+    #region Targeting
+    [HideInInspector] public Agent agent;
+    [HideInInspector] public Transform target;
+    private List<Transform> targetsInRange = new List<Transform>();
+    #endregion
+
+    #region Parameters
+    [HideInInspector] public bool battleStarted = false;
+
+    [Header("Attack")]
+    public float fightRange = 3f;
+    public float fightSpeed = 1f;
+	public float fightDmg = 10f;
+    #endregion
+
     #region States
     public iUnitState currentState;
 
@@ -18,21 +34,9 @@ public class UnitController : MonoBehaviour
     public IdleState idleState;
     #endregion
 
-    #region Targeting
-    public Transform target;
-    public List<Transform> targetsInRange = new List<Transform>();
-    public Agent agent;
     #endregion
 
-    #region Parameters
-    public bool battleStarted = false;
-    public float fightRange = 5f;
-    public float fightCooldown = 1f;
-	public float fightDamage = 10f;
-    #endregion
-    #endregion
-
-    #region Start
+    #region Initialization
     private void Awake()
     {
         aggroState = new AggroState(this);

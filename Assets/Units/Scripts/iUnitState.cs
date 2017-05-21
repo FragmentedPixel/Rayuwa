@@ -6,13 +6,17 @@ public abstract class iUnitState
 {
     public UnitController controller;
 
-    public iUnitState(UnitController controller)
+    #region Constructor
+    public iUnitState(UnitController uController)
     {
-        this.controller = controller;
+        controller = uController;
     }
+    #endregion
 
+    #region Methods
     public abstract void Update();
     public abstract void OnTriggerEnter(Transform newTarget);
+    #endregion
 
     #region Transition
     public void ToIdleState()

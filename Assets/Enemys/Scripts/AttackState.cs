@@ -19,11 +19,11 @@ public  class AttackState : iEnemyState
 
         if (controller.target == null)
 		{
-			ToPatrol ();
+			ToPatrolState ();
 			return;
 		}
-		if (Vector3.Distance (controller.target.transform.position, controller.transform.position) > controller.attackDistance)
-			ToChase ();
+		if (Vector3.Distance (controller.target.transform.position, controller.transform.position) > controller.attackRange)
+			ToChaseState ();
 		else if(lastAttack+controller.attackSpeed<Time.time)
 		{
 			lastAttack = Time.time;
@@ -44,18 +44,4 @@ public  class AttackState : iEnemyState
 	}
     #endregion
 
-    #region Transitions
-    public override void ToAttack ()
-	{
-		controller.currentState = controller.attack;
-	}
-	public override void ToChase ()
-	{
-		controller.currentState = controller.chase;	
-	}
-	public override void ToPatrol ()
-	{
-		controller.currentState = controller.patrol;	
-	}
-    #endregion
 }
