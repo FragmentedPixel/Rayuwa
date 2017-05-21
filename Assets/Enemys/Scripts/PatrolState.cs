@@ -31,14 +31,13 @@ public class PatrolState : iEnemyState
     {
         controller.anim.SetBool("Walking", true);
 
-        if (controller.agent.HasReachedDest())
+        if (controller.agent.HasReachedDest() || controller.target ==  null)
         {
             wayIndex = (wayIndex + 1) % controller.WayPointParent.childCount;
             controller.target = controller.WayPointParent.GetChild(wayIndex);
         }
 
         controller.agent.MoveToDestination(controller.target.position);
-
     }
     #endregion
 

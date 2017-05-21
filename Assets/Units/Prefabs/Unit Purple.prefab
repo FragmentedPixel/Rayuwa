@@ -320,13 +320,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debugCube: {fileID: 23065713817999640}
   oldDestination: {x: 0, y: 0, z: 0}
-  target: {fileID: 0}
-  targetsInRange: []
+  anim: {fileID: 0}
   agent: {fileID: 0}
+  target: {fileID: 0}
   battleStarted: 0
-  fightRange: 5
-  fightCooldown: 1.5
-  fightDamage: 20
+  fightRange: 3
+  fightSpeed: 3
+  fightDmg: 50
 --- !u!114 &114205880479255446
 MonoBehaviour:
   m_ObjectHideFlags: 1

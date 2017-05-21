@@ -60,6 +60,7 @@ public class UnitController : MonoBehaviour
     {
         currentState.Update();
     }
+
     private void OnTriggerEnter(Collider other)
     {
         EnemyHealth enemyHealth = other.GetComponent<EnemyHealth>();

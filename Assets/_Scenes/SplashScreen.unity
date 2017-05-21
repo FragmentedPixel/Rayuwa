@@ -608,10 +608,10 @@ MonoBehaviour:
     count: 1
   - prefab: {fileID: 1536848225202338, guid: 430f974bba43f124cad0f5f51ba5d511, type: 2}
     unlocked: 1
-    count: 1
+    count: 0
   - prefab: {fileID: 1272983954781310, guid: ec26d69efb99ae6438e5287ed99cbe6d, type: 2}
     unlocked: 1
-    count: 1
+    count: 0
 --- !u!4 &1299864684
 Transform:
   m_ObjectHideFlags: 0

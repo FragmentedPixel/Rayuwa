@@ -55,7 +55,6 @@ public class EnemyController : MonoBehaviour
     #region CurrentState
     private void Update()
 	{
-        Debug.Log(currentState);
 		currentState.Update ();
 	}
 

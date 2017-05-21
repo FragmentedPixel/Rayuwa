@@ -27,7 +27,6 @@ public class IdleState : iUnitState
     #region Methods
     private void Idle()
     {
-       
         controller.agent.Stop();
 
         if (controller.battleStarted)
