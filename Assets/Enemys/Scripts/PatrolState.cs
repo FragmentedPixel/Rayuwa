@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PatrolState : iEnemyState  
 {
-	private int wayIndex=0;
+	private int wayIndex=-1;
     
     #region Constructor
     public PatrolState (EnemyController eController):base(eController)
@@ -18,27 +18,27 @@ public class PatrolState : iEnemyState
 	}
 
 
-    public override void OnTriggerEnter(Collider other)
+    public override void OnTriggerEnter(Transform other)
     {
-        if (other.CompareTag("Unit"))
-        {
-            controller.agent.MoveToDestination(other.transform.position);
-            controller.target = other.transform;
-            ToChaseState();
-        }
+        controller.agent.MoveToDestination(other.position);
+        controller.target = other;
+        ToChaseState();
     }
     #endregion
 
     #region Methods
     private void Patrol()
     {
-        controller.transform.GetChild(0).GetComponent<Animator>().SetBool("Walking", true);
+        controller.anim.SetBool("Walking", true);
 
         if (controller.agent.HasReachedDest())
         {
             wayIndex = (wayIndex + 1) % controller.WayPointParent.childCount;
-            controller.agent.MoveToDestination(controller.WayPointParent.GetChild(wayIndex).position);
+            controller.target = controller.WayPointParent.GetChild(wayIndex);
         }
+
+        controller.agent.MoveToDestination(controller.target.position);
+
     }
     #endregion
 

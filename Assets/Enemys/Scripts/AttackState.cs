@@ -14,32 +14,36 @@ public  class AttackState : iEnemyState
     #region State Methods
     public override void Update ()
 	{
-        controller.transform.GetChild(0).GetComponent<Animator>().SetBool("Walking", false);
+        controller.anim.SetBool("Walking", false);
 
-
-        if (controller.target == null)
-		{
-			ToPatrolState ();
-			return;
-		}
-		if (Vector3.Distance (controller.target.transform.position, controller.transform.position) > controller.attackRange)
-			ToChaseState ();
-		else if(lastAttack+controller.attackSpeed<Time.time)
-		{
-			lastAttack = Time.time;
-			HitTarget ();
-		}
+        if (controller.target != null)
+            AttackTarget();
+        else
+            controller.UpdateTarget();
 	}
-	public override void OnTriggerEnter (Collider other)
+	public override void OnTriggerEnter (Transform other)
 	{
 		
 	}
     #endregion
 
     #region Methods
-	public void HitTarget()
+
+    private void AttackTarget()
+    {
+        controller.LookAtTarget();
+        controller.agent.Stop();
+
+        if (controller.DistanceToTarget() > controller.attackRange)
+            ToChaseState();
+        else if (lastAttack + controller.attackSpeed < Time.time)
+            HitTarget();
+    }
+
+    public void HitTarget()
 	{
-        controller.transform.GetChild(0).GetComponent<Animator>().SetTrigger("Attack");
+        lastAttack = Time.time;
+        controller.anim.SetTrigger("Attack");
 		controller.target.GetComponent<UnitHealth> ().Hit (controller.attackDmg);
 	}
     #endregion

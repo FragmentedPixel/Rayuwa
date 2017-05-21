@@ -15,8 +15,9 @@ public class FightState : iUnitState
     #region State Methods
     public override void Update()
     {
-
         controller.debugCube.material.color = Color.red;
+
+        controller.anim.SetBool("Walking", false);
 
         if (controller.target != null)
             FightTarget();
@@ -32,17 +33,19 @@ public class FightState : iUnitState
     #region Methods
     private void FightTarget()
     {
-        controller.agent.MoveToDestination(controller.target.position);
+        controller.LookAtTarget();
+        controller.agent.Stop();
 
         if (controller.DistanceToTarget() > controller.fightRange)
 			ToAggroState ();
-		else if(lastAttack+controller.fightSpeed<Time.time)
+		else if(lastAttack + controller.fightSpeed<Time.time)
             HitTarget();
     }
 
     public void HitTarget()
     {
         lastAttack = Time.time;
+        controller.anim.SetTrigger("Attack");
         controller.target.GetComponent<EnemyHealth>().Hit(controller.fightDmg);
     }
     #endregion

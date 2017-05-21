@@ -14,10 +14,8 @@ public class IdleState : iUnitState
     public override void Update()
     {
         controller.debugCube.material.color = Color.white;
-        controller.agent.Stop();
 
-        if (controller.battleStarted)
-            ToBattleState();
+        Idle();
     }
 
     public override void OnTriggerEnter(Transform newTarget)
@@ -25,4 +23,16 @@ public class IdleState : iUnitState
         controller.CheckNewTarget(newTarget);
     }
     #endregion
+
+    #region Methods
+    private void Idle()
+    {
+       
+        controller.agent.Stop();
+
+        if (controller.battleStarted)
+            ToBattleState();
+    }
+    #endregion
 }
+

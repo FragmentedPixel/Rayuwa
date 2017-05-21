@@ -7,7 +7,8 @@ public class EnemyController : MonoBehaviour
 
     #region Variabiles
 
-    #region Targeting
+    #region Targeting + Components
+    [HideInInspector] public Animator anim;
     [HideInInspector] public Agent agent;
     [HideInInspector] public Transform target;
     private List<Transform> targetsInRange = new List<Transform>();
@@ -46,23 +47,79 @@ public class EnemyController : MonoBehaviour
 
     private void Start()
     {
+        anim = GetComponentInChildren<Animator>();
         agent = GetComponent<Agent>();
     }
     #endregion
 
-    #region CurrentState Methods
+    #region CurrentState
     private void Update()
 	{
+        Debug.Log(currentState);
 		currentState.Update ();
 	}
 
-	private void OnTriggerEnter(Collider collider)
+	private void OnTriggerEnter(Collider other)
 	{
-		currentState.OnTriggerEnter (collider);
+        UnitHealth unitHealth = other.GetComponent<UnitHealth>();
+        if (unitHealth == null || targetsInRange.Contains(unitHealth.transform))
+            return;
+
+        targetsInRange.Add(unitHealth.transform);
+        currentState.OnTriggerEnter(unitHealth.transform);
 	}
+
+    private void OnTriggerExit(Collider other)
+    {
+        UnitHealth unitHealth = other.GetComponent<UnitHealth>();
+        if (unitHealth == null || !targetsInRange.Contains(unitHealth.transform))
+            return;
+        else
+            targetsInRange.Remove(unitHealth.transform);
+    }
     #endregion
 
     #region Methods
+    public void LookAtTarget()
+    {
+        Vector3 lookPoint = new Vector3(target.position.x, transform.position.y, target.position.z);
+        transform.LookAt(lookPoint);
+    }
 
+    public void UpdateTarget()
+    {
+        float distance = int.MaxValue;
+        for (int i = 0; i < targetsInRange.Count; i++)
+        {
+            if (targetsInRange[i] == null)
+            {
+                targetsInRange.Remove(targetsInRange[i]);
+                i--;
+            }
+            else
+            {
+
+                float newDistance = Vector3.Distance(transform.position, targetsInRange[i].position);
+                if (newDistance < distance)
+                {
+                    target = targetsInRange[i];
+                    distance = newDistance;
+                }
+            }
+        }
+
+        if (target == null)
+            currentState.ToPatrolState();
+        else if (distance > attackRange)
+            currentState.ToChaseState();
+        else
+            currentState.ToAttackState();
+
+    }
+    public float DistanceToTarget()
+    {
+        float distance = Vector3.Distance(transform.position, target.position);
+        return distance;
+    }
     #endregion
 }

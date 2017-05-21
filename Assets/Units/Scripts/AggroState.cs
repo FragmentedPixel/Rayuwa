@@ -14,6 +14,9 @@ public class AggroState : iUnitState
     public override void Update()
     {
         controller.debugCube.material.color = Color.yellow;
+
+        controller.anim.SetBool("Walking", true);
+
         if (controller.target != null)
             AggroTarget();
         else

@@ -15,7 +15,7 @@ public abstract  class iEnemyState
 
     #region Methods
     public abstract void Update ();
-	public abstract void OnTriggerEnter (Collider other);
+	public abstract void OnTriggerEnter (Transform newTarget);
     #endregion
 
     #region Transition

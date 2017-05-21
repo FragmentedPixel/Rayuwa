@@ -10,7 +10,8 @@ public class UnitController : MonoBehaviour
 
     #region Variabiles
 
-    #region Targeting
+    #region Targeting + Components
+    [HideInInspector] public Animator anim;
     [HideInInspector] public Agent agent;
     [HideInInspector] public Transform target;
     private List<Transform> targetsInRange = new List<Transform>();
@@ -48,6 +49,7 @@ public class UnitController : MonoBehaviour
     }
     private void Start()
     {
+        anim = GetComponentInChildren<Animator>();
         agent = GetComponent<Agent>();
         agent.MoveToDestination(GameObject.Find("Castel").transform.position);
     }
@@ -116,7 +118,7 @@ public class UnitController : MonoBehaviour
         else if (target == null)
         {
             if(oldDestination != Vector3.zero)
-            agent.MoveToDestination(oldDestination);
+                agent.MoveToDestination(oldDestination);
             currentState.ToBattleState();
         }
         else if (distance > fightRange)

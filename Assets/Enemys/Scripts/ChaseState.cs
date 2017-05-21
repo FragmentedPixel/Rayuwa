@@ -13,22 +13,30 @@ public  class ChaseState : iEnemyState
     #region State Methods
     public override void Update ()
 	{
-        controller.transform.GetChild(0).GetComponent<Animator>().SetBool("Walking", true);
+        controller.anim.SetBool("Walking", true);
 
 
-        if (Vector3.Distance (controller.target.transform.position, controller.transform.position) < controller.attackRange)
-			ToAttackState ();
-
+        if (controller.target != null)
+            ChaseTarget();
+        else
+            controller.UpdateTarget();
 	}
 
-	public override void OnTriggerEnter (Collider other)
+	public override void OnTriggerEnter (Transform other)
 	{
 
 	}
     #endregion
 
     #region Methods
+    private void ChaseTarget()
+    {
+        controller.LookAtTarget();
+        controller.agent.MoveToDestination(controller.target.position);
 
+        if (controller.DistanceToTarget() < controller.attackRange)
+            ToAttackState();
+    }
     #endregion
 
 }
