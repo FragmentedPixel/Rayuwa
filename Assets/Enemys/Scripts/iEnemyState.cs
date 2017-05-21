@@ -19,7 +19,7 @@ public abstract  class iEnemyState
     #endregion
 
     #region Transitions
-    public abstract void ToAttack();
+    public abstract void ToAttack ();
 	public abstract void ToChase ();
 	public abstract void ToPatrol ();
     #endregion
