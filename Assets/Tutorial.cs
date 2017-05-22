@@ -19,6 +19,7 @@ public class Tutorial : MonoBehaviour
 
     private IEnumerator TutorialCR()
     {
+        yield return StartCoroutine(MoveCameraCR());
         yield return new WaitForSeconds(.1f);
         yield return StartCoroutine(SelectCR());
         yield return new WaitForSeconds(.1f);
@@ -29,6 +30,21 @@ public class Tutorial : MonoBehaviour
         yield return StartCoroutine(SetPathCR());
         yield return new WaitForSeconds(.1f);
         yield return StartCoroutine(StartBattleCR());
+    }
+
+    #region Tutorial Coroutines
+    private IEnumerator MoveCameraCR()
+    {
+        tutorialText.text = "Move Camera";
+        bool moved = false;
+
+        while (!moved)
+        {
+            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D) )
+                moved = true;
+
+            yield return null;
+        }
     }
 
     private IEnumerator SelectCR()
@@ -105,9 +121,12 @@ public class Tutorial : MonoBehaviour
 
         tutorialText.text = "Tutorial done";
     }
+    #endregion
 
+    #region Methods
     public void BattleStart()
     {
         battleStarted = true;
     }
+    #endregion
 }
