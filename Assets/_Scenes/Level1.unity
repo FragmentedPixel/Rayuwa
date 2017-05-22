@@ -3023,7 +3023,7 @@ Transform:
   m_LocalScale: {x: 1.0000005, y: 1.4218698, z: 1.4218806}
   m_Children: []
   m_Father: {fileID: 1915770908}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 60.000004, y: 91.93501, z: 0}
 --- !u!81 &792611520
 AudioListener:
@@ -3136,13 +3136,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 800352414}
-  m_LocalRotation: {x: 0.22414392, y: -0.48296294, z: 0.12940955, w: 0.8365163}
+  m_LocalRotation: {x: 0.12940954, y: -0.8365163, z: 0.22414392, w: 0.48296285}
   m_LocalPosition: {x: 36.73, y: 11.54, z: -161.85}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1915770908}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 30, y: -60, z: 0}
+  m_LocalEulerAnglesHint: {x: 30, y: -120, z: 0}
 --- !u!81 &800352416
 AudioListener:
   m_ObjectHideFlags: 0
@@ -3212,8 +3212,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
-  Z_Boundary: 160
+  rot_speed: 25
   screenPercent: 0.1
+  Z_Boundary: 160
+  Y_Rot_Min: 240
+  Y_Rot_Max: 300
 --- !u!1001 &806858852
 Prefab:
   m_ObjectHideFlags: 0
@@ -6809,6 +6812,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 800352415}
+  - {fileID: 1952176805}
   - {fileID: 792611519}
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -6895,6 +6899,110 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1944571973}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1952176804
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1952176805}
+  - component: {fileID: 1952176810}
+  - component: {fileID: 1952176809}
+  - component: {fileID: 1952176808}
+  - component: {fileID: 1952176807}
+  - component: {fileID: 1952176806}
+  m_Layer: 0
+  m_Name: Center Camera
+  m_TagString: MainCamera
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1952176805
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1952176804}
+  m_LocalRotation: {x: 0.3412, y: 0, z: 0, w: 0.93999076}
+  m_LocalPosition: {x: 0, y: 20, z: -155.76}
+  m_LocalScale: {x: 1, y: 1, z: 1.0000002}
+  m_Children: []
+  m_Father: {fileID: 1915770908}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 39.9, y: 0, z: 0}
+--- !u!114 &1952176806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1952176804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2e5415afbb09244786b40e697d7e8a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
+  Z_Boundary: 50
+  screenPercent: 0.1
+--- !u!81 &1952176807
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1952176804}
+  m_Enabled: 1
+--- !u!92 &1952176808
+Behaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1952176804}
+  m_Enabled: 1
+--- !u!124 &1952176809
+Behaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1952176804}
+  m_Enabled: 1
+--- !u!20 &1952176810
+Camera:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1952176804}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 0
+  m_AllowMSAA: 1
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+  m_StereoMirrorMode: 0
 --- !u!4 &1965885575 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4310742630508406, guid: 4f8d54bf80c879a459e120a333580f93,
