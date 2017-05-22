@@ -55,7 +55,6 @@ public class CameraController : MonoBehaviour {
         {
             rotate *= Time.deltaTime * rot_speed;
             rotate += transform.rotation.eulerAngles.y;
-            Debug.Log(rotate);
             if (rotate< Y_Rot_Max&&rotate>Y_Rot_Min)
                 transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, rotate, transform.rotation.eulerAngles.z);
         }
