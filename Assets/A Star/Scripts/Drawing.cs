@@ -34,7 +34,7 @@ public class Drawing : MonoBehaviour
     #endregion
 
     #region Initialization
-    private void Start()
+    private void Awake()
     {
         grid = FindObjectOfType<Grid>();
 
