@@ -58,10 +58,12 @@ public class Drawing : MonoBehaviour
     private void OnGUI()
     {
         if (Unsigned(boxWidth) < dragThreshhold)
-            return;
+            isdragging = false;
 
         if (isdragging)
-            GUI.Box(new Rect(boxLeft, boxTop, boxWidth, boxHeight),max);
+        {
+            GUI.DrawTexture(new Rect(boxLeft, boxTop, boxWidth, boxHeight), max);
+        }
     }
     #endregion
 

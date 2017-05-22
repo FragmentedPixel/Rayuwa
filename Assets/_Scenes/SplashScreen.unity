@@ -601,17 +601,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a444498662dd2dd468dfca628632622a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxUnits: 15
+  maxUnits: 8
   unitsList:
   - prefab: {fileID: 1536848225202338, guid: ccd4db20c3cd25749ad7c3e177324b0a, type: 2}
     unlocked: 1
     count: 1
   - prefab: {fileID: 1536848225202338, guid: 430f974bba43f124cad0f5f51ba5d511, type: 2}
     unlocked: 1
-    count: 0
+    count: 1
   - prefab: {fileID: 1272983954781310, guid: ec26d69efb99ae6438e5287ed99cbe6d, type: 2}
     unlocked: 1
-    count: 0
+    count: 1
 --- !u!4 &1299864684
 Transform:
   m_ObjectHideFlags: 0
