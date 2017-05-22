@@ -29,6 +29,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1740573690050120
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4080607209926368}
+  - component: {fileID: 114507247774271236}
+  m_Layer: 0
+  m_Name: DrawingManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!4 &4030662991940188
 Transform:
   m_ObjectHideFlags: 1
@@ -38,8 +54,22 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 4080607209926368}
   m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4080607209926368
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1740573690050120}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4030662991940188}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &114506038193766910
@@ -54,12 +84,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayGridGizmos: 0
-  gridWorldSize: {x: 100, y: 100}
+  gridWorldSize: {x: 60, y: 220}
+  wayPointPrefab: {fileID: 1843856094298706, guid: 9f0f80300ccdbe74d9502689403d69ff,
+    type: 2}
   nodeRadius: 0.5
   obstacleProximityPenalty: 10
   unwalkableMask:
     serializedVersion: 2
     m_Bits: 512
+  walkableMask:
+    serializedVersion: 2
+    m_Bits: 256
+--- !u!114 &114507247774271236
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1740573690050120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 454a2afacc1176b4eba101d8692f7ddb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isdragging: 0
+  dragThreshhold: 50
+  boxOutline: {fileID: 2800000, guid: 69a01bc29a06281498458773ec9412c5, type: 3}
+  allAgents: []
+  agentsInDrag: []
+  selectedAgents: []
+  wayPointPrefab: {fileID: 1843856094298706, guid: 9f0f80300ccdbe74d9502689403d69ff,
+    type: 2}
   walkableMask:
     serializedVersion: 2
     m_Bits: 256

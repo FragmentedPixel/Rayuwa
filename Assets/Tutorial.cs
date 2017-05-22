@@ -5,42 +5,63 @@ using UnityEngine.UI;
 
 public class Tutorial : MonoBehaviour
 {
+    #region Variabiles
     public Text tutorialText;
     public Button battleButton;
 
     private bool battleStarted;
     private Drawing drawing;
+    #endregion
 
+    #region Initialization
     private void OnEnable()
     {
         drawing = FindObjectOfType<Drawing>();
         StartCoroutine(TutorialCR());
     }
+    #endregion
 
+    #region Tutorial Core
     private IEnumerator TutorialCR()
     {
+        WaitForSeconds waitTime = new WaitForSeconds(.1f);
+
+        yield return StartCoroutine(IntroCR());
+        yield return waitTime;
         yield return StartCoroutine(MoveCameraCR());
-        yield return new WaitForSeconds(.1f);
+        yield return waitTime;
         yield return StartCoroutine(SelectCR());
-        yield return new WaitForSeconds(.1f);
+        yield return waitTime;
         yield return StartCoroutine(ShiftSelectCR());
-        yield return new WaitForSeconds(.1f);
+        yield return waitTime;
         yield return StartCoroutine(DragCR());
-        yield return new WaitForSeconds(.1f);
+        yield return waitTime;
         yield return StartCoroutine(SetPathCR());
-        yield return new WaitForSeconds(.1f);
+        yield return waitTime;
         yield return StartCoroutine(StartBattleCR());
+        yield return new WaitForSeconds(3f);
+
+        FindObjectOfType<LevelManager>().ChangeScene("Menu");
     }
+    #endregion
 
     #region Tutorial Coroutines
+    private IEnumerator IntroCR()
+    {
+        tutorialText.text = "Welcome to Rayuwa. Your forests are controlled by the magic inside the crystal. In order free the nature, you must reach it.";
+
+        while (!Input.GetMouseButton(0) && !Input.GetKey(KeyCode.Space))
+            yield return null;
+    }
+
     private IEnumerator MoveCameraCR()
     {
-        tutorialText.text = "Move Camera";
+        tutorialText.text = "Move the camera by pressing W or S.";
         bool moved = false;
 
         while (!moved)
         {
-            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D) )
+            if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S))
                 moved = true;
 
             yield return null;
@@ -49,7 +70,7 @@ public class Tutorial : MonoBehaviour
 
     private IEnumerator SelectCR()
     {
-        tutorialText.text = "Pls select units";
+        tutorialText.text = "Select a unit by clicking on it.";
         bool selected = false;
         drawing.selectedAgents.Clear();
 
@@ -64,13 +85,12 @@ public class Tutorial : MonoBehaviour
 
     private IEnumerator ShiftSelectCR()
     {
-        tutorialText.text = "Pls shift sleect units";
+        tutorialText.text = "Select more units by Shift + click.";
         bool selected = false;
-        drawing.selectedAgents.Clear();
 
         while (!selected)
         {
-            if (drawing.selectedAgents.Count > 1)
+            if (drawing.selectedAgents.Count > 1 && !drawing.isdragging)
                 selected = true;
 
             yield return null;
@@ -79,7 +99,7 @@ public class Tutorial : MonoBehaviour
 
     private IEnumerator DragCR()
     {
-        tutorialText.text = "Pls drag";
+        tutorialText.text = "Hold the left mouse button to drag for a faster selection.";
         bool dragged = false;
         drawing.selectedAgents.Clear();
 
@@ -95,7 +115,7 @@ public class Tutorial : MonoBehaviour
 
     private IEnumerator SetPathCR()
     {
-        tutorialText.text = "Pls path";
+        tutorialText.text = "Set a path for the selected units by right clicking on the ground.";
         bool pathGiven = false;
         
         while(!pathGiven)
@@ -105,13 +125,11 @@ public class Tutorial : MonoBehaviour
 
             yield return null;
         }
-
-        tutorialText.text = "done path";
     }
 
     private IEnumerator StartBattleCR()
     {
-        tutorialText.text = "Pls battle";
+        tutorialText.text = "Start the battle by pressing the button.";
         battleButton.gameObject.SetActive(true);
 
         while(!battleStarted)
@@ -119,7 +137,7 @@ public class Tutorial : MonoBehaviour
             yield return null;
         }
 
-        tutorialText.text = "Tutorial done";
+        tutorialText.text = "Tutorial done. Good luck and have fun.";
     }
     #endregion
 

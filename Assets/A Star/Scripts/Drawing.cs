@@ -12,6 +12,7 @@ public class Drawing : MonoBehaviour
     public bool isdragging;
     public float dragThreshhold = 10f;
     private Vector2 mouseDownPoint, mouseCurrentPoint;
+    public Texture boxOutline;
     #endregion
 
     #region UnitsLists
@@ -54,7 +55,6 @@ public class Drawing : MonoBehaviour
     #endregion
 
     #region GUI
-    public Texture max;
     private void OnGUI()
     {
         if (Unsigned(boxWidth) < dragThreshhold)
@@ -62,7 +62,7 @@ public class Drawing : MonoBehaviour
 
         if (isdragging)
         {
-            GUI.DrawTexture(new Rect(boxLeft, boxTop, boxWidth, boxHeight), max);
+            GUI.DrawTexture(new Rect(boxLeft, boxTop, boxWidth, boxHeight), boxOutline);
         }
     }
     #endregion
