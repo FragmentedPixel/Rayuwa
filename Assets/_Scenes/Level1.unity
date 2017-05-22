@@ -4525,6 +4525,47 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1049906387}
+--- !u!1 &1066727797
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1066727798}
+  - component: {fileID: 1066727799}
+  m_Layer: 0
+  m_Name: LookAt
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1066727798
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1066727797}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -5.84, z: 34.4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1915770908}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1066727799
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1066727797}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1071743653
 GameObject:
   m_ObjectHideFlags: 0
@@ -6814,6 +6855,7 @@ Transform:
   - {fileID: 800352415}
   - {fileID: 1952176805}
   - {fileID: 792611519}
+  - {fileID: 1066727798}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6918,20 +6960,20 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1952176805
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1952176804}
-  m_LocalRotation: {x: 0.3412, y: 0, z: 0, w: 0.93999076}
-  m_LocalPosition: {x: 0, y: 20, z: -155.76}
+  m_LocalRotation: {x: 0.28853044, y: 0, z: 0, w: 0.9574707}
+  m_LocalPosition: {x: 0, y: 17.1, z: -166.57}
   m_LocalScale: {x: 1, y: 1, z: 1.0000002}
   m_Children: []
   m_Father: {fileID: 1915770908}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 39.9, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 33.54, y: 0, z: 0}
 --- !u!114 &1952176806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6944,8 +6986,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  Z_Boundary: 50
   screenPercent: 0.1
+  Z_Boundary: 100
+  lookAtOffset: 25
+  lookAt: {fileID: 1066727798}
 --- !u!81 &1952176807
 AudioListener:
   m_ObjectHideFlags: 0
