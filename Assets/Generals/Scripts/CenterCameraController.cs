@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CenterCameraController : MonoBehaviour {
+public class CenterCameraController : MonoBehaviour
+{
     private Vector3 startPosition;
     private float screenMoveSize;
     [Header("Speeds")]
@@ -22,7 +23,10 @@ public class CenterCameraController : MonoBehaviour {
         screenPercent = PlayerPrefsManager.GetScrollBoundray();
 		startPosition = transform.position;
         screenMoveSize = Screen.width* screenPercent;
-	}
+
+        transform.LookAt(lookAt);
+        transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x + lookAtOffset, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
+    }
 		
 
 
@@ -35,7 +39,7 @@ public class CenterCameraController : MonoBehaviour {
             movement = -1 * Mathf.InverseLerp(screenMoveSize, 0, Input.mousePosition.x);
         else if (Input.mousePosition.x > Screen.width - screenMoveSize)
             movement = 1 * Mathf.InverseLerp(Screen.width - screenMoveSize, Screen.width, Input.mousePosition.x);
-            */
+        */
         movement *= Time.deltaTime * speed;
         movement += transform.position.z;
 

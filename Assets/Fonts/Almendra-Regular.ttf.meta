@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: fa527c45e6306cd49b0eb376ae717695
-timeCreated: 1494701716
+guid: bd33184e6cddd374691b6fbd78be56e3
+timeCreated: 1495490667
 licenseType: Free
 TrueTypeFontImporter:
   serializedVersion: 4
@@ -9,9 +9,9 @@ TrueTypeFontImporter:
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
-  fontName: Traveling _Typewriter
+  fontName: Almendra
   fontNames:
-  - Traveling _Typewriter
+  - Almendra
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

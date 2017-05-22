@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Mecanici : MonoBehaviour {
+public class HealthHover : MonoBehaviour {
 
     private Transform lastHit=null;
 	// Use this for initialization
@@ -13,8 +13,7 @@ public class Mecanici : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-	    if(Input.GetMouseButtonDown(0))
-        {
+	   
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit raycastHit;
             if(Physics.Raycast(ray, out raycastHit, 100f))
@@ -33,7 +32,5 @@ public class Mecanici : MonoBehaviour {
                 if(lastHit!=null)
                 lastHit.gameObject.SetActive(false);
             }
-        }
 	}
-
 }
