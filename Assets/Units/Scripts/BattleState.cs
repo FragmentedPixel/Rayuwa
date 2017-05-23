@@ -14,14 +14,14 @@ public class BattleState : iUnitState
     public override void Update()
     {
         controller.debugCube.material.color = Color.green;
+        //controller.anim.SetBool("Walking", true);
 
-        if (controller.target != null)
-            controller.agent.MoveToDestination(controller.target.position);
+        controller.agent.MoveToDestination(controller.destination);
     }
 
-    public override void OnTriggerEnter(Transform newTarget)
+    public override void HitByEnemy(Transform enemy)
     {
-        controller.CheckNewTarget(newTarget);
+        controller.SetNewTarget(enemy);
     }
     #endregion
 

@@ -15,7 +15,7 @@ public abstract class iUnitState
 
     #region Methods
     public abstract void Update();
-    public abstract void OnTriggerEnter(Transform newTarget);
+    public abstract void HitByEnemy(Transform enemy);
     #endregion
 
     #region Transition

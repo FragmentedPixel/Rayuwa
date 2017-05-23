@@ -6,7 +6,6 @@ using UnityEngine;
 public class UnitController : MonoBehaviour
 {
     public MeshRenderer debugCube;
-    public Vector3 oldDestination;
 
     #region Variabiles
 
@@ -14,7 +13,7 @@ public class UnitController : MonoBehaviour
     [HideInInspector] public Animator anim;
     [HideInInspector] public Agent agent;
     [HideInInspector] public Transform target;
-    private List<Transform> targetsInRange = new List<Transform>();
+    [HideInInspector] public Vector3 destination;
     #endregion
 
     #region Parameters
@@ -61,87 +60,53 @@ public class UnitController : MonoBehaviour
         currentState.Update();
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void HitByEnemy(Transform attacker)
     {
-        EnemyHealth enemyHealth = other.GetComponent<EnemyHealth>();
-        if (enemyHealth == null || targetsInRange.Contains(enemyHealth.transform))
-            return;
+        EnemyHealth enemy = attacker.GetComponentInChildren<EnemyHealth>();
 
-        targetsInRange.Add(enemyHealth.transform);
-        currentState.OnTriggerEnter(enemyHealth.transform);
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        EnemyHealth enemyHealth = other.GetComponent<EnemyHealth>();
-        if (enemyHealth == null || !targetsInRange.Contains(enemyHealth.transform))
-            return;
-        else
-            targetsInRange.Remove(enemyHealth.transform);
+        if(enemy != null)
+            currentState.HitByEnemy(enemy.transform);
     }
     #endregion
 
     #region Methods
+
     public void StartBattle()
     {
         battleStarted = true;
-        currentState = battleState;
-        agent.Resume();
     }
+
     public void LookAtTarget()
     {
         Vector3 lookPoint = new Vector3(target.position.x, transform.position.y, target.position.z);
         transform.LookAt(lookPoint);
     }
-    public void UpdateTarget()
-    {
-        float distance = int.MaxValue;
-        for(int i = 0; i < targetsInRange.Count; i++)
-        {
-            if (targetsInRange[i] == null)
-            {
-                targetsInRange.Remove(targetsInRange[i]);
-                i--;
-            }
-            else
-            {
-
-                float newDistance = Vector3.Distance(transform.position, targetsInRange[i].position);
-                if (newDistance < distance)
-                {
-                    target = targetsInRange[i];
-                    distance = newDistance;
-                }
-            }
-        }
-
-        if ((target == null) && (!battleStarted))
-            currentState.ToIdleState();
-        else if (target == null)
-        {
-            if(oldDestination != Vector3.zero)
-                agent.MoveToDestination(oldDestination);
-            currentState.ToBattleState();
-        }
-        else if (distance > fightRange)
-            currentState.ToAggroState();
-        else
-            currentState.ToFightState();
-
-    }
+    
     public float DistanceToTarget()
     {
         float distance = Vector3.Distance(transform.position, target.position);
         return distance;
     }
-    public void CheckNewTarget(Transform newTarget)
-    {
-        oldDestination = agent.destination;
-        agent.MoveToDestination(newTarget.position);
 
+    public void SetNewDestination(Vector3 newDestionation)
+    {
+        destination = newDestionation;
+        agent.MoveToDestination(destination);
+
+        target = null;
+
+        if (battleStarted)
+            currentState.ToBattleState();
+    }
+
+    public void SetNewTarget(Transform newTarget)
+    {
         target = newTarget;
 
-        float distance = DistanceToTarget();
-        if (distance < fightRange)
+        if (!battleStarted)
+            return;
+
+        if (DistanceToTarget() < fightRange)
             currentState.ToFightState();
         else
             currentState.ToAggroState();

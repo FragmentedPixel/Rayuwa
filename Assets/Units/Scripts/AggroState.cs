@@ -20,13 +20,11 @@ public class AggroState : iUnitState
         if (controller.target != null)
             AggroTarget();
         else
-            controller.UpdateTarget();
+            ToBattleState();
     }
 
-    public override void OnTriggerEnter(Transform newTarget)
-    {
-
-    }
+    public override void HitByEnemy(Transform enemy)
+    {}
     #endregion
 
     #region Methods

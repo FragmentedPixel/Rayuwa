@@ -35,7 +35,7 @@ public class Drawing : MonoBehaviour
     #endregion
 
     #region Initialization
-    private void Awake()
+    private void Start()
     {
         grid = FindObjectOfType<Grid>();
 
@@ -242,12 +242,12 @@ public class Drawing : MonoBehaviour
         if(targetHealth)
         {
             foreach (Agent unitAgent in selectedAgents)
-                unitAgent.GetComponent<UnitController>().CheckNewTarget(targetHealth.transform);
+                unitAgent.GetComponent<UnitController>().SetNewTarget(targetHealth.transform);
         }
         else
         {
             foreach (Agent unitAgent in selectedAgents)
-                unitAgent.MoveToDestination(hit.point);
+                unitAgent.GetComponent<UnitController>().SetNewDestination(hit.point);
         }
 
         

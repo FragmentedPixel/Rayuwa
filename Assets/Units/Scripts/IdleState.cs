@@ -18,19 +18,29 @@ public class IdleState : iUnitState
         Idle();
     }
 
-    public override void OnTriggerEnter(Transform newTarget)
+    public override void HitByEnemy(Transform newTarget)
     {
-        controller.CheckNewTarget(newTarget);
+        
     }
     #endregion
 
     #region Methods
     private void Idle()
     {
+        if (controller.target != null)
+            controller.agent.MoveToDestination(controller.target.position);
+
         controller.agent.Stop();
 
         if (controller.battleStarted)
-            ToBattleState();
+        {
+            controller.agent.Resume();
+
+            if (controller.target != null)
+                ToAggroState();
+            else
+                ToBattleState();
+        }
     }
     #endregion
 }

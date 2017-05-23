@@ -11,7 +11,7 @@ public class UnitsManager : MonoBehaviour
     private Unit[] units;
 
     #region Initialization
-    public void Start()
+    public void Awake()
     {
         if (UnitsData.instance)
         {
