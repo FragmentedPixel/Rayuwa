@@ -5,16 +5,21 @@ using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
+    #region Variabiles
     private bool paused = false;
     private Canvas pauseCanvas;
+    #endregion
 
+    #region Initialization
     private void Start()
     {
         pauseCanvas = GetComponent<Canvas>();
 
         Time.timeScale = 1f;
     }
+    #endregion
 
+    #region Pause / Unpase
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -27,4 +32,5 @@ public class PauseMenu : MonoBehaviour
         pauseCanvas.enabled = paused;
         Time.timeScale = (paused) ? 0f : 1f;
     }
+    #endregion
 }

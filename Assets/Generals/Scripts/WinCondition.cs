@@ -5,8 +5,11 @@ using UnityEngine.UI;
 
 public class WinCondition : MonoBehaviour
 {
+    #region Variabiles
     public Canvas winCanvas;
+    #endregion
 
+    #region Win check
     private void OnTriggerEnter(Collider other)
     {
         if (other.GetComponent<UnitHealth>())
@@ -21,5 +24,5 @@ public class WinCondition : MonoBehaviour
         foreach (EnemyHealth enemy in enemys)
             Destroy(enemy.transform.parent.gameObject);
     }
-
+    #endregion
 }

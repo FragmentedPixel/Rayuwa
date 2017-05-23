@@ -5,11 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class Autoload : MonoBehaviour
 {
+    #region Variabiles
     public string sceneName;
 
     public AudioClip introSound;
     private AudioSource audioS;
+    #endregion
 
+    #region Loading Scene after sounds end
     private void Start()
     {
         PlayIntroSound();
@@ -28,4 +31,5 @@ public class Autoload : MonoBehaviour
         yield return new WaitForSeconds(introSound.length + .5f);
         SceneManager.LoadScene(sceneName);
     }
+    #endregion
 }

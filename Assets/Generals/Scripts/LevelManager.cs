@@ -5,15 +5,20 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
+    #region Variabiles
     public AudioClip buttonSound;
     private AudioSource audioS;
+    #endregion
 
+    #region Initialization
     private void Start()
     {
         audioS = GetComponent<AudioSource>();
         audioS.volume = PlayerPrefsManager.GetMasterVolume();
     }
+    #endregion
 
+    #region Changing Scene
     public void ChangeScene(string scene)
     {
         audioS.PlayOneShot(buttonSound);
@@ -26,9 +31,12 @@ public class LevelManager : MonoBehaviour
         SceneManager.LoadScene(scene);
         yield break;
     }
+    #endregion
 
+    #region Methods
     public void Exit()
     {
         Application.Quit();
     }
+    #endregion
 }

@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class PersistentMusic : MonoBehaviour
 {
+    #region Varuabiles
     public AudioClip backgroundLoop;
 
     private AudioSource audioS;
+    #endregion
 
-	private void Start ()
+    #region Initialization
+    private void Start ()
     {
         StartMusic();
         DontDestroyOnLoad(this);
@@ -22,4 +25,5 @@ public class PersistentMusic : MonoBehaviour
         audioS.volume = PlayerPrefsManager.GetMasterVolume();
         audioS.Play();
     }
+    #endregion
 }
