@@ -45,6 +45,8 @@ public class Agent : MonoBehaviour
     #region Following Path
     private IEnumerator FollowPath()
     {
+        if (isIdle())
+            yield break;
 
         followingPath = true;
         int pathIndex = 0;
@@ -136,6 +138,14 @@ public class Agent : MonoBehaviour
         StartCoroutine("FollowPath");
     }
 
-    #endregion
+    private bool isIdle()
+    {
+        UnitController controller = GetComponent<UnitController>();
+        if (controller == null)
+            return false;
 
+        return controller.battleStarted;
+    }
+
+    #endregion
 }

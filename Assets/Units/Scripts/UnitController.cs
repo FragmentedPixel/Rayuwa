@@ -50,7 +50,7 @@ public class UnitController : MonoBehaviour
     {
         anim = GetComponentInChildren<Animator>();
         agent = GetComponent<Agent>();
-        agent.MoveToDestination(GameObject.Find("Castel").transform.position);
+        agent.MoveToDestination(GameObject.Find("Crytsal").transform.position);
     }
     #endregion
 
@@ -59,7 +59,6 @@ public class UnitController : MonoBehaviour
     {
         currentState.Update();
     }
-
     public void HitByEnemy(Transform attacker)
     {
         EnemyHealth enemy = attacker.GetComponentInChildren<EnemyHealth>();

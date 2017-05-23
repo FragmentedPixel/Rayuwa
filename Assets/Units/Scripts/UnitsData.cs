@@ -5,6 +5,7 @@ using System;
 
 public class UnitsData : MonoBehaviour
 {
+    #region Singelton
     public static UnitsData instance;
 
     public int maxUnits;
@@ -15,7 +16,9 @@ public class UnitsData : MonoBehaviour
         instance = this;
         DontDestroyOnLoad(this);
     }
+    #endregion
 
+    #region Properties 
     public Unit[] units{get { return unitsList.ToArray(); }    }
     public bool canAddUnits { get { return GetCurrentUnitsCount() < maxUnits; } }
 
@@ -27,6 +30,7 @@ public class UnitsData : MonoBehaviour
 
         return value;
     }
+    #endregion
 }
 
 [Serializable]

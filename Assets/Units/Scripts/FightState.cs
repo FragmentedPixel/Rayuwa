@@ -26,7 +26,9 @@ public class FightState : iUnitState
     }
 
     public override void HitByEnemy(Transform newTarget)
-    {}
+    {
+        //Controller already is attacking a target.
+    }
     #endregion
 
     #region Methods

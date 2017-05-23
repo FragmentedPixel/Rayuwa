@@ -3,33 +3,45 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class EnemyHealth : MonoBehaviour {
-	public float MaxHealth=500;
+public class EnemyHealth : MonoBehaviour
+{
+    #region Variabiles
+    #region Health
+    public float MaxHealth=500;
 	private float currentHealth;
-	public Image background;
+    #endregion
+    #region UI
+    public Image background;
 	public Image healthImage;
 	private Canvas canvas;
-	void Start () 
+    #endregion
+    #endregion
+
+    #region Initialization
+    private void Start () 
 	{	
 		canvas = background.GetComponentInParent<Canvas>();
 		currentHealth = MaxHealth;	
 	}
-	
-	// Update is called once per frame
-	void Update () 
+    #endregion
+
+    #region Bilboard
+    private void Update () 
 	{
 		canvas.transform.LookAt (Camera.main.transform);
 	}
+    #endregion
 
-	public void Hit(float damage)
+    #region HIt
+    public void Hit(float damage)
 	{
 		currentHealth -= damage;
 		healthImage.fillAmount = currentHealth / MaxHealth;
-		if (healthImage.fillAmount < 0.2)
+
+        if (healthImage.fillAmount < 0.2)
 			healthImage.color = Color.red;
 		if (currentHealth <= 0)
-		{
-			Destroy (transform.parent.gameObject);
-		}
+		    Destroy (transform.parent.gameObject);
 	}
+    #endregion
 }

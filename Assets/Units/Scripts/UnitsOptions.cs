@@ -5,14 +5,18 @@ using UnityEngine.UI;
 
 public class UnitsOptions : MonoBehaviour
 {
+
+    #region Variabiles
     public Text unitsCountText;
     public Transform panel;
 
     public GameObject unitRowPrefab;
     public AudioClip clickSound;
-
+    
     private AudioSource audioS;
+    #endregion
 
+    #region Initialization
     private void Start()
     {
         audioS = GetComponent<AudioSource>();
@@ -23,7 +27,9 @@ public class UnitsOptions : MonoBehaviour
         foreach (Unit unit in units)
             AddRow(unit);
     }
+    #endregion
 
+    #region AddMethods + Capping Units
     private void AddRow(Unit unit)
     {
         if (!unit.unlocked)
@@ -49,6 +55,7 @@ public class UnitsOptions : MonoBehaviour
     {
         audioS.PlayOneShot(clickSound);
     }
+    #endregion
 }
 
 public class UnitRow

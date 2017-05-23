@@ -5,10 +5,12 @@ using UnityEngine.UI;
 
 public class UnitsManager : MonoBehaviour
 {
+    #region Variabiles
     public Transform spawnPointsParent;
 
 	private List<Transform> spawnPoints;
     private Unit[] units;
+    #endregion
 
     #region Initialization
     public void Awake()

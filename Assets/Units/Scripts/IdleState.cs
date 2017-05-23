@@ -20,7 +20,7 @@ public class IdleState : iUnitState
 
     public override void HitByEnemy(Transform newTarget)
     {
-        
+        //Fight not started yet.
     }
     #endregion
 

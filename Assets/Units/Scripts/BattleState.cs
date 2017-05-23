@@ -24,5 +24,4 @@ public class BattleState : iUnitState
         controller.SetNewTarget(enemy);
     }
     #endregion
-
 }

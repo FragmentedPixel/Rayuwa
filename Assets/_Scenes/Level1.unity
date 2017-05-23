@@ -721,7 +721,7 @@ Prefab:
       objectReference: {fileID: 938565720}
     - target: {fileID: 1109124499112788, guid: 7e8a1abe9c989894cbcdf5d2863a5776, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e8a1abe9c989894cbcdf5d2863a5776, type: 2}
@@ -1054,7 +1054,7 @@ Transform:
   m_PrefabParentObject: {fileID: 4467021973532180, guid: ed2fe6da22748d64fa7c7e8dee6c2838,
     type: 2}
   m_PrefabInternal: {fileID: 1653409803}
---- !u!1001 &1719849496
+--- !u!1001 &1658949026
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -1217,7 +1217,7 @@ Transform:
 Transform:
   m_PrefabParentObject: {fileID: 4467021973532180, guid: ed2fe6da22748d64fa7c7e8dee6c2838,
     type: 2}
-  m_PrefabInternal: {fileID: 1719849496}
+  m_PrefabInternal: {fileID: 1658949026}
 --- !u!223 &2120116265 stripped
 Canvas:
   m_PrefabParentObject: {fileID: 223560749804299956, guid: 7e8a1abe9c989894cbcdf5d2863a5776,

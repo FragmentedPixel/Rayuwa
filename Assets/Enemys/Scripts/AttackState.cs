@@ -44,7 +44,7 @@ public  class AttackState : iEnemyState
 	{
         lastAttack = Time.time;
         controller.anim.SetTrigger("Attack");
-		controller.target.GetComponent<UnitHealth> ().Hit (controller.attackDmg);
+		controller.target.GetComponent<UnitHealth> ().Hit (controller.attackDmg, controller.transform);
 	}
     #endregion
 
