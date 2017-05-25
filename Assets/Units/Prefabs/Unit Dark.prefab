@@ -106,9 +106,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4691301411944976}
-  - component: {fileID: 114054324753062440}
   - component: {fileID: 135742838863070358}
-  - component: {fileID: 114980552856718328}
+  - component: {fileID: 114054324753062440}
+  - component: {fileID: 114735732793827322}
   m_Layer: 2
   m_Name: Unit Dark
   m_TagString: Unit
@@ -179,8 +179,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1536848225202338}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.37, y: 0, z: 8.9}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 10.11, y: -0.32, z: -14.12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4139415679365488}
@@ -402,6 +402,26 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114735732793827322
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1536848225202338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ed4573005d75a94493fbe0cadc3dabe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debugCube: {fileID: 23266916888634604}
+  anim: {fileID: 0}
+  agent: {fileID: 0}
+  target: {fileID: 0}
+  destination: {x: 0, y: 0, z: 0}
+  battleStarted: 0
+  fightRange: 3
+  fightSpeed: 1
+  fightDmg: 10
 --- !u!114 &114966170098986502
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -429,26 +449,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114980552856718328
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1536848225202338}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81740414b6f707e46bbde46da71279ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  debugCube: {fileID: 23266916888634604}
-  oldDestination: {x: 0, y: 0, z: 0}
-  anim: {fileID: 0}
-  agent: {fileID: 0}
-  target: {fileID: 0}
-  battleStarted: 0
-  fightRange: 3
-  fightSpeed: 3
-  fightDmg: 50
 --- !u!135 &135742838863070358
 SphereCollider:
   m_ObjectHideFlags: 1
