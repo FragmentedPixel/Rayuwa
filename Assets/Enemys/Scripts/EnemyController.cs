@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Agent))]
-public class EnemyController : MonoBehaviour
+public abstract class  EnemyController : MonoBehaviour
 {
     #region Variabiles
 
@@ -120,5 +120,8 @@ public class EnemyController : MonoBehaviour
         float distance = Vector3.Distance(transform.position, target.position);
         return distance;
     }
+
+    public abstract void AttackTarget();
+
     #endregion
 }

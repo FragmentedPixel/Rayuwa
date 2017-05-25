@@ -31,9 +31,12 @@ public class EnemyHover : MonoBehaviour
             return;
 
         MeshRenderer[] renderers = trans.GetComponentsInChildren<MeshRenderer>();
-
+        Debug.Log(renderers.Length);
         foreach (MeshRenderer renderer in renderers)
+        {
             renderer.enabled = value;
+            Debug.Log(renderer.name);
+        }
     }
     #endregion
 }
