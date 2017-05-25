@@ -43,7 +43,7 @@ public  class AttackState : iEnemyState
     public void HitTarget()
 	{
         lastAttack = Time.time;
-        controller.anim.SetTrigger("Attack");
+        controller.AttackTarget(); 
 	}
     #endregion
 

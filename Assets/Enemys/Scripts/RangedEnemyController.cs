@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MeleeControler : EnemyController {
+public class RangedEnemyController : EnemyController {
 
 
     public override void AttackTarget()
     {
-        anim.SetTrigger("Attack");
-        Debug.Log("Melee");
+        anim.SetTrigger("RangedAttack");
+        Debug.Log("Ranged");
     }
-
-    public void MeleeHit()
+    
+    public void RangedHit()
     {
         if (Random.Range(0, 100) < 90)
             target.GetComponent<UnitHealth>().Hit(attackDmg, transform);
