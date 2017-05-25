@@ -47,7 +47,7 @@ public abstract class  EnemyController : MonoBehaviour
 
     private void Start()
     {
-        anim = GetComponentInChildren<Animator>();
+        anim = GetComponent<Animator>();
         agent = GetComponent<Agent>();
     }
     #endregion
