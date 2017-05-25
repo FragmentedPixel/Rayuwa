@@ -47,7 +47,7 @@ public class FightState : iUnitState
     {
         lastAttack = Time.time;
         //controller.anim.SetTrigger("Attack");
-        controller.target.GetComponent<EnemyHealth>().Hit(controller.fightDmg);
+        controller.FightTarget();
     }
     #endregion
 }

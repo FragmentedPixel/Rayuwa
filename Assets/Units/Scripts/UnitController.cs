@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Agent))]
-public class UnitController : MonoBehaviour
+public abstract class UnitController : MonoBehaviour
 {
     public MeshRenderer debugCube;
 
@@ -112,4 +112,5 @@ public class UnitController : MonoBehaviour
     }
     #endregion
 
+    public abstract void FightTarget();
 }
