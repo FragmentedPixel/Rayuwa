@@ -31,6 +31,9 @@ public abstract class Projectile : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (!other.CompareTag("Enemy") && !other.CompareTag("Unit"))
+            return;
+
         StopAllCoroutines();
         DamageTarget();
         Destroy(gameObject);

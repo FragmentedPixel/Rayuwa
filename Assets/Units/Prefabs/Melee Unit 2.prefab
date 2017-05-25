@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 224472332957670428}
   - component: {fileID: 222179019263162646}
   - component: {fileID: 114966170098986502}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Foreground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4139415679365488}
   - component: {fileID: 33789074869416032}
   - component: {fileID: 23856674905143746}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56,7 +56,7 @@ GameObject:
   - component: {fileID: 223646336305769822}
   - component: {fileID: 114485663667933752}
   - component: {fileID: 114060619209841180}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 224737096114724176}
   - component: {fileID: 222810193151354496}
   - component: {fileID: 114521138263109744}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -111,7 +111,7 @@ GameObject:
   - component: {fileID: 114735732793827322}
   m_Layer: 2
   m_Name: Melee Unit 2
-  m_TagString: Unit
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -127,7 +127,7 @@ GameObject:
   - component: {fileID: 33185537251453678}
   - component: {fileID: 65826971563963836}
   - component: {fileID: 23266916888634604}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}

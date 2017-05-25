@@ -2,8 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RangedEnemyController : EnemyController {
+public class RangedEnemyController : EnemyController
+{
 
+    [Header("Projectile")]
+    public GameObject projectile;
+    public Transform shootingPoint;
 
     public override void AttackTarget()
     {
@@ -13,9 +17,7 @@ public class RangedEnemyController : EnemyController {
     
     public void RangedHit()
     {
-        if (Random.Range(0, 100) < 90)
-            target.GetComponent<UnitHealth>().Hit(attackDmg, transform);
-        else
-            Debug.Log("Miss");
+        GameObject projectileGO = Instantiate(projectile, shootingPoint.position, shootingPoint.rotation);
+        projectileGO.GetComponent<EnemyProjectile>().FireProjectile(target, attackDmg, transform);
     }
 }
