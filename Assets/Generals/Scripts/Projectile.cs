@@ -11,25 +11,29 @@ public abstract class Projectile : MonoBehaviour
 
     public void FireProjectile(Transform _target, float _damage, Transform _attacker)
     {
-        attacker = _attacker;
-        damage = _damage;
         target = _target;
+        damage = _damage;
+        attacker = _attacker;
         StartCoroutine(FollowTargetCR());
     }
 
     private IEnumerator FollowTargetCR()
     {
-        while(true)
+        while(target !=  null)
         {
             transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
             yield return null;
         }
+
+        Destroy(gameObject);
+        yield break;
     }
 
     private void OnTriggerEnter(Collider other)
     {
         StopAllCoroutines();
         DamageTarget();
+        Destroy(gameObject);
     }
 
     public abstract void DamageTarget();
