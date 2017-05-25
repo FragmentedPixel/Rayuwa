@@ -144,7 +144,7 @@ public class Agent : MonoBehaviour
         if (controller == null)
             return false;
 
-        return controller.battleStarted;
+        return !controller.battleStarted;
     }
 
     #endregion
