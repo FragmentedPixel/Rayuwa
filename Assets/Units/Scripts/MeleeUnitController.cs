@@ -8,6 +8,7 @@ public class MeleeUnitController : UnitController
     public override void FightTarget()
     {
         Debug.Log("Melee attack animation");
+        SwordHit();
     }
 
     public void SwordHit()

@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 114521260791742948}
   - component: {fileID: 114196961512520528}
   m_Layer: 2
-  m_Name: Unit Purple
+  m_Name: Melee Unit 3
   m_TagString: Unit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
