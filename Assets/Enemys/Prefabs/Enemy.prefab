@@ -34,7 +34,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4861299690168756}
-  - component: {fileID: 95892248558172294}
   m_Layer: 0
   m_Name: golem 2
   m_TagString: Untagged
@@ -279,7 +278,8 @@ GameObject:
   - component: {fileID: 4467021973532180}
   - component: {fileID: 114539120162535772}
   - component: {fileID: 135294668007734216}
-  - component: {fileID: 114443824429615648}
+  - component: {fileID: 114891072043802728}
+  - component: {fileID: 95614203206083332}
   m_Layer: 2
   m_Name: Enemy
   m_TagString: Untagged
@@ -563,7 +563,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1697633308665460}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -6, z: -52.5}
+  m_LocalPosition: {x: 13, y: -6, z: -52.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4861299690168756}
@@ -821,13 +821,13 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3, y: 2.6, z: 3}
   m_Center: {x: 0, y: 0.23, z: 0}
---- !u!95 &95892248558172294
+--- !u!95 &95614203206083332
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1101797534354532}
+  m_GameObject: {fileID: 1697633308665460}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 59893787a24dc9547b5510bc70e99f96, type: 3}
   m_Controller: {fileID: 9100000, guid: a1795bd0f4dca014e86f539d89a15116, type: 2}
@@ -868,24 +868,6 @@ MonoBehaviour:
   MaxHealth: 200
   background: {fileID: 114751687159981716}
   healthImage: {fileID: 114755740959872576}
---- !u!114 &114443824429615648
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1697633308665460}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b759649160bcfa4d90181609f1bc89f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anim: {fileID: 0}
-  agent: {fileID: 0}
-  target: {fileID: 0}
-  WayPointParent: {fileID: 0}
-  attackRange: 3
-  attackSpeed: 3
-  attackDmg: 5
 --- !u!114 &114539120162535772
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1005,6 +987,24 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   parentTransform: {fileID: 0}
+--- !u!114 &114891072043802728
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1697633308665460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ee5d9e6c6a432f458b0588985eb5c13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 0}
+  agent: {fileID: 0}
+  target: {fileID: 0}
+  WayPointParent: {fileID: 0}
+  attackRange: 3
+  attackSpeed: 1
+  attackDmg: 10
 --- !u!135 &135294668007734216
 SphereCollider:
   m_ObjectHideFlags: 1
