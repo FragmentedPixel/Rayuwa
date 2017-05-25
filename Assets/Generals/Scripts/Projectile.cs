@@ -2,15 +2,36 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Projectile : MonoBehaviour {
+public abstract class Projectile : MonoBehaviour
+{
+    public float speed;
+    [HideInInspector] public float damage;
+    [HideInInspector] public Transform target;
+    [HideInInspector] public Transform attacker;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public void FireProjectile(Transform _target, float _damage, Transform _attacker)
+    {
+        attacker = _attacker;
+        damage = _damage;
+        target = _target;
+        StartCoroutine(FollowTargetCR());
+    }
+
+    private IEnumerator FollowTargetCR()
+    {
+        while(true)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+            yield return null;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        StopAllCoroutines();
+        DamageTarget();
+    }
+
+    public abstract void DamageTarget();
+
 }

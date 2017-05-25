@@ -1816,6 +1816,8 @@ Prefab:
       propertyPath: WayPointParent
       value: 
       objectReference: {fileID: 262743522}
+<<<<<<< HEAD
+=======
     - target: {fileID: 4885391878639260, guid: ed2fe6da22748d64fa7c7e8dee6c2838, type: 2}
       propertyPath: m_LocalRotation.x
       value: 0.8638229
@@ -2120,6 +2122,7 @@ Prefab:
       propertyPath: m_LocalPosition.x
       value: -1.472597
       objectReference: {fileID: 0}
+>>>>>>> c10435013c691724ade1db5176a351200b34f3a0
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ed2fe6da22748d64fa7c7e8dee6c2838, type: 2}
   m_IsPrefabParent: 0
