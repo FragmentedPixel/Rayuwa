@@ -18,7 +18,7 @@ public class EnemyHover : MonoBehaviour
 
         if (Physics.Raycast(ray, out raycastHit, 100f) && (raycastHit.collider.tag=="Enemy"))
         {
-            currentDisplayed = raycastHit.transform.GetChild(0).transform;
+            currentDisplayed = raycastHit.transform;
             ChangeVisibility(currentDisplayed, true);
         }
 	}
@@ -29,13 +29,10 @@ public class EnemyHover : MonoBehaviour
     {
         if (trans == null)
             return;
-
         MeshRenderer[] renderers = trans.GetComponentsInChildren<MeshRenderer>();
-        Debug.Log(renderers.Length);
         foreach (MeshRenderer renderer in renderers)
         {
             renderer.enabled = value;
-            Debug.Log(renderer.name);
         }
     }
     #endregion
