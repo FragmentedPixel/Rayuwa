@@ -50,4 +50,9 @@ public class UnitHealth : MonoBehaviour
 			Destroy (transform.parent.gameObject);
 	}
     #endregion
+
+    public float GetHealthPercent()
+    {
+        return (currentHealth * 100f) / MaxHealth;
+    }
 }

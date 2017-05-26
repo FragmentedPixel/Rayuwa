@@ -10,7 +10,11 @@ public class MeleeUnitController : UnitController
         Debug.Log("Melee attack animation");
         SwordHit();
     }
-
+    public override string GetAmmoText()
+    {
+        string ammoText = ((ammo * 100f) / maxAmmo ).ToString() + "%";
+        return ammoText;
+    }
     public void SwordHit()
     {
         target.GetComponent<EnemyHealth>().Hit(fightDmg);

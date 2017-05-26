@@ -243,12 +243,21 @@ public class Drawing : MonoBehaviour
         {
             foreach (Agent unitAgent in selectedAgents)
                 unitAgent.GetComponent<UnitController>().SetNewTarget(targetHealth.transform);
+
+            return;
         }
-        else
+
+        ReloadPoint reloadPoint = hit.transform.GetComponent<ReloadPoint>();
+        if (reloadPoint)
         {
             foreach (Agent unitAgent in selectedAgents)
-                unitAgent.GetComponent<UnitController>().SetNewDestination(hit.point);
+                unitAgent.GetComponent<UnitController>().SetNewReloadPoint(reloadPoint);
+
+            return;
         }
+            
+        foreach (Agent unitAgent in selectedAgents)
+            unitAgent.GetComponent<UnitController>().SetNewDestination(hit.point);
 
         
     }

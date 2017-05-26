@@ -35,5 +35,10 @@ public abstract class iUnitState
     {
         controller.currentState = controller.fightState;
     }
+
+    public void ToReloadState()
+    {
+        controller.currentState = controller.reloadState;
+    }
     #endregion
 }

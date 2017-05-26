@@ -14,6 +14,7 @@ public abstract class UnitController : MonoBehaviour
     [HideInInspector] public Agent agent;
     [HideInInspector] public Transform target;
     [HideInInspector] public Vector3 destination;
+    [HideInInspector] public ReloadPoint reloadPoint;
     #endregion
 
     #region Parameters
@@ -25,6 +26,13 @@ public abstract class UnitController : MonoBehaviour
 	public float fightDmg = 10f;
     #endregion
 
+    #region Amunation
+    [HideInInspector] public int ammo;
+    public int maxAmmo;
+    public float reloadTime = 3f;
+    private bool reloading;
+    #endregion
+
     #region States
     public iUnitState currentState;
 
@@ -32,6 +40,7 @@ public abstract class UnitController : MonoBehaviour
     public BattleState battleState;
     public FightState fightState;
     public IdleState idleState;
+    public ReloadState reloadState;
     #endregion
 
     #endregion
@@ -43,11 +52,13 @@ public abstract class UnitController : MonoBehaviour
         battleState = new BattleState(this);
         fightState = new FightState(this);
         idleState = new IdleState(this);
+        reloadState = new ReloadState(this);
 
         currentState = idleState;
     }
     private void Start()
     {
+        ammo = maxAmmo;
         anim = GetComponentInChildren<Animator>();
         agent = GetComponent<Agent>();
         agent.MoveToDestination(GameObject.Find("Crytsal").transform.position);
@@ -69,7 +80,6 @@ public abstract class UnitController : MonoBehaviour
     #endregion
 
     #region Methods
-
     public void StartBattle()
     {
         battleStarted = true;
@@ -89,6 +99,7 @@ public abstract class UnitController : MonoBehaviour
 
     public void SetNewDestination(Vector3 newDestionation)
     {
+        reloading = false;
         destination = newDestionation;
         agent.MoveToDestination(destination);
 
@@ -100,6 +111,7 @@ public abstract class UnitController : MonoBehaviour
 
     public void SetNewTarget(Transform newTarget)
     {
+        reloading = false;
         target = newTarget;
 
         if (!battleStarted)
@@ -110,7 +122,43 @@ public abstract class UnitController : MonoBehaviour
         else
             currentState.ToAggroState();
     }
+
+    public void SetNewReloadPoint(ReloadPoint point)
+    {
+        reloadPoint = point;
+
+        if (!battleStarted)
+            return;
+
+        currentState.ToReloadState();
+    }
+    #endregion
+
+    #region Reloading
+    public void Reload()
+    {
+        if (!reloading)
+            StartCoroutine(ReloadingCR());
+    }
+    private IEnumerator ReloadingCR()
+    {
+        reloading = true;
+        yield return new WaitForSeconds(reloadTime);
+        ammo = maxAmmo;
+        reloading = false;
+
+        if (target != null)
+        {
+            if (DistanceToTarget() < fightRange)
+                currentState.ToFightState();
+            else
+                currentState.ToAggroState();
+        }
+        else
+            currentState.ToBattleState();
+    }
     #endregion
 
     public abstract void FightTarget();
+    public abstract string GetAmmoText();
 }

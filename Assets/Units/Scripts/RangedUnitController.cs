@@ -14,10 +14,15 @@ public class RangedUnitController : UnitController
         Debug.Log("Play ranged attack animation");
         FireProjectile();
     }
-
+    public override string GetAmmoText()
+    {
+        string ammoText = ammo.ToString() + "/" + maxAmmo.ToString();
+        return ammoText;
+    }
     public void FireProjectile()
     {
         GameObject projectileGO = Instantiate(projectile, shootingPoint.position, shootingPoint.rotation);
         projectileGO.GetComponent<UnitProjectile>().FireProjectile(target, fightDmg, transform);
     }
+
 }

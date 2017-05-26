@@ -36,6 +36,7 @@ public class FightState : iUnitState
     {
         controller.LookAtTarget();
         controller.agent.Stop();
+        controller.agent.ClearPath();
 
         if (controller.DistanceToTarget() > controller.fightRange)
 			ToAggroState ();
@@ -45,6 +46,14 @@ public class FightState : iUnitState
 
     public void HitTarget()
     {
+        if (controller.ammo <= 0)
+        {
+            ToReloadState();
+            return;
+        }
+
+        controller.ammo--;
+
         lastAttack = Time.time;
         //controller.anim.SetTrigger("Attack");
         controller.FightTarget();

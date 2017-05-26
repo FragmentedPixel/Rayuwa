@@ -138,6 +138,11 @@ public class Agent : MonoBehaviour
         StartCoroutine("FollowPath");
     }
 
+    public void ClearPath()
+    {
+        path.nodes.Clear();
+    }
+
     private bool isIdle()
     {
         UnitController controller = GetComponent<UnitController>();
