@@ -40,6 +40,8 @@ public class IdleState : iUnitState
 
             if (controller.target != null)
                 ToAggroState();
+            else if (controller.reloadPoint != null)
+                ToReloadState();
             else
                 ToBattleState();
         }

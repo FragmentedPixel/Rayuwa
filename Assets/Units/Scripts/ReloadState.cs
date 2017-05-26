@@ -15,6 +15,7 @@ public class ReloadState : iUnitState
     {
         controller.debugCube.material.color = Color.blue;
         //controller.anim.SetBool("Walking", true);
+
         if (controller.reloadPoint == null)
             FindClosestReloadPoint();
 

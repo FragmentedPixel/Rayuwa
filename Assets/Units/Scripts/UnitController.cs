@@ -72,6 +72,9 @@ public abstract class UnitController : MonoBehaviour
     }
     public void HitByEnemy(Transform attacker)
     {
+        if (attacker == null)
+            return;
+
         EnemyHealth enemy = attacker.GetComponentInChildren<EnemyHealth>();
 
         if(enemy != null)
