@@ -9,8 +9,13 @@ public class UnitsHud : MonoBehaviour
 
     private void OnEnable()
     {
-        UnitHudElement currentElement = Instantiate(unitImage, unitPannel.transform).GetComponent<UnitHudElement>();
-        currentElement.SetHudElement(null, null);
+        UnitController[] controllers = GetComponentsInChildren<UnitController>();
+        foreach (UnitController controller in controllers)
+        {
+            UnitHealth health = controller.transform.GetComponentInChildren<UnitHealth>();
+            UnitHudElement currentElement = Instantiate(unitImage, unitPannel.transform).GetComponent<UnitHudElement>();
+            currentElement.SetHudElement(controller, health);
+        }
     }
 
 }

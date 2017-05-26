@@ -9,7 +9,6 @@ public class MeleeEnemyController : EnemyController {
     public override void AttackTarget()
     {
         anim.SetTrigger("MeleeAttack");
-        Debug.Log("Melee");
     }
 
     public void MeleeHit()

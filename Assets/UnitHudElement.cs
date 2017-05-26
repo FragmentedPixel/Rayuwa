@@ -17,8 +17,8 @@ public class UnitHudElement : MonoBehaviour
 
     private void Update()
     {
-        ammoText.text = unit.ammo;
         healthImage.fillAmount = unit.health;
+        ammoText.text = unit.ammo;
     }
 
 }

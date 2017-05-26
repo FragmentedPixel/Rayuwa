@@ -53,6 +53,6 @@ public class UnitHealth : MonoBehaviour
 
     public float GetHealthPercent()
     {
-        return (currentHealth * 100f) / MaxHealth;
+        return (currentHealth / MaxHealth);
     }
 }

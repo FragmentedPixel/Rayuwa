@@ -180,8 +180,6 @@ GameObject:
   - component: {fileID: 65647378976132964}
   - component: {fileID: 54616309281532920}
   - component: {fileID: 114515710914591154}
-  - component: {fileID: 114928671527641038}
-  - component: {fileID: 114157318307301724}
   m_Layer: 0
   m_Name: EnemyHealth
   m_TagString: Enemy
@@ -537,7 +535,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1631136321988796}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.65, y: -6, z: -52.5}
+  m_LocalPosition: {x: 10.21, y: -6, z: -76.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4143132885090638}
@@ -881,10 +879,14 @@ MonoBehaviour:
   anim: {fileID: 0}
   agent: {fileID: 0}
   target: {fileID: 0}
+  lastTarget: {fileID: 0}
   WayPointParent: {fileID: 0}
-  attackRange: 3
-  attackSpeed: 1
+  attackRange: 25
+  attackSpeed: 2
   attackDmg: 10
+  maxAmmo: 15
+  currentAmmo: 0
+  refillPlace: {fileID: 0}
   projectile: {fileID: 1072034315379402, guid: adc2ed1671d4bba448e5413a21538afb, type: 2}
   shootingPoint: {fileID: 4045159472617636}
 --- !u!114 &114119546462726668
@@ -914,17 +916,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114157318307301724
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1384767503682944}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66f5e136264aea2498fa9f3cbb644265, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114261064275908798
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1020,22 +1011,6 @@ MonoBehaviour:
   turnDst: 1
   stoppingDst: 0
   pathColor: {r: 0.01306963, g: 0.2655205, b: 0.83029974, a: 1}
---- !u!114 &114928671527641038
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1384767503682944}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1378fe3ad901044ead0268a17361dd9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  groundHeight: 0.1
-  walkableMask:
-    serializedVersion: 2
-    m_Bits: 256
-  parentTransform: {fileID: 0}
 --- !u!135 &135469307774907068
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -1046,7 +1021,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 5
+  m_Radius: 20
   m_Center: {x: 0, y: 1, z: 0}
 --- !u!137 &137046803208758320
 SkinnedMeshRenderer:

@@ -19,7 +19,6 @@ public class RangedEnemyController : EnemyController
     public override void AttackTarget()
     {
         anim.SetTrigger("RangedAttack");
-        Debug.Log("Ranged");
     }
     
     public void RangedHit()

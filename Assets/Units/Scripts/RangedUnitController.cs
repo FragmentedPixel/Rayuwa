@@ -11,7 +11,6 @@ public class RangedUnitController : UnitController
 
     public override void FightTarget()
     {
-        Debug.Log("Play ranged attack animation");
         FireProjectile();
     }
     public override string GetAmmoText()
