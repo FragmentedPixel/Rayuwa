@@ -31,6 +31,13 @@ public  class AttackState : iEnemyState
 
     private void AttackTarget()
     {
+        if(!controller.Ammo())
+        {
+            Debug.Log("Out of Ammo");
+            controller.lastTarget = controller.target;
+            ToPatrolState();
+        }
+
         controller.LookAtTarget();
         controller.agent.Stop();
 

@@ -10,7 +10,8 @@ public abstract class  EnemyController : MonoBehaviour
     #region Targeting + Components
     [HideInInspector] public Animator anim;
     [HideInInspector] public Agent agent;
-    [HideInInspector] public Transform target;
+    public Transform target;
+    [HideInInspector] public Transform lastTarget;
     private List<Transform> targetsInRange = new List<Transform>();
     #endregion
 
@@ -22,6 +23,10 @@ public abstract class  EnemyController : MonoBehaviour
     public float attackRange = 3f;
     public float attackSpeed = 1f;
     public float attackDmg = 10f;
+
+    [Header("Ammo")]
+    public int maxAmmo = 10;
+    public int currentAmmo;
     #endregion
 
     #region States
@@ -29,6 +34,11 @@ public abstract class  EnemyController : MonoBehaviour
     public AttackState attackState;
     public ChaseState chaseState;
     public PatrolState patrolState;
+
+    #endregion
+
+    #region Ammo
+    public Transform refillPlace;
 
     #endregion
 
@@ -65,6 +75,8 @@ public abstract class  EnemyController : MonoBehaviour
             return;
 
         targetsInRange.Add(unitHealth.transform);
+        if (!Ammo())
+            return;
         currentState.OnTriggerEnter(unitHealth.transform);
 	}
 
@@ -108,7 +120,12 @@ public abstract class  EnemyController : MonoBehaviour
         }
 
         if (target == null)
-            currentState.ToPatrolState();
+        {
+            if (lastTarget != null)
+                target = lastTarget;
+            else
+                currentState.ToPatrolState();
+        }
         else if (distance > attackRange)
             currentState.ToChaseState();
         else
@@ -122,6 +139,8 @@ public abstract class  EnemyController : MonoBehaviour
     }
 
     public abstract void AttackTarget();
+
+    public abstract bool Ammo();
 
     #endregion
 }

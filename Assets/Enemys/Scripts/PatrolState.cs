@@ -14,7 +14,10 @@ public class PatrolState : iEnemyState
     #region State Methods
     public override void Update ()
 	{
-        Patrol();	
+        if (controller.Ammo())
+            Patrol();
+        else
+            RefillAmmo();
 	}
 
 
@@ -39,6 +42,22 @@ public class PatrolState : iEnemyState
 
         controller.agent.MoveToDestination(controller.target.position);
     }
+
+    public void RefillAmmo()
+    {
+        
+        controller.anim.SetBool("Walking", true);
+        controller.target = controller.refillPlace;
+        controller.agent.MoveToDestination(controller.target.position);
+        if (Vector3.Distance(controller.transform.position,controller.target.transform.position)<2)
+        {
+            controller.currentAmmo = controller.maxAmmo;
+            controller.target = null;
+            controller.UpdateTarget();
+            return;
+        }
+    }
+
     #endregion
 
 }
