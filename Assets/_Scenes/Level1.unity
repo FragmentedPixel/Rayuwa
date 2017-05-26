@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1681220742}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -1934,6 +1934,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114915474178857966, guid: 6e4a7485b3191a5459ba0582a6017162,
+        type: 2}
+      propertyPath: maxAmmo
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6e4a7485b3191a5459ba0582a6017162, type: 2}
   m_IsPrefabParent: 0
@@ -2948,6 +2953,11 @@ Prefab:
         type: 2}
       propertyPath: m_Center.y
       value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114735732793827322, guid: 430f974bba43f124cad0f5f51ba5d511,
+        type: 2}
+      propertyPath: maxAmmo
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 430f974bba43f124cad0f5f51ba5d511, type: 2}
@@ -5056,6 +5066,11 @@ Prefab:
         type: 2}
       propertyPath: maxAmmo
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 114018253698900358, guid: 915be9d165c76e6419f2e0deed9f37d1,
+        type: 2}
+      propertyPath: attackSpeed
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114157318307301724, guid: 915be9d165c76e6419f2e0deed9f37d1, type: 2}
