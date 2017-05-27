@@ -5,10 +5,13 @@ using UnityEngine;
 
 public class RangedUnitController : UnitController
 {
+    #region Projectile
     [Header("Projectile")]
     public GameObject projectile;
     public Transform shootingPoint;
+    #endregion
 
+    #region Ranged Attacking
     public override void FightTarget()
     {
         FireProjectile();
@@ -23,5 +26,5 @@ public class RangedUnitController : UnitController
         GameObject projectileGO = Instantiate(projectile, shootingPoint.position, shootingPoint.rotation);
         projectileGO.GetComponent<UnitProjectile>().FireProjectile(target, fightDmg, transform);
     }
-
+    #endregion
 }

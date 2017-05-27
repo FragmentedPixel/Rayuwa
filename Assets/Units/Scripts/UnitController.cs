@@ -137,7 +137,7 @@ public abstract class UnitController : MonoBehaviour
     }
     #endregion
 
-    #region Reloading
+    #region Resources
     public void Reload()
     {
         if (!reloading)
@@ -160,8 +160,8 @@ public abstract class UnitController : MonoBehaviour
         else
             currentState.ToBattleState();
     }
+    public abstract string GetAmmoText();
     #endregion
 
     public abstract void FightTarget();
-    public abstract string GetAmmoText();
 }

@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: bd33184e6cddd374691b6fbd78be56e3
-timeCreated: 1495490667
+guid: 0187911ae4c0309499c334646627afb5
+timeCreated: 1495885636
 licenseType: Free
 TrueTypeFontImporter:
   serializedVersion: 4
@@ -9,9 +9,9 @@ TrueTypeFontImporter:
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
-  fontName: Almendra
+  fontName: Mate SC
   fontNames:
-  - Almendra
+  - Mate SC
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

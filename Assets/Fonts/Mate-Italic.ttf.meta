@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 77b85546f375a00408b5563b7646a825
-timeCreated: 1495041513
+guid: d335add511b0bcc41b7c080e35ac7389
+timeCreated: 1495885636
 licenseType: Free
 TrueTypeFontImporter:
   serializedVersion: 4
@@ -9,10 +9,11 @@ TrueTypeFontImporter:
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
-  fontName: Kingthings Xander Outline
+  fontName: Mate
   fontNames:
-  - Kingthings Xander Outline
-  fallbackFontReferences: []
+  - Mate
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: af33cdc61fc4065498d8569056715d6e, type: 3}
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1

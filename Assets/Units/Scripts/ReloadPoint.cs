@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ReloadPoint : MonoBehaviour
 {
-
+    #region Trigger
     private void OnTriggerEnter(Collider other)
     {
         UnitController controller = other.GetComponentInParent<UnitController>();
@@ -14,4 +14,5 @@ public class ReloadPoint : MonoBehaviour
 
         controller.Reload();
     }
+    #endregion
 }

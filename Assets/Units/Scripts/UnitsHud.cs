@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class UnitsHud : MonoBehaviour
 {
+    #region Variabiles
     public GameObject unitPannel;
     public GameObject unitImage;
+    #endregion
 
+    #region Initialization
     private void OnEnable()
     {
         UnitController[] controllers = GetComponentsInChildren<UnitController>();
@@ -17,5 +20,5 @@ public class UnitsHud : MonoBehaviour
             currentElement.SetHudElement(controller, health);
         }
     }
-
+    #endregion
 }

@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class MeleeUnitController : UnitController
 {
+    #region Melee Attacking
     public override void FightTarget()
     {
         SwordHit();
@@ -18,4 +19,5 @@ public class MeleeUnitController : UnitController
     {
         target.GetComponent<EnemyHealth>().Hit(fightDmg);
     }
+    #endregion
 }

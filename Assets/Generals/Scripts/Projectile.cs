@@ -4,11 +4,14 @@ using UnityEngine;
 
 public abstract class Projectile : MonoBehaviour
 {
+    #region Variabiles
     public float speed;
     [HideInInspector] public float damage;
     [HideInInspector] public Transform target;
     [HideInInspector] public Transform attacker;
+    #endregion
 
+    #region Firing
     public void FireProjectile(Transform _target, float _damage, Transform _attacker)
     {
         target = _target;
@@ -16,7 +19,9 @@ public abstract class Projectile : MonoBehaviour
         attacker = _attacker;
         StartCoroutine(FollowTargetCR());
     }
+    #endregion
 
+    #region Flying
     private IEnumerator FollowTargetCR()
     {
         while(target !=  null)
@@ -28,7 +33,9 @@ public abstract class Projectile : MonoBehaviour
         Destroy(gameObject);
         yield break;
     }
+    #endregion
 
+    #region Imapct
     private void OnTriggerEnter(Collider other)
     {
         if (!other.CompareTag("Enemy") && !other.CompareTag("Unit"))
@@ -40,5 +47,5 @@ public abstract class Projectile : MonoBehaviour
     }
 
     public abstract void DamageTarget();
-
+    #endregion
 }

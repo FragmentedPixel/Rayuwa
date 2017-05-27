@@ -5,21 +5,27 @@ using UnityEngine.UI;
 
 public class UnitHudElement : MonoBehaviour
 {
+    #region UI Elements
     public Text ammoText;
     public Image healthImage;
 
     private UnitInfo unit;
+    #endregion
 
+    #region Initialization
     public void SetHudElement(UnitController _unitController, UnitHealth _unitHealth)
     {
         unit = new UnitInfo(_unitController, _unitHealth);
     }
+    #endregion
 
+    #region Update
     private void Update()
     {
         healthImage.fillAmount = unit.health;
         ammoText.text = unit.ammo;
     }
+    #endregion
 
 }
 
