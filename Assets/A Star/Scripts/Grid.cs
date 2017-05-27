@@ -62,8 +62,10 @@ public class Grid : MonoBehaviour
 
                 if (Physics.Raycast(ray, out hit, 100, walkableMask))
                     movementPenalty = 0;
+                else
+                    walkable = false;
 
-				if (!walkable)
+                if (!walkable)
 					movementPenalty += obstacleProximityPenalty;
 
                 GameObject point = Instantiate(wayPointPrefab, worldPoint, Quaternion.identity, transform);

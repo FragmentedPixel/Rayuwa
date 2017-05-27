@@ -10,25 +10,30 @@ ModelImporter:
     100004: //RootNode
     100006: Ground
     100008: River
+    100010: River_Ground
     400000: Plane
     400002: Plane_001
     400004: //RootNode
     400006: Ground
     400008: River
+    400010: River_Ground
     2300000: Plane
     2300002: Plane_001
     2300004: //RootNode
     2300006: Ground
     2300008: River
+    2300010: River_Ground
     3300000: Plane
     3300002: Plane_001
     3300004: //RootNode
     3300006: Ground
     3300008: River
+    3300010: River_Ground
     4300000: Plane_001
     4300002: Plane
     4300004: River
     4300006: Ground
+    4300008: River_Ground
     7400000: Default Take
     9500000: //RootNode
   materials:
@@ -41,6 +46,8 @@ ModelImporter:
     resampleCurves: 1
     optimizeGameObjects: 0
     motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
