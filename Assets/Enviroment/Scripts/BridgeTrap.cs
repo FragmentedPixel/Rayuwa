@@ -26,6 +26,8 @@ public class BridgeTrap : MonoBehaviour
 
     private IEnumerator FallingCR(Transform t, int direction)
     {
+        Destroy(GetComponent<Collider>());
+
         float currentTime = 0f;
 
         while(currentTime < duration)
@@ -36,9 +38,9 @@ public class BridgeTrap : MonoBehaviour
             currentTime += Time.deltaTime;
             yield return null;
         }
+        FindObjectOfType<Grid>().ReCalculateGird();
 
         Destroy(t.gameObject);
-
         yield break;
     }
 }
