@@ -29,8 +29,10 @@ public class IdleState : iUnitState
     {
         if (controller.target != null)
             controller.agent.MoveToDestination(controller.target.position);
-        if (controller.reloadPoint)
+        else if (controller.reloadPoint)
             controller.agent.MoveToDestination(controller.reloadPoint.transform.position);
+        else
+            controller.agent.MoveToDestination(controller.destination);
 
         controller.agent.Stop();
 

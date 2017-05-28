@@ -53,6 +53,16 @@ public class UnitHealth : MonoBehaviour
     {
         return (currentHealth / MaxHealth);
     }
+    public void Heal()
+    {
+        currentHealth = MaxHealth;
+        healthImage.fillAmount = currentHealth / MaxHealth;
+        healthImage.color = Color.green;
+    }
+    public void Die()
+    {
+        Destroy(transform.parent.gameObject);
+    }
     #endregion
 }
 

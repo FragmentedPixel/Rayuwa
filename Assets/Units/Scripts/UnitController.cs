@@ -61,7 +61,7 @@ public abstract class UnitController : MonoBehaviour
         ammo = maxAmmo;
         anim = GetComponentInChildren<Animator>();
         agent = GetComponent<Agent>();
-        agent.MoveToDestination(GameObject.Find("Crytsal").transform.position);
+        SetNewDestination(GameObject.Find("Crytsal").transform.position);
     }
     #endregion
 
@@ -148,6 +148,9 @@ public abstract class UnitController : MonoBehaviour
         reloading = true;
         yield return new WaitForSeconds(reloadTime);
         ammo = maxAmmo;
+        UnitHealth health = GetComponentInChildren<UnitHealth>();
+        health.Heal();
+
         reloading = false;
 
         if (target != null)

@@ -10,23 +10,23 @@ public class BridgeTrap : MonoBehaviour
     public float rotationSpeed = 1f;
     public float fallingSpeed = .1f;
 
-    private void Start()
-    {
-        StartCoroutine(FallingCR(part1, 1));
-        StartCoroutine(FallingCR(part2, -1));
-    }
-
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Player"))
+        Debug.Log(other.transform.name);
+
+        if(other.CompareTag("Unit"))
         {
-            Debug.Log("Player collided");
+            StartCoroutine(FallingCR(part1, 1));
+            StartCoroutine(FallingCR(part2, -1));
         }
     }
 
     private IEnumerator FallingCR(Transform t, int direction)
     {
+        Destroy(t.GetComponent<Collider>());
         Destroy(GetComponent<Collider>());
+        yield return null;
+        FindObjectOfType<Grid>().ReCalculateGird();
 
         float currentTime = 0f;
 
@@ -38,7 +38,6 @@ public class BridgeTrap : MonoBehaviour
             currentTime += Time.deltaTime;
             yield return null;
         }
-        FindObjectOfType<Grid>().ReCalculateGird();
 
         Destroy(t.gameObject);
         yield break;
