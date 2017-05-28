@@ -27,6 +27,7 @@ public abstract class Projectile : MonoBehaviour
         while(target !=  null)
         {
             transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+            transform.LookAt(target);
             yield return null;
         }
 
