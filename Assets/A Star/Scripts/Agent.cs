@@ -24,7 +24,7 @@ public class Agent : MonoBehaviour
     #endregion
 
     #region Initialization
-    private void Start()
+    private void Awake()
     {
         pathColor = new Color(Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f));
         grid = FindObjectOfType<Grid>();
@@ -101,13 +101,20 @@ public class Agent : MonoBehaviour
 		if (path != null)
 			path.DrawWithGizmos ();
 	}
-    
+
+    private Node oldNode;
     private void Update()
     {
         if (path != null)
         {
             Node currentNode = grid.NodeFromWorldPoint(transform.position);
+            currentNode.walkable = false;
             List<Node> nodes = grid.GetNeighbours(currentNode);
+
+            if (oldNode != currentNode && oldNode != null)
+                oldNode.walkable = true;
+
+            oldNode = currentNode;
 
             foreach (Node n in nodes)
                 path.nodes.Remove(n);
@@ -124,6 +131,8 @@ public class Agent : MonoBehaviour
 
     public void MoveToDestination(Vector3 newDestination)
     {
+        Node currentNode = grid.NodeFromWorldPoint(transform.position);
+        currentNode.walkable = true;
         destination = newDestination;
         PathRequestManager.RequestPath(new PathRequest(transform.position, destination, OnPathFound));
     }
