@@ -38,8 +38,7 @@ public class BridgeTrap : MonoBehaviour
             currentTime += Time.deltaTime;
             yield return null;
         }
-
-        Destroy(t.gameObject);
+        
         yield break;
     }
 }

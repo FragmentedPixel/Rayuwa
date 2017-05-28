@@ -8,9 +8,7 @@ public class EnemyManager : MonoBehaviour
     private void Start()
     {
         foreach (Transform child in transform)
-        {
             SetSightAndRange(child);
-        }
     }
 
     private void SetSightAndRange(Transform enemy)
