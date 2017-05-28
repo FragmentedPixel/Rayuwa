@@ -39,6 +39,7 @@ public class Tutorial : MonoBehaviour
         yield return StartCoroutine(SetPathCR());
         yield return waitTime;
         yield return StartCoroutine(StartBattleCR());
+        tutorialText.text = "Tutorial done. Good luck and have fun.";
         yield return new WaitForSeconds(3f);
 
         FindObjectOfType<LevelManager>().ChangeScene("Menu");
@@ -56,12 +57,12 @@ public class Tutorial : MonoBehaviour
 
     private IEnumerator MoveCameraCR()
     {
-        tutorialText.text = "Move the camera by pressing W or S.";
+        tutorialText.text = "Move the camera by pressing A or D. To Rotate it, move your cursor at the edges of the screen.";
         bool moved = false;
 
         while (!moved)
         {
-            if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S))
+            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
                 moved = true;
 
             yield return null;
@@ -90,7 +91,7 @@ public class Tutorial : MonoBehaviour
 
         while (!selected)
         {
-            if (drawing.selectedAgents.Count > 1 && !drawing.isdragging)
+            if (drawing.selectedAgents.Count > 1 && !drawing.isdragging && Input.GetKey(KeyCode.LeftShift))
                 selected = true;
 
             yield return null;
@@ -105,7 +106,7 @@ public class Tutorial : MonoBehaviour
 
         while (!dragged || drawing.isdragging)
         {
-            if (drawing.isdragging)
+            if (drawing.isdragging && !Input.GetKey(KeyCode.LeftShift))
                 dragged = true;
 
             yield return null;
@@ -115,7 +116,8 @@ public class Tutorial : MonoBehaviour
 
     private IEnumerator SetPathCR()
     {
-        tutorialText.text = "Set a path for the selected units by right clicking on the ground.";
+        tutorialText.text = "Set a path for the selected units by right clicking on the ground or click an enemy to target it.";
+        
         bool pathGiven = false;
         
         while(!pathGiven)
@@ -137,7 +139,6 @@ public class Tutorial : MonoBehaviour
             yield return null;
         }
 
-        tutorialText.text = "Tutorial done. Good luck and have fun.";
     }
     #endregion
 

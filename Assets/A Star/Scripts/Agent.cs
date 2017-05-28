@@ -18,6 +18,7 @@ public class Agent : MonoBehaviour
     [HideInInspector]public Color pathColor;
     public aPath path;
     private bool followingPath;
+    private Grid grid;
     #endregion
 
     #endregion
@@ -26,7 +27,8 @@ public class Agent : MonoBehaviour
     private void Start()
     {
         pathColor = new Color(Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f));
-	}
+        grid = FindObjectOfType<Grid>();
+    }
     #endregion
 
     #region Callback Path Found
@@ -94,17 +96,16 @@ public class Agent : MonoBehaviour
     #endregion
 
     #region Gizmos
-    public void OnDrawGizmos() {
-		if (path != null) {
+    public void OnDrawGizmos()
+    {
+		if (path != null)
 			path.DrawWithGizmos ();
-		}
 	}
+    
     private void Update()
     {
         if (path != null)
         {
-            Grid grid = FindObjectOfType<Grid>();
-
             Node currentNode = grid.NodeFromWorldPoint(transform.position);
             List<Node> nodes = grid.GetNeighbours(currentNode);
 

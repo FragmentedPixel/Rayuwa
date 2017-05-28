@@ -22,11 +22,12 @@ public class UnitHudElement : MonoBehaviour
     #region Update
     private void Update()
     {
+        healthImage.color = (unit.health > .2f) ? Color.green : Color.red;
         healthImage.fillAmount = unit.health;
-        ammoText.text = unit.ammo;
+
+        ammoText.text = (unit.health <= 0f) ? "Dead" : unit.ammo;
     }
     #endregion
-
 }
 
 public class UnitInfo
