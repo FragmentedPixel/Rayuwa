@@ -32,6 +32,9 @@ public class ProgressData : MonoBehaviour
 
     private void Load()
     {
+        if (!File.Exists(fileLocation))
+            return;
+
         BinaryFormatter bf = new BinaryFormatter();
         FileStream file = new FileStream(fileLocation, FileMode.Open, FileAccess.Read, FileShare.Read);
 
@@ -43,6 +46,11 @@ public class ProgressData : MonoBehaviour
     private void OnDestroy()
     {
         Save();
+    }
+
+    public string LastLevel()
+    {
+        return "Level" + levelUnlocked;
     }
 }
 

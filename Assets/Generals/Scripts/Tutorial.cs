@@ -42,7 +42,7 @@ public class Tutorial : MonoBehaviour
         tutorialText.text = "Tutorial done. Good luck and have fun.";
         yield return new WaitForSeconds(3f);
 
-        FindObjectOfType<LevelManager>().ChangeScene("Menu");
+        FindObjectOfType<LevelManager>().ChangeScene("Level1");
     }
     #endregion
 
