@@ -2934,7 +2934,7 @@ Prefab:
     - target: {fileID: 114506038193766910, guid: d3ed5fd9a0a3e6d40a051064ed4a73ac,
         type: 2}
       propertyPath: displayGridGizmos
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114507247774271236, guid: d3ed5fd9a0a3e6d40a051064ed4a73ac,
         type: 2}
@@ -18660,7 +18660,7 @@ GameObject:
   - component: {fileID: 1517538405}
   - component: {fileID: 1517538404}
   m_Layer: 5
-  m_Name: Number
+  m_Name: UpgradeLevel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26688,8 +26688,9 @@ GameObject:
   - component: {fileID: 2136793215}
   - component: {fileID: 2136793214}
   - component: {fileID: 2136793213}
+  - component: {fileID: 2136793216}
   m_Layer: 5
-  m_Name: Player Canvas
+  m_Name: Upgrade Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26775,6 +26776,19 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &2136793216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2136793211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 830613a1841eac148bf96e781e8ab96a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text:
+  - {fileID: 1517538404}
 --- !u!1001 &2137939895
 Prefab:
   m_ObjectHideFlags: 0

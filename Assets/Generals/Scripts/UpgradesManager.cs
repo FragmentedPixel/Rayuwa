@@ -8,15 +8,17 @@ using System.IO;
 public class UpgradesManager : MonoBehaviour
 {
     public int levelCount;
-
+    public static UpgradesManager instance;
     public int[] upgradeArray;
     private string fileLocation;
 
     private void Start()
     {
+        instance = this;
         DontDestroyOnLoad(this);
-        fileLocation = Application.persistentDataPath + "/progress.data";
+        fileLocation = Application.persistentDataPath + "/upgrades.data";
         Load();
+        upgradeArray[0] = 2;
     }
 
     private void Save()
@@ -53,9 +55,9 @@ public class UpgradesManager : MonoBehaviour
         upgradeArray[index]++;
     }
 
-    public int[] PresentUpgrades()
+    public int PresentUpgrades(int index)
     {
-        return upgradeArray;
+        return upgradeArray[index];
     }
 
 }
