@@ -9,6 +9,7 @@ public class UnitHudElement : MonoBehaviour
     public Text ammoText;
     public Image healthImage;
 
+    private Animator anim;
     private UnitInfo unit;
     #endregion
 
@@ -16,6 +17,7 @@ public class UnitHudElement : MonoBehaviour
     public void SetHudElement(UnitController _unitController, UnitHealth _unitHealth)
     {
         unit = new UnitInfo(_unitController, _unitHealth);
+        anim = GetComponentInChildren<Animator>();
     }
     #endregion
 
@@ -25,8 +27,13 @@ public class UnitHudElement : MonoBehaviour
         healthImage.color = (unit.health > .2f) ? Color.green : Color.red;
         healthImage.fillAmount = unit.health;
 
-        ammoText.text = (unit.health <= 0f) ? "Dead" : unit.ammo;
+        ammoText.text = (unit.health <= 0f) ? "Dead" : unit.ammoText;
+        if (unit.ammo <= 0f)
+            anim.SetBool("Blinking", true);
+        else
+            anim.SetBool("Blinking", false);
     }
+
     #endregion
 }
 
@@ -42,5 +49,6 @@ public class UnitInfo
     }
 
     public float health { get { return unitHealth.GetHealthPercent(); } }
-    public string ammo { get { return unitController.GetAmmoText(); } }
+    public int ammo { get { return unitController.ammo; } }
+    public string ammoText { get { return unitController.GetAmmoText(); } }
 }
