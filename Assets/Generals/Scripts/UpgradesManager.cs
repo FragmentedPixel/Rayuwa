@@ -18,7 +18,6 @@ public class UpgradesManager : MonoBehaviour
         DontDestroyOnLoad(this);
         fileLocation = Application.persistentDataPath + "/upgrades.data";
         Load();
-        upgradeArray[0] = 2;
     }
 
     private void Save()
