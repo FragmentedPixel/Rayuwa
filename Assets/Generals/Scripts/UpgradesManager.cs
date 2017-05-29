@@ -17,7 +17,7 @@ public class UpgradesManager : MonoBehaviour
         instance = this;
         DontDestroyOnLoad(this);
         fileLocation = Application.persistentDataPath + "/upgrades.data";
-        Load();
+        Load(); 
     }
 
     private void Save()

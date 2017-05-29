@@ -6,6 +6,9 @@ public class CameraController : MonoBehaviour {
 	
 	private Vector3 startPosition;
     private float screenMoveSize;
+
+    public bool isEnabled;
+
     [Header("Speeds")]
     public float speed = 10.0F;
     public float rot_speed = 10.0F;
@@ -30,6 +33,8 @@ public class CameraController : MonoBehaviour {
 
 	void Update() 
 	{
+        if (!isEnabled)
+            return;
 		float movement = Input.GetAxis("Horizontal");
         if (movement != 0)
         {
