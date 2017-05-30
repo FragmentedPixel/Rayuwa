@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BridgeTrap : MonoBehaviour
+public class BridgeTrap : Trap
 {
+    [Header("Specifics")]
     public Transform part1, part2;
 
     public float duration;
@@ -24,7 +25,7 @@ public class BridgeTrap : MonoBehaviour
     private IEnumerator FallingCR(Transform t, int direction)
     {
         Destroy(t.GetComponent<Collider>());
-        Destroy(GetComponent<Collider>());
+        Destroy(t.parent.GetComponent<Collider>());
         yield return null;
         FindObjectOfType<Grid>().ReCalculateGird();
 

@@ -54,6 +54,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4060131682785152}
   - component: {fileID: 95204901269446880}
+  - component: {fileID: 65860543113186742}
   m_Layer: 8
   m_Name: pod final1
   m_TagString: Untagged
@@ -69,7 +70,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4010620271884516}
-  - component: {fileID: 65047718113774744}
   m_Layer: 8
   m_Name: Pod
   m_TagString: Untagged
@@ -212,17 +212,17 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1243119385491528}
   m_Mesh: {fileID: 4300002, guid: 74b2017ef079eaf43a34a689206c4d0a, type: 3}
---- !u!65 &65047718113774744
+--- !u!65 &65860543113186742
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1665788731890040}
+  m_GameObject: {fileID: 1261158641653998}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 10.8}
+  m_Size: {x: 10.9, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &95204901269446880
 Animator:

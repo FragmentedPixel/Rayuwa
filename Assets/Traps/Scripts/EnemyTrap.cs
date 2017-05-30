@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyTrap : MonoBehaviour
+public class EnemyTrap : Trap
 {
+
+    [Header("Specifics")]
     public GameObject[] enemies;
 
     private void OnTriggerEnter(Collider other)
@@ -11,7 +13,6 @@ public class EnemyTrap : MonoBehaviour
         if (other.CompareTag("Unit"))
             SpawnEnemies();
     }
-
     private void SpawnEnemies()
     {
         foreach(GameObject enemy in enemies)

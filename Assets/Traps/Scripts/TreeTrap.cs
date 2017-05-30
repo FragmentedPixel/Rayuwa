@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TreeTrap : MonoBehaviour
+public class TreeTrap : Trap
 {
+    [Header("Specifics")]
     public List<UnitHealth> units = new List<UnitHealth>();
     public GameObject[] trees;
 

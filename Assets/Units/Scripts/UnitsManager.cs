@@ -6,53 +6,26 @@ using UnityEngine.UI;
 public class UnitsManager : MonoBehaviour
 {
     #region Variabiles
-    public Canvas unitsCanvas;
-    public Canvas playerCanvas;
-
-    public Button startButton;
     public Transform spawnPointsParent;
+    public Button startButton;
 
-	private List<Transform> spawnPoints;
+    private List<Transform> spawnPoints;
     private Unit[] units;
+    private Drawing drawing;
     #endregion
 
-    #region Initialization
-    public void Awake()
+    #region Start Level
+    public void StartLevel()
     {
-        unitsCanvas.enabled = true;
-        StartCoroutine(WaitForUnitsCR());
-    }
+        drawing = FindObjectOfType<Drawing>();
 
-    private IEnumerator WaitForUnitsCR()
-    {
-        while (!Input.GetKeyDown(KeyCode.Space))
-            yield return null;
-
-        unitsCanvas.enabled = false;
-        playerCanvas.enabled = true;
-
-        StartLevel();
-    }
-
-    private void StartLevel()
-    {
         if (UnitsData.instance)
             units = UnitsData.instance.units;
 
         Spawn();
         StartCoroutine(WaitForStart());
     }
-
-    private IEnumerator WaitForStart()
-    {
-        while (!Input.GetKeyDown(KeyCode.Space))
-            yield return null;
-
-        StartBattle();
-        yield break;
-    }
-
-    public void Spawn()
+    private void Spawn()
     {
         spawnPoints = new List<Transform>();
 
@@ -70,8 +43,13 @@ public class UnitsManager : MonoBehaviour
             for (int i = 0; i < unit.count; i++)
                 Instantiate(unit.prefab, spawnPoints[spawnIndex++].position, Quaternion.identity, transform);
         }
-     }
 
+        foreach (Transform t in transform)
+            drawing.allAgents.Add(t.GetComponent<Agent>());
+
+        foreach (Agent a in drawing.allAgents)
+            drawing.selectedAgents.Add(a);
+     }
     private void SuffleSpawnPoints()
     {
         for (int i = 0; i < spawnPoints.Count; i++)
@@ -84,30 +62,23 @@ public class UnitsManager : MonoBehaviour
     }
     #endregion
 
-    #region Methods
+    #region Start Battle
+    private IEnumerator WaitForStart()
+    {
+        while (!Input.GetKeyDown(KeyCode.Space))
+            yield return null;
+
+        StartBattle();
+        yield break;
+    }
     public void StartBattle()
     {
         StopAllCoroutines();
         UnitController[] controllers = FindObjectsOfType<UnitController>();
         startButton.gameObject.SetActive(false);
 
-		foreach(UnitController controller in controllers)
-          	 controller.StartBattle();
-    }
-    #endregion
-
-    #region Loosing
-    public Canvas loosCanvas;
-
-    private void Update()
-    {
-        if (transform.childCount <= 0)
-            LostGame();
-    }
-
-    private void LostGame()
-    {
-        loosCanvas.enabled = true;
+        foreach (UnitController controller in controllers)
+            controller.StartBattle();
     }
     #endregion
 }

@@ -10,7 +10,7 @@ public class UnitsHud : MonoBehaviour
     #endregion
 
     #region Initialization
-    private void OnEnable()
+    public void SetUpHud()
     {
         UnitController[] controllers = GetComponentsInChildren<UnitController>();
         foreach (UnitController controller in controllers)

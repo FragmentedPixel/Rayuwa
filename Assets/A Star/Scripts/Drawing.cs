@@ -38,19 +38,6 @@ public class Drawing : MonoBehaviour
     private void Start()
     {
         grid = FindObjectOfType<Grid>();
-
-        allAgents = FindObjectsOfType<Agent>().ToList();
-
-        for (int i = 0; i < allAgents.Count; i++)
-            if (allAgents[i].GetComponent<EnemyController>())
-            {
-                allAgents.Remove(allAgents[i]);
-                i--;
-            }
-
-        selectedAgents = new List<Agent>();
-        foreach (Agent a in allAgents)
-            selectedAgents.Add(a);
     }
     #endregion
 
