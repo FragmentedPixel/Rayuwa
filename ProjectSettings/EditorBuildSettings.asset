@@ -9,23 +9,26 @@ EditorBuildSettings:
     path: Assets/_Scenes/SplashScreen.unity
     guid: 378024b73eba3d846aefd99d25b5369c
   - enabled: 1
-    path: Assets/_Scenes/Menu.unity
+    path: Assets/_Scenes/Menu/Menu.unity
     guid: 815b99a4d51cde947ae709e976a4fb7a
   - enabled: 1
-    path: Assets/_Scenes/Settings.unity
+    path: Assets/_Scenes/Menu/Settings.unity
     guid: bc7152eda83742d48819a60d2d145570
   - enabled: 1
-    path: Assets/_Scenes/UnitsOptions.unity
-    guid: 72525935a7ca8f846ae4db16574a1f28
+    path: Assets/_Scenes/Menu/Upgrade.unity
+    guid: 48fdf06fa5ac0564187d6bcdaab09c64
   - enabled: 1
-    path: Assets/_Scenes/Level0.unity
-    guid: 1504f7e289a50414693d7e051c4b9619
+    path: Assets/_Scenes/Tutorials/Tutorial1.unity
+    guid: ffecf12aadd76a942879ad1930b83d3f
   - enabled: 1
-    path: Assets/_Scenes/Level1.unity
-    guid: 896bdcfeca1246a4e993d5115f2c470c
+    path: Assets/_Scenes/Tutorials/Tutorial2.unity
+    guid: 68b7ad06910f48046a7b5d8067ec2bdf
   - enabled: 1
-    path: Assets/_Scenes/Level2.unity
-    guid: 9d5a7edb3298130418d4697961da7f42
+    path: Assets/_Scenes/Tutorials/Tutorial3.unity
+    guid: 22c887fedee213840befec641f83737a
   - enabled: 1
-    path: Assets/_Scenes/Upgrade.unity
+    path: Assets/_Scenes/Tutorials/Tutorial4.unity
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/_Scenes/Levels/Level1.unity
+    guid: fe4a0ea8b99d47d43bbbb873d4ba070e
