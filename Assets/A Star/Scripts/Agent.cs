@@ -15,6 +15,7 @@ public class Agent : MonoBehaviour
     #endregion
 
     #region Path + Following
+    public GameObject display;
     [HideInInspector]public Color pathColor;
     public aPath path;
     private bool followingPath;
@@ -28,6 +29,7 @@ public class Agent : MonoBehaviour
     {
         pathColor = new Color(Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f));
         grid = FindObjectOfType<Grid>();
+        destination = transform.position;
     }
     #endregion
 
@@ -119,6 +121,11 @@ public class Agent : MonoBehaviour
             foreach (Node n in nodes)
                 path.nodes.Remove(n);
         }
+    }
+
+    public void DisplaySelected(bool value)
+    {
+        display.SetActive(value);
     }
 
     #endregion

@@ -14,9 +14,18 @@ public class ProgressData : MonoBehaviour
 
     private void Start()
     {
+        SetUpScreen();
+
         DontDestroyOnLoad(this);
         fileLocation = Application.persistentDataPath + "/progress.data";
         Load();
+    }
+
+    private void SetUpScreen()
+    {
+        int index = PlayerPrefsManager.GetResolution();
+        Screen.SetResolution(Screen.resolutions[index].width, Screen.resolutions[index].height, Screen.fullScreen);
+        QualitySettings.SetQualityLevel(PlayerPrefsManager.GetQualityLevel());
     }
 
     private void Save()

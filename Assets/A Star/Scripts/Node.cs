@@ -28,7 +28,7 @@ public class Node : IHeapItem<Node>
 		gridY = _gridY;
 		movementPenalty = _penalty;
 
-        pointRenderer = _wayPoint.GetComponent<MeshRenderer>();
+        pointRenderer = _wayPoint.GetComponentInChildren<MeshRenderer>();
 	}
     #endregion
 
@@ -48,10 +48,12 @@ public class Node : IHeapItem<Node>
     #endregion
 
     #region Methods
-    public void Activate(Color color)
+    public void Activate(Color color, Vector3 nextPos)
     {
         pointRenderer.enabled = true;
         pointRenderer.material.color = color;
+
+        pointRenderer.transform.parent.LookAt(nextPos);
     }
 
     public void Deactivate()

@@ -6,6 +6,10 @@ using UnityEngine.UI;
 public class UnitsManager : MonoBehaviour
 {
     #region Variabiles
+    public Canvas unitsCanvas;
+    public Canvas playerCanvas;
+
+    public Button startButton;
     public Transform spawnPointsParent;
 
 	private List<Transform> spawnPoints;
@@ -15,11 +19,37 @@ public class UnitsManager : MonoBehaviour
     #region Initialization
     public void Awake()
     {
+        unitsCanvas.enabled = true;
+        StartCoroutine(WaitForUnitsCR());
+    }
+
+    private IEnumerator WaitForUnitsCR()
+    {
+        while (!Input.GetKeyDown(KeyCode.Space))
+            yield return null;
+
+        unitsCanvas.enabled = false;
+        playerCanvas.enabled = true;
+
+        StartLevel();
+    }
+
+    private void StartLevel()
+    {
         if (UnitsData.instance)
-        {
             units = UnitsData.instance.units;
-            Spawn();
-        }
+
+        Spawn();
+        StartCoroutine(WaitForStart());
+    }
+
+    private IEnumerator WaitForStart()
+    {
+        while (!Input.GetKeyDown(KeyCode.Space))
+            yield return null;
+
+        StartBattle();
+        yield break;
     }
 
     public void Spawn()
@@ -31,6 +61,9 @@ public class UnitsManager : MonoBehaviour
 
         SuffleSpawnPoints();
         int spawnIndex = 0;
+
+        if (units == null)
+            return;
 
         foreach (Unit unit in units)
         {
@@ -54,7 +87,9 @@ public class UnitsManager : MonoBehaviour
     #region Methods
     public void StartBattle()
     {
-       UnitController[] controllers = FindObjectsOfType<UnitController>();
+        StopAllCoroutines();
+        UnitController[] controllers = FindObjectsOfType<UnitController>();
+        startButton.gameObject.SetActive(false);
 
 		foreach(UnitController controller in controllers)
           	 controller.StartBattle();

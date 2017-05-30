@@ -61,7 +61,8 @@ public abstract class UnitController : MonoBehaviour
         ammo = maxAmmo;
         anim = GetComponentInChildren<Animator>();
         agent = GetComponent<Agent>();
-        SetNewDestination(GameObject.Find("Crytsal").transform.position);
+
+        SetNewDestination(transform.position);
     }
     #endregion
 

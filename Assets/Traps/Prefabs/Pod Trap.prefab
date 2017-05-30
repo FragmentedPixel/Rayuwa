@@ -39,6 +39,7 @@ GameObject:
   - component: {fileID: 4153209950225790}
   - component: {fileID: 114908317776318338}
   - component: {fileID: 65544455849897716}
+  - component: {fileID: 65899389919316436}
   m_Layer: 8
   m_Name: Pod Trap
   m_TagString: Untagged
@@ -255,6 +256,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3, y: 1.6, z: 12}
   m_Center: {x: 0, y: 0.8, z: 0}
+--- !u!65 &65899389919316436
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1269413063334580}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 10.8}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &95652273711665786
 Animator:
   serializedVersion: 3
@@ -285,6 +298,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   part1: {fileID: 4938563620333432}
   part2: {fileID: 4135237916289748}
-  duration: 5
+  duration: 1.5
   rotationSpeed: 1
   fallingSpeed: 0.1

@@ -75,6 +75,22 @@ public class Drawing : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
+        UpdateDragging();
+        
+        if (!Physics.Raycast(ray, out hit))
+            return;
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            Agent hitAgent = GetAgentFromTransform(hit.transform);
+
+            if (!Input.GetKey(KeyCode.LeftShift) && !Input.GetKey(KeyCode.RightShift))
+                selectedAgents.Clear();
+
+            if (hitAgent != null)
+                selectedAgents.Add(hitAgent);
+        }
+
         if (selectedAgents.Count > 0)
         {
             if (Input.GetMouseButtonDown(1))
@@ -84,9 +100,10 @@ public class Drawing : MonoBehaviour
                 DrawWithMouse();
         }
 
-        if (!Physics.Raycast(ray, out hit))
-            return;
-
+        
+    }
+    private void UpdateDragging()
+    {
         mouseCurrentPoint = Input.mousePosition;
 
         if ((Input.GetMouseButton(0)) && (CheckIfMouseIsDragging()))
@@ -99,21 +116,12 @@ public class Drawing : MonoBehaviour
         }
 
         if (Input.GetMouseButtonDown(0))
-        {
             mouseDownPoint = mouseCurrentPoint;
-            Agent hitAgent = GetAgentFromTransform(hit.transform);
-
-            if (!Input.GetKey(KeyCode.LeftShift) && !Input.GetKey(KeyCode.RightShift))
-                selectedAgents.Clear();
-
-            if (hitAgent != null)
-                selectedAgents.Add(hitAgent);
-        }
 
         if (isdragging)
             UpdateBox();
-    }
 
+    }
     private void UpdateBox()
     {
         boxWidth = mouseDownPoint.x - mouseCurrentPoint.x;
@@ -132,7 +140,6 @@ public class Drawing : MonoBehaviour
 
         boxFinish = new Vector2(boxStart.x + Unsigned(boxWidth), boxStart.y - Unsigned(boxHeight));
     }
-   
     private void LateUpdate()
     {
         agentsInDrag.Clear();
@@ -282,8 +289,10 @@ public class Drawing : MonoBehaviour
                 continue;
 
             List<Node> pathNodes = selectedAgents[i].GetComponent<Agent>().path.nodes;
-            foreach (Node node in pathNodes)
-                node.Activate(selectedAgents[i].pathColor);
+
+            for (int j = 0; j < pathNodes.Count - 1; j++)
+                pathNodes[j].Activate(selectedAgents[i].pathColor, pathNodes[j + 1].worldPosition);
+
         }
     }
     #endregion

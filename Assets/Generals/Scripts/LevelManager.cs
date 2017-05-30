@@ -21,6 +21,7 @@ public class LevelManager : MonoBehaviour
     #region Changing Scene
     public void ChangeScene(string scene)
     {
+        Time.timeScale = 1f;
         audioS.PlayOneShot(buttonSound);
         StartCoroutine(ChangeSceneCR(scene));
     }
