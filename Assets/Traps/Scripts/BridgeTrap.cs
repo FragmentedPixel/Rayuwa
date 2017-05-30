@@ -13,7 +13,6 @@ public class BridgeTrap : Trap
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.transform.name);
 
         if(other.CompareTag("Unit"))
         {
