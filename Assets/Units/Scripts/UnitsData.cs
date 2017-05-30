@@ -11,7 +11,7 @@ public class UnitsData : MonoBehaviour
     public int maxUnits;
     public List<Unit> unitsList;
 
-    private void Start()
+    private void Awake()
     {
         instance = this;
         DontDestroyOnLoad(this);

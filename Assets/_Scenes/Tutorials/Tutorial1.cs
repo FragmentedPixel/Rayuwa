@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Tutorial : MonoBehaviour
+public class Tutorial1 : MonoBehaviour
 {
     #region Variabiles
     public Text tutorialText;
@@ -18,6 +18,10 @@ public class Tutorial : MonoBehaviour
     {
         drawing = FindObjectOfType<Drawing>();
         StartCoroutine(TutorialCR());
+
+        FindObjectOfType<UnitsManager>().StartLevel();
+        FindObjectOfType<UnitsHud>().SetUpHud();
+        battleButton.gameObject.SetActive(false);
     }
     #endregion
 
@@ -39,10 +43,7 @@ public class Tutorial : MonoBehaviour
         yield return StartCoroutine(SetPathCR());
         yield return waitTime;
         yield return StartCoroutine(StartBattleCR());
-        tutorialText.text = "Tutorial done. Good luck and have fun.";
-        yield return new WaitForSeconds(3f);
-
-        FindObjectOfType<LevelManager>().ChangeScene("Level1");
+        tutorialText.text = "Well done. Now go to the castel.";
     }
     #endregion
 

@@ -265,13 +265,17 @@ public class Drawing : MonoBehaviour
     {
         foreach (Node node in grid.grid)
             node.Deactivate();
+        
+        for (int i = 0; i < allAgents.Count; i++)
+            allAgents[i].DisplaySelected(false);
 
         if (selectedAgents.Count <= 0)
             return;
 
         for(int i = 0; i < selectedAgents.Count; i++)
         {
-            
+            selectedAgents[i].DisplaySelected(true);
+
             if (selectedAgents[i].GetComponent<Agent>().path == null)
                 continue;
 
@@ -279,7 +283,6 @@ public class Drawing : MonoBehaviour
 
             for (int j = 0; j < pathNodes.Count - 1; j++)
                 pathNodes[j].Activate(selectedAgents[i].pathColor, pathNodes[j + 1].worldPosition);
-
         }
     }
     #endregion

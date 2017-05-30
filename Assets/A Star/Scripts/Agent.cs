@@ -15,7 +15,7 @@ public class Agent : MonoBehaviour
     #endregion
 
     #region Path + Following
-    public GameObject display;
+    public MeshRenderer selectedRenderer;
     [HideInInspector]public Color pathColor;
     public aPath path;
     private bool followingPath;
@@ -30,6 +30,9 @@ public class Agent : MonoBehaviour
         pathColor = new Color(Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f));
         grid = FindObjectOfType<Grid>();
         destination = transform.position;
+
+        if (selectedRenderer != null)
+            selectedRenderer.material.color = pathColor;
     }
     #endregion
 
@@ -110,7 +113,7 @@ public class Agent : MonoBehaviour
         if (path != null)
         {
             Node currentNode = grid.NodeFromWorldPoint(transform.position);
-            currentNode.walkable = false;
+            //currentNode.walkable = false;
             List<Node> nodes = grid.GetNeighbours(currentNode);
 
             if (oldNode != currentNode && oldNode != null)
@@ -125,7 +128,7 @@ public class Agent : MonoBehaviour
 
     public void DisplaySelected(bool value)
     {
-        display.SetActive(value);
+        selectedRenderer.enabled = value;
     }
 
     #endregion

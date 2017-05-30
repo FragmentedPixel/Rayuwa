@@ -35,13 +35,13 @@ public class UnitsManager : MonoBehaviour
         SuffleSpawnPoints();
         int spawnIndex = 0;
 
-        if (units == null)
-            return;
-
-        foreach (Unit unit in units)
+        if (units != null)
         {
-            for (int i = 0; i < unit.count; i++)
-                Instantiate(unit.prefab, spawnPoints[spawnIndex++].position, Quaternion.identity, transform);
+            foreach (Unit unit in units)
+            {
+                for (int i = 0; i < unit.count; i++)
+                    Instantiate(unit.prefab, spawnPoints[spawnIndex++].position, Quaternion.identity, transform);
+            }
         }
 
         foreach (Transform t in transform)
