@@ -56,6 +56,30 @@ public class Agent : MonoBehaviour
             yield break;
 
         followingPath = true;
+
+        for(int i = path.nodes.Count - 1; i > 0; i--)
+        {
+            Vector3 finalPosition = path.nodes[i].worldPosition;
+            while(finalPosition != transform.position)
+            {
+                if (followingPath == false)
+                    yield break;
+
+                transform.position = Vector3.MoveTowards(transform.position, finalPosition, speed * Time.deltaTime);
+                yield return null;
+            }
+        }
+
+        followingPath = false;
+    }
+
+    /* Original
+    private IEnumerator FollowPath()
+    {
+        if (isIdle())
+            yield break;
+
+        followingPath = true;
         int pathIndex = 0;
         transform.LookAt(path.lookPoints[0]);
 
@@ -98,6 +122,7 @@ public class Agent : MonoBehaviour
 
         }
     }
+    */
     #endregion
 
     #region Gizmos
@@ -110,7 +135,7 @@ public class Agent : MonoBehaviour
     private Node oldNode;
     private void Update()
     {
-        if (path != null)
+        if (true == false) //(path != null)
         {
             Node currentNode = grid.NodeFromWorldPoint(transform.position);
             //currentNode.walkable = false;
