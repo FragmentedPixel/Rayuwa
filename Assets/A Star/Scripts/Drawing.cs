@@ -11,8 +11,10 @@ public class Drawing : MonoBehaviour
     #region Dragging
     public bool isdragging;
     public float dragThreshhold = 10f;
-    private Vector2 mouseDownPoint, mouseCurrentPoint;
     public Texture boxOutline;
+
+    private Vector2 mouseDownPoint, mouseCurrentPoint;
+    private RaycastHit hit;
     #endregion
 
     #region UnitsLists
@@ -28,10 +30,8 @@ public class Drawing : MonoBehaviour
 
     #region Showing Path
     public GameObject wayPointPrefab;
-    public LayerMask walkableMask;
     private Grid grid;
     #endregion
-
     #endregion
 
     #region Initialization
@@ -48,47 +48,39 @@ public class Drawing : MonoBehaviour
             isdragging = false;
 
         if (isdragging)
-        {
             GUI.DrawTexture(new Rect(boxLeft, boxTop, boxWidth, boxHeight), boxOutline);
-        }
     }
     #endregion
 
     #region Updates
     private void Update()
     {
-        CheckForUnitsUpdates();
         DrawSelectedPaths();
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-
         UpdateDragging();
-        
+
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (!Physics.Raycast(ray, out hit))
             return;
 
-        if (Input.GetMouseButtonDown(0))
-        {
-            Agent hitAgent = GetAgentFromTransform(hit.transform);
-
-            if (!Input.GetKey(KeyCode.LeftShift) && !Input.GetKey(KeyCode.RightShift))
-                selectedAgents.Clear();
-
-            if (hitAgent != null)
-                selectedAgents.Add(hitAgent);
-        }
-
-        if (selectedAgents.Count > 0)
-        {
-            if (Input.GetMouseButtonDown(1))
-                DrawShortest();
-
-            if (Input.GetMouseButton(1))
-                DrawWithMouse();
-        }
-
-        
+        UpdateSelecting();
+        UpdatePathing();
     }
+    private void LateUpdate()
+    {
+        agentsInDrag.Clear();
+
+        if ((!isdragging) || (allAgents.Count <= 0))
+            return;
+
+        for (int i = 0; i < allAgents.Count; i++)
+        {
+            Agent UnitObj = allAgents[i] as Agent;
+
+            if ((!agentsInDrag.Contains(UnitObj)) && (UnitWithinDrag(ScreenPosition(UnitObj.gameObject))))
+                agentsInDrag.Add(UnitObj);
+        }
+    }
+
     private void UpdateDragging()
     {
         mouseCurrentPoint = Input.mousePosition;
@@ -127,26 +119,31 @@ public class Drawing : MonoBehaviour
 
         boxFinish = new Vector2(boxStart.x + Unsigned(boxWidth), boxStart.y - Unsigned(boxHeight));
     }
-    private void LateUpdate()
+    private void UpdateSelecting()
     {
-        agentsInDrag.Clear();
-
-        if ((!isdragging) || (allAgents.Count <= 0))
-            return;
-
-        for (int i = 0; i < allAgents.Count; i++)
+        if (Input.GetMouseButtonDown(0))
         {
-            Agent UnitObj = allAgents[i] as Agent;
+            Agent hitAgent = GetAgentFromTransform(hit.transform);
 
-            if ((!agentsInDrag.Contains(UnitObj)) && (UnitWithinDrag(ScreenPosition(UnitObj.gameObject))))
-                agentsInDrag.Add(UnitObj);
+            if (!Input.GetKey(KeyCode.LeftShift) && !Input.GetKey(KeyCode.RightShift))
+                selectedAgents.Clear();
+
+            if (hitAgent != null)
+                selectedAgents.Add(hitAgent);
         }
     }
+    private void UpdatePathing()
+    {
+        if (selectedAgents.Count <= 0)
+            return;
 
+        if (Input.GetMouseButtonDown(1))
+            DrawShortest();
+    }
     #endregion
 
     #region Utility
-    private void CheckForUnitsUpdates()
+    private void UnselectUnits()
     {
         for(int i = 0; i < allAgents.Count; i++)
         {
@@ -157,10 +154,16 @@ public class Drawing : MonoBehaviour
                 allAgents.Remove(agent);
                 if (selectedAgents.Contains(agent))
                     selectedAgents.Remove(agent);
+                if (agentsInDrag.Contains(agent))
+                    agentsInDrag.Remove(agent);
             }
+            else
+                agent.DisplaySelected(false);
         }
-    }
 
+        foreach (Node node in grid.grid)
+            node.Deactivate();
+    }
     private Agent GetAgentFromTransform(Transform t)
     {
         UnitHealth unitHealth = t.GetComponent<UnitHealth>();
@@ -169,12 +172,10 @@ public class Drawing : MonoBehaviour
         else
             return unitHealth.transform.parent.GetComponent<Agent>();
     }
-
-    float Unsigned(float val)
+    private float Unsigned(float val)
     {
         return (val > 0f) ? (val) : (-val);
     }
-
     private bool CheckIfMouseIsDragging()
     {
         if (mouseCurrentPoint.x - dragThreshhold >= mouseDownPoint.x || mouseCurrentPoint.y - dragThreshhold >= mouseDownPoint.y  ||
@@ -183,29 +184,25 @@ public class Drawing : MonoBehaviour
         else
             return false;
     }
-
-    public bool UnitWithinScreenSpace(Vector2 UnitScreenPos)
+    private bool UnitWithinScreenSpace(Vector2 UnitScreenPos)
     {
         if ((UnitScreenPos.x < Screen.width && UnitScreenPos.y < Screen.height) && (UnitScreenPos.x > 0f && UnitScreenPos.y > 0f))
             return true;
         else
             return false;
     }
-
-    public bool UnitWithinDrag(Vector2 UnitScreenPos)
+    private bool UnitWithinDrag(Vector2 UnitScreenPos)
     {
         if ((UnitScreenPos.x > boxStart.x && UnitScreenPos.y < boxStart.y) && (UnitScreenPos.x < boxFinish.x && UnitScreenPos.y > boxFinish.y))
             return true;
         else
             return false;
     }
-
     private Vector2 ScreenPosition(GameObject obj)
     {
         return Camera.main.WorldToScreenPoint(obj.transform.position);
     }
-
-    public void PutUnitsFromDragIntoSelectedUnits()
+    private void PutUnitsFromDragIntoSelectedUnits()
     {
         if (agentsInDrag.Count <= 0)
             return;
@@ -220,18 +217,11 @@ public class Drawing : MonoBehaviour
 
         agentsInDrag.Clear();
     }
-
     #endregion
 
     #region Pathing
     private void DrawShortest()
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-
-        if (!Physics.Raycast(ray, out hit))
-            return;
-
         EnemyHealth targetHealth = hit.transform.GetComponent<EnemyHealth>();
         if(targetHealth)
         {
@@ -252,34 +242,19 @@ public class Drawing : MonoBehaviour
             
         foreach (Agent unitAgent in selectedAgents)
             unitAgent.GetComponent<UnitController>().SetNewDestination(hit.point);
-
-        
     }
-    
-    private void DrawWithMouse()
-    {
-        //TODO: PLS ADD BUT LATER
-    }
-
     private void DrawSelectedPaths()
     {
-        foreach (Node node in grid.grid)
-            node.Deactivate();
-        
-        for (int i = 0; i < allAgents.Count; i++)
-            allAgents[i].DisplaySelected(false);
-
-        if (selectedAgents.Count <= 0)
-            return;
+        UnselectUnits();
 
         for(int i = 0; i < selectedAgents.Count; i++)
         {
             selectedAgents[i].DisplaySelected(true);
 
-            if (selectedAgents[i].GetComponent<Agent>().path == null)
+            if (selectedAgents[i].pathNodes == null)
                 continue;
 
-            List<Node> pathNodes = selectedAgents[i].GetComponent<Agent>().path.nodes;
+            List<Node> pathNodes = selectedAgents[i].pathNodes;
 
             for (int j = 0; j < pathNodes.Count - 1; j++)
                 pathNodes[j].Activate(selectedAgents[i].pathColor, pathNodes[j + 1].worldPosition);

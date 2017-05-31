@@ -3,8 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 
-public class Pathfinding : MonoBehaviour {
-
+public class Pathfinding : MonoBehaviour
+{
     #region Initialization
     private Grid grid;
 	
@@ -66,7 +66,7 @@ public class Pathfinding : MonoBehaviour {
 		if (pathSuccess)
         {
             pathNodes = RetraceNodes(startNode, targetNode);
-			waypoints = NodesToPath(pathNodes);
+			waypoints = SimplifyPath(pathNodes);
 			pathSuccess = waypoints.Length > 0;
 		}
 
@@ -86,16 +86,9 @@ public class Pathfinding : MonoBehaviour {
             pathNodes.Add(currentNode);
             currentNode = currentNode.parent;
         }
-
+        pathNodes.Reverse();
         return pathNodes;
     }
-	private Vector3[] NodesToPath(List<Node> pathNodes)
-    {
-		Vector3[] waypoints = SimplifyPath(pathNodes);
-		Array.Reverse(waypoints);
-		return waypoints;
-		
-	}
 	private Vector3[] SimplifyPath(List<Node> path)
     {
 		List<Vector3> waypoints = new List<Vector3>();
@@ -125,5 +118,4 @@ public class Pathfinding : MonoBehaviour {
             return 14 * dstX + 10 * (dstY - dstX);
     }
     #endregion
-
 }

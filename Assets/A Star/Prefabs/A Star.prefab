@@ -88,7 +88,7 @@ MonoBehaviour:
   wayPointPrefab: {fileID: 1843856094298706, guid: 9f0f80300ccdbe74d9502689403d69ff,
     type: 2}
   nodeRadius: 0.5
-  obstacleProximityPenalty: 10
+  obstacleProximityPenalty: 20
   unwalkableMask:
     serializedVersion: 2
     m_Bits: 512

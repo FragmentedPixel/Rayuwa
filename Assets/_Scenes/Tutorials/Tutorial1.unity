@@ -1511,41 +1511,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114506038193766910, guid: d3ed5fd9a0a3e6d40a051064ed4a73ac,
-        type: 2}
-      propertyPath: displayGridGizmos
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114507247774271236, guid: d3ed5fd9a0a3e6d40a051064ed4a73ac,
-        type: 2}
-      propertyPath: boxStyle.m_Border.m_Left
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114507247774271236, guid: d3ed5fd9a0a3e6d40a051064ed4a73ac,
-        type: 2}
-      propertyPath: boxStyle.m_Border.m_Right
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114507247774271236, guid: d3ed5fd9a0a3e6d40a051064ed4a73ac,
-        type: 2}
-      propertyPath: boxStyle.m_Border.m_Top
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114507247774271236, guid: d3ed5fd9a0a3e6d40a051064ed4a73ac,
-        type: 2}
-      propertyPath: boxStyle.m_Border.m_Bottom
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114507247774271236, guid: d3ed5fd9a0a3e6d40a051064ed4a73ac,
-        type: 2}
-      propertyPath: boxStyle.m_StretchHeight
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114507247774271236, guid: d3ed5fd9a0a3e6d40a051064ed4a73ac,
-        type: 2}
-      propertyPath: boxStyle.m_Normal.m_Background
-      value: 
-      objectReference: {fileID: 2800000, guid: ca00d9bce8eab3846bc49122f07433bd, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d3ed5fd9a0a3e6d40a051064ed4a73ac, type: 2}
   m_IsPrefabParent: 0

@@ -55,7 +55,6 @@ public class Node : IHeapItem<Node>
 
         pointRenderer.transform.parent.LookAt(nextPos);
     }
-
     public void Deactivate()
     {
         pointRenderer.enabled = false;

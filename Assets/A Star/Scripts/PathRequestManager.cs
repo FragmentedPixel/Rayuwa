@@ -56,8 +56,6 @@ public class PathRequestManager : MonoBehaviour
 		}
 	}
     #endregion
-
-
 }
 
 #region Result + Request Structures
@@ -77,7 +75,6 @@ public struct PathResult
 	}
 
 }
-
 public struct PathRequest
 {
 	public Vector3 pathStart;
