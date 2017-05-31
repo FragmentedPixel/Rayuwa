@@ -3402,7 +3402,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b43abcac1685794188e8286e7f81fe4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tutorialText: {fileID: 0}
+  tutorialText: {fileID: 530285318}
 --- !u!1001 &498731973
 Prefab:
   m_ObjectHideFlags: 0
@@ -3812,9 +3812,45 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 492444073}
+    - target: {fileID: 224204166953150124, guid: 13c67f4ed06527d4c81521c4a63c528c,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224204166953150124, guid: 13c67f4ed06527d4c81521c4a63c528c,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224204166953150124, guid: 13c67f4ed06527d4c81521c4a63c528c,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 403.06122
+      objectReference: {fileID: 0}
+    - target: {fileID: 224204166953150124, guid: 13c67f4ed06527d4c81521c4a63c528c,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224204166953150124, guid: 13c67f4ed06527d4c81521c4a63c528c,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 224204166953150124, guid: 13c67f4ed06527d4c81521c4a63c528c,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 13c67f4ed06527d4c81521c4a63c528c, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &530285318 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114981957618705236, guid: 13c67f4ed06527d4c81521c4a63c528c,
+    type: 2}
+  m_PrefabInternal: {fileID: 530285317}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &571025425
 GameObject:
   m_ObjectHideFlags: 0

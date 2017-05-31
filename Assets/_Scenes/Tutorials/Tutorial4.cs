@@ -11,6 +11,13 @@ public class Tutorial4 : MonoBehaviour
     private bool selectedUnits;
     #endregion
 
+    #region Initialization
+    private void Start()
+    {
+        StartCoroutine(TutorialCR());
+    }
+    #endregion
+
     #region Tutorial Core
     private IEnumerator TutorialCR()
     {
@@ -24,8 +31,10 @@ public class Tutorial4 : MonoBehaviour
         yield return waitTime;
         yield return StartCoroutine(AmmoBlinkCR());
         yield return waitTime;
+        yield return StartCoroutine(GoodLuckCR());
+        yield return waitTime;
 
-        tutorialText.text = "Good luck and pls give us 3 weeks intership.";
+        tutorialText.transform.GetComponentInParent<Canvas>().enabled = false;
     }
     #endregion
 
@@ -55,6 +64,13 @@ public class Tutorial4 : MonoBehaviour
     private IEnumerator AmmoBlinkCR()
     {
         tutorialText.text = "When a unit is out of ammo, their ammo start blinking and they automatically go to reload.";
+
+        while (!Input.GetMouseButton(0) && !Input.GetKey(KeyCode.Space))
+            yield return null;
+    }
+    private IEnumerator GoodLuckCR()
+    {
+        tutorialText.text = "Good luck and pls give us 3 weeks intership.";
 
         while (!Input.GetMouseButton(0) && !Input.GetKey(KeyCode.Space))
             yield return null;
