@@ -155,7 +155,8 @@ public class Agent : MonoBehaviour
     public void Resume()
     {
         StopCoroutine("FollowPath");
-        StartCoroutine("FollowPath");
+        if(path != null)
+            StartCoroutine("FollowPath");
     }
 
     public void ClearPath()
