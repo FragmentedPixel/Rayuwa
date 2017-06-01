@@ -10,6 +10,7 @@ public abstract class  EnemyController : MonoBehaviour
     #region Targeting + Components
     [HideInInspector] public Animator anim;
     [HideInInspector] public Agent agent;
+    [HideInInspector] public AudioSource audioS;
     public Transform target;
     [HideInInspector] public Transform lastTarget;
     private List<Transform> targetsInRange = new List<Transform>();
@@ -23,6 +24,7 @@ public abstract class  EnemyController : MonoBehaviour
     public float attackRange = 3f;
     public float attackSpeed = 1f;
     public float attackDmg = 10f;
+    public AudioClip attackSound;
 
     [Header("Ammo")]
     public int maxAmmo = 10;
@@ -59,6 +61,10 @@ public abstract class  EnemyController : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         agent = GetComponent<Agent>();
+        audioS = GetComponent<AudioSource>();
+        audioS.volume = PlayerPrefsManager.GetMasterVolume();
+
+        currentAmmo = maxAmmo;
     }
     #endregion
 

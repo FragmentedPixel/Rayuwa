@@ -9,13 +9,6 @@ public class RangedEnemyController : EnemyController
     public GameObject projectile;
     public Transform shootingPoint;
 
-    public void Start()
-    {
-        anim = GetComponent<Animator>();
-        agent = GetComponent<Agent>();
-        currentAmmo = maxAmmo;
-    }
-
     public override void AttackTarget()
     {
         anim.SetTrigger("RangedAttack");
@@ -23,6 +16,7 @@ public class RangedEnemyController : EnemyController
     
     public void RangedHit()
     {
+        audioS.PlayOneShot(attackSound);
         GameObject projectileGO = Instantiate(projectile, shootingPoint.position, shootingPoint.rotation);
         projectileGO.GetComponent<EnemyProjectile>().FireProjectile(target, attackDmg, transform);
         currentAmmo--;
