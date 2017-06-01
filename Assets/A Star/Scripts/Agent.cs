@@ -42,14 +42,17 @@ public class Agent : MonoBehaviour
     #region Following Path
     public void OnPathFound(List<Node> pathNodes, Vector3[] waypoints, bool pathSuccessful)
     {
-		if (pathSuccessful)
+        if (pathSuccessful)
         {
             this.pathNodes = pathNodes;
             this.waypoints = waypoints;
-
-			StopCoroutine("FollowPath");
-			StartCoroutine("FollowPath");
-		}
+            try
+            {
+                StopCoroutine("FollowPath");
+                StartCoroutine("FollowPath");
+            }
+            catch { }
+        }
 	}
     private IEnumerator FollowPath()
     {
