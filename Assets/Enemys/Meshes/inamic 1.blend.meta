@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: bd885cdf8446a5548a76a49fb5e18589
-timeCreated: 1496088447
+guid: b5284f9d3eb2cba4bba3ae9e6f7ead31
+timeCreated: 1496337053
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -43,6 +43,9 @@ ModelImporter:
     400034: Upper_Leg_R
     4300000: Cylinder
     7400000: Default Take
+    7400002: Attack
+    7400004: Idle
+    7400006: Walk
     9500000: //RootNode
     13700000: Cylinder
   materials:

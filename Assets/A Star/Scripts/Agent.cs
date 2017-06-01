@@ -67,6 +67,7 @@ public class Agent : MonoBehaviour
                     yield break;
 
                 transform.position = Vector3.MoveTowards(transform.position, finalPosition, speed * Time.deltaTime);
+                transform.LookAt(finalPosition);
                 yield return null;
             }
         }
