@@ -76,20 +76,6 @@ public class Agent : MonoBehaviour
     #endregion
 
     #region Gizmos
-    private Node oldNode;
-    private void Update()
-    {
-        if (true == false) //(path != null)
-        {
-            Node currentNode = grid.NodeFromWorldPoint(transform.position);
-            //currentNode.walkable = false;
-            
-            if (oldNode != currentNode && oldNode != null)
-                oldNode.walkable = true;
-
-            oldNode = currentNode;
-        }
-    }
     public void DisplaySelected(bool value)
     {
         selectedRenderer.enabled = value;
@@ -103,8 +89,6 @@ public class Agent : MonoBehaviour
 	}
     public void MoveToDestination(Vector3 newDestination)
     {
-        Node currentNode = grid.NodeFromWorldPoint(transform.position);
-        currentNode.walkable = true;
         destination = newDestination;
         PathRequestManager.RequestPath(new PathRequest(transform.position, destination, OnPathFound));
     }

@@ -5,21 +5,45 @@ using UnityEngine.UI;
 
 public class UpgradeScript : MonoBehaviour {
 
-    public Text[] text;
-  	// Use this for initialization
-	void Start ()
+    public Transform[] images;
+   
+    private void Start()
     {
-        for (int i = 0; i < text.Length; i++)
-            text[i].text = UpgradesManager.instance.PresentUpgrades(i).ToString();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+        for (int i = 0; i < images.Length; i++)
+            new UpgradeImage(images[i], i);
+
+    }
 }
 
-public class UpgradeText
+public class UpgradeImage
+{
+    public Text upgradeLevel;
+    public Text upgradeCost;
+    public Button upgradeButton;
+
+    public UpgradeImage(Transform parent, int i)
+    {
+        upgradeLevel = parent.GetChild(0).GetComponent<Text>();
+        upgradeCost = parent.GetChild(1).GetComponent<Text>();
+        upgradeButton = parent.GetChild(2).GetComponent<Button>();
+
+        upgradeLevel.text = UpgradesManager.instance.upgradeArray[i].ToString();
+        upgradeCost.text = UpgradesManager.instance.UpgradeCost(i).ToString();
+        upgradeButton.onClick.AddListener(delegate { UpgradesManager.instance.ApplyUpgrade(i); });
+    }
+}
+/*public Text[] text;
+
+   private void Start ()
+   {
+       for (int i = 0; i < text.Length; i++)
+           text[i].text = UpgradesManager.instance.upgradeArray[i].ToString();
+   }
+   */
+
+
+/*
+ public class UpgradeText
 {
     public Text upgradeText;
     public int upgradeInt;
@@ -29,4 +53,5 @@ public class UpgradeText
         upgradeText = _upgradeText;
         upgradeInt = _upgradeInt;
     }
-}
+} 
+ * */
