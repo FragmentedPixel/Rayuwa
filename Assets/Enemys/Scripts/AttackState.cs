@@ -17,7 +17,7 @@ public  class AttackState : iEnemyState
         controller.anim.SetBool("Walking", false);
 
         if (controller.target != null)
-            AttackTarget();
+            Attack();
         else
             controller.UpdateTarget();
 	}
@@ -29,7 +29,7 @@ public  class AttackState : iEnemyState
 
     #region Methods
 
-    private void AttackTarget()
+    private void Attack()
     {
         if(!controller.Ammo())
         {

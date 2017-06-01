@@ -8,6 +8,6 @@ public class UnitProjectile : Projectile
     public override void DamageTarget()
     {
         EnemyHealth enemyHealth = damageTarget.GetComponent<EnemyHealth>();
-        enemyHealth.Hit(damage);
+        enemyHealth.Hit(damage,attacker);
     }
 }

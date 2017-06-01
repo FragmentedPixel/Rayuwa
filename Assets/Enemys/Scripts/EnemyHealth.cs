@@ -9,6 +9,7 @@ public class EnemyHealth : MonoBehaviour
     #region Health
     public float MaxHealth=500;
 	private float currentHealth;
+    private EnemyController controller;
     #endregion
     #region UI
     public Image background;
@@ -21,7 +22,8 @@ public class EnemyHealth : MonoBehaviour
     private void Start () 
 	{	
 		canvas = background.GetComponentInParent<Canvas>();
-		currentHealth = MaxHealth;	
+		currentHealth = MaxHealth;
+        controller = GetComponentInParent<EnemyController>();
 	}
     #endregion
 
@@ -33,11 +35,16 @@ public class EnemyHealth : MonoBehaviour
     #endregion
 
     #region HIt
-    public void Hit(float damage)
+    public void Hit(float damage,Transform attacker)
 	{
 		currentHealth -= damage;
 		healthImage.fillAmount = currentHealth / MaxHealth;
 
+        if (controller.target.tag != "Units")
+        {
+            controller.target = attacker;
+            controller.currentState.ToChaseState();
+        }
         if (healthImage.fillAmount < 0.2)
 			healthImage.color = Color.red;
 		if (currentHealth <= 0)
