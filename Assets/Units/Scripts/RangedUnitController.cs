@@ -23,8 +23,12 @@ public class RangedUnitController : UnitController
     }
     public void FireProjectile()
     {
+        Transform hitPlace = target;
+        for (int i = 0; i < target.childCount; i++)
+            if (target.GetChild(i).tag == "HitPlace")
+                hitPlace = target.GetChild(i).transform;
         GameObject projectileGO = Instantiate(projectile, shootingPoint.position, shootingPoint.rotation);
-        projectileGO.GetComponent<UnitProjectile>().FireProjectile(target, fightDmg, transform);
+        projectileGO.GetComponent<UnitProjectile>().FireProjectile(hitPlace, fightDmg, transform);
     }
     #endregion
 }

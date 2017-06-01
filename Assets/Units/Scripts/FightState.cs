@@ -37,7 +37,7 @@ public class FightState : iUnitState
         controller.LookAtTarget();
         controller.agent.Stop();
         controller.agent.ClearPath();
-
+        Debug.Log(controller.target);
         if (controller.DistanceToTarget() > controller.fightRange)
 			ToAggroState ();
 		else if(lastAttack + controller.fightSpeed<Time.time)
