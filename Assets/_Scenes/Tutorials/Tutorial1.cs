@@ -34,6 +34,8 @@ public class Tutorial1 : MonoBehaviour
         yield return waitTime;
         yield return StartCoroutine(MoveCameraCR());
         yield return waitTime;
+        yield return StartCoroutine(ChangeCameraCR());
+        yield return waitTime;
         yield return StartCoroutine(SelectCR());
         yield return waitTime;
         yield return StartCoroutine(ShiftSelectCR());
@@ -64,6 +66,19 @@ public class Tutorial1 : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
                 moved = true;
+
+            yield return null;
+        }
+    }
+    private IEnumerator ChangeCameraCR()
+    {
+        tutorialText.text = "Change the camera by using C.";
+        bool changed = false;
+
+        while (!changed)
+        {
+            if (Input.GetKey(KeyCode.C))
+                changed = true;
 
             yield return null;
         }

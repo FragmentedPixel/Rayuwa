@@ -17,7 +17,8 @@ public class MeleeUnitController : UnitController
     }
     public void SwordHit()
     {
-        target.GetComponent<EnemyHealth>().Hit(fightDmg,transform);
+        if(target != null)
+            target.GetComponent<EnemyHealth>().Hit(fightDmg,transform);
     }
     #endregion
 }
