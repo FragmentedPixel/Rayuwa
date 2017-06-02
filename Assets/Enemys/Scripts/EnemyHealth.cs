@@ -37,10 +37,11 @@ public class EnemyHealth : MonoBehaviour
     #region HIt
     public void Hit(float damage,Transform attacker)
 	{
-		currentHealth -= damage;
+        attacker= attacker.GetComponentInChildren<UnitHealth>().transform;
+        currentHealth -= damage;
 		healthImage.fillAmount = currentHealth / MaxHealth;
 
-        if (controller.target.tag != "Units")
+        if (!controller.target.CompareTag("Unit"))
         {
             controller.target = attacker;
             controller.currentState.ToChaseState();

@@ -11101,6 +11101,16 @@ Prefab:
       propertyPath: m_Name
       value: Melee Unit (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 82969632937384794, guid: ccd4db20c3cd25749ad7c3e177324b0a,
+        type: 2}
+      propertyPath: panLevelCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 82969632937384794, guid: ccd4db20c3cd25749ad7c3e177324b0a,
+        type: 2}
+      propertyPath: reverbZoneMixCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ccd4db20c3cd25749ad7c3e177324b0a, type: 2}
   m_IsPrefabParent: 0

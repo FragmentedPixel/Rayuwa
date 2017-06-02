@@ -50,7 +50,7 @@ public class GameManager : MonoBehaviour
     {
         UnitsManager unitsManager = FindObjectOfType<UnitsManager>();
 
-        while (unitsManager.transform.childCount >= 0)
+        while (unitsManager.transform.childCount > 0)
             yield return null;
 
         looseCanvas.enabled = true;
