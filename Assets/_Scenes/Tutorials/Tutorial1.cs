@@ -50,12 +50,11 @@ public class Tutorial1 : MonoBehaviour
     #region Tutorial Coroutines
     private IEnumerator IntroCR()
     {
-        tutorialText.text = "Welcome to Rayuwa. Your forests are controlled by the magic inside the crystal. In order free the nature, you must reach it.";
+        tutorialText.text = "Welcome to Rayuwa. Your forests are controlled by the magic inside the crystal. In order free the nature, you must reach it. Click to continue.";
 
         while (!Input.GetMouseButton(0) && !Input.GetKey(KeyCode.Space))
             yield return null;
     }
-
     private IEnumerator MoveCameraCR()
     {
         tutorialText.text = "Move the camera by pressing A or D. To Rotate it, move your cursor at the edges of the screen.";
@@ -69,7 +68,6 @@ public class Tutorial1 : MonoBehaviour
             yield return null;
         }
     }
-
     private IEnumerator SelectCR()
     {
         tutorialText.text = "Select a unit by clicking on it.";
@@ -78,13 +76,12 @@ public class Tutorial1 : MonoBehaviour
 
         while (!selected)
         {
-            if (drawing.selectedAgents.Count > 0)
+            if (drawing.selectedAgents.Count > 0 && !drawing.isdragging)
                 selected = true;
 
             yield return null;
         }
     }
-
     private IEnumerator ShiftSelectCR()
     {
         tutorialText.text = "Select more units by Shift + click.";
@@ -98,7 +95,6 @@ public class Tutorial1 : MonoBehaviour
             yield return null;
         }
     }
-
     private IEnumerator DragCR()
     {
         tutorialText.text = "Hold the left mouse button to drag for a faster selection.";
@@ -114,22 +110,23 @@ public class Tutorial1 : MonoBehaviour
         }
 
     }
-
     private IEnumerator SetPathCR()
     {
         tutorialText.text = "Set a path for the selected units by right clicking on the ground or click an enemy to target it.";
         
         bool pathGiven = false;
-        
+
         while(!pathGiven)
         {
-            if (Input.GetMouseButtonDown(1) && drawing.selectedAgents.Count > 0)
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if (Input.GetMouseButtonDown(1) && drawing.selectedAgents.Count > 0 && Physics.Raycast(ray,out hit) && LayerMask.NameToLayer("Walkable") == hit.transform.gameObject.layer)
                 pathGiven = true;
 
             yield return null;
         }
     }
-
     private IEnumerator StartBattleCR()
     {
         tutorialText.text = "Start the battle by pressing the button.";

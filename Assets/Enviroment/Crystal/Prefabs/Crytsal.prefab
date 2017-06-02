@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33415679234865332}
   - component: {fileID: 23273402320342448}
   - component: {fileID: 95880830160532268}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: crystal
   m_TagString: Untagged
   m_Icon: {fileID: 0}

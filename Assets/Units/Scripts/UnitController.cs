@@ -68,7 +68,6 @@ public abstract class UnitController : MonoBehaviour
     private void Update()
     {
         currentState.Update();
-        Debug.Log(currentState);
     }
     public void HitByEnemy(Transform attacker)
     {
