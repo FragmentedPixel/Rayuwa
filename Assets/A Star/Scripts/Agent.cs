@@ -85,6 +85,19 @@ public class Agent : MonoBehaviour
     {
         selectedRenderer.enabled = value;
     }
+
+    private Node currentNode;
+    private Node oldNode;
+    private void Update()
+    {
+        currentNode = grid.NodeFromWorldPoint(transform.position);
+        currentNode.walkable = false;
+
+        if (oldNode != null && oldNode != currentNode)
+            oldNode.walkable = true;
+
+        oldNode = currentNode;
+    }
     #endregion
 
     #region Agent Methods
@@ -94,6 +107,9 @@ public class Agent : MonoBehaviour
 	}
     public void MoveToDestination(Vector3 newDestination)
     {
+        currentNode = grid.NodeFromWorldPoint(transform.position);
+        currentNode.walkable = true;
+
         destination = newDestination;
         PathRequestManager.RequestPath(new PathRequest(transform.position, destination, OnPathFound));
     }
