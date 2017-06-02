@@ -54,7 +54,6 @@ public abstract class  EnemyController : MonoBehaviour
 		patrolState = new PatrolState (this);
 
         currentState = patrolState;
-
     }
 
     private void Start()

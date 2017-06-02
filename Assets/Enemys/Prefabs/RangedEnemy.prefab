@@ -906,7 +906,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -930,7 +930,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
 --- !u!95 &95465518593166364
 Animator:
   serializedVersion: 3
@@ -1043,10 +1043,10 @@ MonoBehaviour:
   lastTarget: {fileID: 0}
   WayPointParent: {fileID: 0}
   attackRange: 20
-  attackSpeed: 5
+  attackSpeed: 1
   attackDmg: 10
   attackSound: {fileID: 8300000, guid: 04051136be94e0546b69ad55fc859cf0, type: 3}
-  maxAmmo: 15
+  maxAmmo: 2
   currentAmmo: 0
   refillPlace: {fileID: 0}
   projectile: {fileID: 1448934860947280, guid: adc2ed1671d4bba448e5413a21538afb, type: 2}
