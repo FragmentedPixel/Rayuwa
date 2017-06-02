@@ -64,13 +64,14 @@ public class Agent : MonoBehaviour
         for (int i = 0; i < pathNodes.Count; i++)
         {
             Vector3 finalPosition = pathNodes[i].worldPosition;
+            Quaternion finalRotation = Quaternion.LookRotation(finalPosition - transform.position);
             while (finalPosition != transform.position)
             {
                 if (followingPath == false)
                     yield break;
 
                 transform.position = Vector3.MoveTowards(transform.position, finalPosition, speed * Time.deltaTime);
-                transform.LookAt(finalPosition);
+                transform.rotation = Quaternion.Slerp(transform.rotation, finalRotation, Time.deltaTime * turnSpeed);
                 yield return null;
             }
         }
