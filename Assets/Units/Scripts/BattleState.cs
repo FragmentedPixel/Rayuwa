@@ -13,8 +13,7 @@ public class BattleState : iUnitState
     #region State Methods
     public override void Update()
     {
-        controller.debugCube.material.color = Color.green;
-        //controller.anim.SetBool("Walking", true);
+        controller.anim.SetBool("Walking", true);
 
         controller.agent.MoveToDestination(controller.destination);
     }

@@ -13,8 +13,7 @@ public class ReloadState : iUnitState
     #region State Methods
     public override void Update()
     {
-        controller.debugCube.material.color = Color.blue;
-        //controller.anim.SetBool("Walking", true);
+        controller.anim.SetBool("Walking", true);
 
         if (controller.reloadPoint == null)
             FindClosestReloadPoint();
