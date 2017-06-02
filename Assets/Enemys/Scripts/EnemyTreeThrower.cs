@@ -29,6 +29,8 @@ public class EnemyTreeThrower : MonoBehaviour
     {
         if (treeHolded != null)
         {
+            Debug.Log("Are copac in mana");
+
             if (waitTime >= attackSpeed)
                 Throw();
             else
@@ -74,7 +76,10 @@ public class EnemyTreeThrower : MonoBehaviour
         {
             float newDistance = DistanceToObject(transform, tree.transform);
             if (newDistance < distance)
+            {
+                distance = newDistance;
                 treeTargeted = tree;
+            }
         }
     }
     #endregion
