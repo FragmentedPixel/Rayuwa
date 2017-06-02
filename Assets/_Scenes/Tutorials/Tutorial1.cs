@@ -45,7 +45,7 @@ public class Tutorial1 : MonoBehaviour
         yield return StartCoroutine(SetPathCR());
         yield return waitTime;
         yield return StartCoroutine(StartBattleCR());
-        tutorialText.text = "Well done. Now go to the castel.";
+        tutorialText.text = "Well done. Now go to the crystal.";
     }
     #endregion
 
