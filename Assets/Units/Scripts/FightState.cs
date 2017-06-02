@@ -15,9 +15,7 @@ public class FightState : iUnitState
     #region State Methods
     public override void Update()
     {
-        controller.debugCube.material.color = Color.red;
-
-        //controller.anim.SetBool("Walking", false);
+        controller.anim.SetBool("Walking", false);
 
         if (controller.target != null)
             FightTarget();

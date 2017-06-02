@@ -13,8 +13,9 @@ public class BattleState : iUnitState
     #region State Methods
     public override void Update()
     {
-        controller.anim.SetBool("Walking", true);
+        bool walking = !controller.agent.HasReachedDest();
 
+        controller.anim.SetBool("Walking", walking);
         controller.agent.MoveToDestination(controller.destination);
     }
 

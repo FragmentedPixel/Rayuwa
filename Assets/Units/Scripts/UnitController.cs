@@ -5,8 +5,6 @@ using UnityEngine;
 [RequireComponent(typeof(Agent))]
 public abstract class UnitController : MonoBehaviour
 {
-    public MeshRenderer debugCube;
-
     #region Variabiles
 
     #region Targeting + Components
@@ -70,7 +68,6 @@ public abstract class UnitController : MonoBehaviour
     private void Update()
     {
         currentState.Update();
-        Debug.Log(currentState);
     }
     public void HitByEnemy(Transform attacker)
     {
