@@ -8,7 +8,7 @@ public class MeleeUnitController : UnitController
     #region Melee Attacking
     public override void FightTarget()
     {
-        SwordHit();
+        anim.SetTrigger("MeleeAttack");
     }
     public override string GetAmmoText()
     {

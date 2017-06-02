@@ -68,6 +68,7 @@ public abstract class UnitController : MonoBehaviour
     private void Update()
     {
         currentState.Update();
+        Debug.Log(currentState);
     }
     public void HitByEnemy(Transform attacker)
     {
@@ -95,7 +96,10 @@ public abstract class UnitController : MonoBehaviour
     
     public float DistanceToTarget()
     {
-        float distance = Vector3.Distance(transform.position, target.position);
+        Vector3 playerPos = new Vector3(transform.position.x, 0f, transform.position.z);
+        Vector3 targetPos = new Vector3(target.position.x, 0f, target.position.z);
+
+        float distance = Vector3.Distance(playerPos, targetPos);
         return distance;
     }
 

@@ -110,6 +110,7 @@ public class Agent : MonoBehaviour
     }
     public void ClearPath()
     {
+        if(pathNodes != null)
         pathNodes.Clear();
     }
     private bool isIdle()
