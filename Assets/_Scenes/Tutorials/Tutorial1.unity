@@ -1511,6 +1511,15 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114507247774271236, guid: d3ed5fd9a0a3e6d40a051064ed4a73ac,
+        type: 2}
+      propertyPath: isdragging
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1162171205955708, guid: d3ed5fd9a0a3e6d40a051064ed4a73ac, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d3ed5fd9a0a3e6d40a051064ed4a73ac, type: 2}
   m_IsPrefabParent: 0
@@ -10005,6 +10014,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4716242456434306, guid: 7b63bd1eb60d61b478a30de5b4c6da2e,
     type: 2}
   m_PrefabInternal: {fileID: 1535637933}
+--- !u!114 &1545220495 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114216882833252024, guid: 5b0ee274af5bc4f4295cbfdbe58a0e36,
+    type: 2}
+  m_PrefabInternal: {fileID: 1483351602}
+  m_Script: {fileID: 11500000, guid: 3cb17bc9fa74d0a4bba8d5c1b6a0d2ed, type: 3}
 --- !u!1001 &1548005507
 Prefab:
   m_ObjectHideFlags: 0
@@ -11143,6 +11158,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tutorialText: {fileID: 2081064691}
   battleButton: {fileID: 1074648485}
+  cm: {fileID: 1545220495}
 --- !u!4 &1731697248
 Transform:
   m_ObjectHideFlags: 0

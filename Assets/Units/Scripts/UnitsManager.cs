@@ -65,7 +65,7 @@ public class UnitsManager : MonoBehaviour
     #region Start Battle
     private IEnumerator WaitForStart()
     {
-        while (!Input.GetKeyDown(KeyCode.Space))
+        while (!Input.GetKeyDown(KeyCode.Space)||true)
             yield return null;
 
         StartBattle();
