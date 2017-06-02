@@ -49,7 +49,7 @@ public class PatrolState : iEnemyState
         controller.anim.SetBool("Walking", true);
         controller.target = controller.refillPlace;
         controller.agent.MoveToDestination(controller.target.position);
-        if (Vector3.Distance(controller.transform.position,controller.target.transform.position)<2)
+        if (Vector3.Distance(controller.transform.position,controller.target.transform.position)<5)
         {
             controller.currentAmmo = controller.maxAmmo;
             controller.target = null;

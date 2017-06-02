@@ -41,7 +41,7 @@ public class EnemyHealth : MonoBehaviour
         currentHealth -= damage;
 		healthImage.fillAmount = currentHealth / MaxHealth;
 
-        if (!controller.target.CompareTag("Unit"))
+        if (!controller.target.CompareTag("Unit")&&controller.Ammo())
         {
             controller.target = attacker;
             controller.currentState.ToChaseState();
