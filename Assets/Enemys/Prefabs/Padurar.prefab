@@ -1012,9 +1012,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25987402aef116a4b95c741bcd0c5149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  treeHolded: {fileID: 0}
   pickUpRange: 5
+  damage: 0
   attackSpeed: 1
+  treeHolded: {fileID: 0}
 --- !u!114 &114305524393523744
 MonoBehaviour:
   m_ObjectHideFlags: 1

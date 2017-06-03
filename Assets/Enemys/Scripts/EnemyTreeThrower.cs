@@ -10,6 +10,7 @@ public class EnemyTreeThrower : MonoBehaviour
     #region Variabiles
     //Paramters
     public float pickUpRange;
+    public float damage;
     public float attackSpeed;
     private float waitTime;
 
@@ -17,6 +18,7 @@ public class EnemyTreeThrower : MonoBehaviour
     public GameObject treeHolded;
     private GameObject treeTargeted;
     private List<GameObject> allTrees;
+    private Transform target;
 
     //Componente
     private Agent agent;
@@ -36,6 +38,10 @@ public class EnemyTreeThrower : MonoBehaviour
     #region Update
     private void Update()
     {
+        target = FindTarget();
+        if (target ==  null)
+            return;
+
         if (treeHolded != null)
         {
             if (waitTime >= attackSpeed)
@@ -58,10 +64,13 @@ public class EnemyTreeThrower : MonoBehaviour
     #region Methods
     private void Throw()
     {
-        Transform target = FindTarget();
-        launcher.Launch(treeHolded.transform, target);
+        EnemyTree enemyTree = treeHolded.AddComponent<EnemyTree>();
+        enemyTree.damage = damage;
 
+        launcher.Launch(treeHolded.transform, target);
         allTrees.Remove(treeHolded);
+        treeHolded = null;
+
         waitTime = 0f;
     }
     private void Wait()
@@ -71,6 +80,7 @@ public class EnemyTreeThrower : MonoBehaviour
     private void PickUp()
     {
         treeHolded = treeTargeted;
+        treeTargeted = null;
     }
     private void GoTowardsTargeted()
     {
@@ -92,7 +102,21 @@ public class EnemyTreeThrower : MonoBehaviour
     }
     private Transform FindTarget()
     {
-        return GameObject.Find("Castel").transform;
+        UnitHealth[] units = FindObjectsOfType<UnitHealth>();
+        Transform target = null;
+        float distance = int.MaxValue;
+
+        foreach(UnitHealth unit in units)
+        {
+            float newDistance = Vector3.Distance(transform.position, unit.transform.position);
+            if(newDistance < distance)
+            {
+                distance = newDistance;
+                target = unit.transform;
+            }
+        }
+
+        return target;
     }
     #endregion
 

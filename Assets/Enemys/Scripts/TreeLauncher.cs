@@ -23,7 +23,6 @@ public class TreeLauncher : MonoBehaviour
         rb.useGravity = true;
         rb.velocity = CalculateLaunchVelocity();
     }
-
     private Vector3 CalculateLaunchVelocity()
     {
         float displacementY = target.position.y - transform.position.y;
