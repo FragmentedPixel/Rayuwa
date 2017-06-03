@@ -14,7 +14,7 @@ public class RangedUnitController : UnitController
     #region Ranged Attacking
     public override void FightTarget()
     {
-        FireProjectile();
+        anim.SetTrigger("RangedAttack");
     }
     public override string GetAmmoText()
     {
@@ -23,12 +23,8 @@ public class RangedUnitController : UnitController
     }
     public void FireProjectile()
     {
-        Transform hitPlace = target;
-        for (int i = 0; i < target.childCount; i++)
-            if (target.GetChild(i).tag == "HitPlace")
-                hitPlace = target.GetChild(i).transform;
         GameObject projectileGO = Instantiate(projectile, shootingPoint.position, shootingPoint.rotation);
-        projectileGO.GetComponent<UnitProjectile>().FireProjectile(hitPlace, fightDmg, transform);
+        projectileGO.GetComponent<UnitProjectile>().FireProjectile(target, fightDmg, transform);
     }
     #endregion
 }
