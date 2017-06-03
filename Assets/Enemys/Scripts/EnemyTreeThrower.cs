@@ -2,25 +2,34 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 [RequireComponent(typeof(Agent))]
 public class EnemyTreeThrower : MonoBehaviour
 {
     #region Variabiles
-    public GameObject treeHolded;
+    //Paramters
     public float pickUpRange;
     public float attackSpeed;
-
     private float waitTime;
+
+    //copaco
+    public GameObject treeHolded;
     private GameObject treeTargeted;
+    private List<GameObject> allTrees;
+
+    //Componente
     private Agent agent;
-    private bool isTimeToAttack;
+    private TreeLauncher launcher;
     #endregion
 
     #region Initialization
     private void Start()
     {
         agent = GetComponent<Agent>();
+        launcher = GetComponent<TreeLauncher>();
+
+        allTrees = GameObject.FindGameObjectsWithTag("Tree").ToList();
     }
     #endregion
 
@@ -29,8 +38,6 @@ public class EnemyTreeThrower : MonoBehaviour
     {
         if (treeHolded != null)
         {
-            Debug.Log("Are copac in mana");
-
             if (waitTime >= attackSpeed)
                 Throw();
             else
@@ -51,8 +58,10 @@ public class EnemyTreeThrower : MonoBehaviour
     #region Methods
     private void Throw()
     {
-        Debug.Log("Inceput animatie aruncat copaci.");
-        Destroy(treeHolded);
+        Transform target = FindTarget();
+        launcher.Launch(treeHolded.transform, target);
+
+        allTrees.Remove(treeHolded);
         waitTime = 0f;
     }
     private void Wait()
@@ -69,10 +78,9 @@ public class EnemyTreeThrower : MonoBehaviour
     }
     private void FindClosestTree()
     {
-        GameObject[] trees = GameObject.FindGameObjectsWithTag("Tree");
         float distance = int.MaxValue;
 
-        foreach (GameObject tree in trees)
+        foreach (GameObject tree in allTrees)
         {
             float newDistance = DistanceToObject(transform, tree.transform);
             if (newDistance < distance)
@@ -81,6 +89,10 @@ public class EnemyTreeThrower : MonoBehaviour
                 treeTargeted = tree;
             }
         }
+    }
+    private Transform FindTarget()
+    {
+        return GameObject.Find("Castel").transform;
     }
     #endregion
 

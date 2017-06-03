@@ -4,27 +4,22 @@ using UnityEngine;
 
 public class TreeLauncher : MonoBehaviour
 {
-    public Transform target;
-    public float height = 25f;
     public float gravity = -18;
 
+    private Transform target;
+    private Transform tree;
+
+    public float height = 25f;
     private Rigidbody rb;
 
-    private void Start()
+    public void Launch(Transform _tree, Transform _target)
     {
-        rb = GetComponent<Rigidbody>();
-        rb.useGravity = false;
-    }
+        tree = _tree;
+        target = _target;
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-            Launch();
-    }
-
-    private void Launch()
-    {
         Physics.gravity = Vector3.up * gravity;
+        rb = tree.GetComponent<Rigidbody>();
+
         rb.useGravity = true;
         rb.velocity = CalculateLaunchVelocity();
     }

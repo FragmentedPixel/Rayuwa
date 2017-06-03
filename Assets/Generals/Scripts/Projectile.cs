@@ -9,17 +9,11 @@ public abstract class Projectile : MonoBehaviour
     [HideInInspector] public float damage;
     [HideInInspector] public Transform target;
     [HideInInspector] public Transform attacker;
-    [HideInInspector] public Transform damageTarget;
     #endregion
 
     #region Firing
     public void FireProjectile(Transform _target, float _damage, Transform _attacker)
     {
-        if (_target.tag == "HitPlace")
-            damageTarget = _target.parent.transform;
-        else
-            damageTarget = _target;
-
         target = _target;
         damage = _damage;
         attacker = _attacker;

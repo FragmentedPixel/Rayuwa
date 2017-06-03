@@ -318,6 +318,7 @@ GameObject:
   - component: {fileID: 82105477584683240}
   - component: {fileID: 114002607821717420}
   - component: {fileID: 114275657310240486}
+  - component: {fileID: 114888550143502784}
   m_Layer: 2
   m_Name: Padurar
   m_TagString: Untagged
@@ -1105,6 +1106,19 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114888550143502784
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1778103595076164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98fe8ce41ade4e04eb635f847be7327f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gravity: -18
+  height: 25
 --- !u!114 &114985758245363036
 MonoBehaviour:
   m_ObjectHideFlags: 1
