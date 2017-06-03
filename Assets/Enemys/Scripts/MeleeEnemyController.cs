@@ -13,7 +13,7 @@ public class MeleeEnemyController : EnemyController {
 
     public void MeleeHit()
     {
-        if (target == null)
+        if (target == null||!target.CompareTag("Unit"))
             return;
 
         Debug.Log(target.name);

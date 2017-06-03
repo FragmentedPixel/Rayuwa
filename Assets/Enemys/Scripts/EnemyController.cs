@@ -25,6 +25,7 @@ public abstract class  EnemyController : MonoBehaviour
     public float attackSpeed = 1f;
     public float attackDmg = 10f;
     public AudioClip attackSound;
+    public float targetTreshold = 2f;
 
     [Header("Ammo")]
     public int maxAmmo = 10;
