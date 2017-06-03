@@ -25,8 +25,8 @@ public class TreeLauncher : MonoBehaviour
     }
     private Vector3 CalculateLaunchVelocity()
     {
-        float displacementY = target.position.y - transform.position.y;
-        Vector3 DisplacementXZ = new Vector3(target.position.x - transform.position.x, 0f, target.position.z - transform.position.z);
+        float displacementY = target.position.y - tree.position.y;
+        Vector3 DisplacementXZ = new Vector3(target.position.x - tree.position.x, 0f, target.position.z - tree.position.z);
 
         Vector3 velocityY = Vector3.up * Mathf.Sqrt(-2 * gravity * height);
         Vector3 velocityXZ = DisplacementXZ / (Mathf.Sqrt(-2 * height / gravity) + Mathf.Sqrt(2*(displacementY - height) / gravity));

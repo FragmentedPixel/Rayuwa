@@ -23,6 +23,7 @@ public class BridgeTrap : Trap
 
     private IEnumerator FallingCR(Transform t, int direction)
     {
+        Destroy(GetComponent<Collider>());
         Destroy(t.GetComponent<Collider>());
         Destroy(t.parent.GetComponent<Collider>());
         yield return null;

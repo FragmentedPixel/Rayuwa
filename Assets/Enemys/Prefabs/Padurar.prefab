@@ -1119,7 +1119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravity: -18
-  height: 25
+  height: 15
 --- !u!114 &114985758245363036
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -83,6 +83,9 @@ public class Agent : MonoBehaviour
     #region Gizmos
     public void DisplaySelected(bool value)
     {
+        if (selectedRenderer == null)
+            return;
+
         selectedRenderer.enabled = value;
     }
 
