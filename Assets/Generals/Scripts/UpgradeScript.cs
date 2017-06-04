@@ -52,6 +52,6 @@ public class UpgradeImage
     public void Update()
     {
         upgradeLevel.text = UpgradesManager.instance.upgradeArray[index].ToString();
-        upgradeCost.text = UpgradesManager.instance.UpgradeCost(index).ToString();
+        upgradeCost.text = "Cost: " + UpgradesManager.instance.UpgradeCost(index).ToString();
     }
 }

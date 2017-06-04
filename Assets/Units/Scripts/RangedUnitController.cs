@@ -23,6 +23,7 @@ public class RangedUnitController : UnitController
     }
     public void FireProjectile()
     {
+        audioS.PlayOneShot(fightSound);
         GameObject projectileGO = Instantiate(projectile, shootingPoint.position, shootingPoint.rotation);
         projectileGO.GetComponent<UnitProjectile>().FireProjectile(target, fightDmg, transform);
     }

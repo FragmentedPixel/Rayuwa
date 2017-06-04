@@ -19,6 +19,8 @@ public class MeleeUnitController : UnitController
     {
         if(target != null)
             target.GetComponent<EnemyHealth>().Hit(fightDmg,transform);
+
+        audioS.PlayOneShot(fightSound);
     }
     #endregion
 }

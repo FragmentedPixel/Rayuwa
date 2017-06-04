@@ -13,6 +13,7 @@ public abstract class UnitController : MonoBehaviour
     [HideInInspector] public Transform target;
     [HideInInspector] public Vector3 destination;
     [HideInInspector] public ReloadPoint reloadPoint;
+    [HideInInspector] public AudioSource audioS;
     #endregion
 
     #region Parameters
@@ -22,6 +23,7 @@ public abstract class UnitController : MonoBehaviour
     public float fightRange = 3f;
     public float fightSpeed = 1f;
 	public float fightDmg = 10f;
+    public AudioClip fightSound;
     #endregion
 
     #region Amunation
@@ -59,6 +61,7 @@ public abstract class UnitController : MonoBehaviour
         ammo = maxAmmo;
         anim = GetComponentInChildren<Animator>();
         agent = GetComponent<Agent>();
+        audioS = GetComponent<AudioSource>();
 
         SetNewDestination(transform.position);
     }
