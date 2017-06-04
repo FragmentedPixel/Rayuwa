@@ -37,7 +37,8 @@ public class EnemyHealth : MonoBehaviour
     #region HIt
     public void Hit(float damage,Transform attacker)
 	{
-        attacker= attacker.GetComponentInChildren<UnitHealth>().transform;
+        if(attacker != null)
+            attacker= attacker.GetComponentInChildren<UnitHealth>().transform;
         currentHealth -= damage;
 		healthImage.fillAmount = currentHealth / MaxHealth;
         
