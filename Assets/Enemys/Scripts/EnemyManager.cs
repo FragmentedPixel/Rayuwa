@@ -23,7 +23,7 @@ public class EnemyManager : MonoBehaviour
         Transform sight = enemyHealth.transform.GetChild(1);
 
         range.transform.localScale = Vector3.one * enemyController.attackRange;
-        sight.transform.localScale = Vector3.one * enemyController.GetComponent<SphereCollider>().radius * 2;
+        sight.transform.localScale = Vector3.one * enemyController.GetComponent<SphereCollider>().radius ;
     }
     #endregion
 }

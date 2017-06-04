@@ -47,6 +47,11 @@ public abstract class UnitController : MonoBehaviour
     #endregion
 
     #region Initialization
+    private void OnDrawGizmos()
+    {
+        Debug.DrawLine(transform.position, transform.position + transform.forward * fightRange);
+    }
+
     private void Awake()
     {
         aggroState = new AggroState(this);

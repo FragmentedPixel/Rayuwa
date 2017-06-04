@@ -57,6 +57,8 @@ public abstract class  EnemyController : MonoBehaviour
         currentState = patrolState;
     }
 
+    
+
     private void Start()
     {
         anim = GetComponent<Animator>();

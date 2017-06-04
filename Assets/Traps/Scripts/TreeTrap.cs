@@ -28,6 +28,7 @@ public class TreeTrap : Trap
     private void TriggerTrap()
     {
         triggered = true;
+        gameObject.layer = 9;
         StartCoroutine(ColapseAllTrees());
     }
 
