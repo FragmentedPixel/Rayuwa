@@ -38,8 +38,11 @@ public class EnemyTreeThrower : MonoBehaviour
     #region Update
     private void Update()
     {
-        target = FindTarget();
+       
         if (target ==  null)
+            target = FindTarget();
+
+        if (target == null)
             return;
 
         if (treeHolded != null)

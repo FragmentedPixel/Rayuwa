@@ -31,6 +31,7 @@ public class Drawing : MonoBehaviour
     #region Showing Path
     public GameObject wayPointPrefab;
     private Grid grid;
+    private List<Node> lastSelected;
     #endregion
     #endregion
 
@@ -38,6 +39,9 @@ public class Drawing : MonoBehaviour
     private void Start()
     {
         grid = FindObjectOfType<Grid>();
+
+        foreach (Node node in grid.grid)
+            node.Deactivate();
     }
     #endregion
 
@@ -53,7 +57,7 @@ public class Drawing : MonoBehaviour
     #endregion
 
     #region Updates
-    private void Update()
+    private void FixedUpdate()
     {
         DrawSelectedPaths();
         UpdateDragging();
@@ -161,7 +165,10 @@ public class Drawing : MonoBehaviour
                 agent.DisplaySelected(false);
         }
 
-        foreach (Node node in grid.grid)
+        if (lastSelected == null)
+            return;
+
+        foreach (Node node in lastSelected)
             node.Deactivate();
     }
     private Agent GetAgentFromTransform(Transform t)
@@ -247,6 +254,8 @@ public class Drawing : MonoBehaviour
     {
         UnselectUnits();
 
+        lastSelected = new List<Node>();
+
         for(int i = 0; i < selectedAgents.Count; i++)
         {
             selectedAgents[i].DisplaySelected(true);
@@ -255,6 +264,9 @@ public class Drawing : MonoBehaviour
                 continue;
 
             List<Node> pathNodes = selectedAgents[i].pathNodes;
+
+            foreach(Node n in pathNodes)
+                lastSelected.Add(n);
 
             for (int j = 0; j < pathNodes.Count - 1; j++)
                 pathNodes[j].Activate(selectedAgents[i].pathColor, pathNodes[j + 1].worldPosition);

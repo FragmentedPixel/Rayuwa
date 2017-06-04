@@ -9,7 +9,7 @@ public class EnemyHover : MonoBehaviour
     #endregion
 
     #region Ray from Mouse
-    private void Update ()
+    private void FixedUpdate ()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit raycastHit;

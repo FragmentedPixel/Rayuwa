@@ -15,6 +15,7 @@ public class Agent : MonoBehaviour
     #endregion
 
     #region Path + Following
+    public float pathUpdateThreshhold = .5f;
     public MeshRenderer selectedRenderer;
     [HideInInspector]public Color pathColor;
     private bool followingPath;
@@ -74,6 +75,8 @@ public class Agent : MonoBehaviour
                 transform.rotation = Quaternion.Slerp(transform.rotation, finalRotation, Time.deltaTime * turnSpeed);
                 yield return null;
             }
+
+            pathNodes.Remove(pathNodes[i]);
         }
 
         followingPath = false;
@@ -94,6 +97,7 @@ public class Agent : MonoBehaviour
     private void Update()
     {
         currentNode = grid.NodeFromWorldPoint(transform.position);
+
         currentNode.walkable = false;
 
         if (oldNode != null && oldNode != currentNode)
@@ -110,6 +114,10 @@ public class Agent : MonoBehaviour
 	}
     public void MoveToDestination(Vector3 newDestination)
     {
+        float differnece = Vector3.Distance(newDestination, destination);
+        if (differnece < pathUpdateThreshhold)
+            return;
+
         currentNode = grid.NodeFromWorldPoint(transform.position);
         currentNode.walkable = true;
 
