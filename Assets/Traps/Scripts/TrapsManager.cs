@@ -9,5 +9,8 @@ public class TrapsManager : MonoBehaviour
     private void Start()
     {
         traps = FindObjectsOfType<Trap>();
+
+        foreach (Trap trap in traps)
+            trap.enabled = true;
     }
 }

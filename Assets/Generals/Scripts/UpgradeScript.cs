@@ -5,18 +5,24 @@ using UnityEngine.UI;
 
 public class UpgradeScript : MonoBehaviour
 {
+    public static UpgradeScript instance;
 
     public Text moneyText;
+    public AudioClip buySound;
+    public AudioClip notEnoughMoney;
     public Transform[] images;
+
+    private AudioSource audioS;
     private List<UpgradeImage> upgrades;
 
     private void Start()
     {
+        instance = this;
+        audioS = GetComponent<AudioSource>();
         upgrades = new List<UpgradeImage>();
 
         for (int i = 0; i < images.Length; i++)
             upgrades.Add(new UpgradeImage(images[i], i));
-
     }
 
     private void Update()
@@ -26,13 +32,19 @@ public class UpgradeScript : MonoBehaviour
         foreach (UpgradeImage upgrade in upgrades)
             upgrade.Update();
     }
+
+    public void PlaybuySound(bool success)
+    {
+        AudioClip clipToPlay = success ? buySound : notEnoughMoney;
+        audioS.PlayOneShot(clipToPlay);
+    }
 }
 
 public class UpgradeImage
 {
     private Text upgradeLevel;
     private Text upgradeCost;
-    private Button upgradeButton;
+    public Button upgradeButton;
 
     private int index;
 
@@ -44,7 +56,10 @@ public class UpgradeImage
         upgradeCost = parent.GetChild(1).GetComponent<Text>();
         upgradeButton = parent.GetChild(2).GetComponent<Button>();
 
-        upgradeButton.onClick.AddListener(delegate { UpgradesManager.instance.ApplyUpgrade(index); });
+        upgradeButton.onClick.AddListener(delegate {
+            bool success = UpgradesManager.instance.ApplyUpgrade(index);
+            UpgradeScript.instance.PlaybuySound(success);
+        });
 
         Update();
     }

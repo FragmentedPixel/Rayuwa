@@ -15,18 +15,13 @@ public class UpgradesManager : MonoBehaviour
     public int costPerLevel;
     private string fileLocation;
 
-    public int UpgradeCost(int i)
-    {
-        return upgradeArray[i] * costPerLevel;
-    }
-
     #region Serialization
     private void Start()
     {
         instance = this;
         DontDestroyOnLoad(this);
         fileLocation = Application.persistentDataPath + "/upgrades.data";
-        Load(); 
+        Load();
     }
     private void Save()
     {
@@ -57,9 +52,13 @@ public class UpgradesManager : MonoBehaviour
     }
     #endregion
 
+    public int UpgradeCost(int index)
+    {
+        return upgradeArray[index] * costPerLevel;
+    }
     public bool ApplyUpgrade(int index)
     {
-        int cost = upgradeArray[index] * costPerLevel;
+        int cost = UpgradeCost(index);
 
         if (cost > resources)
             return false;
@@ -68,12 +67,10 @@ public class UpgradesManager : MonoBehaviour
         upgradeArray[index]++;
         return true;
     }
-
-    public int PresentUpgrades(int index)
+    public int GetUpgradeValue(int index)
     {
         return upgradeArray[index];
     }
-
 }
 
 [Serializable]

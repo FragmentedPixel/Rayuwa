@@ -19,8 +19,10 @@ public class FightState : iUnitState
 
         if (controller.target != null)
             FightTarget();
-        else
+        else if (!controller.playerDecided)
             ToBattleState();
+        else
+            controller.SetNewDestination(controller.transform.position);
     }
 
     public override void HitByEnemy(Transform newTarget)

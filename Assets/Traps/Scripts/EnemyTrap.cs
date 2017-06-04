@@ -19,5 +19,7 @@ public class EnemyTrap : Trap
         {
             enemy.SetActive(true);
         }
+
+        Destroy(gameObject);
     }
 }

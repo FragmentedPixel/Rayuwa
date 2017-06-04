@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PersistentMusic : MonoBehaviour
 {
@@ -26,4 +27,14 @@ public class PersistentMusic : MonoBehaviour
         audioS.Play();
     }
     #endregion
+
+    private void Update()
+    {
+        if(Input.GetKey(KeyCode.P) && Input.GetKey(KeyCode.O))
+        {
+            int buildIndex = SceneManager.GetActiveScene().buildIndex;
+            buildIndex++;
+            SceneManager.LoadScene(buildIndex);
+        }
+    }
 }

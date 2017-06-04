@@ -233,7 +233,7 @@ public class Drawing : MonoBehaviour
         if(targetHealth)
         {
             foreach (Agent unitAgent in selectedAgents)
-                unitAgent.GetComponent<UnitController>().SetNewTarget(targetHealth.transform);
+                unitAgent.GetComponent<UnitController>().SetNewTarget(targetHealth.transform, true);
 
             return;
         }

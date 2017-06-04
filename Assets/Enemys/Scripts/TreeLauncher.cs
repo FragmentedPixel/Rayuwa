@@ -5,6 +5,7 @@ using UnityEngine;
 public class TreeLauncher : MonoBehaviour
 {
     public float gravity = -18;
+    public float maxRandomRotation;
 
     private Transform target;
     private Transform tree;
@@ -22,6 +23,7 @@ public class TreeLauncher : MonoBehaviour
 
         rb.useGravity = true;
         rb.velocity = CalculateLaunchVelocity();
+        rb.AddTorque(Random.Range(0f, maxRandomRotation), Random.Range(0f, maxRandomRotation), Random.Range(0f, maxRandomRotation));
     }
     private Vector3 CalculateLaunchVelocity()
     {

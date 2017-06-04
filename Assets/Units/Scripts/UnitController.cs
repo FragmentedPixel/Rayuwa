@@ -18,6 +18,7 @@ public abstract class UnitController : MonoBehaviour
 
     #region Parameters
     [HideInInspector] public bool battleStarted = false;
+    [HideInInspector] public bool playerDecided = false;
 
     [Header("Attack")]
     public float fightRange = 3f;
@@ -64,6 +65,14 @@ public abstract class UnitController : MonoBehaviour
         audioS = GetComponent<AudioSource>();
 
         SetNewDestination(transform.position);
+    }
+
+    private void AddUpgrades()
+    {
+        if (UpgradesManager.instance == null)
+            return;
+
+        fightDmg += UpgradesManager.instance.GetUpgradeValue(1);
     }
     #endregion
 
@@ -117,10 +126,12 @@ public abstract class UnitController : MonoBehaviour
             currentState.ToBattleState();
     }
 
-    public void SetNewTarget(Transform newTarget)
+    public void SetNewTarget(Transform newTarget, bool _playerDecided)
     {
         reloading = false;
         target = newTarget;
+
+        playerDecided = _playerDecided;
 
         if (!battleStarted)
             return;

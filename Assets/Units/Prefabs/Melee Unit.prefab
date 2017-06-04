@@ -1124,6 +1124,7 @@ MonoBehaviour:
   reloadPoint: {fileID: 0}
   audioS: {fileID: 0}
   battleStarted: 0
+  playerDecided: 0
   fightRange: 3
   fightSpeed: 1
   fightDmg: 10

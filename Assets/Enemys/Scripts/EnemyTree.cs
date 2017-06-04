@@ -9,6 +9,8 @@ public class EnemyTree : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         UnitHealth unitHealth = other.GetComponent<UnitHealth>();
-        unitHealth.Hit(damage, null);
+
+        if (unitHealth != null)
+            unitHealth.Hit(damage, null);
     }
 }

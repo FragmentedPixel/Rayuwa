@@ -259,7 +259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7eae440e10d877b4c8fe6e35c9b447ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backgroundLoop: {fileID: 8300000, guid: c38c52b8e2180aa4b9c97884021f80bd, type: 3}
+  backgroundLoop: {fileID: 8300000, guid: d49a5fafa13b53f44bef83d05b5f688c, type: 3}
 --- !u!4 &149194545
 Transform:
   m_ObjectHideFlags: 0
@@ -634,7 +634,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c882f6f4ebb9d4c4ca9ecc08e9ba109a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upgradeArray: 05000000
+  upgradeArray: 0100000001000000
   resources: 300
   costPerLevel: 10
 --- !u!1 &1517820362

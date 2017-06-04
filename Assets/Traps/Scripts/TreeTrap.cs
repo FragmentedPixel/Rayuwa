@@ -57,6 +57,8 @@ public class TreeTrap : Trap
             yield return null;
         }
 
+        Destroy(enemyTree);
+
         yield break;
     }
     #endregion

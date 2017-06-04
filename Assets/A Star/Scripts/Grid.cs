@@ -161,6 +161,10 @@ public class Grid : MonoBehaviour
         }
 
         BlurPenaltyMap(3);
+
+        Agent[] agents = FindObjectsOfType<Agent>();
+        foreach (Agent agent in agents)
+            agent.RecalculateDestination();
     }
     #endregion
 

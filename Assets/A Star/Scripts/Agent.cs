@@ -77,6 +77,7 @@ public class Agent : MonoBehaviour
             }
 
             pathNodes.Remove(pathNodes[i]);
+            i--;
         }
 
         followingPath = false;
@@ -147,6 +148,13 @@ public class Agent : MonoBehaviour
             return false;
 
         return !controller.battleStarted;
+    }
+    public void RecalculateDestination()
+    {
+        currentNode = grid.NodeFromWorldPoint(transform.position);
+        currentNode.walkable = true;
+
+        PathRequestManager.RequestPath(new PathRequest(transform.position, destination, OnPathFound));
     }
     #endregion
 }

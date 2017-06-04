@@ -40,13 +40,14 @@ public class EnemyHealth : MonoBehaviour
         attacker= attacker.GetComponentInChildren<UnitHealth>().transform;
         currentHealth -= damage;
 		healthImage.fillAmount = currentHealth / MaxHealth;
-
-        if (controller.Ammo())
+        
+        if (controller != null && controller.Ammo())
         {
             if(!controller.target.CompareTag("Unit") || (Vector3.Distance(controller.target.position, transform.position) > Vector3.Distance(transform.position, attacker.position)+controller.targetTreshold))
             controller.target = attacker;
             controller.currentState.ToChaseState();
         }
+
         if (healthImage.fillAmount < 0.2)
 			healthImage.color = Color.red;
 		if (currentHealth <= 0)
