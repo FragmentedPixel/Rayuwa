@@ -4,61 +4,50 @@ using UnityEngine;
 
 public class TreeTrap : Trap
 {
-    [Header("Specifics")]
-    public List<UnitHealth> units = new List<UnitHealth>();
+    #region Variabiles
+    [Header("Tree")]
     public GameObject[] trees;
-
-    public int unitsCount = 3;
     public float angle = 5f;
     public float duration = .5f;
 
+    [Header("Trap")]
+    public float damage;
+
     private bool triggered = false;
+    #endregion
 
     #region Triggers
     private void OnTriggerEnter(Collider other)
     {
-        UnitHealth unit = other.transform.GetComponent<UnitHealth>();
+        UnitHealth unit = other.GetComponent<UnitHealth>();
 
-        if (unit != null && !units.Contains(unit))
-            units.Add(unit);
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        UnitHealth unit = other.transform.GetComponent<UnitHealth>();
-
-        if (unit != null && units.Contains(unit))
-            units.Remove(unit);
-    }
-    #endregion
-
-    private void Update()
-    {
-        if (units.Count >= unitsCount && ! triggered)
+        if (!triggered && unit != null)
             TriggerTrap();
     }
+
     private void TriggerTrap()
     {
         triggered = true;
         StartCoroutine(ColapseAllTrees());
-        KillUnits();
     }
 
+    #endregion
+
+    #region Animations
     private IEnumerator ColapseAllTrees()
     {
         yield return StartCoroutine(ColapseTree(trees[0], 1, 1));
         yield return StartCoroutine(ColapseTree(trees[1], 1, -1));
         yield return StartCoroutine(ColapseTree(trees[2], -1, -1));
         yield return StartCoroutine(ColapseTree(trees[3], -1, 1));
-    }
-    private void KillUnits()
-    {
-        for (int i = 0; i < units.Count; i++)
-            units[i].Die();
+
+        FindObjectOfType<Grid>().ReCalculateGird();
     }
     private IEnumerator ColapseTree(GameObject tree, int a, int b)
     {
         float currentTime = 0f;
+        EnemyTree enemyTree = tree.AddComponent<EnemyTree>();
+        enemyTree.damage = damage;
 
         while(currentTime < duration)
         {
@@ -70,5 +59,5 @@ public class TreeTrap : Trap
 
         yield break;
     }
-
+    #endregion
 }

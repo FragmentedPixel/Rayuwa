@@ -38,6 +38,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4283590550648104}
+  - component: {fileID: 65290522761897382}
   m_Layer: 9
   m_Name: Brad (2)
   m_TagString: Untagged
@@ -68,6 +69,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4807192366464480}
+  - component: {fileID: 65291078774029100}
   m_Layer: 9
   m_Name: Brad (3)
   m_TagString: Untagged
@@ -102,6 +104,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4372666524544314}
+  - component: {fileID: 65506663466573792}
   m_Layer: 9
   m_Name: Brad (1)
   m_TagString: Untagged
@@ -173,6 +176,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4690299281617316}
+  - component: {fileID: 65279769958585740}
   m_Layer: 9
   m_Name: Brad
   m_TagString: Untagged
@@ -542,6 +546,42 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 8d0cf7d45272dc844a3ded885cf73e88, type: 3}
+--- !u!65 &65279769958585740
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1831187146179120}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 4, z: 1}
+  m_Center: {x: 0, y: 2, z: 0}
+--- !u!65 &65290522761897382
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1135415393426420}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 4, z: 1}
+  m_Center: {x: 0, y: 2, z: 0}
+--- !u!65 &65291078774029100
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1213148725086132}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 4, z: 1}
+  m_Center: {x: 0, y: 2, z: 0}
 --- !u!65 &65430397732916228
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -554,6 +594,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5, y: 2, z: 3}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65506663466573792
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1510142204184356}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 4, z: 1}
+  m_Center: {x: 0, y: 2, z: 0}
 --- !u!95 &95094811110948132
 Animator:
   serializedVersion: 3
@@ -633,12 +685,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d430d2f57972e8a45ae8c77ae6f0e4d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  units: []
   trees:
   - {fileID: 1831187146179120}
   - {fileID: 1510142204184356}
   - {fileID: 1135415393426420}
   - {fileID: 1213148725086132}
-  colapsePoint: {fileID: 4134381538178524}
-  unitsCount: 3
-  angle: 5
+  angle: 3.5
+  duration: 0.5
+  damage: 0
