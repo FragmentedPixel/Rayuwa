@@ -634,8 +634,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c882f6f4ebb9d4c4ca9ecc08e9ba109a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelCount: 0
   upgradeArray: 05000000
+  resources: 300
+  costPerLevel: 10
 --- !u!1 &1517820362
 GameObject:
   m_ObjectHideFlags: 0

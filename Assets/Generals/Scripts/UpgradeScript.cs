@@ -3,55 +3,55 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UpgradeScript : MonoBehaviour {
+public class UpgradeScript : MonoBehaviour
+{
 
+    public Text moneyText;
     public Transform[] images;
-   
+    private List<UpgradeImage> upgrades;
+
     private void Start()
     {
-        for (int i = 0; i < images.Length; i++)
-            new UpgradeImage(images[i], i);
+        upgrades = new List<UpgradeImage>();
 
+        for (int i = 0; i < images.Length; i++)
+            upgrades.Add(new UpgradeImage(images[i], i));
+
+    }
+
+    private void Update()
+    {
+        moneyText.text = UpgradesManager.instance.resources.ToString();
+
+        foreach (UpgradeImage upgrade in upgrades)
+            upgrade.Update();
     }
 }
 
 public class UpgradeImage
 {
-    public Text upgradeLevel;
-    public Text upgradeCost;
-    public Button upgradeButton;
+    private Text upgradeLevel;
+    private Text upgradeCost;
+    private Button upgradeButton;
+
+    private int index;
 
     public UpgradeImage(Transform parent, int i)
     {
+        index = i;
+
         upgradeLevel = parent.GetChild(0).GetComponent<Text>();
         upgradeCost = parent.GetChild(1).GetComponent<Text>();
         upgradeButton = parent.GetChild(2).GetComponent<Button>();
 
-        upgradeLevel.text = UpgradesManager.instance.upgradeArray[i].ToString();
-        upgradeCost.text = UpgradesManager.instance.UpgradeCost(i).ToString();
-        upgradeButton.onClick.AddListener(delegate { UpgradesManager.instance.ApplyUpgrade(i); });
+        upgradeButton.onClick.AddListener(delegate { UpgradesManager.instance.ApplyUpgrade(index); });
+
+        Update();
+    }
+
+    public void Update()
+    {
+        upgradeLevel.text = UpgradesManager.instance.upgradeArray[index].ToString();
+        upgradeCost.text = UpgradesManager.instance.UpgradeCost(index).ToString();
     }
 }
-/*public Text[] text;
-
-   private void Start ()
-   {
-       for (int i = 0; i < text.Length; i++)
-           text[i].text = UpgradesManager.instance.upgradeArray[i].ToString();
-   }
-   */
-
-
-/*
- public class UpgradeText
-{
-    public Text upgradeText;
-    public int upgradeInt;
-
-   public UpgradeText(Text _upgradeText,int _upgradeInt)
-    {
-        upgradeText = _upgradeText;
-        upgradeInt = _upgradeInt;
-    }
-} 
- * */
