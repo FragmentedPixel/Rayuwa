@@ -20,7 +20,7 @@ public class LightningTrap : Trap
         InvokeRepeating("Trap", .3f, cooldown);
     }
 
-    private void Trap()
+    public void Trap()
     {
         StartCoroutine(TriggerTrap());
     }
