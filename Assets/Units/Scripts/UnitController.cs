@@ -67,7 +67,9 @@ public abstract class UnitController : MonoBehaviour
         ammo = maxAmmo;
         anim = GetComponentInChildren<Animator>();
         agent = GetComponent<Agent>();
+
         audioS = GetComponent<AudioSource>();
+        audioS.volume = PlayerPrefsManager.GetMasterVolume();
 
         SetNewDestination(transform.position);
     }

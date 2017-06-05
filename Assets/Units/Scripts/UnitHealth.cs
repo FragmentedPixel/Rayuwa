@@ -61,7 +61,7 @@ public class UnitHealth : MonoBehaviour
     }
     public void Die()
     {
-        Destroy(transform.parent.gameObject);
+        Hit(MaxHealth, null);
     }
     #endregion
 }
