@@ -18,11 +18,12 @@ public class WinCondition : MonoBehaviour
 
     private void Win()
     {
-        winCanvas.enabled = true;
 
         EnemyHealth[] enemys = FindObjectsOfType<EnemyHealth>();
-        foreach (EnemyHealth enemy in enemys)
-            Destroy(enemy.transform.parent.gameObject);
+        if (enemys.Length != 0)
+            return;
+        winCanvas.enabled = true;
+
     }
     #endregion
 }
