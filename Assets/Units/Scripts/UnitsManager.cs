@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class UnitsManager : MonoBehaviour
 {
     #region Variabiles
+    public int maxUnits = 8;
     public Transform spawnPointsParent;
     public Button startButton;
 

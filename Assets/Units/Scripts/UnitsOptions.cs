@@ -22,6 +22,8 @@ public class UnitsOptions : MonoBehaviour
         audioS = GetComponent<AudioSource>();
         audioS.volume = PlayerPrefsManager.GetMasterVolume();
 
+        UnitsManager unitsManager = FindObjectOfType<UnitsManager>();
+        UnitsData.instance.maxUnits = unitsManager.maxUnits;
         Unit[] units = UnitsData.instance.units;
 
         foreach (Unit unit in units)
