@@ -1128,10 +1128,11 @@ MonoBehaviour:
   fightRange: 1.5
   fightSpeed: 2
   fightDmg: 20
-  fightSound: {fileID: 8300000, guid: 4fe84a57dd7da694b9b122b9becfde50, type: 3}
+  fightSound: {fileID: 8300000, guid: bd219e5fcc44dda459c64d6c8a165a9e, type: 3}
   ammo: 0
   maxAmmo: 20
   reloadTime: 2
+  reloading: 0
 --- !u!135 &135269286591990720
 SphereCollider:
   m_ObjectHideFlags: 1
