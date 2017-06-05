@@ -8925,6 +8925,11 @@ Prefab:
       propertyPath: m_Name
       value: Ranged Unit (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 114519784974296206, guid: 330fadf4d7349424398c008d675773f2,
+        type: 2}
+      propertyPath: maxAmmo
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 330fadf4d7349424398c008d675773f2, type: 2}
   m_IsPrefabParent: 0
@@ -10567,6 +10572,11 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: bd53aab838ceca545803616b744100bd, type: 2}
+    - target: {fileID: 114519784974296206, guid: 330fadf4d7349424398c008d675773f2,
+        type: 2}
+      propertyPath: maxAmmo
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 330fadf4d7349424398c008d675773f2, type: 2}
   m_IsPrefabParent: 0
@@ -11265,6 +11275,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tutorialText: {fileID: 2081064691}
   battleButton: {fileID: 1074648485}
+  enemyManager: {fileID: 1830315062}
 --- !u!4 &1731697248
 Transform:
   m_ObjectHideFlags: 0
@@ -12968,7 +12979,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4133408434629712, guid: ed2fe6da22748d64fa7c7e8dee6c2838, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -10.3
       objectReference: {fileID: 0}
     - target: {fileID: 4133408434629712, guid: ed2fe6da22748d64fa7c7e8dee6c2838, type: 2}
       propertyPath: m_LocalPosition.y
@@ -12976,7 +12987,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4133408434629712, guid: ed2fe6da22748d64fa7c7e8dee6c2838, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -51.4
+      value: -41.02
       objectReference: {fileID: 0}
     - target: {fileID: 4133408434629712, guid: ed2fe6da22748d64fa7c7e8dee6c2838, type: 2}
       propertyPath: m_LocalRotation.x
@@ -13003,6 +13014,11 @@ Prefab:
       propertyPath: WayPointParent
       value: 
       objectReference: {fileID: 2107522472}
+    - target: {fileID: 114017139128389158, guid: ed2fe6da22748d64fa7c7e8dee6c2838,
+        type: 2}
+      propertyPath: MaxHealth
+      value: 150
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ed2fe6da22748d64fa7c7e8dee6c2838, type: 2}
   m_IsPrefabParent: 0
@@ -13715,7 +13731,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4133408434629712, guid: ed2fe6da22748d64fa7c7e8dee6c2838, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -51.4
+      value: -39.29
       objectReference: {fileID: 0}
     - target: {fileID: 4133408434629712, guid: ed2fe6da22748d64fa7c7e8dee6c2838, type: 2}
       propertyPath: m_LocalRotation.x
@@ -13745,6 +13761,11 @@ Prefab:
     - target: {fileID: 1888181325017428, guid: ed2fe6da22748d64fa7c7e8dee6c2838, type: 2}
       propertyPath: m_Name
       value: Melee Enemy (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114017139128389158, guid: ed2fe6da22748d64fa7c7e8dee6c2838,
+        type: 2}
+      propertyPath: MaxHealth
+      value: 150
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ed2fe6da22748d64fa7c7e8dee6c2838, type: 2}
@@ -13853,6 +13874,11 @@ Prefab:
     - target: {fileID: 1752354336571878, guid: 330fadf4d7349424398c008d675773f2, type: 2}
       propertyPath: m_Name
       value: Ranged Unit (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114519784974296206, guid: 330fadf4d7349424398c008d675773f2,
+        type: 2}
+      propertyPath: maxAmmo
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 330fadf4d7349424398c008d675773f2, type: 2}
@@ -14041,7 +14067,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2107522471}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -50.5}
+  m_LocalPosition: {x: -4.32, y: 0, z: -38.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 588620313}
