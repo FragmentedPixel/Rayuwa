@@ -74,8 +74,12 @@ public class Agent : MonoBehaviour
                 if (followingPath == false)
                     yield break;
 
+                if (pathNodes[i].walkable == false)
+                    RecalculateDestination();
+
                 transform.position = Vector3.MoveTowards(transform.position, finalPosition, speed * Time.deltaTime);
                 transform.rotation = Quaternion.Slerp(transform.rotation, finalRotation, Time.deltaTime * turnSpeed);
+
                 yield return null;
             }
 
@@ -103,16 +107,6 @@ public class Agent : MonoBehaviour
 
     private void PreventColliding()
     {
-        if (pathNodes != null)
-        {
-            foreach (Node n in pathNodes)
-                if (n.walkable == false)
-                {
-                    RecalculateDestination();
-                    break;
-                }
-        }
-
         currentNode = grid.NodeFromWorldPoint(transform.position);
 
         currentNode.walkable = false;
