@@ -23,6 +23,9 @@ public class Agent : MonoBehaviour
 
     public List<Node> pathNodes;
     private Vector3[] waypoints;
+
+    private Node currentNode;
+    private Node oldNode;
     #endregion
 
     #endregion
@@ -93,10 +96,23 @@ public class Agent : MonoBehaviour
         selectedRenderer.enabled = value;
     }
 
-    private Node currentNode;
-    private Node oldNode;
     private void Update()
     {
+        PreventColliding();
+    }
+
+    private void PreventColliding()
+    {
+        if (pathNodes != null)
+        {
+            foreach (Node n in pathNodes)
+                if (n.walkable == false)
+                {
+                    RecalculateDestination();
+                    break;
+                }
+        }
+
         currentNode = grid.NodeFromWorldPoint(transform.position);
 
         currentNode.walkable = false;

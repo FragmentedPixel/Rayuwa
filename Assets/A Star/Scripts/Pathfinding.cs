@@ -24,13 +24,14 @@ public class Pathfinding : MonoBehaviour
 		Node startNode = grid.NodeFromWorldPoint(request.pathStart);
 		Node targetNode = grid.NodeFromWorldPoint(request.pathEnd);
 
+        
         if(!targetNode.walkable)
         {
             foreach (Node no in grid.GetNeighbours(targetNode))
                 if (no.walkable)
                     targetNode = no;
         }
-
+        
 		startNode.parent = startNode;
 		
 		if (startNode.walkable && targetNode.walkable)

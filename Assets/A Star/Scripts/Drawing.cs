@@ -260,7 +260,7 @@ public class Drawing : MonoBehaviour
         {
             selectedAgents[i].DisplaySelected(true);
 
-            if (selectedAgents[i].pathNodes == null)
+            if (selectedAgents[i].pathNodes == null || selectedAgents[i] ==  null)
                 continue;
 
             List<Node> pathNodes = selectedAgents[i].pathNodes;
