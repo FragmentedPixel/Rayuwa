@@ -963,7 +963,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb31f5e8b03883d45b2cc981fb05e278, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 200
+  MaxHealth: 300
   background: {fileID: 114508878081113110}
   healthImage: {fileID: 114141413873169116}
 --- !u!114 &114037005553802640
@@ -978,10 +978,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destination: {x: 14.7, y: 0, z: -40.9}
-  speed: 3
-  turnSpeed: 3
-  turnDst: 1
+  speed: 2
+  turnSpeed: 2
+  turnDst: 0
   stoppingDst: 0
+  pathUpdateThreshhold: 0.5
   selectedRenderer: {fileID: 0}
   pathColor: {r: 0.01306963, g: 0.2655205, b: 0.83029974, a: 1}
 --- !u!114 &114141413873169116
@@ -1076,11 +1077,12 @@ MonoBehaviour:
   target: {fileID: 0}
   lastTarget: {fileID: 0}
   WayPointParent: {fileID: 0}
-  attackRange: 3
-  attackSpeed: 3
-  attackDmg: 10
+  attackRange: 4
+  attackSpeed: 5
+  attackDmg: 50
   attackSound: {fileID: 8300000, guid: 6aee50330fe344246ae88f2fc990a3e1, type: 3}
-  maxAmmo: 10
+  targetTreshold: 2
+  maxAmmo: 30
   currentAmmo: 0
   refillPlace: {fileID: 0}
 --- !u!114 &114811924206824690
@@ -1109,7 +1111,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 5
+  m_Radius: 17
   m_Center: {x: 0, y: 1, z: 0}
 --- !u!137 &137101782556785066
 SkinnedMeshRenderer:
