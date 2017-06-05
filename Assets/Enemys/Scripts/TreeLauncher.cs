@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TreeLauncher : MonoBehaviour
 {
-    public GameManager dangerZone;
+    public GameObject dangerZone;
     public float gravity = -18;
     public float maxRandomRotation;
 
@@ -19,7 +19,7 @@ public class TreeLauncher : MonoBehaviour
         tree = _tree;
         target = _target;
 
-        Instantiate(dangerZone, transform.position, Quaternion.identity, transform);
+        Instantiate(dangerZone, target.position, Quaternion.identity);
 
         Physics.gravity = Vector3.up * gravity;
         rb = tree.GetComponent<Rigidbody>();
