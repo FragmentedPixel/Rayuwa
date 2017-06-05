@@ -71,7 +71,7 @@ public class PlayerPrefsManager : MonoBehaviour
 
     public static float GetScrollBoundray()
     {
-        return PlayerPrefs.GetFloat(SCROLL_BOUNDRAY_KEY, .15f);
+        return PlayerPrefs.GetFloat(SCROLL_BOUNDRAY_KEY, 0f);
     }
     #endregion
     #endregion

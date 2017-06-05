@@ -107,7 +107,7 @@ public class EnemyTreeThrower : MonoBehaviour
     {
         UnitHealth[] units = FindObjectsOfType<UnitHealth>();
         Transform target = null;
-        float distance = int.MaxValue;
+        float distance = float.MaxValue;
 
         foreach(UnitHealth unit in units)
         {
