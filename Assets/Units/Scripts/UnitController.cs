@@ -123,6 +123,7 @@ public abstract class UnitController : MonoBehaviour
     {
         reloading = false;
         destination = newDestionation;
+        reloadPoint = null;
         agent.MoveToDestination(destination);
 
         target = null;
