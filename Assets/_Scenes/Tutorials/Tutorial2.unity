@@ -12510,6 +12510,11 @@ Prefab:
       propertyPath: WayPointParent
       value: 
       objectReference: {fileID: 2107522472}
+    - target: {fileID: 114017139128389158, guid: ed2fe6da22748d64fa7c7e8dee6c2838,
+        type: 2}
+      propertyPath: MaxHealth
+      value: 150
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ed2fe6da22748d64fa7c7e8dee6c2838, type: 2}
   m_IsPrefabParent: 0
