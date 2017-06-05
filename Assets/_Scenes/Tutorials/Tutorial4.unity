@@ -1540,6 +1540,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114360295025584472, guid: 5b0ee274af5bc4f4295cbfdbe58a0e36,
+        type: 2}
+      propertyPath: screenPercent
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5b0ee274af5bc4f4295cbfdbe58a0e36, type: 2}
   m_IsPrefabParent: 0
@@ -3398,6 +3403,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tutorialText: {fileID: 530285318}
+  cm: {fileID: 0}
 --- !u!1001 &498731973
 Prefab:
   m_ObjectHideFlags: 0
@@ -3825,12 +3831,12 @@ Prefab:
     - target: {fileID: 224204166953150124, guid: 13c67f4ed06527d4c81521c4a63c528c,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 408.76566
+      value: 589.60394
       objectReference: {fileID: 0}
     - target: {fileID: 224204166953150124, guid: 13c67f4ed06527d4c81521c4a63c528c,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -175
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224204166953150124, guid: 13c67f4ed06527d4c81521c4a63c528c,
         type: 2}
@@ -3840,7 +3846,7 @@ Prefab:
     - target: {fileID: 224204166953150124, guid: 13c67f4ed06527d4c81521c4a63c528c,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 50
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114922821184944764, guid: 13c67f4ed06527d4c81521c4a63c528c,
         type: 2}

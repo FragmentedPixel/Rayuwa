@@ -9,11 +9,14 @@ public class Tutorial4 : MonoBehaviour
     public Text tutorialText;
 
     private bool selectedUnits;
+    public CameraManager cm;
     #endregion
 
     #region Initialization
     private void Start()
     {
+        cm.enabled = false;
+        
         StartCoroutine(TutorialCR());
     }
     #endregion
@@ -24,6 +27,14 @@ public class Tutorial4 : MonoBehaviour
         WaitForSeconds waitTime = new WaitForSeconds(.1f);
 
         yield return StartCoroutine(IntroCR());
+        yield return waitTime;
+        yield return StartCoroutine(MoveCamera1CR());
+        yield return waitTime;
+        yield return StartCoroutine(MoveCamera2CR());
+        yield return waitTime;
+        yield return StartCoroutine(ChangeCameraCR());
+        yield return waitTime;
+        yield return StartCoroutine(MoveCamera3CR());
         yield return waitTime;
         yield return StartCoroutine(HUDCR());
         yield return waitTime;
@@ -47,6 +58,74 @@ public class Tutorial4 : MonoBehaviour
             yield return null;
 
     }
+
+    private IEnumerator MoveCamera1CR()
+    {
+        tutorialText.text = "On large battlegrounds you will be able to move the camera. Move it by pressing A or D.";
+        bool moved_a = false;
+        bool moved_d = false;
+
+        while (!(moved_a && moved_d))
+        {
+            if (Input.GetKey(KeyCode.A))
+                moved_a = true;
+            if (Input.GetKey(KeyCode.D))
+                moved_d = true;
+
+            yield return null;
+        }
+    }
+
+    private IEnumerator MoveCamera2CR()
+    {
+        tutorialText.text = "To Rotate it, move your cursor at the edges of the screen or by pressing Q or E.";
+        bool rotated = false;
+        float screenMoveSize;
+        screenMoveSize = Screen.width * 0.1f;
+        while (!rotated)
+        {
+            if (Input.mousePosition.x < screenMoveSize || Input.mousePosition.x > Screen.width - screenMoveSize)
+                rotated = true;
+
+            yield return null;
+        }
+        cm.enabled = true;
+
+    }
+
+    private IEnumerator ChangeCameraCR()
+    {
+        tutorialText.text = "Change the camera by using C.";
+        bool changed = false;
+
+        while (!changed)
+        {
+            if (Input.GetKey(KeyCode.C))
+                changed = true;
+
+            yield return null;
+        }
+        cm.enabled = false;
+    }
+    private IEnumerator MoveCamera3CR()
+    {
+        tutorialText.text = "This camera can be controlled with W and S";
+
+        bool moved_w = false;
+        bool moved_s = false;
+
+        while (!(moved_w && moved_s))
+        {
+            if (Input.GetKey(KeyCode.W))
+                moved_w = true;
+            if (Input.GetKey(KeyCode.S))
+                moved_s = true;
+
+            yield return null;
+        }
+        cm.enabled = true;
+    }
+
     private IEnumerator HUDCR()
     {
         tutorialText.text = "On the bottom of your screen you can see your HUD. All your units are listed there. Below each one you can see their Health and Ammo.";
@@ -75,6 +154,9 @@ public class Tutorial4 : MonoBehaviour
         while (!Input.GetMouseButton(0) && !Input.GetKey(KeyCode.Space))
             yield return null;
     }
+
+
+
     #endregion
 
     #region Methods
