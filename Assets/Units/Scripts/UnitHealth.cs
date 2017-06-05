@@ -42,9 +42,8 @@ public class UnitHealth : MonoBehaviour
         healthImage.fillAmount = currentHealth / MaxHealth;
 
         controller.HitByEnemy(attacker);
-
-        if (healthImage.fillAmount < 0.2)
-            healthImage.color = Color.red;
+        
+        healthImage.color = (healthImage.fillAmount < 0.2) ? Color.red : Color.green;
 
         if (currentHealth <= 0)
             Destroy(transform.parent.gameObject);
@@ -53,11 +52,12 @@ public class UnitHealth : MonoBehaviour
     {
         return (currentHealth / MaxHealth);
     }
-    public void Heal()
+    public void Heal(float percent)
     {
-        currentHealth = MaxHealth;
+        currentHealth += MaxHealth * percent;
+        Debug.Log(currentHealth);
         healthImage.fillAmount = currentHealth / MaxHealth;
-        healthImage.color = Color.green;
+        healthImage.color = (healthImage.fillAmount < 0.2) ? Color.red : Color.green;
     }
     public void Die()
     {
