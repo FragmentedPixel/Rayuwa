@@ -31,7 +31,7 @@ public abstract class UnitController : MonoBehaviour
     [HideInInspector] public int ammo;
     public int maxAmmo;
     public float reloadTime = 3f;
-    private bool reloading;
+    public bool reloading;
     #endregion
 
     #region States
