@@ -11,6 +11,8 @@ public class Tutorial3 : MonoBehaviour
 
     private bool battleStarted;
     private Drawing drawing;
+
+    public Transform enemyManager;
     #endregion
 
     #region Initialization
@@ -40,10 +42,10 @@ public class Tutorial3 : MonoBehaviour
         yield return waitTime;
         yield return StartCoroutine(TargetEnemyCR());
         yield return waitTime;
-        yield return StartCoroutine(WaitToReachReloadCR());
+        yield return StartCoroutine(WaitForEnemyKill());
        
         //Auto reload.
-        
+
         tutorialText.text = "Take good care of your units, they are your only hope to save Rayuwa.";
     }
     #endregion
@@ -113,6 +115,22 @@ public class Tutorial3 : MonoBehaviour
             yield return null;
         }
     }
+
+    private IEnumerator WaitForEnemyKill()
+    {
+        
+        bool killed = false;
+
+        while (!killed)
+        {
+            if (enemyManager.childCount==2)
+                killed = true;
+
+            yield return null;
+        }
+        tutorialText.text = "Now that you have killed all the enemyes go to the crystal";
+    }
+
     private IEnumerator AutoReloadedCR()
     {
         tutorialText.text = "Waiting for autoreload..";

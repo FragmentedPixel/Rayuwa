@@ -42,7 +42,7 @@ public class Tutorial2 : MonoBehaviour
         yield return waitTime;
         yield return StartCoroutine(InRangeCR());
         yield return waitTime;
-        tutorialText.text = "You killed the defender, now continue your way to the castel.";
+        tutorialText.text = "You killed the defender, now continue your way to the crystal.";
     }
     #endregion
 
