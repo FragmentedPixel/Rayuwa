@@ -12,5 +12,7 @@ public class EnemyTree : MonoBehaviour
 
         if (unitHealth != null)
             unitHealth.Hit(damage, null);
+
+        Debug.Log(other.transform.name);
     }
 }

@@ -67,6 +67,7 @@ public class EnemyTreeThrower : MonoBehaviour
     #region Methods
     private void Throw()
     {
+        treeHolded.layer = 11;
         EnemyTree enemyTree = treeHolded.AddComponent<EnemyTree>();
         enemyTree.damage = damage;
 

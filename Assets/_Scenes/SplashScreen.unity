@@ -603,6 +603,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxUnits: 8
+  unitColors:
+  - {r: 1, g: 0, b: 0, a: 1}
+  - {r: 1, g: 0, b: 0.64137936, a: 1}
+  - {r: 0.44827604, g: 0, b: 1, a: 1}
+  - {r: 0.034482475, g: 0, b: 1, a: 1}
+  - {r: 0, g: 0.7103448, b: 1, a: 1}
+  - {r: 0, g: 1, b: 0.6275861, a: 1}
+  - {r: 0, g: 1, b: 0.048275948, a: 1}
+  - {r: 0.8627451, g: 1, b: 0, a: 1}
+  - {r: 1, g: 0.80784315, b: 0, a: 1}
+  - {r: 1, g: 0.3529412, b: 0, a: 1}
+  colorIndex: 0
   unitsList:
   - prefab: {fileID: 1794585903509742, guid: ccd4db20c3cd25749ad7c3e177324b0a, type: 2}
     unlocked: 1

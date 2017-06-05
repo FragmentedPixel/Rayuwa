@@ -33,7 +33,8 @@ public class Agent : MonoBehaviour
     #region Initialization
     private void Awake()
     {
-        pathColor = new Color(Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f));
+        if(GetComponent<UnitController>())
+            pathColor = UnitsData.instance.GetUnitColor();
 
         grid = FindObjectOfType<Grid>();
         destination = transform.position;
