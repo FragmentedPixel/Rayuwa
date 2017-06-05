@@ -30,8 +30,6 @@ public class Tutorial4 : MonoBehaviour
         yield return waitTime;
         yield return StartCoroutine(MoveCamera1CR());
         yield return waitTime;
-        yield return StartCoroutine(MoveCamera2CR());
-        yield return waitTime;
         yield return StartCoroutine(ChangeCameraCR());
         yield return waitTime;
         yield return StartCoroutine(MoveCamera3CR());
@@ -74,23 +72,7 @@ public class Tutorial4 : MonoBehaviour
 
             yield return null;
         }
-    }
-
-    private IEnumerator MoveCamera2CR()
-    {
-        tutorialText.text = "To Rotate it, move your cursor at the edges of the screen or by pressing Q or E.";
-        bool rotated = false;
-        float screenMoveSize;
-        screenMoveSize = Screen.width * 0.1f;
-        while (!rotated)
-        {
-            if (Input.mousePosition.x < screenMoveSize || Input.mousePosition.x > Screen.width - screenMoveSize)
-                rotated = true;
-
-            yield return null;
-        }
         cm.enabled = true;
-
     }
 
     private IEnumerator ChangeCameraCR()
