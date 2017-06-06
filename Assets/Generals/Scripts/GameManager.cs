@@ -52,7 +52,7 @@ public class GameManager : MonoBehaviour
 
         while (unitsManager.transform.childCount > 0)
             yield return null;
-
+        UpgradesManager.instance.ApplyResources(0);
         looseCanvas.enabled = true;
         yield break;
     }

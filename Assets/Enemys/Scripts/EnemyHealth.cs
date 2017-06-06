@@ -10,6 +10,9 @@ public class EnemyHealth : MonoBehaviour
     public float MaxHealth=500;
 	private float currentHealth;
     private EnemyController controller;
+
+    public int EnemyValue=10;
+
     #endregion
     #region UI
     public Image background;
@@ -51,8 +54,11 @@ public class EnemyHealth : MonoBehaviour
 
         if (healthImage.fillAmount < 0.2)
 			healthImage.color = Color.red;
-		if (currentHealth <= 0)
-		    Destroy (transform.parent.gameObject);
+        if (currentHealth <= 0)
+        {
+            UpgradesManager.instance.Resources(EnemyValue);
+            Destroy(transform.parent.gameObject);
+        }
 	}
     #endregion
 }
