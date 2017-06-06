@@ -60,7 +60,7 @@ public class Tutorial3 : MonoBehaviour
     }
     private IEnumerator SendToReloadPointCR()
     {
-        tutorialText.text = "Select some units and send them to a reload point.";
+        tutorialText.text = "Sometimes your units will run out of ammo. The swords will loose their durability and the others will run out of tomahawks. Send them to a reload point.";
         bool selected = false;
 
         while (!selected)

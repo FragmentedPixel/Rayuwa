@@ -15,7 +15,7 @@ public class LevelPanelManager : MonoBehaviour
     private void PopulatePanel()
     {
         int count = LevelsData.instance.levels.Length;
-        for (int i = count - 1; i > 0; i--)
+        for (int i = 1; i < count; i++)
         {
             GameObject image = Instantiate(levelImage, transform);
 

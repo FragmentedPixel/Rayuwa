@@ -13059,6 +13059,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxUnits: 10
+  unitsRangeThreshold: 5
   spawnPointsParent: {fileID: 1658933794}
   startButton: {fileID: 872925758}
 --- !u!4 &923606563
@@ -13954,7 +13955,7 @@ Prefab:
     - target: {fileID: 224030328752118524, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 408.76566
+      value: 474.77637
       objectReference: {fileID: 0}
     - target: {fileID: 224030328752118524, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
@@ -14097,7 +14098,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4729269800261556, guid: 3f8f7adbabeb88043b90f38a0d6b3457, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -19
+      value: -11
       objectReference: {fileID: 0}
     - target: {fileID: 4729269800261556, guid: 3f8f7adbabeb88043b90f38a0d6b3457, type: 2}
       propertyPath: m_LocalRotation.x
@@ -19241,7 +19242,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4012280087614526, guid: 7108bc5b8cfd7094a911bb99dccbe30c, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 4012280087614526, guid: 7108bc5b8cfd7094a911bb99dccbe30c, type: 2}
       propertyPath: m_LocalRotation.x
@@ -24323,6 +24324,14 @@ Prefab:
     - target: {fileID: 4103264083520608, guid: 6f608acf28650e94c8a61ea2f92a6890, type: 2}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765883704479380, guid: 6f608acf28650e94c8a61ea2f92a6890, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765883704479380, guid: 6f608acf28650e94c8a61ea2f92a6890, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6f608acf28650e94c8a61ea2f92a6890, type: 2}

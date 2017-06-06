@@ -28622,6 +28622,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxUnits: 10
+  unitsRangeThreshold: 5
   spawnPointsParent: {fileID: 1658933794}
   startButton: {fileID: 872925758}
 --- !u!4 &923606563
@@ -62486,11 +62487,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1668190467144418, guid: bf1d966315a50e641b106704bc7a6bc1, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1576540880975924, guid: bf1d966315a50e641b106704bc7a6bc1, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4876562662219046, guid: bf1d966315a50e641b106704bc7a6bc1, type: 2}
       propertyPath: m_LocalPosition.z

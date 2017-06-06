@@ -31,12 +31,14 @@ public abstract class UnitController : MonoBehaviour
     public int speedIndex;
     public int damageIndex;
     public int healthIndex;
+    public int ammoIndex;
     [Range(0,1)]
     public float speedPercent = 0.1f;
     [Range(0, 1)]
     public float damagePercent = 0.05f;
     [Range(0, 1)]
     public float healthPercent = 0.1f;
+    public int ammoToAdd = 1;
     #endregion
 
     #region Amunation
@@ -44,6 +46,7 @@ public abstract class UnitController : MonoBehaviour
     public int maxAmmo;
     public float reloadTime = 3f;
     public bool reloading;
+    private ParticleSystem healParticules;
     #endregion
 
     #region States
@@ -77,11 +80,12 @@ public abstract class UnitController : MonoBehaviour
     private void Start()
     {
         UnitHealth unitHealth;
-
-        ammo = maxAmmo;
+        
         unitHealth = GetComponentInChildren<UnitHealth>();
         anim = GetComponentInChildren<Animator>();
         agent = GetComponent<Agent>();
+        healParticules = unitHealth.GetComponentInChildren<ParticleSystem>();
+        healParticules.Stop();
 
         audioS = GetComponent<AudioSource>();
         audioS.volume = PlayerPrefsManager.GetMasterVolume();
@@ -89,16 +93,10 @@ public abstract class UnitController : MonoBehaviour
         agent.speed += agent.speed * speedPercent * UpgradesManager.instance.GetUpgradeValue(speedIndex);
         fightDmg += fightDmg * damagePercent * UpgradesManager.instance.GetUpgradeValue(damageIndex);
         unitHealth.MaxHealth += unitHealth.MaxHealth * healthPercent * UpgradesManager.instance.GetUpgradeValue(healthIndex);
+        maxAmmo += ammoToAdd * UpgradesManager.instance.GetUpgradeValue(ammoIndex);
+        ammo = maxAmmo;
 
         SetNewDestination(transform.position);
-    }
-
-    private void AddUpgrades()
-    {
-        if (UpgradesManager.instance == null)
-            return;
-
-        fightDmg += UpgradesManager.instance.GetUpgradeValue(1);
     }
     #endregion
 
@@ -222,6 +220,7 @@ public abstract class UnitController : MonoBehaviour
     }
     private IEnumerator ReloadingCR()
     {
+        healParticules.Play();
         reloading = true;
         yield return new WaitForSeconds(reloadTime);
 
@@ -241,6 +240,8 @@ public abstract class UnitController : MonoBehaviour
         }
         else
             currentState.ToBattleState();
+
+        healParticules.Stop();
     }
     public abstract string GetAmmoText();
     #endregion

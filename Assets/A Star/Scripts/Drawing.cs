@@ -103,7 +103,6 @@ public class Drawing : MonoBehaviour
 
         if (isdragging)
             UpdateBox();
-
     }
     private void UpdateBox()
     {

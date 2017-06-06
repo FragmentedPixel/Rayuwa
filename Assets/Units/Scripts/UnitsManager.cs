@@ -7,6 +7,7 @@ public class UnitsManager : MonoBehaviour
 {
     #region Variabiles
     public int maxUnits = 8;
+    public float unitsRangeThreshold = 5f;
     public Transform spawnPointsParent;
     public Button startButton;
 
@@ -92,7 +93,6 @@ public class UnitsManager : MonoBehaviour
     #region Methods
     public void UnitsInRange(Vector3 unitPosition, Transform newTarget)
     {
-        float range = 5f;
 
         for (int i = 0; i < unitsControllers.Count; i++)
         {
@@ -101,7 +101,7 @@ public class UnitsManager : MonoBehaviour
                 unitsControllers.Remove(unitsControllers[i]);
                 i--;
             }
-            else if (Vector3.Distance(unitsControllers[i].transform.position, unitPosition) < range)
+            else if (Vector3.Distance(unitsControllers[i].transform.position, unitPosition) < unitsRangeThreshold)
                 unitsControllers[i].HitByEnemy(newTarget);
         }
     }
