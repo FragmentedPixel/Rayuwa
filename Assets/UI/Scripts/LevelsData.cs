@@ -9,6 +9,8 @@ public class LevelsData : MonoBehaviour
 {
     public static LevelsData instance;
 
+    [Header("0=Cinematic")]
+    [Header("1=Level")]
     public bool[] levels;
 
     #region Serialization
