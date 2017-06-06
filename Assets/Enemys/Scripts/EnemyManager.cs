@@ -4,21 +4,25 @@ using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
 {
+    public List<Transform> enemyList= new List<Transform>();
+    public static EnemyManager instance;
     #region Initialization
     private void Start()
     {
+        instance = this;
         foreach (Transform child in transform)
             SetSightAndRange(child);
     }
 
     private void SetSightAndRange(Transform enemy)
     {
+        
         EnemyController enemyController = enemy.GetComponent<EnemyController>();
         EnemyHealth enemyHealth = enemy.GetComponentInChildren<EnemyHealth>();
 
         if (enemyController == null)
             return;
-
+        enemyList.Add(enemy);
         Transform range = enemyHealth.transform.GetChild(0);
         Transform sight = enemyHealth.transform.GetChild(1);
 

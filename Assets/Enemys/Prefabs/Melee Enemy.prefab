@@ -964,6 +964,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHealth: 300
+  EnemyValue: 10
   background: {fileID: 114508878081113110}
   healthImage: {fileID: 114141413873169116}
 --- !u!114 &114037005553802640
@@ -1082,6 +1083,7 @@ MonoBehaviour:
   attackDmg: 50
   attackSound: {fileID: 8300000, guid: 6aee50330fe344246ae88f2fc990a3e1, type: 3}
   targetTreshold: 2
+  agroRange: 1000
   maxAmmo: 30
   currentAmmo: 0
   refillPlace: {fileID: 0}
