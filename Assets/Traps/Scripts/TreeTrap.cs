@@ -17,10 +17,6 @@ public class TreeTrap : Trap
     #endregion
 
     #region Triggers
-    private void Start()
-    {
-        TriggerTrap();
-    }
     private void OnTriggerEnter(Collider other)
     {
         UnitHealth unit = other.GetComponent<UnitHealth>();
