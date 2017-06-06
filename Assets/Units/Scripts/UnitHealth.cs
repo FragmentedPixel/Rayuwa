@@ -55,7 +55,6 @@ public class UnitHealth : MonoBehaviour
     public void Heal(float percent)
     {
         currentHealth += MaxHealth * percent;
-        Debug.Log(currentHealth);
         healthImage.fillAmount = currentHealth / MaxHealth;
         healthImage.color = (healthImage.fillAmount < 0.2) ? Color.red : Color.green;
     }

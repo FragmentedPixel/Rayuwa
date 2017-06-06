@@ -9,13 +9,13 @@ public class LightningTrap : Trap
     public float duration;
     public ParticleSystem lightningParticules;
 
-    private Collider collider;
-    private MeshRenderer renderer;
+    private BoxCollider collider;
+    private Renderer renderer;
 
     private void Start()
     {
-        collider = GetComponent<Collider>();
-        renderer = GetComponent<MeshRenderer>();
+        collider = GetComponent<BoxCollider>();
+        renderer = GetComponent<Renderer>();
 
         InvokeRepeating("Trap", .3f, cooldown);
     }

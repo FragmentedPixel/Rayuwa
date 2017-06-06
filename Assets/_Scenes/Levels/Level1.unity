@@ -14,8 +14,8 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 8
-  m_Fog: 1
-  m_FogColor: {r: 0.39710668, g: 0.25605536, b: 0.5441177, a: 1}
+  m_Fog: 0
+  m_FogColor: {r: 0.37954152, g: 0.4080211, b: 0.44117647, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.01
   m_LinearFogStart: 0
@@ -13959,7 +13959,7 @@ Prefab:
     - target: {fileID: 224030328752118524, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -175
       objectReference: {fileID: 0}
     - target: {fileID: 224030328752118524, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
@@ -13969,7 +13969,7 @@ Prefab:
     - target: {fileID: 224030328752118524, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e8a1abe9c989894cbcdf5d2863a5776, type: 2}
@@ -29935,6 +29935,48 @@ Transform:
   m_PrefabParentObject: {fileID: 4716242456434306, guid: 7b63bd1eb60d61b478a30de5b4c6da2e,
     type: 2}
   m_PrefabInternal: {fileID: 2124195194}
+--- !u!1001 &2124643604
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4942747387658294, guid: 57a71552cd5935043a2a42acf9710466, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -114.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4942747387658294, guid: 57a71552cd5935043a2a42acf9710466, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -1.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4942747387658294, guid: 57a71552cd5935043a2a42acf9710466, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 22.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4942747387658294, guid: 57a71552cd5935043a2a42acf9710466, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0.6493539
+      objectReference: {fileID: 0}
+    - target: {fileID: 4942747387658294, guid: 57a71552cd5935043a2a42acf9710466, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0.27989212
+      objectReference: {fileID: 0}
+    - target: {fileID: 4942747387658294, guid: 57a71552cd5935043a2a42acf9710466, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0.27989203
+      objectReference: {fileID: 0}
+    - target: {fileID: 4942747387658294, guid: 57a71552cd5935043a2a42acf9710466, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.6493539
+      objectReference: {fileID: 0}
+    - target: {fileID: 4942747387658294, guid: 57a71552cd5935043a2a42acf9710466, type: 2}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 57a71552cd5935043a2a42acf9710466, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &2125316548
 Prefab:
   m_ObjectHideFlags: 0

@@ -173,20 +173,8 @@ public abstract class UnitController : MonoBehaviour
         yield return new WaitForSeconds(reloadTime);
 
         UnitHealth health = GetComponentInChildren<UnitHealth>();
-
-        float interval = .5f;
-        float duration = reloadTime;
-        float currentTime = 0f;
-
-        while(currentTime <= duration)
-        {
-            float percent = (interval * 100f) / duration;
-            health.Heal(percent);
-
-            currentTime += interval;
-            yield return new WaitForSeconds(interval);
-        }
-
+        
+        health.Heal(1);
         ammo = maxAmmo;
 
         reloading = false;
