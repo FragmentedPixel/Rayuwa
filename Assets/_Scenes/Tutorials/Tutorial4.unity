@@ -4038,6 +4038,11 @@ Prefab:
       propertyPath: m_Spacing.y
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 114907984738027212, guid: 13c67f4ed06527d4c81521c4a63c528c,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Level2
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114086699196439638, guid: 13c67f4ed06527d4c81521c4a63c528c, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 13c67f4ed06527d4c81521c4a63c528c, type: 2}
