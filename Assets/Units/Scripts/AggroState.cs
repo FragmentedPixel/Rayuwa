@@ -17,10 +17,8 @@ public class AggroState : iUnitState
 
         if (controller.target != null)
             AggroTarget();
-        else if (!controller.playerDecided)
-            ToBattleState();
         else
-            controller.SetNewDestination(controller.transform.position);
+            controller.CheckForNearbyEnemies();
     }
 
     public override void HitByEnemy(Transform enemy)

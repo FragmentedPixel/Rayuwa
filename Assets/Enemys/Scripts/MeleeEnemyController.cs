@@ -16,8 +16,6 @@ public class MeleeEnemyController : EnemyController {
         if (target == null||!target.CompareTag("Unit"))
             return;
 
-        Debug.Log(target.name);
-
         audioS.PlayOneShot(attackSound);
         if (UnityEngine.Random.Range(0, 100) < 90)
             target.GetComponent<UnitHealth>().Hit(attackDmg, transform);

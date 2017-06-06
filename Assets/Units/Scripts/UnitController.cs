@@ -14,6 +14,7 @@ public abstract class UnitController : MonoBehaviour
     [HideInInspector] public Vector3 destination;
     [HideInInspector] public ReloadPoint reloadPoint;
     [HideInInspector] public AudioSource audioS;
+    [HideInInspector] public List<EnemyHealth> nearbyEnemies = new List<EnemyHealth>();
     #endregion
 
     #region Parameters
@@ -88,6 +89,23 @@ public abstract class UnitController : MonoBehaviour
     {
         currentState.Update();
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        EnemyHealth enemy = other.GetComponent<EnemyHealth>();
+
+        if (enemy != null && !nearbyEnemies.Contains(enemy))
+            nearbyEnemies.Add(enemy);
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        EnemyHealth enemy = other.GetComponent<EnemyHealth>();
+
+        if (enemy != null && nearbyEnemies.Contains(enemy))
+            nearbyEnemies.Remove(enemy);
+    }
+
     public void HitByEnemy(Transform attacker)
     {
         if (attacker == null)
@@ -105,13 +123,11 @@ public abstract class UnitController : MonoBehaviour
     {
         battleStarted = true;
     }
-
     public void LookAtTarget()
     {
         Vector3 lookPoint = new Vector3(target.position.x, transform.position.y, target.position.z);
         transform.LookAt(lookPoint);
     }
-    
     public float DistanceToTarget()
     {
         Vector3 playerPos = new Vector3(transform.position.x, 0f, transform.position.z);
@@ -120,7 +136,6 @@ public abstract class UnitController : MonoBehaviour
         float distance = Vector3.Distance(playerPos, targetPos);
         return distance;
     }
-
     public void SetNewDestination(Vector3 newDestionation)
     {
         reloading = false;
@@ -133,7 +148,6 @@ public abstract class UnitController : MonoBehaviour
         if (battleStarted)
             currentState.ToBattleState();
     }
-
     public void SetNewTarget(Transform newTarget, bool _playerDecided)
     {
         reloading = false;
@@ -149,7 +163,6 @@ public abstract class UnitController : MonoBehaviour
         else
             currentState.ToAggroState();
     }
-
     public void SetNewReloadPoint(ReloadPoint point)
     {
         reloadPoint = point;
@@ -158,6 +171,28 @@ public abstract class UnitController : MonoBehaviour
             return;
 
         currentState.ToReloadState();
+    }
+    public void CheckForNearbyEnemies()
+    {
+        //TODO: Find closest
+        for(int i = 0; i < nearbyEnemies.Count; i++)
+        {
+            if(nearbyEnemies[i] == null)
+            {
+                nearbyEnemies.Remove(nearbyEnemies[i]);
+                i--;
+            }
+            else
+            {
+                SetNewTarget(nearbyEnemies[0].transform, playerDecided);
+                return;
+            }
+        }
+        
+        if (playerDecided)
+            currentState.ToBattleState();
+        else
+            SetNewDestination(transform.position);
     }
     #endregion
 

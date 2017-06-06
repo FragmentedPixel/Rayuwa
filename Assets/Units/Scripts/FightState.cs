@@ -19,10 +19,8 @@ public class FightState : iUnitState
 
         if (controller.target != null)
             FightTarget();
-        else if (!controller.playerDecided)
-            ToBattleState();
         else
-            controller.SetNewDestination(controller.transform.position);
+            controller.CheckForNearbyEnemies();
     }
 
     public override void HitByEnemy(Transform newTarget)
@@ -37,7 +35,7 @@ public class FightState : iUnitState
         controller.LookAtTarget();
         controller.agent.Stop();
         controller.agent.ClearPath();
-        Debug.Log(controller.target);
+
         if (controller.DistanceToTarget() > controller.fightRange)
 			ToAggroState ();
 		else if(lastAttack + controller.fightSpeed<Time.time)

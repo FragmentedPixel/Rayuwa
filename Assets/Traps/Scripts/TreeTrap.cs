@@ -17,6 +17,10 @@ public class TreeTrap : Trap
     #endregion
 
     #region Triggers
+    private void Start()
+    {
+        TriggerTrap();
+    }
     private void OnTriggerEnter(Collider other)
     {
         UnitHealth unit = other.GetComponent<UnitHealth>();
@@ -52,7 +56,7 @@ public class TreeTrap : Trap
 
         while(currentTime < duration)
         {
-            tree.transform.Rotate(angle * a, 0f, angle * b);    
+            tree.transform.Rotate(angle * a * Time.deltaTime, 0f, angle * b * Time.deltaTime);    
         
             currentTime += Time.deltaTime;
             yield return null;

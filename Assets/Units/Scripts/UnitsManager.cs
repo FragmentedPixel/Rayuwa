@@ -10,6 +10,7 @@ public class UnitsManager : MonoBehaviour
     public Transform spawnPointsParent;
     public Button startButton;
 
+    private List<UnitController> unitsControllers = new List<UnitController>();
     private List<Transform> spawnPoints;
     private Unit[] units;
     private Drawing drawing;
@@ -46,7 +47,7 @@ public class UnitsManager : MonoBehaviour
             foreach (Unit unit in units)
             {
                 for (int i = 0; i < unit.count; i++)
-                    Instantiate(unit.prefab, spawnPoints[spawnIndex++].position, Quaternion.identity, transform);
+                    unitsControllers.Add(Instantiate(unit.prefab, spawnPoints[spawnIndex++].position, Quaternion.identity, transform).GetComponent<UnitController>());
             }
         }
 
@@ -86,5 +87,24 @@ public class UnitsManager : MonoBehaviour
         foreach (UnitController controller in controllers)
             controller.StartBattle();
     }
+    #endregion
+
+    #region Methods
+    public void UnitsInRange(Vector3 unitPosition, Transform newTarget)
+    {
+        float range = 5f;
+
+        for (int i = 0; i < unitsControllers.Count; i++)
+        {
+            if(unitsControllers[i] == null)
+            {
+                unitsControllers.Remove(unitsControllers[i]);
+                i--;
+            }
+            else if (Vector3.Distance(unitsControllers[i].transform.position, unitPosition) < range)
+                unitsControllers[i].HitByEnemy(newTarget);
+        }
+    }
+
     #endregion
 }
