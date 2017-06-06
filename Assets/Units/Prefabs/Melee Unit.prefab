@@ -1123,12 +1123,19 @@ MonoBehaviour:
   destination: {x: 0, y: 0, z: 0}
   reloadPoint: {fileID: 0}
   audioS: {fileID: 0}
+  nearbyEnemies: []
   battleStarted: 0
   playerDecided: 0
   fightRange: 1.5
   fightSpeed: 2
   fightDmg: 20
   fightSound: {fileID: 8300000, guid: bd219e5fcc44dda459c64d6c8a165a9e, type: 3}
+  speedIndex: 1
+  damageIndex: 3
+  healthIndex: 2
+  speedPercent: 0.1
+  damagePercent: 0.05
+  healthPercent: 0.1
   ammo: 0
   maxAmmo: 20
   reloadTime: 2

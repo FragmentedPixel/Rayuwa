@@ -26,6 +26,17 @@ public abstract class UnitController : MonoBehaviour
     public float fightSpeed = 1f;
 	public float fightDmg = 10f;
     public AudioClip fightSound;
+
+    [Header("UpgradeEffects")]
+    public int speedIndex;
+    public int damageIndex;
+    public int healthIndex;
+    [Range(0,1)]
+    public float speedPercent = 0.1f;
+    [Range(0, 1)]
+    public float damagePercent = 0.05f;
+    [Range(0, 1)]
+    public float healthPercent = 0.1f;
     #endregion
 
     #region Amunation
@@ -65,12 +76,19 @@ public abstract class UnitController : MonoBehaviour
     }
     private void Start()
     {
+        UnitHealth unitHealth;
+
         ammo = maxAmmo;
+        unitHealth = GetComponentInChildren<UnitHealth>();
         anim = GetComponentInChildren<Animator>();
         agent = GetComponent<Agent>();
 
         audioS = GetComponent<AudioSource>();
         audioS.volume = PlayerPrefsManager.GetMasterVolume();
+
+        agent.speed += agent.speed * speedPercent * UpgradesManager.instance.GetUpgradeValue(speedIndex);
+        fightDmg += fightDmg * damagePercent * UpgradesManager.instance.GetUpgradeValue(damageIndex);
+        unitHealth.MaxHealth += unitHealth.MaxHealth * healthPercent * UpgradesManager.instance.GetUpgradeValue(healthIndex);
 
         SetNewDestination(transform.position);
     }

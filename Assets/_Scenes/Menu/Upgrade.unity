@@ -7094,12 +7094,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1719714729465066, guid: f0845a3be483da548bc6a827a4a8b434, type: 2}
       propertyPath: m_Name
-      value: Reckless
+      value: Blacksmith
       objectReference: {fileID: 0}
     - target: {fileID: 114689263543214766, guid: f0845a3be483da548bc6a827a4a8b434,
         type: 2}
       propertyPath: m_Text
-      value: Reckless
+      value: Blacksmith
       objectReference: {fileID: 0}
     - target: {fileID: 114487669740674364, guid: f0845a3be483da548bc6a827a4a8b434,
         type: 2}
@@ -21519,7 +21519,7 @@ Prefab:
     - target: {fileID: 114487669740674364, guid: f0845a3be483da548bc6a827a4a8b434,
         type: 2}
       propertyPath: m_Text
-      value: Creste rezistenta trupelorin timpul bataliei.
+      value: Creste rezistenta trupelor in timpul bataliei.
       objectReference: {fileID: 0}
     - target: {fileID: 114487669740674364, guid: f0845a3be483da548bc6a827a4a8b434,
         type: 2}
@@ -26062,7 +26062,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -26086,7 +26086,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
 --- !u!1001 &2137939895
 Prefab:
   m_ObjectHideFlags: 0
