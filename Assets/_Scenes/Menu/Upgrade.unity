@@ -7010,7 +7010,7 @@ Prefab:
     - target: {fileID: 114487669740674364, guid: f0845a3be483da548bc6a827a4a8b434,
         type: 2}
       propertyPath: m_Text
-      value: Creste damage-ul produs de trupe
+      value: The damage dealt by the troop increases
       objectReference: {fileID: 0}
     - target: {fileID: 114487669740674364, guid: f0845a3be483da548bc6a827a4a8b434,
         type: 2}
@@ -14803,8 +14803,8 @@ Prefab:
     - target: {fileID: 114487669740674364, guid: f0845a3be483da548bc6a827a4a8b434,
         type: 2}
       propertyPath: m_Text
-      value: Creste durabilitatea sabilor si numarul de sageti pe care le poate duce
-        un unit.
+      value: The durability of the swords and the number of arrows an unit can take
+        increases
       objectReference: {fileID: 0}
     - target: {fileID: 1719714729465066, guid: f0845a3be483da548bc6a827a4a8b434, type: 2}
       propertyPath: m_IsActive
@@ -21121,7 +21121,7 @@ Prefab:
     - target: {fileID: 114487669740674364, guid: f0845a3be483da548bc6a827a4a8b434,
         type: 2}
       propertyPath: m_Text
-      value: Creste rezistenta trupelor in timpul bataliei.
+      value: The troop' s resistance during the battle increases
       objectReference: {fileID: 0}
     - target: {fileID: 114487669740674364, guid: f0845a3be483da548bc6a827a4a8b434,
         type: 2}
@@ -25208,7 +25208,7 @@ Prefab:
     - target: {fileID: 114487669740674364, guid: f0845a3be483da548bc6a827a4a8b434,
         type: 2}
       propertyPath: m_Text
-      value: Ajuta trupele sa se deplaseze mai repede pe harta.
+      value: Increases the movement speed of the units.
       objectReference: {fileID: 0}
     - target: {fileID: 114487669740674364, guid: f0845a3be483da548bc6a827a4a8b434,
         type: 2}

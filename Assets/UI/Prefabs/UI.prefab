@@ -1060,7 +1060,7 @@ MonoBehaviour:
   m_IgnoreLayout: 0
   m_MinWidth: -1
   m_MinHeight: -1
-  m_PreferredWidth: 50
+  m_PreferredWidth: 200
   m_PreferredHeight: 50
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
@@ -1104,8 +1104,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 114805177976558698}
-        m_MethodName: ChangeScene
-        m_Mode: 5
+        m_MethodName: ReloadScene
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1815,6 +1815,7 @@ MonoBehaviour:
   playerCanvas: {fileID: 223275834528441430}
   winCanvas: {fileID: 223560749804299956}
   looseCanvas: {fileID: 223721987769625318}
+  bonusPercent: 0
   won: 0
 --- !u!114 &114651598065026778
 MonoBehaviour:
@@ -2481,6 +2482,7 @@ MonoBehaviour:
   panel: {fileID: 224898223433872016}
   unitRowPrefab: {fileID: 1557121231369484, guid: 250361c1a46a48a418694e697caba3f3,
     type: 2}
+  fightButton: {fileID: 114890666616949362}
   clickSound: {fileID: 8300000, guid: bae016cbe56624b419c5c730bb2813a1, type: 3}
 --- !u!114 &114968393555853926
 MonoBehaviour:

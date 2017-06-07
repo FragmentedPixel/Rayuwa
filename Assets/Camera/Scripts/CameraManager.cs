@@ -6,10 +6,9 @@ public class CameraManager : MonoBehaviour {
 
     private Camera[] camera_list;
     private int index = 0;
-    // Update is called once per frame
+
     private void Start()
     {
-
         camera_list = transform.GetComponentsInChildren<Camera>(true);
     }
 
@@ -24,12 +23,16 @@ public class CameraManager : MonoBehaviour {
     void ChangeCamera()
     {
         camera_list[index].gameObject.SetActive(false);
+        float zPos = camera_list[index].transform.position.z;
         if (!(++index<camera_list.Length))
         {
             index = 0;
         }
         camera_list[index].gameObject.SetActive(true);
 
+        Vector3 newPos = camera_list[index].transform.position;
+        newPos.z = zPos;
+        camera_list[index].transform.position = newPos;
     }
 
 }

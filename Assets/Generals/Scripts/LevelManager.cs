@@ -45,5 +45,11 @@ public class LevelManager : MonoBehaviour
         ProgressData progressData = FindObjectOfType<ProgressData>();
         SceneManager.LoadScene(progressData.LastLevel());
     }
+
+    public void ReloadScene()
+    {
+        string currentScene = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(currentScene);
+    }
     #endregion
 }

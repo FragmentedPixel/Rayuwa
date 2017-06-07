@@ -13,6 +13,7 @@ public class UnitsOptions : MonoBehaviour
     public Transform panel;
 
     public GameObject unitRowPrefab;
+    public Button fightButton;
     public AudioClip clickSound;
     
     private AudioSource audioS;
@@ -55,7 +56,7 @@ public class UnitsOptions : MonoBehaviour
         foreach (Unit unit in units)
             value += unit.count;
 
-        unitsCountText.text = value.ToString();
+        unitsCountText.text = value.ToString() + "/" + UnitsData.instance.maxUnits.ToString();
         unitsCountText.color = Color.Lerp(Color.yellow, Color.red, value / UnitsData.instance.maxUnits);
 
         gameManager.bonusPercent = Mathf.Lerp(0f, maxBonusPercent, (UnitsData.instance.maxUnits - value) / UnitsData.instance.maxUnits);
@@ -64,6 +65,8 @@ public class UnitsOptions : MonoBehaviour
             bonusText.text = "Bonus: " + gameManager.bonusPercent + "%";
         else
             bonusText.text = "";
+
+        fightButton.enabled = !(value == 0);
     }
 
     public void PlaySound()

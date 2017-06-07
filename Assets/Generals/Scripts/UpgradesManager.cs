@@ -55,7 +55,7 @@ public class UpgradesManager : MonoBehaviour
 
     public int UpgradeCost(int index)
     {
-        return upgradeArray[index] * costPerLevel;
+        return  costPerLevel + upgradeArray[index] * costPerLevel;
     }
     public bool ApplyUpgrade(int index)
     {

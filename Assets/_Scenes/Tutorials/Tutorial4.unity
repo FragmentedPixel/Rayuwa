@@ -4041,7 +4041,7 @@ Prefab:
     - target: {fileID: 114907984738027212, guid: 13c67f4ed06527d4c81521c4a63c528c,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Level2
+      value: Level1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114086699196439638, guid: 13c67f4ed06527d4c81521c4a63c528c, type: 2}
@@ -7231,6 +7231,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxUnits: 8
+  unitsRangeThreshold: 5
   spawnPointsParent: {fileID: 1658933794}
   startButton: {fileID: 530285319}
 --- !u!4 &962155433
@@ -7276,7 +7277,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4729269800261556, guid: 3f8f7adbabeb88043b90f38a0d6b3457, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -7.2
+      value: -4.71
       objectReference: {fileID: 0}
     - target: {fileID: 4729269800261556, guid: 3f8f7adbabeb88043b90f38a0d6b3457, type: 2}
       propertyPath: m_LocalRotation.x
@@ -12362,6 +12363,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9247a7983fd71ae49b0a9f7b436cb183, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyList: []
 --- !u!4 &1830315062
 Transform:
   m_ObjectHideFlags: 0
@@ -14535,7 +14537,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2107522471}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -27.8}
+  m_LocalPosition: {x: 0, y: 0, z: -33.49}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 588620313}

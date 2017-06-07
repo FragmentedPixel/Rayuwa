@@ -110,7 +110,7 @@ public class Tutorial4 : MonoBehaviour
 
     private IEnumerator HUDCR()
     {
-        tutorialText.text = "On the bottom of your screen you can see your HUD. All your units are listed there. Below each one you can see their Health and Ammo.";
+        tutorialText.text = "On the bottom of your screen you can see your units. Below each one you can see their Health and Ammo.";
 
         while (!Input.GetMouseButton(0) && !Input.GetKey(KeyCode.Space))
             yield return null;

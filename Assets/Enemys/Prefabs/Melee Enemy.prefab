@@ -1080,7 +1080,7 @@ MonoBehaviour:
   WayPointParent: {fileID: 0}
   attackRange: 4
   attackSpeed: 5
-  attackDmg: 20
+  attackDmg: 40
   attackSound: {fileID: 8300000, guid: 6aee50330fe344246ae88f2fc990a3e1, type: 3}
   targetTreshold: 5
   agroRange: 15

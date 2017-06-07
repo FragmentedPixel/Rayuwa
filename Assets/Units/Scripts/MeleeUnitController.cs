@@ -12,7 +12,7 @@ public class MeleeUnitController : UnitController
     }
     public override string GetAmmoText()
     {
-        string ammoText = ((ammo * 100f) / maxAmmo ).ToString() + "%";
+        string ammoText = Mathf.RoundToInt( ((ammo * 100f) / maxAmmo ) ).ToString() + "%";
         return ammoText;
     }
     public void SwordHit()
