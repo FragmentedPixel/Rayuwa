@@ -444,7 +444,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1888181325017428}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -39.4}
+  m_LocalPosition: {x: 20.1, y: 0, z: 18.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4270230776772938}
@@ -1083,7 +1083,7 @@ MonoBehaviour:
   attackDmg: 50
   attackSound: {fileID: 8300000, guid: 6aee50330fe344246ae88f2fc990a3e1, type: 3}
   targetTreshold: 2
-  agroRange: 1000
+  agroRange: 15
   maxAmmo: 30
   currentAmmo: 0
   refillPlace: {fileID: 0}

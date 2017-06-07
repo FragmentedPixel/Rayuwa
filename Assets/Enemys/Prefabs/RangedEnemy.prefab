@@ -151,7 +151,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1465925461734894
 GameObject:
   m_ObjectHideFlags: 1
@@ -636,7 +636,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1444080983380518}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.21, y: 0, z: -40.6}
+  m_LocalPosition: {x: 36.9, y: 0, z: -33.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4382026451652568}
@@ -1047,7 +1047,7 @@ MonoBehaviour:
   attackDmg: 18
   attackSound: {fileID: 8300000, guid: 04051136be94e0546b69ad55fc859cf0, type: 3}
   targetTreshold: 2
-  agroRange: 1000
+  agroRange: 15
   maxAmmo: 10
   currentAmmo: 0
   refillPlace: {fileID: 0}
