@@ -3217,6 +3217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9247a7983fd71ae49b0a9f7b436cb183, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyList: []
 --- !u!1001 &212214339
 Prefab:
   m_ObjectHideFlags: 0
@@ -13971,6 +13972,11 @@ Prefab:
         type: 2}
       propertyPath: m_SizeDelta.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114646902056649974, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
+        type: 2}
+      propertyPath: levelIndex
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e8a1abe9c989894cbcdf5d2863a5776, type: 2}

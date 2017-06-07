@@ -8,17 +8,21 @@ public class UnitsOptions : MonoBehaviour
 
     #region Variabiles
     public Text unitsCountText;
+    public Text bonusText;
+    public float maxBonusPercent = 300;
     public Transform panel;
 
     public GameObject unitRowPrefab;
     public AudioClip clickSound;
     
     private AudioSource audioS;
+    private GameManager gameManager;
     #endregion
 
     #region Initialization
     private void Start()
     {
+        gameManager = FindObjectOfType<GameManager>();
         audioS = GetComponent<AudioSource>();
         audioS.volume = PlayerPrefsManager.GetMasterVolume();
 
@@ -28,6 +32,8 @@ public class UnitsOptions : MonoBehaviour
 
         foreach (Unit unit in units)
             AddRow(unit);
+
+        bonusText.transform.SetAsLastSibling();
     }
     #endregion
 
@@ -51,6 +57,13 @@ public class UnitsOptions : MonoBehaviour
 
         unitsCountText.text = value.ToString();
         unitsCountText.color = Color.Lerp(Color.yellow, Color.red, value / UnitsData.instance.maxUnits);
+
+        gameManager.bonusPercent = Mathf.Lerp(0f, maxBonusPercent, (UnitsData.instance.maxUnits - value) / UnitsData.instance.maxUnits);
+
+        if (value != 0 && value != UnitsData.instance.maxUnits)
+            bonusText.text = "Bonus: " + gameManager.bonusPercent + "%";
+        else
+            bonusText.text = "";
     }
 
     public void PlaySound()

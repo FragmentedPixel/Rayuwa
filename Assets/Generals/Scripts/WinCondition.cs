@@ -7,7 +7,6 @@ public class WinCondition : MonoBehaviour
 {
     #region Variabiles
     public Canvas winCanvas;
-    public int winBonus = 100;
     #endregion
 
     #region Win check
@@ -19,13 +18,11 @@ public class WinCondition : MonoBehaviour
 
     private void Win()
     {
-
         EnemyHealth[] enemys = FindObjectsOfType<EnemyHealth>();
         if (enemys.Length != 0)
             return;
-        UpgradesManager.instance.ApplyResources(winBonus);
-        winCanvas.enabled = true;
 
+        FindObjectOfType<GameManager>().WonGame();
     }
     #endregion
 }

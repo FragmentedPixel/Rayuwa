@@ -259,7 +259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7eae440e10d877b4c8fe6e35c9b447ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backgroundLoop: {fileID: 8300000, guid: d49a5fafa13b53f44bef83d05b5f688c, type: 3}
+  backgroundLoop: {fileID: 8300000, guid: a2c52a599f463fa45b4ae252ad5355b5, type: 3}
 --- !u!4 &149194545
 Transform:
   m_ObjectHideFlags: 0
@@ -647,7 +647,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b3b31351ec72da4d904a92504117806, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levels: 010101
+  levels: 010100
 --- !u!114 &1299864686
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -6,10 +6,17 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     #region Variabiles
+    public int levelIndex;
+    public int winBonus = 100;
+
+    [Header("UI")]
     public Canvas unitsCanavas;
     public Canvas playerCanvas;
+    public Canvas winCanvas;
     public Canvas looseCanvas;
 
+    public float bonusPercent;
+    public bool won;
     private bool unitsSelected;
     #endregion
 
@@ -50,11 +57,32 @@ public class GameManager : MonoBehaviour
     {
         UnitsManager unitsManager = FindObjectOfType<UnitsManager>();
 
-        while (unitsManager.transform.childCount > 0)
+        while (unitsManager.transform.childCount > 0 && !won)
+        {
+            Debug.Log(true && false);
             yield return null;
-        UpgradesManager.instance.ApplyResources(0);
+        }
+
+        if (won)
+            yield return Win();
+        else
+            yield return Loose();
+    }
+
+    private IEnumerator Win()
+    {
+        winCanvas.enabled = true;
+        int reward = Mathf.RoundToInt(winBonus + winBonus * bonusPercent);
+        UpgradesManager.instance.ApplyResources(reward);
+        LevelsData.instance.levels[levelIndex+1] = true;
+
+        yield return null;
+    }
+    private IEnumerator Loose()
+    {
         looseCanvas.enabled = true;
-        yield break;
+
+        yield return null;
     }
     #endregion
 
@@ -62,6 +90,11 @@ public class GameManager : MonoBehaviour
     public void SelectUnits()
     {
         unitsSelected = true;
+    }
+
+    public void WonGame()
+    {
+        won = true;
     }
     #endregion
 }
