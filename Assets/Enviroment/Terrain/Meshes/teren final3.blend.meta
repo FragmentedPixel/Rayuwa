@@ -1,0 +1,143 @@
+fileFormatVersion: 2
+guid: e4df94d8ac01d384bbbe25770134d2d8
+timeCreated: 1495055249
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Plane
+    100002: Plane_001
+    100004: //RootNode
+    100006: Ground
+    100008: River
+    100010: River_Ground
+    100012: River_001
+    100014: River_002
+    100016: River_003
+    100018: River_004
+    100020: River_Ground_001
+    100022: River_Ground_003
+    100024: Ground-River
+    400000: Plane
+    400002: Plane_001
+    400004: //RootNode
+    400006: Ground
+    400008: River
+    400010: River_Ground
+    400012: River_001
+    400014: River_002
+    400016: River_003
+    400018: River_004
+    400020: River_Ground_001
+    400022: River_Ground_003
+    400024: Ground-River
+    2300000: Plane
+    2300002: Plane_001
+    2300004: //RootNode
+    2300006: Ground
+    2300008: River
+    2300010: River_Ground
+    2300012: River_001
+    2300014: River_002
+    2300016: River_003
+    2300018: River_004
+    2300020: River_Ground_001
+    2300022: River_Ground_003
+    2300024: Ground-River
+    3300000: Plane
+    3300002: Plane_001
+    3300004: //RootNode
+    3300006: Ground
+    3300008: River
+    3300010: River_Ground
+    3300012: River_001
+    3300014: River_002
+    3300016: River_003
+    3300018: River_004
+    3300020: River_Ground_001
+    3300022: River_Ground_003
+    3300024: Ground-River
+    4300000: Plane_001
+    4300002: Plane
+    4300004: River
+    4300006: Ground
+    4300008: River_Ground
+    4300010: River_001
+    4300012: River_Ground_001
+    4300014: River_002
+    4300016: River_003
+    4300018: River_Ground_003
+    4300020: River_004
+    4300022: Ground-River
+    7400000: Default Take
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
