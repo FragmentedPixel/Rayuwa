@@ -26,10 +26,18 @@ public class CenterCameraController : MonoBehaviour
         transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x + lookAtOffset, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
     }
 		
-
+    public void Clamp()
+    {
+            Vector3 position = transform.position;
+            position.z = Mathf.Clamp(transform.position.z, startPosition.z, startPosition.z + Z_Boundary);
+            transform.position = position;
+            transform.LookAt(lookAt);
+            transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x + lookAtOffset, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
+    }
 
 	void Update() 
 	{
+
 		float movement = Input.GetAxis("Vertical");
 
         movement *= Time.deltaTime * speed;
@@ -42,5 +50,6 @@ public class CenterCameraController : MonoBehaviour
             transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x+lookAtOffset,transform.rotation.eulerAngles.y,transform.rotation.eulerAngles.z);
             
         }
+        
 	}
 }

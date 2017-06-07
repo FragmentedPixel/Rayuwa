@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraController : MonoBehaviour {
+public class SideCameraController : MonoBehaviour {
 	
 	private Vector3 startPosition;
     private float screenMoveSize;
@@ -29,13 +29,17 @@ public class CameraController : MonoBehaviour {
         screenMoveSize = Screen.width* screenPercent;
 	}
 		
+    public void Clamp()
+    {
+        Vector3 newposition = transform.position;
+        newposition.z = Mathf.Clamp(transform.position.z, startPosition.z, startPosition.z + Z_Boundary);
+        transform.position = newposition;
+    }
 
-
-	void Update() 
+	public void Update() 
 	{
-        if (!isEnabled)
-            return;
-		float movement = Input.GetAxis("Horizontal");
+        
+        float movement = Input.GetAxis("Horizontal");
         if (movement != 0)
         {
             movement *= Time.deltaTime * speed;
