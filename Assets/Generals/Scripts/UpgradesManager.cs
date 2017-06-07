@@ -11,7 +11,6 @@ public class UpgradesManager : MonoBehaviour
 
     public int[] upgradeArray;
     public int resources;
-    private int levelResources;
 
     public int costPerLevel;
     private string fileLocation;
@@ -72,16 +71,9 @@ public class UpgradesManager : MonoBehaviour
     {
         return upgradeArray[index];
     }
-    public void Resources (int amount)
+    public void ApplyResources(int resGained)
     {
-        levelResources += amount;
-        Debug.Log(levelResources);
-    }
-    public void ApplyResources(int bonus)
-    {
-        resources += levelResources+bonus;
-        Debug.Log(levelResources + "Final");
-        levelResources = 0;
+        resources += resGained;
     }
 }
 

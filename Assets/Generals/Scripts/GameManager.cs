@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     #region Variabiles
+    [Header("Level")]
     public int levelIndex;
     public int winBonus = 100;
 
@@ -14,7 +15,10 @@ public class GameManager : MonoBehaviour
     public Canvas playerCanvas;
     public Canvas winCanvas;
     public Canvas looseCanvas;
+    public Canvas resourcesCanvas;
 
+    [Header("Resources")]
+    public int levelResources;
     public float bonusPercent;
     public bool won;
     private bool unitsSelected;
@@ -30,6 +34,7 @@ public class GameManager : MonoBehaviour
         yield return SelectUnitsCR();
         yield return StartLevelCR();
         yield return GameCR();
+        yield return ResourcesCR();
     }
     #endregion
 
@@ -64,6 +69,19 @@ public class GameManager : MonoBehaviour
             yield return Win();
         else
             yield return Loose();
+    }
+    private IEnumerator ResourcesCR()
+    {
+        resourcesCanvas.enabled = true;
+
+        int bonus = Mathf.RoundToInt((levelResources + winBonus) * bonusPercent / 100f);
+        int totalRes = winBonus + levelResources + bonus;
+
+        UpgradesManager.instance.ApplyResources(totalRes);
+
+
+        FindObjectOfType<ResourcesPanel>().SetResources(levelResources, winBonus, bonus, UpgradesManager.instance.resources);
+        yield return null;
     }
 
     private IEnumerator Win()

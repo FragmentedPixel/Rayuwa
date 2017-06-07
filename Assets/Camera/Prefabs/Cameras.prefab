@@ -46,7 +46,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1668190467144418
 GameObject:
   m_ObjectHideFlags: 0
@@ -104,7 +104,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1865262889730024}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -121,7 +121,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1668190467144418}
   m_LocalRotation: {x: 0.22414392, y: -0.48296294, z: 0.12940955, w: 0.8365163}
-  m_LocalPosition: {x: 36.73, y: 17.54, z: -89.350006}
+  m_LocalPosition: {x: 46.73, y: 25, z: -89.350006}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4436295707809148}
@@ -134,7 +134,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1576540880975924}
   m_LocalRotation: {x: 0.28853044, y: -0, z: -0, w: 0.9574707}
-  m_LocalPosition: {x: 0, y: 23.1, z: -98.99}
+  m_LocalPosition: {x: 0, y: 20.3, z: -115.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4436295707809148}
@@ -288,7 +288,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   screenPercent: 0.15
-  Z_Boundary: 140
+  Z_Boundary: 200
   lookAtOffset: 22
   lookAt: {fileID: 4366106552554674}
 --- !u!114 &114737558731119020
@@ -302,6 +302,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cb17bc9fa74d0a4bba8d5c1b6a0d2ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scc: {fileID: 114800754584537736}
+  ccc: {fileID: 114263594309116162}
 --- !u!114 &114800754584537736
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -313,10 +315,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf656b8b78ca8fd42aed9f0dcdec995c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isEnabled: 0
   speed: 10
   rot_speed: 10
   screenPercent: 0.1
-  Z_Boundary: 100
+  Z_Boundary: 150
   Y_Rot_Min: 240
   Y_Rot_Max: 300
 --- !u!124 &124528249791182032

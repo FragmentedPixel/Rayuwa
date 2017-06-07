@@ -11,7 +11,7 @@ public class EnemyHealth : MonoBehaviour
 	private float currentHealth;
     private EnemyController controller;
 
-    public int EnemyValue=10;
+    public int enemyValue=10;
 
     #endregion
     #region UI
@@ -19,11 +19,13 @@ public class EnemyHealth : MonoBehaviour
 	public Image healthImage;
 	private Canvas canvas;
     #endregion
+    private GameManager gameManager;
     #endregion
 
     #region Initialization
     private void Start () 
-	{	
+	{
+        gameManager = FindObjectOfType<GameManager>();
 		canvas = background.GetComponentInParent<Canvas>();
 		currentHealth = MaxHealth;
         controller = GetComponentInParent<EnemyController>();
@@ -56,7 +58,7 @@ public class EnemyHealth : MonoBehaviour
 			healthImage.color = Color.red;
         if (currentHealth <= 0)
         {
-            UpgradesManager.instance.Resources(EnemyValue);
+            gameManager.levelResources += enemyValue;
             Destroy(transform.parent.gameObject);
         }
 	}
