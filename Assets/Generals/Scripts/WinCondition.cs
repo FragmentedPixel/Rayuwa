@@ -21,8 +21,12 @@ public class WinCondition : MonoBehaviour
         EnemyHealth[] enemys = FindObjectsOfType<EnemyHealth>();
         if (enemys.Length != 0)
             return;
-
-        FindObjectOfType<GameManager>().WonGame();
+        if(FindObjectOfType<GameManager>()!=null)
+            FindObjectOfType<GameManager>().WonGame();
+        else
+        {
+            winCanvas.enabled = true;
+        }
     }
     #endregion
 }
