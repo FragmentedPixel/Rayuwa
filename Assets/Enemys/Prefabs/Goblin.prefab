@@ -206,9 +206,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4454249175886404}
-  - component: {fileID: 65244434697769458}
   - component: {fileID: 54323171625166600}
   - component: {fileID: 114913958815409258}
+  - component: {fileID: 65270048492958138}
   m_Layer: 11
   m_Name: EnemyHealth
   m_TagString: Enemy
@@ -488,7 +488,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1743884985339750}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4454249175886404}
@@ -528,7 +528,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1507448285885588}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalPosition: {x: 0, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4383961064512684}
@@ -558,7 +558,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1976298765940570}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4454249175886404}
@@ -658,7 +658,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1444080983380518}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 16.6, y: 0, z: 18.2}
+  m_LocalPosition: {x: 16.6, y: 0, z: -25.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4316783250288552}
@@ -839,7 +839,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &65244434697769458
+--- !u!65 &65270048492958138
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -849,8 +849,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.3, y: 0.7, z: 0.3}
-  m_Center: {x: 0, y: -0.15, z: 0}
+  m_Size: {x: 1, y: 2.7, z: 1}
+  m_Center: {x: 0, y: -0.62, z: 0}
 --- !u!82 &82158334248933872
 AudioSource:
   m_ObjectHideFlags: 1
@@ -1054,7 +1054,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destination: {x: 14.7, y: 0, z: -40.9}
-  speed: 6
+  speed: 3.5
   turnSpeed: 4
   turnDst: 1
   stoppingDst: 0
@@ -1099,9 +1099,9 @@ MonoBehaviour:
   target: {fileID: 0}
   lastTarget: {fileID: 0}
   WayPointParent: {fileID: 0}
-  attackRange: 1
-  attackSpeed: 0.5
-  attackDmg: 5
+  attackRange: 4
+  attackSpeed: 1
+  attackDmg: 12
   attackSound: {fileID: 8300000, guid: 769e37b1d38115446a7dd4cf7b1533b7, type: 3}
   targetTreshold: 2
   agroRange: 10

@@ -58,10 +58,7 @@ public class GameManager : MonoBehaviour
         UnitsManager unitsManager = FindObjectOfType<UnitsManager>();
 
         while (unitsManager.transform.childCount > 0 && !won)
-        {
-            Debug.Log(true && false);
             yield return null;
-        }
 
         if (won)
             yield return Win();

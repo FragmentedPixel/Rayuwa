@@ -143,7 +143,10 @@ public abstract class  EnemyController : MonoBehaviour
     }
     public float DistanceToTarget()
     {
-        float distance = Vector3.Distance(transform.position, target.position);
+        Vector3 tranPos = new Vector3(transform.position.x, 0f, transform.position.z);
+        Vector3 targetPos = new Vector3(target.position.x, 0f, target.position.z);
+
+        float distance = Vector3.Distance(tranPos, targetPos);
         return distance;
     }
 
