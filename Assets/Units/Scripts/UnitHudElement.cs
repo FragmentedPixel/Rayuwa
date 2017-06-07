@@ -45,13 +45,18 @@ public class UnitHudElement : MonoBehaviour
         if (drawing.selectedAgents.Contains(unit.unitController.agent))
             newColor.a = 1f;
         else
-            newColor.a = .5f;
+            newColor.a = .3f;
 
         buttonImage.color = newColor;
 
         ammoText.text = (unit.health <= 0f) ? "Dead" : unit.ammoText;
 
-        if (unit.ammo <= 0f)
+        if (unit.reloading)
+        {
+            ammoText.text = "Reloading";
+            ammoText.color = Color.green;
+        }
+        else if (unit.ammo <= 0f)
             anim.SetBool("Blinking", true);
         else
             anim.SetBool("Blinking", false);
@@ -73,5 +78,6 @@ public class UnitInfo
 
     public float health { get { return unitHealth.GetHealthPercent(); } }
     public int ammo { get { return unitController.ammo; } }
+    public bool reloading { get { return unitController.reloading; } }
     public string ammoText { get { return unitController.GetAmmoText(); } }
 }
