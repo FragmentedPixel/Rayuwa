@@ -37,7 +37,8 @@ GameObject:
   - component: {fileID: 4687236126882730}
   - component: {fileID: 33146148274135772}
   - component: {fileID: 23543437673654612}
-  m_Layer: 0
+  - component: {fileID: 64436160333406554}
+  m_Layer: 9
   m_Name: Ground-River
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,7 +55,8 @@ GameObject:
   - component: {fileID: 4222650261279750}
   - component: {fileID: 33456343501591084}
   - component: {fileID: 23039156074653710}
-  m_Layer: 0
+  - component: {fileID: 64571328575296596}
+  m_Layer: 9
   m_Name: River_004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +73,8 @@ GameObject:
   - component: {fileID: 4394243109426062}
   - component: {fileID: 33919815959963192}
   - component: {fileID: 23257357266119502}
-  m_Layer: 0
+  - component: {fileID: 64801293936033416}
+  m_Layer: 8
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -250,6 +253,48 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1817975506911838}
+  m_Mesh: {fileID: 4300006, guid: e4df94d8ac01d384bbbe25770134d2d8, type: 3}
+--- !u!64 &64436160333406554
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1684222211414118}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300022, guid: e4df94d8ac01d384bbbe25770134d2d8, type: 3}
+--- !u!64 &64571328575296596
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1703416743452930}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300020, guid: e4df94d8ac01d384bbbe25770134d2d8, type: 3}
+--- !u!64 &64801293936033416
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1817975506911838}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300006, guid: e4df94d8ac01d384bbbe25770134d2d8, type: 3}
 --- !u!95 &95045258620893926
 Animator:
