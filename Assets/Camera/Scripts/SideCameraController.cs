@@ -29,10 +29,10 @@ public class SideCameraController : MonoBehaviour {
         screenMoveSize = Screen.width* screenPercent;
 	}
 		
-    public void Clamp()
+    public void Clamp(float zPosition)
     {
         Vector3 newposition = transform.position;
-        newposition.z = Mathf.Clamp(transform.position.z, startPosition.z, startPosition.z + Z_Boundary);
+        newposition.z = Mathf.Clamp(zPosition, startPosition.z, startPosition.z + Z_Boundary);
         transform.position = newposition;
     }
 

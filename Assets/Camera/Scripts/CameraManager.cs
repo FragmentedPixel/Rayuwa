@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraManager : MonoBehaviour {
-
+    [Header("Offsets relative to last camera")]
+    public float[] cameraOffsets;
     private Camera[] camera_list;
     public SideCameraController scc;
     public CenterCameraController ccc;
@@ -25,21 +26,19 @@ public class CameraManager : MonoBehaviour {
     void ChangeCamera()
     {
         camera_list[index].gameObject.SetActive(false);
+
         float zPos = camera_list[index].transform.position.z;
 
         index = (index + 1) % camera_list.Length;
 
-        Vector3 newPos = camera_list[index].transform.position;
-        newPos.z = zPos;
-        camera_list[index].transform.position = newPos;
+        zPos = zPos+cameraOffsets[index];
+
         if (index == 0)
-            scc.Clamp();
+            scc.Clamp(zPos);
         else
-            ccc.Clamp();
+            ccc.Clamp(zPos);
 
         camera_list[index].gameObject.SetActive(true);
-
-        
     }
 
 }

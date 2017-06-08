@@ -10,7 +10,6 @@ public class CenterCameraController : MonoBehaviour
 
     [Header("Boundaries")]
     [Range(0, 0.5f)]
-    public float screenPercent = 0.0f;
     public float Z_Boundary = 50f;
     public float lookAtOffset = 25f;
 
@@ -19,20 +18,24 @@ public class CenterCameraController : MonoBehaviour
 
     void Start () 
 	{
-        screenPercent = PlayerPrefsManager.GetScrollBoundray();
-		startPosition = transform.position;
+        if (startPosition == Vector3.zero)
+            startPosition = transform.position;
 
         transform.LookAt(lookAt);
         transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x + lookAtOffset, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
     }
 		
-    public void Clamp()
+    public void Clamp(float zPosition)
     {
-            Vector3 position = transform.position;
-            position.z = Mathf.Clamp(transform.position.z, startPosition.z, startPosition.z + Z_Boundary);
-            transform.position = position;
-            transform.LookAt(lookAt);
-            transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x + lookAtOffset, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
+        if(startPosition==Vector3.zero)
+            startPosition = transform.position;
+
+        Vector3 position = transform.position;
+        position.z = Mathf.Clamp(zPosition, startPosition.z, startPosition.z + Z_Boundary);
+        transform.position = position;
+
+        transform.LookAt(lookAt);
+        transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x + lookAtOffset, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
     }
 
 	void Update() 
