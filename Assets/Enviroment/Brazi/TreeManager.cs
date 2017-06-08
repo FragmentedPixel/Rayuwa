@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CopaciManager : MonoBehaviour
+public class TreeManager : MonoBehaviour
 {
     private Grid grid;
 
