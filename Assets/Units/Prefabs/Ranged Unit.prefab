@@ -1029,7 +1029,7 @@ MonoBehaviour:
   nearbyEnemies: []
   battleStarted: 0
   playerDecided: 0
-  UIsprite: {fileID: 21300000, guid: 2dba3d65781bbd249aa56e83db7bfd92, type: 3}
+  UIsprite: {fileID: 21300000, guid: ee9adeaafe7b4fc4e8f9d60c5ba0469b, type: 3}
   fightRange: 12
   fightSpeed: 4
   fightDmg: 25
@@ -1219,7 +1219,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1829354165
+  randomSeed: 1622817813
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -4218,7 +4218,7 @@ ParticleSystemRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: a6147df28235b5e43875960fbe39c851, type: 2}
+  - {fileID: 2100000, guid: d997f20a2c0f14c4a8a40af099a932cb, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
