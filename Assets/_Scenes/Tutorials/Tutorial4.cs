@@ -117,7 +117,7 @@ public class Tutorial4 : MonoBehaviour
     }
     private IEnumerator SelectHUDCR()
     {
-        tutorialText.text = "You can select units from your HUD, or shift select to add them to your currently selected units.";
+        tutorialText.text = "You can also select them by clicking, or shift select to add them to your currently selected units.";
 
         while (!Input.GetMouseButton(0) && !Input.GetKey(KeyCode.Space))
             yield return null;
