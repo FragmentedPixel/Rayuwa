@@ -49,9 +49,7 @@ public  class AttackState : iEnemyState
             }
             else if(Vector3.Distance(controller.transform.position, enemyList[i].position) < controller.agroRange)
             {
-                Debug.Log(enemyList[i].GetComponentInChildren<EnemyHealth>());
-                enemyList[i].GetComponentInChildren<EnemyHealth>().Hit(0,controller.target);
-                    
+                enemyList[i].GetComponentInChildren<EnemyHealth>().Hit(0,controller.target);       
             }
         }
 

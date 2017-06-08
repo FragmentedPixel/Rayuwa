@@ -223,8 +223,15 @@ public abstract class UnitController : MonoBehaviour
     {
         healParticules.Play();
         reloading = true;
-        yield return new WaitForSeconds(reloadTime);
 
+        float duration = reloadTime;
+        float currentTime = 0f;
+        while(reloading && currentTime < duration)
+        {
+            currentTime += Time.deltaTime;
+            yield return null;
+        }
+        
         UnitHealth health = GetComponentInChildren<UnitHealth>();
         
         health.Heal(1);
