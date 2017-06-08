@@ -106,5 +106,14 @@ public class UnitsManager : MonoBehaviour
         }
     }
 
+    public void UpdateControllersList()
+    {
+        UnitController[] controllers = FindObjectsOfType<UnitController>();
+        unitsControllers = new List<UnitController>();
+
+        foreach (UnitController controller in controllers)
+            unitsControllers.Add(controller);
+    }
+
     #endregion
 }

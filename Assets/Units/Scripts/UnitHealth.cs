@@ -43,6 +43,7 @@ public class UnitHealth : MonoBehaviour
         currentHealth -= damage;
         healthImage.fillAmount = currentHealth / MaxHealth;
 
+        transform.GetComponentInParent<UnitController>().HitByEnemy(attacker);
         unitsManager.UnitsInRange(transform.position, attacker);
         
         healthImage.color = (healthImage.fillAmount < 0.2) ? Color.red : Color.green;
