@@ -1064,7 +1064,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Bonus(90%)
+  m_Text: Bonus
 --- !u!114 &114022773255109848
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2263,7 +2263,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f836a0fa94317042ae3413980331dbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelIndex: 1
+  levelIndex: 2
   winBonus: 100
   unitsCanavas: {fileID: 223968898026317626}
   playerCanvas: {fileID: 223436402546635752}

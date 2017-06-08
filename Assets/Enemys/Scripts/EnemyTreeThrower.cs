@@ -106,11 +106,11 @@ public class EnemyTreeThrower : MonoBehaviour
     }
     private Transform FindTarget()
     {
-        UnitHealth[] units = FindObjectsOfType<UnitHealth>();
+        UnitController[] units = FindObjectsOfType<UnitController>();
         Transform target = null;
         float distance = float.MaxValue;
 
-        foreach(UnitHealth unit in units)
+        foreach(UnitController unit in units)
         {
             float newDistance = Vector3.Distance(transform.position, unit.transform.position);
             if(newDistance < distance)

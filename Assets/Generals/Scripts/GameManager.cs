@@ -73,29 +73,32 @@ public class GameManager : MonoBehaviour
     private IEnumerator ResourcesCR()
     {
         resourcesCanvas.enabled = true;
-
-        int bonus = Mathf.RoundToInt((levelResources + winBonus) * bonusPercent / 100f);
-        int totalRes = winBonus + levelResources + bonus;
-
-        UpgradesManager.instance.ApplyResources(totalRes);
-
-
-        FindObjectOfType<ResourcesPanel>().SetResources(levelResources, winBonus, bonus, UpgradesManager.instance.resources);
         yield return null;
     }
 
     private IEnumerator Win()
     {
         winCanvas.enabled = true;
-        int reward = Mathf.RoundToInt(winBonus + winBonus * bonusPercent);
-        UpgradesManager.instance.ApplyResources(reward);
-        LevelsData.instance.levels[levelIndex+1] = true;
+
+        int bonus = Mathf.RoundToInt((levelResources + winBonus) * bonusPercent / 100f);
+        int totalRes = winBonus + levelResources + bonus;
+
+        UpgradesManager.instance.ApplyResources(totalRes);
+
+        FindObjectOfType<ResourcesPanel>().SetResources(levelResources, winBonus, bonus, UpgradesManager.instance.resources);
 
         yield return null;
     }
     private IEnumerator Loose()
     {
         looseCanvas.enabled = true;
+
+        int bonus = 0;
+        int totalRes = levelResources;
+
+        UpgradesManager.instance.ApplyResources(totalRes);
+
+        FindObjectOfType<ResourcesPanel>().SetResources(levelResources, 0, bonus, UpgradesManager.instance.resources);
 
         yield return null;
     }
