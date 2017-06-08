@@ -35,6 +35,7 @@ public class Tutorial1 : MonoBehaviour
         battleButton.gameObject.SetActive(false);
         foreach (Node node in grid.grid)
             node.Deactivate();
+        FindObjectOfType<UnitsManager>().UpdateControllersList();
     }
     #endregion
 

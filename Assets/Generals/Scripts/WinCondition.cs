@@ -30,9 +30,9 @@ public class WinCondition : MonoBehaviour
         if(FindObjectOfType<GameManager>()!=null)
             FindObjectOfType<GameManager>().WonGame();
         else
-        {
             winCanvas.enabled = true;
-        }
+        Destroy(gameObject);
+
     }
     #endregion
 }

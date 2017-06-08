@@ -22,6 +22,7 @@ public class Tutorial2 : MonoBehaviour
         FindObjectOfType<UnitsManager>().StartLevel();
         FindObjectOfType<UnitsHud>().SetUpHud();
         battleButton.gameObject.SetActive(false);
+        FindObjectOfType<UnitsManager>().UpdateControllersList();
     }
     #endregion
 

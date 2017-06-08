@@ -25,6 +25,8 @@ public class Tutorial3 : MonoBehaviour
         FindObjectOfType<UnitsManager>().StartLevel();
         FindObjectOfType<UnitsHud>().SetUpHud();
         battleButton.gameObject.SetActive(false);
+
+        FindObjectOfType<UnitsManager>().UpdateControllersList();
     }
     #endregion
 
@@ -86,7 +88,7 @@ public class Tutorial3 : MonoBehaviour
     }
     private IEnumerator WaitToReachReloadCR()
     {
-        tutorialText.text = "Got to a reload point";
+        tutorialText.text = "Go to a reload point";
         bool reached = false;
 
         Agent[] agents = FindObjectsOfType<Agent>();
