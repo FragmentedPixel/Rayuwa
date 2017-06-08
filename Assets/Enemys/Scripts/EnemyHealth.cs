@@ -58,7 +58,9 @@ public class EnemyHealth : MonoBehaviour
 			healthImage.color = Color.red;
         if (currentHealth <= 0)
         {
-            gameManager.levelResources += enemyValue;
+            if(gameManager!= null)
+                gameManager.levelResources += enemyValue;
+
             Destroy(transform.parent.gameObject);
         }
 	}
