@@ -44,8 +44,6 @@ public class EnemyHealth : MonoBehaviour
 	{
         if (attacker != null)
             attacker = attacker.GetComponentInChildren<UnitHealth>().transform;
-        else
-            return;
         currentHealth -= damage;
 		healthImage.fillAmount = currentHealth / MaxHealth;
         

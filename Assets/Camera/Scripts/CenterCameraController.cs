@@ -9,7 +9,6 @@ public class CenterCameraController : MonoBehaviour
     public float speed = 10.0F;
 
     [Header("Boundaries")]
-    [Range(0, 0.5f)]
     public float Z_Boundary = 50f;
     public float lookAtOffset = 25f;
 
