@@ -16,6 +16,12 @@ public class WinCondition : MonoBehaviour
             Win();
     }
 
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.GetComponent<UnitHealth>())
+            Win();
+    }
+
     private void Win()
     {
         EnemyHealth[] enemys = FindObjectsOfType<EnemyHealth>();
