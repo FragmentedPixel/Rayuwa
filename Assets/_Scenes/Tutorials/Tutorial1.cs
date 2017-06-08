@@ -83,7 +83,7 @@ public class Tutorial1 : MonoBehaviour
     }
     private IEnumerator ShiftSelectCR()
     {
-        tutorialText.text = "Select more units by Shift + click.";
+        tutorialText.text = "Select more units by Shift + left click.";
         bool selected = false;
 
         while (!selected)
@@ -129,7 +129,7 @@ public class Tutorial1 : MonoBehaviour
     }
     private IEnumerator StartBattleCR()
     {
-        tutorialText.text = "Start the battle by pressing the button.";
+        tutorialText.text = "Start the battle by pressing the battle button in the top middle portion of the screen.";
         battleButton.gameObject.SetActive(true);
 
         while(!battleStarted)

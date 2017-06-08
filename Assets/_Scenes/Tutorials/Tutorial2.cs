@@ -49,7 +49,7 @@ public class Tutorial2 : MonoBehaviour
     #region Tutorial Coroutines
     private IEnumerator IntroCR()
     {
-        tutorialText.text = "The crystal is feeding of Rayuwa's nature. It can controll the enviroment in order to protect itself. Be precaut.";
+        tutorialText.text = "The crystal is feeding of Rayuwa's nature. It can controll the enviroment in order to protect itself. Be carefull.";
 
         while (!Input.GetMouseButton(0) && !Input.GetKey(KeyCode.Space))
             yield return null;

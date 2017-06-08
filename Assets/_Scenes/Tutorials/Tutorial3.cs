@@ -13,6 +13,7 @@ public class Tutorial3 : MonoBehaviour
     private Drawing drawing;
 
     public Transform enemyManager;
+    public Transform gates;
     #endregion
 
     #region Initialization
@@ -85,7 +86,7 @@ public class Tutorial3 : MonoBehaviour
     }
     private IEnumerator WaitToReachReloadCR()
     {
-        tutorialText.text = "Waiting...";
+        tutorialText.text = "Got to a reload point";
         bool reached = false;
 
         Agent[] agents = FindObjectsOfType<Agent>();
@@ -98,6 +99,13 @@ public class Tutorial3 : MonoBehaviour
 
             yield return null;
         }
+
+        foreach(Transform child in gates)
+        {
+            child.gameObject.SetActive(false);
+        }
+        FindObjectOfType<Grid>().ReCalculateGird();
+
     }
     private IEnumerator TargetEnemyCR()
     {
