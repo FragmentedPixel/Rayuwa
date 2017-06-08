@@ -1029,6 +1029,7 @@ MonoBehaviour:
   nearbyEnemies: []
   battleStarted: 0
   playerDecided: 0
+  UIsprite: {fileID: 21300000, guid: 2dba3d65781bbd249aa56e83db7bfd92, type: 3}
   fightRange: 12
   fightSpeed: 4
   fightDmg: 25
@@ -1218,7 +1219,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1417662313
+  randomSeed: 1829354165
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -2081,15 +2082,15 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 0.5586207, b: 0, a: 0.7058824}
-        key1: {r: 0, g: 1, b: 0.17241383, a: 1}
+        key0: {r: 0, g: 0, b: 0, a: 0.7058824}
+        key1: {r: 1, g: 1, b: 1, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 1}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
-        ctime0: 32768
+        ctime0: 17540
         ctime1: 65535
         ctime2: 0
         ctime3: 0
@@ -4217,7 +4218,7 @@ ParticleSystemRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: dfc08679e095fe14a9630604710db11d, type: 2}
+  - {fileID: 2100000, guid: a6147df28235b5e43875960fbe39c851, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0

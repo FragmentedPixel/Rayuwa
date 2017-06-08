@@ -22,6 +22,7 @@ public abstract class UnitController : MonoBehaviour
     [HideInInspector] public bool playerDecided = false;
 
     [Header("Attack")]
+    public Sprite UIsprite;
     public float fightRange = 3f;
     public float fightSpeed = 1f;
 	public float fightDmg = 10f;

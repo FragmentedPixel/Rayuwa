@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 198403402001455340}
   - component: {fileID: 199998347878293348}
   m_Layer: 0
-  m_Name: Heal Particules
+  m_Name: Ammo Particules
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

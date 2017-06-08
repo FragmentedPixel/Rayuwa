@@ -9,6 +9,7 @@ public class UnitHudElement : MonoBehaviour
     public Text ammoText;
     public Image healthImage;
     public Button addButton;
+    public Image typeImage;
 
     private Image buttonImage;
     private Animator anim;
@@ -24,6 +25,7 @@ public class UnitHudElement : MonoBehaviour
         drawing = FindObjectOfType<Drawing>();
         buttonImage = addButton.GetComponent<Image>();
 
+        typeImage.sprite = _unitController.UIsprite;
         addButton.onClick.AddListener(delegate { AddAgent(unit.unitController.agent); });
     }
 
