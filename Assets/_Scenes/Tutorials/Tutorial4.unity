@@ -6655,7 +6655,7 @@ Prefab:
     - target: {fileID: 224204166953150124, guid: 13c67f4ed06527d4c81521c4a63c528c,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 580.6507
+      value: 510.67615
       objectReference: {fileID: 0}
     - target: {fileID: 224204166953150124, guid: 13c67f4ed06527d4c81521c4a63c528c,
         type: 2}
@@ -6914,6 +6914,56 @@ Prefab:
         type: 2}
       propertyPath: m_Text
       value: Finish
+      objectReference: {fileID: 0}
+    - target: {fileID: 114504513738544652, guid: 13c67f4ed06527d4c81521c4a63c528c,
+        type: 2}
+      propertyPath: m_ScreenMatchMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114504513738544652, guid: 13c67f4ed06527d4c81521c4a63c528c,
+        type: 2}
+      propertyPath: m_MatchWidthOrHeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114879588714116004, guid: 13c67f4ed06527d4c81521c4a63c528c,
+        type: 2}
+      propertyPath: m_ScreenMatchMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114879588714116004, guid: 13c67f4ed06527d4c81521c4a63c528c,
+        type: 2}
+      propertyPath: m_MatchWidthOrHeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114139394039892818, guid: 13c67f4ed06527d4c81521c4a63c528c,
+        type: 2}
+      propertyPath: m_ScreenMatchMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114139394039892818, guid: 13c67f4ed06527d4c81521c4a63c528c,
+        type: 2}
+      propertyPath: m_MatchWidthOrHeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114148431092096866, guid: 13c67f4ed06527d4c81521c4a63c528c,
+        type: 2}
+      propertyPath: m_ScreenMatchMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114148431092096866, guid: 13c67f4ed06527d4c81521c4a63c528c,
+        type: 2}
+      propertyPath: m_MatchWidthOrHeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114136416814232900, guid: 13c67f4ed06527d4c81521c4a63c528c,
+        type: 2}
+      propertyPath: m_ScreenMatchMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114136416814232900, guid: 13c67f4ed06527d4c81521c4a63c528c,
+        type: 2}
+      propertyPath: m_MatchWidthOrHeight
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114086699196439638, guid: 13c67f4ed06527d4c81521c4a63c528c, type: 2}
@@ -9434,8 +9484,8 @@ MonoBehaviour:
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 1
+  m_ScreenMatchMode: 1
+  m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
