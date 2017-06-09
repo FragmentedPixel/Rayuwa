@@ -43,13 +43,14 @@ public class Tutorial1 : MonoBehaviour
     private IEnumerator TutorialCR()
     {
         WaitForSeconds waitTime = new WaitForSeconds(.1f);
+        WaitForSeconds longTime = new WaitForSeconds(1f);
 
         yield return StartCoroutine(IntroCR());
         yield return waitTime;
         yield return StartCoroutine(SelectCR());
         yield return waitTime;
         yield return StartCoroutine(ShiftSelectCR());
-        yield return waitTime;
+        yield return longTime;
         yield return StartCoroutine(DragCR());
         yield return waitTime;
         yield return StartCoroutine(SetPathCR());
