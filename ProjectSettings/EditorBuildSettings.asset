@@ -38,3 +38,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/Levels/Level2.unity
     guid: e8104ad2462093a4d8add1f38fdf0ddf
+  - enabled: 1
+    path: Assets/_Scenes/Menu/FinishScreen.unity
+    guid: 00000000000000000000000000000000
