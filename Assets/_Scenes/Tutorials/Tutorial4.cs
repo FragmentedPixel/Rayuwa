@@ -7,6 +7,7 @@ public class Tutorial4 : MonoBehaviour
 {
     #region Variabiles
     public Text tutorialText;
+    public Button battleButton;
 
     private bool selectedUnits;
     public CameraManager cm;
@@ -15,6 +16,7 @@ public class Tutorial4 : MonoBehaviour
     #region Initialization
     private void Start()
     {
+        battleButton.gameObject.SetActive(false);
         cm.enabled = false;
         
         StartCoroutine(TutorialCR());
@@ -136,6 +138,7 @@ public class Tutorial4 : MonoBehaviour
 
         while (!Input.GetMouseButton(0) && !Input.GetKey(KeyCode.Space))
             yield return null;
+        battleButton.gameObject.SetActive(true);
     }
 
 

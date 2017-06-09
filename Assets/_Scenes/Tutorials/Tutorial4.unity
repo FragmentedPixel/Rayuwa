@@ -6109,6 +6109,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tutorialText: {fileID: 530285318}
+  battleButton: {fileID: 530285319}
   cm: {fileID: 1764000710}
 --- !u!1001 &498731973
 Prefab:
@@ -6655,7 +6656,7 @@ Prefab:
     - target: {fileID: 224204166953150124, guid: 13c67f4ed06527d4c81521c4a63c528c,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 576.2376
+      value: 576.2377
       objectReference: {fileID: 0}
     - target: {fileID: 224204166953150124, guid: 13c67f4ed06527d4c81521c4a63c528c,
         type: 2}
