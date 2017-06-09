@@ -50,8 +50,12 @@ public class EnemyHealth : MonoBehaviour
         if (controller != null && controller.Ammo())
         {
             if(!controller.target.CompareTag("Unit") || (Vector3.Distance(controller.target.position, transform.position) > Vector3.Distance(transform.position, attacker.position)+controller.targetTreshold))
-            controller.target = attacker;
-            controller.currentState.ToChaseState();
+                controller.target = attacker;
+
+            if (controller.DistanceToTarget() < controller.attackRange)
+                controller.currentState.ToAttackState();
+            else
+                controller.currentState.ToChaseState();
         }
 
         if (healthImage.fillAmount < 0.2)
