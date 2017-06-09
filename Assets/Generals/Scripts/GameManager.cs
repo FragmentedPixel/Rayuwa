@@ -85,8 +85,9 @@ public class GameManager : MonoBehaviour
         int totalRes = winBonus + levelResources + bonus;
 
         UpgradesManager.instance.ApplyResources(totalRes);
+        LevelsData.instance.levels[levelIndex + 1] = true;
 
-		FindObjectOfType<ResourcesPanel>().SetResources(levelResources, winBonus, bonus, totalRes);
+        FindObjectOfType<ResourcesPanel>().SetResources(levelResources, winBonus, bonus, totalRes);
 
         yield return null;
     }
