@@ -78,6 +78,8 @@ public class Drawing : MonoBehaviour
 
         for (int i = 0; i < allAgents.Count; i++)
         {
+			if (allAgents [i] == null)
+				continue;
             Agent UnitObj = allAgents[i] as Agent;
 
             if ((!agentsInDrag.Contains(UnitObj)) && (UnitWithinDrag(ScreenPosition(UnitObj.gameObject))))
