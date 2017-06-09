@@ -33,7 +33,7 @@ public class BridgeTrap : Trap
 
         while(currentTime < duration)
         {
-            t.Rotate(0f, rotationSpeed * direction, 0f);
+            t.Rotate(0f,rotationSpeed * direction, 0f);
             t.position += Vector3.down * fallingSpeed;
 
             currentTime += Time.deltaTime;

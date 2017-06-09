@@ -23125,7 +23125,7 @@ Prefab:
     - target: {fileID: 114519784974296206, guid: 330fadf4d7349424398c008d675773f2,
         type: 2}
       propertyPath: maxAmmo
-      value: 3
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 330fadf4d7349424398c008d675773f2, type: 2}
@@ -27547,7 +27547,7 @@ Prefab:
     - target: {fileID: 114519784974296206, guid: 330fadf4d7349424398c008d675773f2,
         type: 2}
       propertyPath: maxAmmo
-      value: 3
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 330fadf4d7349424398c008d675773f2, type: 2}
@@ -37326,7 +37326,7 @@ Prefab:
     - target: {fileID: 114519784974296206, guid: 330fadf4d7349424398c008d675773f2,
         type: 2}
       propertyPath: maxAmmo
-      value: 3
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 330fadf4d7349424398c008d675773f2, type: 2}

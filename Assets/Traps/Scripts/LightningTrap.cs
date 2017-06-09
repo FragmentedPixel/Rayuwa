@@ -9,8 +9,8 @@ public class LightningTrap : Trap
     public float duration;
     public ParticleSystem lightningParticules;
 
-    private BoxCollider collider;
-    private Renderer renderer;
+    private new BoxCollider collider;
+    private new Renderer renderer;
 
     private void Start()
     {

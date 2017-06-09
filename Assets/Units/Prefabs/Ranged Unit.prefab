@@ -1044,7 +1044,7 @@ MonoBehaviour:
   ammoToAdd: 1
   ammo: 0
   maxAmmo: 10
-  reloadTime: 10
+  reloadTime: 4
   reloading: 0
   projectile: {fileID: 1845533052663576, guid: be68677877c817947959fd3d82ba5de2, type: 2}
   shootingPoint: {fileID: 4017407636439430}

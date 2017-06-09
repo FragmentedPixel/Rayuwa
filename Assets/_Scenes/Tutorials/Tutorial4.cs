@@ -51,7 +51,7 @@ public class Tutorial4 : MonoBehaviour
     #region Tutorial Coroutines
     private IEnumerator IntroCR()
     {
-        tutorialText.text = "Before the battle starts you can choose your units. You have a maxium number of units you can select, but you can ciorba them as you wish.";
+        tutorialText.text = "Before the battle starts you can choose your units. You have a maxium number of units you can select, but you can mix them up them as you wish.";
 
         while (!selectedUnits)
             yield return null;
@@ -111,28 +111,28 @@ public class Tutorial4 : MonoBehaviour
 
     private IEnumerator HUDCR()
     {
-        tutorialText.text = "On the bottom of your screen you can see your units. Below each one you can see their Health and Ammo.";
+        tutorialText.text = "On the bottom of your screen you can see your units. Below each one you can see their Health and Ammo. Click to continue";
 
         while (!Input.GetMouseButton(0) && !Input.GetKey(KeyCode.Space))
             yield return null;
     }
     private IEnumerator SelectHUDCR()
     {
-        tutorialText.text = "You can also select them by clicking, or shift select to add them to your currently selected units.";
+        tutorialText.text = "You can also select them by clicking, or shift select to add them to your currently selected units.  Click to continue";
 
         while (!Input.GetMouseButton(0) && !Input.GetKey(KeyCode.Space))
             yield return null;
     }
     private IEnumerator AmmoBlinkCR()
     {
-        tutorialText.text = "When a unit is out of ammo, their ammo start blinking and they automatically go to reload.";
+        tutorialText.text = "When a unit is out of ammo, their ammo start blinking and they automatically go to reload.  Click to continue";
 
         while (!Input.GetMouseButton(0) && !Input.GetKey(KeyCode.Space))
             yield return null;
     }
     private IEnumerator GoodLuckCR()
     {
-        tutorialText.text = "Good luck and pls give us 3 weeks intership.";
+        tutorialText.text = "Good luck and save Rayuwa !";
 
         while (!Input.GetMouseButton(0) && !Input.GetKey(KeyCode.Space))
             yield return null;

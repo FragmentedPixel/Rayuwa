@@ -39,9 +39,12 @@ public class UnitHudElement : MonoBehaviour
     #region Update
     private void Update()
     {
+        #region Health
         healthImage.color = (unit.health > .2f) ? Color.green : Color.red;
         healthImage.fillAmount = unit.health;
+        #endregion
 
+        #region Selecting
         Color newColor = buttonImage.color;
 
         if (drawing.selectedAgents.Contains(unit.unitController.agent))
@@ -50,18 +53,32 @@ public class UnitHudElement : MonoBehaviour
             newColor.a = .3f;
 
         buttonImage.color = newColor;
-
-        ammoText.text = (unit.health <= 0f) ? "Dead" : unit.ammoText;
-
-        if (unit.reloading)
+        #endregion
+        
+        #region Text
+        if (unit.health <=0f)
+        {
+            ammoText.text = "Dead";
+            ammoText.color = Color.red;
+            anim.SetBool("Blinking", false);
+        }
+        else if(unit.reloading)
         {
             ammoText.text = "Reloading";
             ammoText.color = Color.green;
-        }
-        else if (unit.ammo <= 0f)
-            anim.SetBool("Blinking", true);
-        else
             anim.SetBool("Blinking", false);
+        }
+        else if(unit.ammo <= 0f)
+        {
+            ammoText.text = unit.ammoText;
+            anim.SetBool("Blinking", true);
+        }
+        else
+        {
+            ammoText.text = unit.ammoText;
+            anim.SetBool("Blinking", false);
+        }
+        #endregion
     }
 
     #endregion
