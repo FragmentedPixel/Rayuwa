@@ -57,7 +57,7 @@ public class Tutorial2 : MonoBehaviour
     }
     private IEnumerator MouseOverEnemyCR()
     {
-        tutorialText.text = "Mouse over the golem in order to see it's sight and attack range.";
+		tutorialText.text = "Mouse over the golem in order to see it's sight(outer circle) and attack(inner circle) range.";
         bool hovered = false;
 
         while (!hovered)

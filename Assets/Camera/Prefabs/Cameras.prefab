@@ -46,7 +46,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1668190467144418
 GameObject:
   m_ObjectHideFlags: 0
@@ -121,7 +121,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1668190467144418}
   m_LocalRotation: {x: 0.22414392, y: -0.48296294, z: 0.12940955, w: 0.8365163}
-  m_LocalPosition: {x: 46.73, y: 25, z: -89.350006}
+  m_LocalPosition: {x: 46.73, y: 25, z: -85.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4436295707809148}
@@ -246,7 +246,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1865262889730024}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 66f5e136264aea2498fa9f3cbb644265, type: 3}
   m_Name: 
@@ -287,7 +287,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  screenPercent: 0.15
   Z_Boundary: 200
   lookAtOffset: 22
   lookAt: {fileID: 4366106552554674}
@@ -302,6 +301,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cb17bc9fa74d0a4bba8d5c1b6a0d2ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraOffsets:
+  - 6
+  - -6
   scc: {fileID: 114800754584537736}
   ccc: {fileID: 114263594309116162}
 --- !u!114 &114800754584537736
