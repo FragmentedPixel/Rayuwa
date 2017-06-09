@@ -35,9 +35,7 @@ public class Tutorial2 : MonoBehaviour
         yield return waitTime;
         yield return StartCoroutine(MouseOverEnemyCR());
         yield return waitTime;
-        yield return StartCoroutine(TargetEnemyCR());
-        yield return waitTime;
-        yield return StartCoroutine(StartBattleCR());
+        yield return StartCoroutine(SightAndAttack());
         yield return waitTime;
         yield return StartCoroutine(WaitForRangeCR());
         yield return waitTime;
@@ -57,7 +55,7 @@ public class Tutorial2 : MonoBehaviour
     }
     private IEnumerator MouseOverEnemyCR()
     {
-		tutorialText.text = "Mouse over the golem in order to see it's sight(outer circle) and attack(inner circle) range.";
+		tutorialText.text = "Mouse over the golem in order to see it's sight and attack range.";
         bool hovered = false;
 
         while (!hovered)
@@ -71,9 +69,9 @@ public class Tutorial2 : MonoBehaviour
             yield return null;
         }
     }
-    private IEnumerator TargetEnemyCR()
+    private IEnumerator SightAndAttack()
     {
-        tutorialText.text = "Select some units and right click the enemy to target it.";
+        tutorialText.text = "The outer circle shows you his sight range. /n The inner red circle shows you his attack range. /n Select some units and right click the enemy to target it.";
         bool targeted = false;
 
         while (!targeted)
@@ -86,15 +84,6 @@ public class Tutorial2 : MonoBehaviour
 
             yield return null;
         }
-    }
-    private IEnumerator StartBattleCR()
-    {
-        tutorialText.text = "Press the battle button and start the fight.";
-        battleButton.gameObject.SetActive(true);
-
-        while(!battleStarted)
-            yield return null;
-
     }
     private IEnumerator WaitForRangeCR()
     {
