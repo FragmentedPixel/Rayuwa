@@ -1042,7 +1042,7 @@ MonoBehaviour:
   target: {fileID: 0}
   lastTarget: {fileID: 0}
   WayPointParent: {fileID: 0}
-  attackRange: 12
+  attackRange: 16
   attackSpeed: 2.5
   attackDmg: 18
   attackSound: {fileID: 8300000, guid: 04051136be94e0546b69ad55fc859cf0, type: 3}
@@ -1132,7 +1132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHealth: 150
-  EnemyValue: 10
+  enemyValue: 10
   background: {fileID: 114002076316368526}
   healthImage: {fileID: 114802023657248434}
 --- !u!135 &135216886391286618

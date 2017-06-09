@@ -85,7 +85,7 @@ public class GameManager : MonoBehaviour
 
         UpgradesManager.instance.ApplyResources(totalRes);
 
-        FindObjectOfType<ResourcesPanel>().SetResources(levelResources, winBonus, bonus, UpgradesManager.instance.resources);
+		FindObjectOfType<ResourcesPanel>().SetResources(levelResources, winBonus, bonus, totalRes);
 
         yield return null;
     }
@@ -93,12 +93,11 @@ public class GameManager : MonoBehaviour
     {
         looseCanvas.enabled = true;
 
-        int bonus = 0;
         int totalRes = levelResources;
 
         UpgradesManager.instance.ApplyResources(totalRes);
 
-        FindObjectOfType<ResourcesPanel>().SetResources(levelResources, 0, bonus, UpgradesManager.instance.resources);
+		FindObjectOfType<ResourcesPanel>().SetResources(levelResources, 0,  0, totalRes);
 
         yield return null;
     }
