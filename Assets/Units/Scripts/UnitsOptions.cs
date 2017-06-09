@@ -33,7 +33,7 @@ public class UnitsOptions : MonoBehaviour
 
         foreach (Unit unit in units)
             AddRow(unit);
-
+        if(bonusText!= null)
         bonusText.transform.SetAsLastSibling();
     }
     #endregion
@@ -61,7 +61,7 @@ public class UnitsOptions : MonoBehaviour
 
         gameManager.bonusPercent = Mathf.Lerp(0f, maxBonusPercent, (UnitsData.instance.maxUnits - value) / UnitsData.instance.maxUnits);
 
-        if (value != 0 && value != UnitsData.instance.maxUnits)
+        if (value != 0 && value != UnitsData.instance.maxUnits && gameManager.bonusPercent != 0)
             bonusText.text = "Bonus: " + gameManager.bonusPercent + "%";
         else
             bonusText.text = "";
