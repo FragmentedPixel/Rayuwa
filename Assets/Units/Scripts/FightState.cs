@@ -44,17 +44,14 @@ public class FightState : iUnitState
 
     public void HitTarget()
     {
-        if (controller.ammo <= 0)
-        {
-            ToReloadState();
-            return;
-        }
-
         controller.ammo--;
 
         lastAttack = Time.time;
-        //controller.anim.SetTrigger("Attack");
+
         controller.FightTarget();
+
+		if (controller.ammo <= 0)
+			ToReloadState();
     }
     #endregion
 }

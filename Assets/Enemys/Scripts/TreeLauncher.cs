@@ -19,7 +19,7 @@ public class TreeLauncher : MonoBehaviour
         tree = _tree;
         target = _target;
 
-        Instantiate(dangerZone, target.position, Quaternion.identity);
+		Instantiate(dangerZone, target.position + (-target.forward * 2f), Quaternion.identity);
 
         Physics.gravity = Vector3.up * gravity;
         rb = tree.GetComponent<Rigidbody>();
@@ -35,7 +35,6 @@ public class TreeLauncher : MonoBehaviour
 
         Vector3 velocityY = Vector3.up * Mathf.Sqrt(-2 * gravity * height);
         Vector3 velocityXZ = DisplacementXZ / (Mathf.Sqrt(-2 * height / gravity) + Mathf.Sqrt(2*(displacementY - height) / gravity));
-
         return velocityXZ + velocityY;
     }
 

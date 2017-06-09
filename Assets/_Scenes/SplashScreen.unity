@@ -585,6 +585,7 @@ GameObject:
   - component: {fileID: 1299864683}
   - component: {fileID: 1299864686}
   - component: {fileID: 1299864685}
+  - component: {fileID: 1299864687}
   m_Layer: 0
   m_Name: Persistent Data
   m_TagString: Untagged
@@ -662,6 +663,17 @@ MonoBehaviour:
   upgradeArray: 00000000000000000000000000000000
   resources: 300
   costPerLevel: 10
+--- !u!114 &1299864687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1299864682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b39b0053b6a4f8f498c5101fb4b69a36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1517820362
 GameObject:
   m_ObjectHideFlags: 0

@@ -6655,7 +6655,7 @@ Prefab:
     - target: {fileID: 224204166953150124, guid: 13c67f4ed06527d4c81521c4a63c528c,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 588.11884
+      value: 580.6507
       objectReference: {fileID: 0}
     - target: {fileID: 224204166953150124, guid: 13c67f4ed06527d4c81521c4a63c528c,
         type: 2}
@@ -9145,7 +9145,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Bonus(90%)
+  m_Text: Bonus
 --- !u!222 &677829409
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -23,6 +23,7 @@ public class EnemyTreeThrower : MonoBehaviour
     //Componente
     private Agent agent;
     private TreeLauncher launcher;
+	private Grid grid;
     #endregion
 
     #region Initialization
@@ -30,6 +31,7 @@ public class EnemyTreeThrower : MonoBehaviour
     {
         agent = GetComponent<Agent>();
         launcher = GetComponent<TreeLauncher>();
+		grid = FindObjectOfType<Grid> ();
 
         allTrees = GameObject.FindGameObjectsWithTag("Tree").ToList();
     }
@@ -71,10 +73,11 @@ public class EnemyTreeThrower : MonoBehaviour
         EnemyTree enemyTree = treeHolded.AddComponent<EnemyTree>();
         enemyTree.damage = damage;
 
-        launcher.Launch(treeHolded.transform, target);
+		launcher.Launch(treeHolded.transform, target);
         allTrees.Remove(treeHolded);
         treeHolded = null;
 
+		grid.ReCalculateGird ();
         waitTime = 0f;
     }
     private void Wait()

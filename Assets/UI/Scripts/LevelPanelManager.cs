@@ -22,6 +22,7 @@ public class LevelPanelManager : MonoBehaviour
             image.GetComponent<Button>().enabled = LevelsData.instance.levels[i];
             string level = "Level" + i.ToString();
             image.GetComponent<Button>().onClick.AddListener(delegate { FindObjectOfType<LevelManager>().ChangeScene(level); });
+			image.GetComponent<Image> ().color = Color.grey;
 
             image.GetComponentInChildren<Text>().text = i.ToString();
         }

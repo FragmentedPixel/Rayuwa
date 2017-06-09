@@ -46,7 +46,7 @@ public class PlayerPrefsManager : MonoBehaviour
 
     public static int GetResolution()
     {
-        return PlayerPrefs.GetInt(RESOLUTION_KEY, Screen.resolutions.ToList().IndexOf(Screen.currentResolution));
+		return PlayerPrefs.GetInt(RESOLUTION_KEY, Screen.resolutions.Length - 1);
     }
     #endregion
 
@@ -75,4 +75,10 @@ public class PlayerPrefsManager : MonoBehaviour
     }
     #endregion
     #endregion
+
+	private void OnEnable()
+	{
+		Resolution startRes = Screen.resolutions [PlayerPrefsManager.GetResolution ()];
+		Screen.SetResolution (startRes.width, startRes.height, GetFullScreen());
+	}
 }
