@@ -44,6 +44,7 @@ public class Tutorial4 : MonoBehaviour
         yield return waitTime;
 
         tutorialText.transform.GetComponentInParent<Canvas>().enabled = false;
+		LevelsData.instance.levels [1] = true;
     }
     #endregion
 
