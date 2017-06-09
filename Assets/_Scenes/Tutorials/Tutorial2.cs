@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -71,7 +72,7 @@ public class Tutorial2 : MonoBehaviour
     }
     private IEnumerator SightAndAttack()
     {
-        tutorialText.text = "The outer circle shows you his sight range. /n The inner red circle shows you his attack range. /n Select some units and right click the enemy to target it.";
+        tutorialText.text = "The outer circle shows you his sight range."+Environment.NewLine+ "The inner red circle shows you his attack range." + Environment.NewLine + "Select some units and right click the enemy to target it.";
         bool targeted = false;
 
         while (!targeted)
@@ -84,6 +85,7 @@ public class Tutorial2 : MonoBehaviour
 
             yield return null;
         }
+        battleButton.gameObject.SetActive(true);
     }
     private IEnumerator WaitForRangeCR()
     {

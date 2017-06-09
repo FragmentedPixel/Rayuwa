@@ -46,10 +46,10 @@ public class Tutorial3 : MonoBehaviour
         yield return StartCoroutine(TargetEnemyCR());
         yield return waitTime;
         yield return StartCoroutine(WaitForEnemyKill());
-       
-        //Auto reload.
 
-        tutorialText.text = "Take good care of your units, they are your only hope to save Rayuwa.";
+        //Auto reload.
+        tutorialText.text = "Now that you have killed all the enemyes go to the crystal";
+
     }
     #endregion
 
@@ -124,6 +124,7 @@ public class Tutorial3 : MonoBehaviour
 
             yield return null;
         }
+        tutorialText.text = "Take good care of your units, they are your only hope to save Rayuwa.";
     }
 
     private IEnumerator WaitForEnemyKill()
@@ -135,24 +136,6 @@ public class Tutorial3 : MonoBehaviour
         {
             if (enemyManager.childCount==2)
                 killed = true;
-
-            yield return null;
-        }
-        tutorialText.text = "Now that you have killed all the enemyes go to the crystal";
-    }
-
-    private IEnumerator AutoReloadedCR()
-    {
-        tutorialText.text = "Waiting for autoreload..";
-        bool reached = false;
-
-        Agent[] agents = FindObjectsOfType<Agent>();
-        ReloadPoint[] reloadPoints = FindObjectsOfType<ReloadPoint>();
-
-        while (!reached)
-        {
-            if (HasReachedReloadPoint(agents, reloadPoints))
-                reached = true;
 
             yield return null;
         }
