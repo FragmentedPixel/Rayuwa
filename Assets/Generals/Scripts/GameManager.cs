@@ -72,6 +72,7 @@ public class GameManager : MonoBehaviour
     }
     private IEnumerator ResourcesCR()
     {
+		playerCanvas.enabled = false;
         resourcesCanvas.enabled = true;
         yield return null;
     }
