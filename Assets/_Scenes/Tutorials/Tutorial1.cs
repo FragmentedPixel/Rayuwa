@@ -26,7 +26,8 @@ public class Tutorial1 : MonoBehaviour
 
     private void OnEnable()
     {
-       
+        LevelsData.instance.levels[0] = true;
+
         drawing = FindObjectOfType<Drawing>();
         StartCoroutine(TutorialCR());
         grid = drawing.GetComponentInParent<Grid>();
