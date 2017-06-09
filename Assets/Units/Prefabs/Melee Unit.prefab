@@ -1134,7 +1134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a54a29682ff2124e9f96c27aea33d8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 150
+  MaxHealth: 220
   background: {fileID: 114268287294116970}
   healthImage: {fileID: 114349502728771306}
 --- !u!114 &114924446996072726
@@ -1160,7 +1160,7 @@ MonoBehaviour:
   UIsprite: {fileID: 21300000, guid: 2dba3d65781bbd249aa56e83db7bfd92, type: 3}
   fightRange: 2.5
   fightSpeed: 2
-  fightDmg: 20
+  fightDmg: 15
   fightSound: {fileID: 8300000, guid: bd219e5fcc44dda459c64d6c8a165a9e, type: 3}
   speedIndex: 1
   damageIndex: 3
