@@ -5,19 +5,22 @@ using UnityEngine;
 public class EnemyDeathTrap : MonoBehaviour
 {
     [Header("Specifics")]
-    public GameObject[] enemies;
+    public GameObject enemy;
+    public int count;
 
     public void OnDestroy()
     {
         SpawnEnemies();
     }
+
     private void SpawnEnemies()
     {
-        foreach (GameObject enemy in enemies)
+        for (int i = 0; i < count; i++)
         {
-            enemy.SetActive(true);
-        }
+            Vector3 spawnOffSet = Random.insideUnitSphere * 2f;
+            spawnOffSet.y = 0f;
 
-        Destroy(gameObject);
+            Instantiate(enemy, transform.position + spawnOffSet, transform.rotation, transform.parent);
+        }
     }
 }

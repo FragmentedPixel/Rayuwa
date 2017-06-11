@@ -979,7 +979,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destination: {x: 14.7, y: 0, z: -40.9}
-  speed: 2
+  speed: 3
   turnSpeed: 2
   turnDst: 0
   stoppingDst: 0
