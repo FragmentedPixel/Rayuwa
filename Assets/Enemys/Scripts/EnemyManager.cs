@@ -6,6 +6,7 @@ public class EnemyManager : MonoBehaviour
 {
     public List<Transform> enemyList= new List<Transform>();
     public static EnemyManager instance;
+
     #region Initialization
     private void Start()
     {

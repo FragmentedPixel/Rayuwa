@@ -1,53 +1,17 @@
 fileFormatVersion: 2
-guid: a41c880e780af6141a5fa4f0e70cedbb
-timeCreated: 1496595195
+guid: 678cea88ceeef734687e69e7ccb2391f
+timeCreated: 1497185422
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: Armature
-    100002: Chest
-    100004: Cylinder
-    100006: Foot_L
-    100008: Foot_R
-    100010: Head
-    100012: Hip_L
-    100014: Hip_R
-    100016: Lower_Arm_L
-    100018: Lower_Arm_R
-    100020: Lower_Leg_L
-    100022: Lower_Leg_R
-    100024: //RootNode
-    100026: Neck
-    100028: Upper_Arm_L
-    100030: Upper_Arm_R
-    100032: Upper_Leg_L
-    100034: Upper_Leg_R
-    400000: Armature
-    400002: Chest
-    400004: Cylinder
-    400006: Foot_L
-    400008: Foot_R
-    400010: Head
-    400012: Hip_L
-    400014: Hip_R
-    400016: Lower_Arm_L
-    400018: Lower_Arm_R
-    400020: Lower_Leg_L
-    400022: Lower_Leg_R
-    400024: //RootNode
-    400026: Neck
-    400028: Upper_Arm_L
-    400030: Upper_Arm_R
-    400032: Upper_Leg_L
-    400034: Upper_Leg_R
-    4300000: Cylinder
+    100000: //RootNode
+    400000: //RootNode
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Bow00_mesh
     7400000: Default Take
-    7400002: Idle
-    7400004: Casting
-    7400006: Throw
     9500000: //RootNode
-    13700000: Cylinder
   materials:
     importMaterials: 1
     materialName: 0
