@@ -15,9 +15,9 @@ public class EnemyTree : MonoBehaviour
 
         if (other.transform.name == "DangerZone(Clone)")
         {
-            Rigidbody rb = GetComponent<Rigidbody>();
-            rb.velocity = Vector3.zero;
-            Destroy(rb);
+            //Rigidbody rb = GetComponent<Rigidbody>();
+            //rb.velocity = Vector3.zero;
+            //Destroy(rb);
 
             Destroy(gameObject, 3f);
             Destroy(other.transform.gameObject);

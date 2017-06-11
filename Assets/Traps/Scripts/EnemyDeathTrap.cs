@@ -10,7 +10,7 @@ public class EnemyDeathTrap : MonoBehaviour
 
     public void OnDestroy()
     {
-        SpawnEnemies();
+            SpawnEnemies();
     }
     private void SpawnEnemies()
     {
@@ -26,7 +26,7 @@ public class EnemyDeathTrap : MonoBehaviour
             spawnedEnemy.GetComponent<Collider>().enabled = false;
             spawnedEnemy.GetComponent<Collider>().enabled = true;
         }
-
-        FindObjectOfType<UnitsManager>().ResetUnitsColliders();
+        try { FindObjectOfType<UnitsManager>().ResetUnitsColliders(); }
+        catch { }
     }
 }
