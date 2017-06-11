@@ -20,11 +20,14 @@ public abstract class UnitController : MonoBehaviour
     [HideInInspector] public ReloadPoint reloadPoint;
     #endregion
 
-    #region Parameters
+    #region UI
+    [Header("UnitType")]
+    public Sprite image;
+    public Color color;
+    #endregion
 
-    [Header("Attack")]
-    public Sprite UIsprite;
-    public Color unitColor;
+    #region Stats
+    [Header("Attack stats")]
     public float fightRange = 3f;
     public float fightSpeed = 1f;
 	public float fightDmg = 10f;
@@ -59,24 +62,17 @@ public abstract class UnitController : MonoBehaviour
     public AggroState aggroState;
     public BattleState battleState;
     public FightState fightState;
-    public IdleState idleState;
     public ReloadState reloadState;
     #endregion
 
     #endregion
 
     #region Initialization
-    private void OnDrawGizmos()
-    {
-        Debug.DrawLine(transform.position, transform.position + transform.forward * fightRange);
-    }
-
     private void Awake()
     {
         aggroState = new AggroState(this);
         battleState = new BattleState(this);
         fightState = new FightState(this);
-        idleState = new IdleState(this);
         reloadState = new ReloadState(this);
 
         currentState = battleState;
@@ -109,6 +105,16 @@ public abstract class UnitController : MonoBehaviour
     {
         currentState.Update();
     }
+    public void HitByEnemy(Transform attacker)
+    {
+        if (attacker == null)
+            return;
+
+        EnemyHealth enemy = attacker.GetComponentInChildren<EnemyHealth>();
+
+        if (enemy != null)
+            currentState.HitByEnemy(enemy.transform);
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -117,7 +123,6 @@ public abstract class UnitController : MonoBehaviour
         if (enemy != null && !nearbyEnemies.Contains(enemy))
             nearbyEnemies.Add(enemy);
     }
-
     private void OnTriggerExit(Collider other)
     {
         EnemyHealth enemy = other.GetComponent<EnemyHealth>();
@@ -125,24 +130,9 @@ public abstract class UnitController : MonoBehaviour
         if (enemy != null && nearbyEnemies.Contains(enemy))
             nearbyEnemies.Remove(enemy);
     }
-
-    public void HitByEnemy(Transform attacker)
-    {
-        if (attacker == null)
-            return;
-
-        EnemyHealth enemy = attacker.GetComponentInChildren<EnemyHealth>();
-
-        if(enemy != null)
-            currentState.HitByEnemy(enemy.transform);
-    }
     #endregion
 
     #region Methods
-    public void StartBattle()
-    {
-        battleStarted = true;
-    }
     public void LookAtTarget()
     {
         Vector3 lookPoint = new Vector3(target.position.x, transform.position.y, target.position.z);
@@ -156,28 +146,26 @@ public abstract class UnitController : MonoBehaviour
         float distance = Vector3.Distance(playerPos, targetPos);
         return distance;
     }
+    #endregion
+
+    #region Targeting
     public void SetNewDestination(Vector3 newDestionation)
     {
         reloading = false;
         destination = newDestionation;
-        reloadPoint = null;
+
         agent.MoveToDestination(destination);
 
+        reloadPoint = null;
         target = null;
-
-        if (battleStarted)
-            currentState.ToBattleState();
+        
+        currentState.ToBattleState();
     }
-    public void SetNewTarget(Transform newTarget, bool _playerDecided)
+    public void SetNewTarget(Transform newTarget)
     {
         reloading = false;
         target = newTarget;
-
-        playerDecided = _playerDecided;
-
-        if (!battleStarted)
-            return;
-
+        
         if (DistanceToTarget() < fightRange)
             currentState.ToFightState();
         else
@@ -186,10 +174,6 @@ public abstract class UnitController : MonoBehaviour
     public void SetNewReloadPoint(ReloadPoint point)
     {
         reloadPoint = point;
-
-        if (!battleStarted)
-            return;
-
         currentState.ToReloadState();
     }
     public void CheckForNearbyEnemies()
@@ -204,15 +188,12 @@ public abstract class UnitController : MonoBehaviour
             }
             else
             {
-                SetNewTarget(nearbyEnemies[0].transform, playerDecided);
+                SetNewTarget(nearbyEnemies[0].transform);
                 return;
             }
         }
-        
-        if (playerDecided)
-            currentState.ToBattleState();
-        else
-            SetNewDestination(transform.position);
+            
+        SetNewDestination(transform.position);
     }
     #endregion
 
@@ -257,5 +238,9 @@ public abstract class UnitController : MonoBehaviour
     public abstract string GetAmmoText();
     #endregion
 
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawLine(transform.position, transform.position + transform.forward * fightRange);
+    }
     public abstract void FightTarget();
 }

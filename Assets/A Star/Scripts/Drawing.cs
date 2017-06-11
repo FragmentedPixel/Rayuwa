@@ -115,6 +115,14 @@ public class Drawing : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha2))
             SelectRangedUnits();
 
+        if(Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            selectedAgents.Clear();
+
+            foreach (Agent agent in allAgents)
+                selectedAgents.Add(agent);
+        }
+
     }
     private void UpdateBox()
     {
@@ -276,8 +284,6 @@ public class Drawing : MonoBehaviour
     }
     private void SelectRangedUnits()
     {
-        Debug.Log("Rangeed");
-
         selectedAgents.Clear();
         foreach (Agent agent in allAgents)
         {
@@ -299,7 +305,7 @@ public class Drawing : MonoBehaviour
         if(targetHealth)
         {
             foreach (Agent unitAgent in selectedAgents)
-                unitAgent.GetComponent<UnitController>().SetNewTarget(targetHealth.transform, true);
+                unitAgent.GetComponent<UnitController>().SetNewTarget(targetHealth.transform);
 
             return;
         }

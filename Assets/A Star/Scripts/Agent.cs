@@ -35,7 +35,7 @@ public class Agent : MonoBehaviour
     {
         UnitController unit = GetComponent<UnitController>();
         if (unit != null)
-            pathColor = unit.unitColor;
+            pathColor = unit.color;
 
         grid = FindObjectOfType<Grid>();
         destination = transform.position;
@@ -62,9 +62,6 @@ public class Agent : MonoBehaviour
 	}
     private IEnumerator FollowPath()
     {
-        if (isIdle())
-            yield break;
-
         followingPath = true;
        
         for (int i = 0; i < pathNodes.Count; i++)
@@ -76,7 +73,7 @@ public class Agent : MonoBehaviour
                 if (followingPath == false)
                     yield break;
 
-                if (pathNodes[i].walkable == false)
+                if (pathNodes[i].walkable == false && i == pathNodes.Count - 1)
                     RecalculateDestination();
 
                 transform.position = Vector3.MoveTowards(transform.position, finalPosition, speed * Time.deltaTime);
@@ -152,14 +149,6 @@ public class Agent : MonoBehaviour
     {
         if(pathNodes != null)
         pathNodes.Clear();
-    }
-    private bool isIdle()
-    {
-        UnitController controller = GetComponent<UnitController>();
-        if (controller == null)
-            return false;
-
-        return !controller.battleStarted;
     }
     public void RecalculateDestination()
     {

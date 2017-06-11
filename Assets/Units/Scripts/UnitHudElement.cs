@@ -25,7 +25,7 @@ public class UnitHudElement : MonoBehaviour
         drawing = FindObjectOfType<Drawing>();
         buttonImage = addButton.GetComponent<Image>();
 
-        typeImage.sprite = _unitController.UIsprite;
+        typeImage.sprite = _unitController.image;
         addButton.onClick.AddListener(delegate { AddAgent(unit.unitController.agent); });
     }
 

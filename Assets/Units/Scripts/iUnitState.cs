@@ -19,10 +19,6 @@ public abstract class iUnitState
     #endregion
 
     #region Transition
-    public void ToIdleState()
-    {
-        controller.currentState = controller.idleState;
-    }
     public void ToBattleState()
     {
         controller.currentState = controller.battleState;

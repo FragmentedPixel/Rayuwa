@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class UnitHealth : MonoBehaviour
 {
     #region Variabiles
+
     #region Health
     public float MaxHealth = 500;
     private float currentHealth;
@@ -17,8 +18,7 @@ public class UnitHealth : MonoBehaviour
     public Image healthImage;
     private Canvas healthCanvas;
     #endregion
-
-
+    
     #endregion
 
     #region Initialization
@@ -38,7 +38,7 @@ public class UnitHealth : MonoBehaviour
     #endregion
 
     #region Health Management
-    public void Hit(float damage, Transform attacker)
+    public void Hit(float damage, Transform attacker = null)
     {
         currentHealth -= damage;
         healthImage.fillAmount = currentHealth / MaxHealth;
@@ -61,10 +61,6 @@ public class UnitHealth : MonoBehaviour
         currentHealth = Mathf.Clamp(currentHealth, 0f, MaxHealth);
         healthImage.fillAmount = currentHealth / MaxHealth;
         healthImage.color = (healthImage.fillAmount < 0.2) ? Color.red : Color.green;
-    }
-    public void Die()
-    {
-        Hit(MaxHealth, null);
     }
     #endregion
 }

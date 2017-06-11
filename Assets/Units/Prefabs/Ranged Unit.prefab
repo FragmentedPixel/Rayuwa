@@ -1022,15 +1022,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
   agent: {fileID: 0}
+  audioS: {fileID: 0}
+  nearbyEnemies: []
   target: {fileID: 0}
   destination: {x: 0, y: 0, z: 0}
   reloadPoint: {fileID: 0}
-  audioS: {fileID: 0}
-  nearbyEnemies: []
-  battleStarted: 0
-  playerDecided: 0
-  UIsprite: {fileID: 21300000, guid: ee9adeaafe7b4fc4e8f9d60c5ba0469b, type: 3}
-  unitColor: {r: 0, g: 0.6275863, b: 1, a: 1}
+  image: {fileID: 21300000, guid: ee9adeaafe7b4fc4e8f9d60c5ba0469b, type: 3}
+  color: {r: 0, g: 0.2965517, b: 1, a: 1}
   fightRange: 18
   fightSpeed: 4
   fightDmg: 22

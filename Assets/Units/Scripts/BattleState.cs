@@ -21,7 +21,7 @@ public class BattleState : iUnitState
 
     public override void HitByEnemy(Transform enemy)
     {
-        controller.SetNewTarget(enemy, false);
+        controller.SetNewTarget(enemy);
     }
     #endregion
 }
