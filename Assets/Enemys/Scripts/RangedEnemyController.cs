@@ -24,6 +24,7 @@ public class RangedEnemyController : EnemyController
 
     public override bool Ammo()
     {
-        return currentAmmo != 0;
+        return true;
+        //return currentAmmo != 0;
     }
 }
