@@ -6944,7 +6944,7 @@ Prefab:
     - target: {fileID: 114907984738027212, guid: 13c67f4ed06527d4c81521c4a63c528c,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Levels
+      value: Upgrades
       objectReference: {fileID: 0}
     - target: {fileID: 114730862927555956, guid: 13c67f4ed06527d4c81521c4a63c528c,
         type: 2}
@@ -6992,7 +6992,7 @@ Prefab:
     - target: {fileID: 114227730621148636, guid: 13c67f4ed06527d4c81521c4a63c528c,
         type: 2}
       propertyPath: m_Text
-      value: Finish
+      value: To Upgrades
       objectReference: {fileID: 0}
     - target: {fileID: 114504513738544652, guid: 13c67f4ed06527d4c81521c4a63c528c,
         type: 2}

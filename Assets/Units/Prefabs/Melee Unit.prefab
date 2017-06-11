@@ -1158,6 +1158,7 @@ MonoBehaviour:
   battleStarted: 0
   playerDecided: 0
   UIsprite: {fileID: 21300000, guid: 2dba3d65781bbd249aa56e83db7bfd92, type: 3}
+  unitColor: {r: 1, g: 0.22794116, b: 0.22794116, a: 1}
   fightRange: 2.5
   fightSpeed: 2
   fightDmg: 15

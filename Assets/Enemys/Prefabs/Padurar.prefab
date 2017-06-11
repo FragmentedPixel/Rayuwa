@@ -849,8 +849,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3, y: 4, z: 3}
-  m_Center: {x: 0, y: -0.8, z: 0}
+  m_Size: {x: 4, y: 7, z: 4}
+  m_Center: {x: 0, y: 0.3, z: 0}
 --- !u!82 &82105477584683240
 AudioSource:
   m_ObjectHideFlags: 1
@@ -1133,7 +1133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb31f5e8b03883d45b2cc981fb05e278, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 200
+  MaxHealth: 50
   enemyValue: 10
   background: {fileID: 114871414083492422}
   healthImage: {fileID: 114809529764239120}

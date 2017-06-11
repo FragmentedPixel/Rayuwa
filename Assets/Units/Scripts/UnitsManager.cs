@@ -19,11 +19,6 @@ public class UnitsManager : MonoBehaviour
     #endregion
 
     #region Start Level
-    private void Awake()
-    {
-        UnitsData.instance.colorIndex = 0;
-    }
-
     public void StartLevel()
     {
         drawing = FindObjectOfType<Drawing>();

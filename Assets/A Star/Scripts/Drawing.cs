@@ -13,7 +13,7 @@ public class Drawing : MonoBehaviour
     public float dragThreshhold = 10f;
     public Texture boxOutline;
 
-    private Vector2 mouseDownPoint, mouseCurrentPoint;
+    public Vector2 mouseDownPoint, mouseCurrentPoint;
     private RaycastHit hit;
     #endregion
 
@@ -61,6 +61,7 @@ public class Drawing : MonoBehaviour
     {
         DrawSelectedPaths();
         UpdateDragging();
+        KeyBoardSelecting();
 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (!Physics.Raycast(ray, out hit))
@@ -94,17 +95,26 @@ public class Drawing : MonoBehaviour
         if ((Input.GetMouseButton(0)) && (CheckIfMouseIsDragging()))
             isdragging = true;
 
+        if (Input.GetMouseButtonDown(0))
+            mouseDownPoint = mouseCurrentPoint;
+            
         if (Input.GetMouseButtonUp(0))
         {
             PutUnitsFromDragIntoSelectedUnits();
             isdragging = false;
-        }
-
-        if (Input.GetMouseButtonDown(0))
-            mouseDownPoint = mouseCurrentPoint;
+        }   
 
         if (isdragging)
             UpdateBox();
+    }
+    private void KeyBoardSelecting()
+    {
+        if(Input.GetKeyDown(KeyCode.Alpha1))
+            SelectMeleeUnits();
+
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+            SelectRangedUnits();
+
     }
     private void UpdateBox()
     {
@@ -124,17 +134,29 @@ public class Drawing : MonoBehaviour
 
         boxFinish = new Vector2(boxStart.x + Unsigned(boxWidth), boxStart.y - Unsigned(boxHeight));
     }
+
+    private float lastClickTime = 0f;
+    private float catchTime = .25f;
+
     private void UpdateSelecting()
     {
         if (Input.GetMouseButtonDown(0))
         {
             Agent hitAgent = GetAgentFromTransform(hit.transform);
 
-            if (!Input.GetKey(KeyCode.LeftShift) && !Input.GetKey(KeyCode.RightShift))
-                selectedAgents.Clear();
+            if (Time.time - lastClickTime < catchTime)
+                DoubleClickSelection(hitAgent);
+            else
+            {
+                if (!Input.GetKey(KeyCode.LeftShift) && !Input.GetKey(KeyCode.RightShift))
+                    selectedAgents.Clear();
 
-            if (hitAgent != null)
-                selectedAgents.Add(hitAgent);
+                if (hitAgent != null)
+                    selectedAgents.Add(hitAgent);
+            }
+
+
+            lastClickTime = Time.time;
         }
     }
     private void UpdatePathing()
@@ -142,8 +164,25 @@ public class Drawing : MonoBehaviour
         if (selectedAgents.Count <= 0)
             return;
 
+        if (Input.GetKeyDown(KeyCode.R))
+            GoToReload();
+
         if (Input.GetMouseButtonDown(1))
             DrawShortest();
+    }
+    private void DoubleClickSelection(Agent agent)
+    {
+        isdragging = false;
+
+        if (agent != null)
+        {
+            UnitController controller = agent.GetComponent<UnitController>();
+
+            if (controller is MeleeUnitController)
+                SelectMeleeUnits();
+            else if (controller is RangedUnitController)
+                SelectRangedUnits();
+        }
     }
     #endregion
 
@@ -225,9 +264,35 @@ public class Drawing : MonoBehaviour
 
         agentsInDrag.Clear();
     }
+
+    private void SelectMeleeUnits()
+    {
+        selectedAgents.Clear();
+        foreach (Agent agent in allAgents)
+        {
+            if (agent.GetComponent<MeleeUnitController>() != null)
+                selectedAgents.Add(agent);
+        }
+    }
+    private void SelectRangedUnits()
+    {
+        Debug.Log("Rangeed");
+
+        selectedAgents.Clear();
+        foreach (Agent agent in allAgents)
+        {
+            if (agent.GetComponent<RangedUnitController>() != null)
+                selectedAgents.Add(agent);
+        }
+    }
     #endregion
 
     #region Pathing
+    private void GoToReload()
+    {
+        foreach(Agent agent in selectedAgents)
+            agent.GetComponent<UnitController>().currentState.ToReloadState();
+    }
     private void DrawShortest()
     {
         EnemyHealth targetHealth = hit.transform.GetComponent<EnemyHealth>();

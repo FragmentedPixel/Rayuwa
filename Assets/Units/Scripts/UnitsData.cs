@@ -9,8 +9,6 @@ public class UnitsData : MonoBehaviour
     public static UnitsData instance;
 
     public int maxUnits;
-    public Color[] unitColors;
-    public int colorIndex;
     public List<Unit> unitsList;
 
     private void Awake()
@@ -23,13 +21,6 @@ public class UnitsData : MonoBehaviour
     #region Properties 
     public Unit[] units{get { return unitsList.ToArray(); }    }
     public bool canAddUnits { get { return GetCurrentUnitsCount() < maxUnits; } }
-    public Color GetUnitColor()
-    {
-        Color color =  unitColors[colorIndex];
-        colorIndex++;
-
-        return color;
-    }
     private int GetCurrentUnitsCount()
     {
         int value = 0;
@@ -37,6 +28,12 @@ public class UnitsData : MonoBehaviour
             value += unit.count;
 
         return value;
+    }
+
+    private void OnLevelWasLoaded(int level)
+    {
+        foreach(Unit unit in unitsList)
+            unit.count = 0;
     }
     #endregion
 }

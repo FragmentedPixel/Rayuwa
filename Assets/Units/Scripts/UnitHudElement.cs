@@ -58,9 +58,7 @@ public class UnitHudElement : MonoBehaviour
         #region Text
         if (unit.health <=0f)
         {
-            ammoText.text = "Dead";
-            ammoText.color = Color.red;
-            anim.SetBool("Blinking", false);
+            Destroy(gameObject);
         }
         else if(unit.reloading)
         {

@@ -7,22 +7,24 @@ public abstract class UnitController : MonoBehaviour
 {
     #region Variabiles
 
-    #region Targeting + Components
+    #region Components
     [HideInInspector] public Animator anim;
     [HideInInspector] public Agent agent;
-    [HideInInspector] public Transform target;
-    [HideInInspector] public Vector3 destination;
-    [HideInInspector] public ReloadPoint reloadPoint;
     [HideInInspector] public AudioSource audioS;
     [HideInInspector] public List<EnemyHealth> nearbyEnemies = new List<EnemyHealth>();
     #endregion
 
+    #region Targeting
+    [HideInInspector] public Transform target;
+    [HideInInspector] public Vector3 destination;
+    [HideInInspector] public ReloadPoint reloadPoint;
+    #endregion
+
     #region Parameters
-    [HideInInspector] public bool battleStarted = false;
-    [HideInInspector] public bool playerDecided = false;
 
     [Header("Attack")]
     public Sprite UIsprite;
+    public Color unitColor;
     public float fightRange = 3f;
     public float fightSpeed = 1f;
 	public float fightDmg = 10f;
@@ -44,10 +46,11 @@ public abstract class UnitController : MonoBehaviour
 
     #region Amunation
     [HideInInspector] public int ammo;
+    [Header("Ammo")]
     public int maxAmmo;
     public float reloadTime = 3f;
     public bool reloading;
-    private ParticleSystem healParticules;
+    private ParticleSystem ammoParticules;
     #endregion
 
     #region States
@@ -76,7 +79,7 @@ public abstract class UnitController : MonoBehaviour
         idleState = new IdleState(this);
         reloadState = new ReloadState(this);
 
-        currentState = idleState;
+        currentState = battleState;
     }
     private void Start()
     {
@@ -85,8 +88,8 @@ public abstract class UnitController : MonoBehaviour
         unitHealth = GetComponentInChildren<UnitHealth>();
         anim = GetComponentInChildren<Animator>();
         agent = GetComponent<Agent>();
-        healParticules = unitHealth.GetComponentInChildren<ParticleSystem>();
-        healParticules.Stop();
+        ammoParticules = unitHealth.GetComponentInChildren<ParticleSystem>();
+        ammoParticules.Stop();
 
         audioS = GetComponent<AudioSource>();
         audioS.volume = PlayerPrefsManager.GetMasterVolume();
@@ -221,7 +224,7 @@ public abstract class UnitController : MonoBehaviour
     }
     private IEnumerator ReloadingCR()
     {
-        healParticules.Play();
+        ammoParticules.Play();
         reloading = true;
 
         float duration = reloadTime;
@@ -249,7 +252,7 @@ public abstract class UnitController : MonoBehaviour
         else
             currentState.ToBattleState();
 
-        healParticules.Stop();
+        ammoParticules.Stop();
     }
     public abstract string GetAmmoText();
     #endregion

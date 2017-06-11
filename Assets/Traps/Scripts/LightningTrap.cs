@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class LightningTrap : Trap
 {
+    public float damage;
     public float cooldown;
     public float warnningTime;
     public float duration;
     public ParticleSystem lightningParticules;
+    public ParticleSystem rainParticules;
 
     private new BoxCollider collider;
     private new Renderer renderer;
@@ -27,13 +29,20 @@ public class LightningTrap : Trap
 
     private IEnumerator TriggerTrap()
     {
+        rainParticules.Play();
+        yield return new WaitForSeconds(3f);
+
         renderer.enabled = true;
         yield return new WaitForSeconds(warnningTime);
 
         collider.enabled = true;
         lightningParticules.Play();
+
         yield return new WaitForSeconds(duration);
         lightningParticules.Stop();
+
+        yield return new WaitForSeconds(.3f);
+        rainParticules.Stop();
 
         collider.enabled = false;
         renderer.enabled = false;
@@ -43,7 +52,7 @@ public class LightningTrap : Trap
     {        
         UnitHealth unit = other.GetComponent<UnitHealth>();
         if (unit != null)
-            unit.Die();
+            unit.Hit(damage, null);
     }
 
 }

@@ -582,10 +582,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1299864684}
-  - component: {fileID: 1299864683}
+  - component: {fileID: 1299864689}
+  - component: {fileID: 1299864688}
+  - component: {fileID: 1299864687}
   - component: {fileID: 1299864686}
   - component: {fileID: 1299864685}
-  - component: {fileID: 1299864687}
+  - component: {fileID: 1299864683}
   m_Layer: 0
   m_Name: Persistent Data
   m_TagString: Untagged
@@ -605,18 +607,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxUnits: 8
-  unitColors:
-  - {r: 1, g: 0, b: 0, a: 1}
-  - {r: 1, g: 0, b: 0.64137936, a: 1}
-  - {r: 0.44827604, g: 0, b: 1, a: 1}
-  - {r: 0, g: 1, b: 0.99999976, a: 1}
-  - {r: 0, g: 0.7103448, b: 1, a: 1}
-  - {r: 0.9034482, g: 1, b: 0, a: 1}
-  - {r: 0, g: 1, b: 0.048275948, a: 1}
-  - {r: 1, g: 0.5579446, b: 0, a: 1}
-  - {r: 1, g: 0.80784315, b: 0, a: 1}
-  - {r: 1, g: 0.3529412, b: 0, a: 1}
-  colorIndex: 0
   unitsList:
   - prefab: {fileID: 1794585903509742, guid: ccd4db20c3cd25749ad7c3e177324b0a, type: 2}
     unlocked: 1
@@ -674,6 +664,98 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b39b0053b6a4f8f498c5101fb4b69a36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1299864688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1299864682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7eae440e10d877b4c8fe6e35c9b447ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backgroundLoop: {fileID: 8300000, guid: a2c52a599f463fa45b4ae252ad5355b5, type: 3}
+--- !u!82 &1299864689
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1299864682}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!1 &1517820362
 GameObject:
   m_ObjectHideFlags: 0

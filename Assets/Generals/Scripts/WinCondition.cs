@@ -16,23 +16,14 @@ public class WinCondition : MonoBehaviour
             Win();
     }
 
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.GetComponent<UnitHealth>())
-            Win();
-    }
-
     private void Win()
     {
-        EnemyHealth[] enemys = FindObjectsOfType<EnemyHealth>();
-        if (enemys.Length != 0)
-            return;
         if(FindObjectOfType<GameManager>()!=null)
             FindObjectOfType<GameManager>().WonGame();
         else
             winCanvas.enabled = true;
-        Destroy(gameObject);
 
+        Destroy(gameObject);
     }
     #endregion
 }
