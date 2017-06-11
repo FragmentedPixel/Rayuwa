@@ -12,7 +12,6 @@ public class EnemyDeathTrap : MonoBehaviour
     {
         SpawnEnemies();
     }
-
     private void SpawnEnemies()
     {
         EnemyController controller = GetComponent<EnemyController>();
