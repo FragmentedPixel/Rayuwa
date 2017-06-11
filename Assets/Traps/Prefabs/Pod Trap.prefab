@@ -299,5 +299,5 @@ MonoBehaviour:
   part1: {fileID: 4938563620333432}
   part2: {fileID: 4135237916289748}
   duration: 1.5
-  rotationSpeed: 1
+  rotationAngle: 45
   fallingSpeed: 0.1
