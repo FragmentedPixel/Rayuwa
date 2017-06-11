@@ -44,7 +44,9 @@ public class EnemyTreeWizard : MonoBehaviour
         EnemyTree enemyTree = closestTree.gameObject.AddComponent<EnemyTree>();
         enemyTree.damage = damage;
 
-        treeLauncher.Launch(closestTree, target);
+        if(target != null && Vector3.Distance(transform.position, target.position) < range)
+            treeLauncher.Launch(closestTree, target);
+
         currentCastTime = 0f;
         grid.ReCalculateGird();
     }
