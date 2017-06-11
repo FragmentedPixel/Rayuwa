@@ -1173,10 +1173,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5df2e4a652673be4f8d6b2de1c1ea06d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 300
-  damage: 50
-  castTime: 10
+  attackRange: 0
+  damage: 56
+  castTime: 8
   castBar: {fileID: 114254576791961074}
+  bridge: {fileID: 0}
 --- !u!114 &114788535364449996
 MonoBehaviour:
   m_ObjectHideFlags: 1

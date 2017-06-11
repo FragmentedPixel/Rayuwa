@@ -215,6 +215,9 @@ public abstract class UnitController : MonoBehaviour
             currentTime += Time.deltaTime;
             yield return null;
         }
+
+        if (!reloading)
+            yield break;
         
         UnitHealth health = GetComponentInChildren<UnitHealth>();
         

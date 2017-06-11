@@ -963,7 +963,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb31f5e8b03883d45b2cc981fb05e278, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 300
+  MaxHealth: 200
   enemyValue: 10
   background: {fileID: 114508878081113110}
   healthImage: {fileID: 114141413873169116}
@@ -1079,12 +1079,12 @@ MonoBehaviour:
   lastTarget: {fileID: 0}
   WayPointParent: {fileID: 0}
   attackRange: 4
-  attackSpeed: 4
-  attackDmg: 40
+  attackSpeed: 3
+  attackDmg: 60
   attackSound: {fileID: 8300000, guid: 6aee50330fe344246ae88f2fc990a3e1, type: 3}
   targetTreshold: 5
   agroRange: 15
-  maxAmmo: 30
+  maxAmmo: 100
   currentAmmo: 0
   refillPlace: {fileID: 0}
 --- !u!114 &114811924206824690

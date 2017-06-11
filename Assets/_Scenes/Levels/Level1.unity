@@ -22112,7 +22112,7 @@ Prefab:
     - target: {fileID: 224647533324537108, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 866.28314
+      value: 866.2832
       objectReference: {fileID: 0}
     - target: {fileID: 224647533324537108, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
@@ -22132,7 +22132,7 @@ Prefab:
     - target: {fileID: 224526494002961386, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 999.5576
+      value: 999.55756
       objectReference: {fileID: 0}
     - target: {fileID: 224526494002961386, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
@@ -55554,6 +55554,10 @@ Prefab:
         type: 2}
       propertyPath: enemies.Array.data[3]
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1573207870486432, guid: c946c05ece3ea3041aeaa51db95cf6c3, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c946c05ece3ea3041aeaa51db95cf6c3, type: 2}

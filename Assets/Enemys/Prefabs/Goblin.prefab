@@ -1054,7 +1054,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destination: {x: 14.7, y: 0, z: -40.9}
-  speed: 5
+  speed: 5.5
   turnSpeed: 4
   turnDst: 1
   stoppingDst: 0
@@ -1101,7 +1101,7 @@ MonoBehaviour:
   WayPointParent: {fileID: 0}
   attackRange: 4
   attackSpeed: 1
-  attackDmg: 12
+  attackDmg: 8
   attackSound: {fileID: 8300000, guid: 769e37b1d38115446a7dd4cf7b1533b7, type: 3}
   targetTreshold: 2
   agroRange: 10
@@ -1146,8 +1146,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb31f5e8b03883d45b2cc981fb05e278, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 30
-  enemyValue: 10
+  MaxHealth: 35
+  enemyValue: 5
   background: {fileID: 114002076316368526}
   healthImage: {fileID: 114802023657248434}
 --- !u!135 &135216886391286618
