@@ -105,6 +105,7 @@ public class EnemyTreeWizard : MonoBehaviour
 
         if(unit != null && !triggered)
         {
+            target = bridge;
             triggered = true;
             ThrowAtBridge();
         }

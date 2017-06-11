@@ -10,6 +10,7 @@ public class UnitHudElement : MonoBehaviour
     public Image healthImage;
     public Button addButton;
     public Image typeImage;
+    public Text shortcutKey;
 
     private Image buttonImage;
     private Animator anim;
@@ -24,6 +25,7 @@ public class UnitHudElement : MonoBehaviour
         anim = GetComponentInChildren<Animator>();
         drawing = FindObjectOfType<Drawing>();
         buttonImage = addButton.GetComponent<Image>();
+        shortcutKey.text = _unitController is MeleeUnitController ? "1" : "2";
 
         typeImage.sprite = _unitController.image;
         addButton.onClick.AddListener(delegate { AddAgent(unit.unitController.agent); });
