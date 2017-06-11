@@ -13,7 +13,6 @@ public class BridgeTrap : Trap
 
     private void OnTriggerEnter(Collider other)
     {
-
         if(other.CompareTag("Unit"))
         {
             StartCoroutine(FallingCR(part1, 1));
