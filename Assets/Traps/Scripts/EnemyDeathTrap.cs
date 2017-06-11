@@ -15,12 +15,19 @@ public class EnemyDeathTrap : MonoBehaviour
 
     private void SpawnEnemies()
     {
+        EnemyController controller = GetComponent<EnemyController>();
+
         for (int i = 0; i < count; i++)
         {
             Vector3 spawnOffSet = Random.insideUnitSphere * 2f;
             spawnOffSet.y = 0f;
 
-            Instantiate(enemy, transform.position + spawnOffSet, transform.rotation, transform.parent);
+            GameObject spawnedEnemy = Instantiate(enemy, transform.position + spawnOffSet, transform.rotation, transform.parent);
+
+            spawnedEnemy.GetComponent<Collider>().enabled = false;
+            spawnedEnemy.GetComponent<Collider>().enabled = true;
         }
+
+        FindObjectOfType<UnitsManager>().ResetUnitsColliders();
     }
 }

@@ -55,6 +55,14 @@ public class UnitsManager : MonoBehaviour
         foreach (UnitController controller in controllers)
             unitsControllers.Add(controller);
     }
+    public void ResetUnitsColliders()
+    {
+        foreach(UnitController controller in unitsControllers)
+        {
+            controller.GetComponent<Collider>().enabled = false;
+            controller.GetComponent<Collider>().enabled = true;
+        }
+    }
 
     private void SuffleSpawnPoints()
     {
