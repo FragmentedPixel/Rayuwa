@@ -23,6 +23,9 @@ public class PatrolState : iEnemyState
 
     public override void OnTriggerEnter(Transform other)
     {
+        if (controller.agent == null)
+            return;
+
         controller.agent.MoveToDestination(other.position);
         controller.target = other;
         ToChaseState();
