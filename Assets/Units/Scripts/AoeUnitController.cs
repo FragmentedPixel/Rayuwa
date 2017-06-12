@@ -17,7 +17,7 @@ public class AoeUnitController: UnitController
         string ammoText = Mathf.RoundToInt( ((ammo * 100f) / maxAmmo ) ).ToString() + "%";
         return ammoText;
     }
-    public void SwordHit()
+    public void AoeHit()
     {
         if (target != null)
         {
@@ -25,6 +25,9 @@ public class AoeUnitController: UnitController
 
             foreach(EnemyHealth enemy in nearbyEnemies)
             {
+                if (enemy == null)
+                    continue;
+
                 Vector3 playerPos = new Vector3(transform.position.x, 0f, transform.position.z);
                 Vector3 enemyPos = new Vector3(enemy.transform.position.x, 0f, enemy.transform.position.z);
 
