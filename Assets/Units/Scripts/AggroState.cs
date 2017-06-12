@@ -28,7 +28,6 @@ public class AggroState : iUnitState
     #region Methods
     private void AggroTarget()
     {
-        controller.LookAtTarget();
         controller.destination = controller.target.position;
         controller.agent.MoveToDestination(controller.target.position);
 

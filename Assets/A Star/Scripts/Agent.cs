@@ -73,7 +73,7 @@ public class Agent : MonoBehaviour
                 if (followingPath == false)
                     yield break;
 
-                if (pathNodes[i].walkable == false && i == pathNodes.Count - 1)
+                if (pathNodes[i].walkable == false)
                     RecalculateDestination();
 
                 transform.position = Vector3.MoveTowards(transform.position, finalPosition, speed * Time.deltaTime);

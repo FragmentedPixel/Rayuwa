@@ -130,6 +130,7 @@ public class EnemyTreeWizard : MonoBehaviour
         anim.SetTrigger("ThrowTrigger");
         currentCastTime = 0f;
         grid.ReCalculateGird();
+        target = null;
     }
     #endregion
 }

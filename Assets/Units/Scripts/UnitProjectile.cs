@@ -7,6 +7,9 @@ public class UnitProjectile : Projectile
 {
     public override void DamageTarget()
     {
+        if (target == null)
+            return;
+
         EnemyHealth enemyHealth = target.GetComponent<EnemyHealth>();
         enemyHealth.Hit(damage,attacker);
     }

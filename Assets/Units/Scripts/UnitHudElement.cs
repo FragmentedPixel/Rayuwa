@@ -25,7 +25,13 @@ public class UnitHudElement : MonoBehaviour
         anim = GetComponentInChildren<Animator>();
         drawing = FindObjectOfType<Drawing>();
         buttonImage = addButton.GetComponent<Image>();
-        shortcutKey.text = _unitController is MeleeUnitController ? "1" : "2";
+
+        if (_unitController is MeleeUnitController)
+            shortcutKey.text = "1";
+        else if (_unitController is RangedUnitController)
+            shortcutKey.text = "2";
+        else if (_unitController is AoeUnitController)
+            shortcutKey.text = "3";
 
         typeImage.sprite = _unitController.image;
         addButton.onClick.AddListener(delegate { AddAgent(unit.unitController.agent); });

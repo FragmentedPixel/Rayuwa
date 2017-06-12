@@ -27,7 +27,7 @@ public class UpgradeScript : MonoBehaviour
 
     private void Update()
     {
-        moneyText.text = UpgradesManager.instance.resources.ToString();
+        moneyText.text = UpgradesManager.instance.resources.ToString() + " Resources";
 
         foreach (UpgradeImage upgrade in upgrades)
             upgrade.Update();

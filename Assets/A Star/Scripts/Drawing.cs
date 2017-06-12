@@ -115,7 +115,10 @@ public class Drawing : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha2))
             SelectRangedUnits();
 
-        if(Input.GetKeyDown(KeyCode.Alpha3))
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+            SelectAoeUnits();
+
+        if(Input.GetKeyDown(KeyCode.Alpha4))
         {
             selectedAgents.Clear();
 
@@ -190,6 +193,8 @@ public class Drawing : MonoBehaviour
                 SelectMeleeUnits();
             else if (controller is RangedUnitController)
                 SelectRangedUnits();
+            else if(controller is AoeUnitController)
+                SelectAoeUnits();
         }
     }
     #endregion
@@ -288,6 +293,15 @@ public class Drawing : MonoBehaviour
         foreach (Agent agent in allAgents)
         {
             if (agent.GetComponent<RangedUnitController>() != null)
+                selectedAgents.Add(agent);
+        }
+    }
+    private void SelectAoeUnits()
+    {
+        selectedAgents.Clear();
+        foreach (Agent agent in allAgents)
+        {
+            if (agent.GetComponent<AoeUnitController>() != null)
                 selectedAgents.Add(agent);
         }
     }
