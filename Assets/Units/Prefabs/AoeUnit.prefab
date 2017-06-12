@@ -996,7 +996,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destination: {x: 0, y: 0, z: 0}
-  speed: 2.6
+  speed: 3
   turnSpeed: 3
   turnDst: 0
   stoppingDst: 0
@@ -1024,8 +1024,8 @@ MonoBehaviour:
   image: {fileID: 21300000, guid: 97e0f0ea6c148e54d9e34e9cddbb5db1, type: 3}
   color: {r: 0, g: 1, b: 0.6689656, a: 1}
   fightRange: 3
-  fightSpeed: 1
-  fightDmg: 10
+  fightSpeed: 2.5
+  fightDmg: 25
   fightSound: {fileID: 8300000, guid: bfe0a5e05741cd147aa44854ef322697, type: 3}
   speedIndex: 1
   damageIndex: 3
@@ -1142,7 +1142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a54a29682ff2124e9f96c27aea33d8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 250
+  MaxHealth: 100
   background: {fileID: 114268287294116970}
   healthImage: {fileID: 114349502728771306}
 --- !u!135 &135269286591990720

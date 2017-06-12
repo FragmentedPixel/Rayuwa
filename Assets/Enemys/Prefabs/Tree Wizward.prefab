@@ -310,7 +310,6 @@ GameObject:
   - component: {fileID: 135070521832406494}
   - component: {fileID: 95083282703857310}
   - component: {fileID: 82707871512413262}
-  - component: {fileID: 114127498617212072}
   - component: {fileID: 114183615854322780}
   - component: {fileID: 114755269199341042}
   m_Layer: 2
@@ -1032,25 +1031,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &114127498617212072
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1593968471915654}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f405937fb69e244198911aebaac9bf00, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  destination: {x: 14.7, y: 0, z: -40.9}
-  speed: 3.5
-  turnSpeed: 3
-  turnDst: 1
-  stoppingDst: 0
-  pathUpdateThreshhold: 0.5
-  selectedRenderer: {fileID: 0}
-  pathColor: {r: 0.01306963, g: 0.2655205, b: 0.83029974, a: 1}
 --- !u!114 &114183615854322780
 MonoBehaviour:
   m_ObjectHideFlags: 1
