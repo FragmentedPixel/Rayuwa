@@ -18,6 +18,10 @@ public class WinCondition : MonoBehaviour
 
     private void Win()
     {
+        EnemyHealth[] enemys = FindObjectsOfType<EnemyHealth>();
+        foreach (EnemyHealth enemy in enemys)
+            Destroy(enemy.gameObject);
+
         if(FindObjectOfType<GameManager>()!=null)
             FindObjectOfType<GameManager>().WonGame();
         else

@@ -159,13 +159,14 @@ public class Drawing : MonoBehaviour
                 DoubleClickSelection(hitAgent);
             else
             {
+                Debug.Log("Normal click");
+
                 if (!Input.GetKey(KeyCode.LeftShift) && !Input.GetKey(KeyCode.RightShift))
                     selectedAgents.Clear();
 
                 if (hitAgent != null)
                     selectedAgents.Add(hitAgent);
             }
-
 
             lastClickTime = Time.time;
         }
@@ -183,8 +184,6 @@ public class Drawing : MonoBehaviour
     }
     private void DoubleClickSelection(Agent agent)
     {
-        isdragging = false;
-
         if (agent != null)
         {
             UnitController controller = agent.GetComponent<UnitController>();
