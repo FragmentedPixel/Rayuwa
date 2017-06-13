@@ -14,7 +14,6 @@ public class LeaderController : MonoBehaviour {
 
     void Start ()
     {
-        //anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
     }
 
