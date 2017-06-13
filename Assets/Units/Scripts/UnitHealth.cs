@@ -11,6 +11,7 @@ public class UnitHealth : MonoBehaviour
     public float MaxHealth = 500;
     private float currentHealth;
     private UnitsManager unitsManager;
+    private UnitController contrller;
     #endregion
 
     #region UI
@@ -26,6 +27,7 @@ public class UnitHealth : MonoBehaviour
     {
         unitsManager = FindObjectOfType<UnitsManager>();
         healthCanvas = background.GetComponentInParent<Canvas>();
+        contrller = transform.GetComponentInParent<UnitController>();
         currentHealth = MaxHealth;
     }
     #endregion
@@ -43,7 +45,9 @@ public class UnitHealth : MonoBehaviour
         currentHealth -= damage;
         healthImage.fillAmount = currentHealth / MaxHealth;
 
-        transform.GetComponentInParent<UnitController>().HitByEnemy(attacker);
+        if(contrller != null)
+            contrller.HitByEnemy(attacker);
+
         unitsManager.UnitsInRange(transform.position, attacker);
         
         healthImage.color = (healthImage.fillAmount < 0.2) ? Color.red : Color.green;

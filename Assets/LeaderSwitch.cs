@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LeaderSwitch : MonoBehaviour {
 
     public LeaderController leader;
     public UnitController unit;
+
+    public Canvas leaderCanvas;
 
 	void Start ()
     {
@@ -32,6 +35,8 @@ public class LeaderSwitch : MonoBehaviour {
             unit.transform.position = leader.transform.position;
             unit.transform.rotation = leader.transform.rotation;
         }
+
+        leaderCanvas.enabled = isLeader;
         leader.gameObject.SetActive(isLeader);
         unit.gameObject.SetActive(!isLeader);
     }

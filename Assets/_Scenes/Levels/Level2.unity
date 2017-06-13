@@ -18272,6 +18272,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leader: {fileID: 1422809197}
   unit: {fileID: 852996304}
+  leaderCanvas: {fileID: 1040533186}
 --- !u!4 &571039769
 Transform:
   m_ObjectHideFlags: 0
@@ -34482,7 +34483,7 @@ Prefab:
     - target: {fileID: 224518959944274550, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 85.643555
+      value: 66.65192
       objectReference: {fileID: 0}
     - target: {fileID: 224518959944274550, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
@@ -34507,7 +34508,7 @@ Prefab:
     - target: {fileID: 224561857236209480, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 256.9307
+      value: 199.95584
       objectReference: {fileID: 0}
     - target: {fileID: 224561857236209480, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
@@ -34532,7 +34533,7 @@ Prefab:
     - target: {fileID: 224655157698004352, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 428.2178
+      value: 333.25974
       objectReference: {fileID: 0}
     - target: {fileID: 224655157698004352, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
@@ -34557,7 +34558,7 @@ Prefab:
     - target: {fileID: 224030191413974032, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 599.50494
+      value: 466.56363
       objectReference: {fileID: 0}
     - target: {fileID: 224030191413974032, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
@@ -34582,7 +34583,7 @@ Prefab:
     - target: {fileID: 224580992381246166, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 770.79205
+      value: 599.86755
       objectReference: {fileID: 0}
     - target: {fileID: 224580992381246166, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
@@ -34607,7 +34608,7 @@ Prefab:
     - target: {fileID: 224961939683550432, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 942.0791
+      value: 733.1714
       objectReference: {fileID: 0}
     - target: {fileID: 224961939683550432, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
@@ -34632,7 +34633,7 @@ Prefab:
     - target: {fileID: 224647533324537108, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 1113.3665
+      value: 866.47534
       objectReference: {fileID: 0}
     - target: {fileID: 224647533324537108, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
@@ -34657,7 +34658,7 @@ Prefab:
     - target: {fileID: 224526494002961386, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 1284.6536
+      value: 999.7792
       objectReference: {fileID: 0}
     - target: {fileID: 224526494002961386, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
@@ -34710,6 +34711,23 @@ Prefab:
 --- !u!1 &1040533183 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1618623244173862, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
+    type: 2}
+  m_PrefabInternal: {fileID: 1040533182}
+--- !u!114 &1040533184 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114087266106117884, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
+    type: 2}
+  m_PrefabInternal: {fileID: 1040533182}
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &1040533185 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114545536129040952, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
+    type: 2}
+  m_PrefabInternal: {fileID: 1040533182}
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!223 &1040533186 stripped
+Canvas:
+  m_PrefabParentObject: {fileID: 223275834528441430, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
     type: 2}
   m_PrefabInternal: {fileID: 1040533182}
 --- !u!4 &1041805884 stripped
@@ -49383,8 +49401,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHealth: 500
-  background: {fileID: 0}
-  healthImage: {fileID: 0}
+  background: {fileID: 1040533185}
+  healthImage: {fileID: 1040533184}
 --- !u!95 &1422809201
 Animator:
   serializedVersion: 3
