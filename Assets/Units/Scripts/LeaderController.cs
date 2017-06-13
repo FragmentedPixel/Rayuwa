@@ -43,5 +43,8 @@ public class LeaderController : MonoBehaviour {
         //Rotates Player on "Y" Axis Acording to Mouse Input
         float v = cameraVerticalSpeed * Input.GetAxis("Mouse Y");
         Camera.main.transform.Rotate(-v, 0, 0);
+        Vector3 rotation = Camera.main.transform.localRotation.eulerAngles;
+        rotation.x = Mathf.Clamp(rotation.x, -30, 30);
+        Camera.main.transform.localRotation = Quaternion.Euler(rotation);
     }
 }
