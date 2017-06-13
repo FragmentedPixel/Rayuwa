@@ -19,6 +19,6 @@ public class LeaderController : MonoBehaviour {
 
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
-        GetComponent<Rigidbody>().velocity = new Vector3(horizontal, 0, 0).normalized * Time.fixedDeltaTime * movementSpeed; 
+        GetComponent<Rigidbody>().velocity = new Vector3(horizontal, 0, vertical).normalized * Time.fixedDeltaTime * movementSpeed; 
 	}
 }
