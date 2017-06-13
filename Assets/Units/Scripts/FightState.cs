@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class FightState : iUnitState
 {
-	private float lastAttack = Time.time;
+	public float lastAttack = Time.time;
 
     #region Constructor
     public FightState(UnitController controller) : base(controller)
