@@ -9,6 +9,8 @@ public class CameraManager : MonoBehaviour {
     public SideCameraController scc;
     public CenterCameraController ccc;
     private int index = 0;
+    public Camera leaderCamera;
+    private bool isLeader=false;
 
     private void Start()
     {
@@ -21,7 +23,12 @@ public class CameraManager : MonoBehaviour {
         {
             ChangeCamera();
         }
-	}
+
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            LeaderCamera();
+        }
+    }
 
     void ChangeCamera()
     {
@@ -40,5 +47,19 @@ public class CameraManager : MonoBehaviour {
 
         camera_list[index].gameObject.SetActive(true);
     }
-
+    void LeaderCamera()
+    {
+        Camera.main.gameObject.SetActive(false);
+        if (isLeader)
+        {
+            camera_list[index].gameObject.SetActive(true);
+            Cursor.visible = true;
+        }
+        else
+        {
+            leaderCamera.gameObject.SetActive(true);
+            Cursor.visible = false;
+        } 
+        isLeader = !isLeader;
+    }
 }

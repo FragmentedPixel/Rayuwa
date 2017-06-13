@@ -10308,7 +10308,7 @@ Prefab:
     - target: {fileID: 114929891491168826, guid: 6f608acf28650e94c8a61ea2f92a6890,
         type: 2}
       propertyPath: cooldown
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 114929891491168826, guid: 6f608acf28650e94c8a61ea2f92a6890,
         type: 2}
@@ -10330,6 +10330,11 @@ Prefab:
       propertyPath: maxZ
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 114929891491168826, guid: 6f608acf28650e94c8a61ea2f92a6890,
+        type: 2}
+      propertyPath: lightningSound
+      value: 
+      objectReference: {fileID: 8300000, guid: d14c4161ffe068f4e8814f6ddfcd0e7d, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6f608acf28650e94c8a61ea2f92a6890, type: 2}
   m_IsPrefabParent: 0
@@ -57246,6 +57251,11 @@ Prefab:
       propertyPath: hasTarget
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114929891491168826, guid: 6f608acf28650e94c8a61ea2f92a6890,
+        type: 2}
+      propertyPath: lightningSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 9bdf44936be92604b91fbc43d67c167c, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6f608acf28650e94c8a61ea2f92a6890, type: 2}
   m_IsPrefabParent: 0

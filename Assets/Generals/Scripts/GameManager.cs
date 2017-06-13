@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
     {
         unitsCanavas.enabled = true;
 
-        while (!Input.GetKeyDown(KeyCode.Space) && !unitsSelected)
+        while (!unitsSelected)
             yield return null;
 
         unitsCanavas.enabled = false;
