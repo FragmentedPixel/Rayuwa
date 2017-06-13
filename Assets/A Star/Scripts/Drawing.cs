@@ -159,8 +159,6 @@ public class Drawing : MonoBehaviour
                 DoubleClickSelection(hitAgent);
             else
             {
-                Debug.Log("Normal click");
-
                 if (!Input.GetKey(KeyCode.LeftShift) && !Input.GetKey(KeyCode.RightShift))
                     selectedAgents.Clear();
 

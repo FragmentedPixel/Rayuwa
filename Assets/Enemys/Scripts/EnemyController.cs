@@ -18,7 +18,7 @@ public abstract class  EnemyController : MonoBehaviour
 
     #region Parameters
     [Header("Patroling")]
-    public Transform WayPointParent;
+    public Transform wayPointsParent;
 
 	[Header("Attack")]
     public float attackRange = 3f;

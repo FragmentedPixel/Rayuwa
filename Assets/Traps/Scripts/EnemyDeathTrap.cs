@@ -26,7 +26,7 @@ public class EnemyDeathTrap : MonoBehaviour
             spawnedEnemy.GetComponent<Collider>().enabled = false;
             spawnedEnemy.GetComponent<Collider>().enabled = true;
 
-            spawnedEnemy.GetComponent<EnemyController>().WayPointParent = controller.WayPointParent;
+            spawnedEnemy.GetComponent<EnemyController>().wayPointsParent = controller.wayPointsParent;
         }
         try { FindObjectOfType<UnitsManager>().ResetUnitsColliders(); }
         catch { }
