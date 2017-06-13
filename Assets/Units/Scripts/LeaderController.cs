@@ -22,8 +22,24 @@ public class LeaderController : MonoBehaviour {
             if (unit.fightState.lastAttack + unit.fightSpeed < Time.time)
             {
                 unit.fightState.lastAttack = Time.time;
-                unit.target = FindObjectOfType<EnemyHealth>().transform;
-                unit.FightTarget();
+
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                RaycastHit hit;
+
+                if (Physics.Raycast(ray, out hit))
+                {
+                    EnemyHealth enemy = hit.transform.GetComponent<EnemyHealth>();
+
+                    if (enemy != null)
+                        unit.target = enemy.transform;
+                }
+
+                if (unit.target != null)
+                {
+                    //TODO: Event missing from animation.
+                    GetComponent<Animator>().SetTrigger("MeleeAttack");
+                    (unit as MeleeUnitController).SwordHit();
+                }
             }
         }
     }

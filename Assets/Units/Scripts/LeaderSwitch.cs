@@ -9,6 +9,7 @@ public class LeaderSwitch : MonoBehaviour {
     public UnitController unit;
 
     public Canvas leaderCanvas;
+    private bool isLeader;
 
 	void Start ()
     {
@@ -16,13 +17,20 @@ public class LeaderSwitch : MonoBehaviour {
         unit = GetComponentInChildren<UnitController>();
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+	void Update ()
+    {
+        if (!isLeader)
+            leader.transform.position = unit.transform.position;
+        else
+            unit.transform.position = leader.transform.position;
+
+    }
 
     public void Switch(bool isLeader)
     {
+        this.isLeader = isLeader;
+
         if(isLeader)
         {
             leader.transform.position = unit.transform.position;
