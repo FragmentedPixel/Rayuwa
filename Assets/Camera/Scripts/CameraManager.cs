@@ -51,15 +51,10 @@ public class CameraManager : MonoBehaviour {
     {
         Camera.main.gameObject.SetActive(false);
         if (isLeader)
-        {
             camera_list[index].gameObject.SetActive(true);
-            Cursor.visible = true;
-        }
         else
-        {
             leaderCamera.gameObject.SetActive(true);
-            Cursor.visible = false;
-        } 
+        Cursor.visible = isLeader;
         isLeader = !isLeader;
     }
 }
