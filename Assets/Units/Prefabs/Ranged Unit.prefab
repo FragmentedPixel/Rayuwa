@@ -644,7 +644,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1752354336571878}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.55, y: 0.18322325, z: -72.12}
+  m_LocalPosition: {x: 13.460433, y: 0.046157837, z: -40.466022}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4146596974921268}
@@ -1025,6 +1025,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHealth: 60
+  currentHealth: 0
   background: {fileID: 114089942114005922}
   healthImage: {fileID: 114422963005775804}
 --- !u!114 &114089942114005922
@@ -1119,7 +1120,7 @@ MonoBehaviour:
   color: {r: 0, g: 0.2965517, b: 1, a: 1}
   fightRange: 15
   fightSpeed: 1
-  fightDmg: 12
+  fightDmg: 15
   fightSound: {fileID: 8300000, guid: 4fd59a20cad78ca4b949c6bc91727bab, type: 3}
   speedIndex: 1
   damageIndex: 3
