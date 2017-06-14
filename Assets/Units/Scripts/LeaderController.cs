@@ -24,7 +24,7 @@ public class LeaderController : MonoBehaviour {
 
     private void Update()
     {
-        attackImage.fillAmount = (Time.time - unit.fightState.lastAttack) / (unit.fightState.lastAttack + unit.fightSpeed);
+        attackImage.fillAmount = (Time.time - unit.fightState.lastAttack) / (unit.fightSpeed);
 
         if (Input.GetMouseButtonDown(0) && (unit.fightState.lastAttack + unit.fightSpeed < Time.time))
         {
