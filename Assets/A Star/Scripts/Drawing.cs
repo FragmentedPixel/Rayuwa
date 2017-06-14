@@ -57,7 +57,7 @@ public class Drawing : MonoBehaviour
     #endregion
 
     #region Updates
-    private void FixedUpdate()
+    private void Update()
     {
         DrawSelectedPaths();
         UpdateDragging();
