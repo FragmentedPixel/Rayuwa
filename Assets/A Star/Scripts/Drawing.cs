@@ -118,13 +118,20 @@ public class Drawing : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha3))
             SelectAoeUnits();
 
-        if(Input.GetKeyDown(KeyCode.Alpha4))
+        if (Input.GetKeyDown(KeyCode.Alpha0))
+            SelectLeaderUnit();
+
+        if (Input.GetKeyDown(KeyCode.Alpha4))
         {
             selectedAgents.Clear();
 
             foreach (Agent agent in allAgents)
                 selectedAgents.Add(agent);
         }
+
+        if (Input.GetKeyDown(KeyCode.K))
+            if (selectedAgents.Contains(allAgents[0]))
+                selectedAgents.Remove(allAgents[0]);
 
     }
     private void UpdateBox()
@@ -277,29 +284,45 @@ public class Drawing : MonoBehaviour
 
     private void SelectMeleeUnits()
     {
-        selectedAgents.Clear();
+        if(!Input.GetKey(KeyCode.LeftShift))
+            selectedAgents.Clear();
         foreach (Agent agent in allAgents)
         {
-            if (agent.GetComponent<MeleeUnitController>() != null)
+            if (agent.GetComponent<MeleeUnitController>() != null&& agent.GetComponentInParent<LeaderSwitch>() == null)
                 selectedAgents.Add(agent);
         }
     }
     private void SelectRangedUnits()
     {
-        selectedAgents.Clear();
+        if (!Input.GetKey(KeyCode.LeftShift))
+            selectedAgents.Clear();
         foreach (Agent agent in allAgents)
         {
-            if (agent.GetComponent<RangedUnitController>() != null)
+            if (agent.GetComponent<RangedUnitController>() != null && agent.GetComponentInParent<LeaderSwitch>() == null)
                 selectedAgents.Add(agent);
         }
     }
     private void SelectAoeUnits()
     {
-        selectedAgents.Clear();
+        if (!Input.GetKey(KeyCode.LeftShift))
+            selectedAgents.Clear();
         foreach (Agent agent in allAgents)
         {
-            if (agent.GetComponent<AoeUnitController>() != null)
+            if (agent.GetComponent<AoeUnitController>() != null && agent.GetComponentInParent<LeaderSwitch>() == null)
                 selectedAgents.Add(agent);
+        }
+    }
+    private void SelectLeaderUnit()
+    {
+        if (!Input.GetKey(KeyCode.LeftShift))
+            selectedAgents.Clear();
+        if(!FindObjectOfType<LeaderSwitch>().isLeader)
+        {
+            foreach (Agent agent in allAgents)
+            {
+                if (agent.GetComponentInParent<LeaderSwitch>() != null)
+                    selectedAgents.Add(agent);
+            }
         }
     }
     #endregion

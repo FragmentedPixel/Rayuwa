@@ -9,7 +9,7 @@ public class LeaderSwitch : MonoBehaviour {
     [HideInInspector] public UnitController unit;
 
     public Canvas leaderCanvas;
-    private bool isLeader;
+    public bool isLeader;
 
 	void Start ()
     {
@@ -43,6 +43,7 @@ public class LeaderSwitch : MonoBehaviour {
 			leader.GetComponent<UnitHealth> ().currentHealth = unit.GetComponentInChildren<UnitHealth> ().currentHealth;
             unit.agent.Stop();
             unit.agent.ClearPath();
+            
         }
         else
         {
