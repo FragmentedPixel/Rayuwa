@@ -16561,10 +16561,6 @@ Prefab:
       propertyPath: healthImage
       value: 
       objectReference: {fileID: 1040533184}
-    - target: {fileID: 1337278178674106, guid: 4f84068891b5a2545b8d13ee1bfe6695, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4f84068891b5a2545b8d13ee1bfe6695, type: 2}
   m_IsPrefabParent: 0
@@ -37145,15 +37141,6 @@ Prefab:
       propertyPath: leaderCanvas
       value: 
       objectReference: {fileID: 1040533186}
-    - target: {fileID: 1021319693115628, guid: bd716ea0cd8a0004994c72eeff3d8fda, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 95447447271507104, guid: bd716ea0cd8a0004994c72eeff3d8fda,
-        type: 2}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 80c8c273f9ef4bd4fb22508b0fcbd9ae, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bd716ea0cd8a0004994c72eeff3d8fda, type: 2}
   m_IsPrefabParent: 0
