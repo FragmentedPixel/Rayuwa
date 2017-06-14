@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class LeaderSwitch : MonoBehaviour {
 
-    public LeaderController leader;
-    public UnitController unit;
+    [HideInInspector] public LeaderController leader;
+    [HideInInspector] public UnitController unit;
 
     public Canvas leaderCanvas;
     private bool isLeader;
