@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43667564, g: 0.48427147, b: 0.56452364, a: 1}
+  m_IndirectSpecularColor: {r: 0.45140088, g: 0.50089335, b: 0.5723178, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -62526,60 +62526,6 @@ Prefab:
     - target: {fileID: 4211419324405732, guid: 57c97224ca331dc4798d2884329243b9, type: 2}
       propertyPath: m_RootOrder
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4408337596144820, guid: 57c97224ca331dc4798d2884329243b9, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4408337596144820, guid: 57c97224ca331dc4798d2884329243b9, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 108452926219536480, guid: 57c97224ca331dc4798d2884329243b9,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1869266803192166, guid: 57c97224ca331dc4798d2884329243b9, type: 2}
-      propertyPath: m_Name
-      value: Nori Light
-      objectReference: {fileID: 0}
-    - target: {fileID: 4626504811281852, guid: 57c97224ca331dc4798d2884329243b9, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4626504811281852, guid: 57c97224ca331dc4798d2884329243b9, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4626504811281852, guid: 57c97224ca331dc4798d2884329243b9, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 4626504811281852, guid: 57c97224ca331dc4798d2884329243b9, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4626504811281852, guid: 57c97224ca331dc4798d2884329243b9, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4626504811281852, guid: 57c97224ca331dc4798d2884329243b9, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 4626504811281852, guid: 57c97224ca331dc4798d2884329243b9, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 4626504811281852, guid: 57c97224ca331dc4798d2884329243b9, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 108452926219536480, guid: 57c97224ca331dc4798d2884329243b9,
-        type: 2}
-      propertyPath: m_CullingMask.m_Bits
-      value: 16
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 57c97224ca331dc4798d2884329243b9, type: 2}
