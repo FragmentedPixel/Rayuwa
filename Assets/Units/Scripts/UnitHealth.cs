@@ -9,7 +9,7 @@ public class UnitHealth : MonoBehaviour
 
     #region Health
     public float MaxHealth = 500;
-    private float currentHealth;
+    public float currentHealth;
     private UnitsManager unitsManager;
     private UnitController contrller;
     #endregion

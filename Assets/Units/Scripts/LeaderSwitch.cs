@@ -30,11 +30,14 @@ public class LeaderSwitch : MonoBehaviour {
     public void Switch(bool isLeader)
     {
         this.isLeader = isLeader;
-
+		leaderCanvas.enabled = isLeader;
+		leader.gameObject.SetActive(isLeader);
+		unit.gameObject.SetActive(!isLeader);
         if(isLeader)
         {
             leader.transform.position = unit.transform.position;
             leader.transform.rotation = unit.transform.rotation;
+			leader.GetComponent<UnitHealth> ().currentHealth = unit.GetComponentInChildren<UnitHealth> ().currentHealth;
             unit.agent.Stop();
             unit.agent.ClearPath();
         }
@@ -42,10 +45,9 @@ public class LeaderSwitch : MonoBehaviour {
         {
             unit.transform.position = leader.transform.position;
             unit.transform.rotation = leader.transform.rotation;
+			unit.GetComponentInChildren<UnitHealth> ().currentHealth = leader.GetComponent<UnitHealth> ().currentHealth;
         }
 
-        leaderCanvas.enabled = isLeader;
-        leader.gameObject.SetActive(isLeader);
-        unit.gameObject.SetActive(!isLeader);
+        
     }
 }

@@ -20,6 +20,8 @@ public class LeaderController : MonoBehaviour {
 
     private void Update()
     {
+
+
         if (Input.GetMouseButtonDown(0) && (unit.fightState.lastAttack + unit.fightSpeed < Time.time))
         {
             unit.fightState.lastAttack = Time.time;
