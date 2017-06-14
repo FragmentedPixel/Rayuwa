@@ -387,7 +387,7 @@ MonoBehaviour:
   cooldown: 12
   warnningTime: 1.5
   duration: 1
-  lightningSound: {fileID: 8300000, guid: c0ed4519f02193149b3356eded935da6, type: 3}
+  lightningSound: {fileID: 8300000, guid: e90dfb00b20ab6b47a086475ec3554e3, type: 3}
   lightningParticules: {fileID: 198236353395993474}
   rainSound: {fileID: 8300000, guid: 7b9a6a320f2814649bbbfbbc2ede2e82, type: 3}
   rainParticules: {fileID: 198403790308551218}
@@ -3478,7 +3478,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -904871145
+  randomSeed: 166038585
   InitialModule:
     serializedVersion: 3
     enabled: 1
