@@ -15,6 +15,7 @@ public class LeaderController : MonoBehaviour {
     void Start ()
     {
         rb = GetComponent<Rigidbody>();
+		anim = GetComponent<Animator> ();
     }
 
     private void Update()
@@ -33,14 +34,22 @@ public class LeaderController : MonoBehaviour {
                 if (enemy != null)
                     unit.target = enemy.transform;
             }
-
-            if (unit.target != null)
-            {
-                //TODO: Event missing from animation.
+			try
+			{
                 anim.SetTrigger("MeleeAttack");
-                (unit as MeleeUnitController).SwordHit();
-                
+
+				if (unit.DistanceToTarget () < unit.fightRange)
+				{	
+					if (unit is MeleeUnitController)
+						(unit as MeleeUnitController).SwordHit ();
+					else if (unit is RangedUnitController)
+						(unit as RangedUnitController).FireProjectile ();
+					else if (unit is AoeUnitController)
+						(unit as AoeUnitController).AoeHit ();
+				}
             }
+
+			catch{}
         }
     }
 

@@ -1785,7 +1785,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 47384716}
-  m_Layer: 2
+  m_Layer: 10
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4209,7 +4209,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 114052234}
-  m_Layer: 2
+  m_Layer: 10
   m_Name: Lower_Leg_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7646,7 +7646,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 225537879}
-  m_Layer: 2
+  m_Layer: 10
   m_Name: Upper_Leg_R_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9568,7 +9568,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 289517096}
-  m_Layer: 2
+  m_Layer: 10
   m_Name: Lower_Arm_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11817,7 +11817,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 354657627}
-  m_Layer: 2
+  m_Layer: 10
   m_Name: Lower_Arm_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14246,7 +14246,7 @@ GameObject:
   - component: {fileID: 441853314}
   - component: {fileID: 441853313}
   - component: {fileID: 441853317}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -17349,7 +17349,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 537365714}
-  m_Layer: 2
+  m_Layer: 10
   m_Name: Upper_Leg_L_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20196,7 +20196,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 638209113}
-  m_Layer: 2
+  m_Layer: 10
   m_Name: Hand_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21514,7 +21514,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 663629558}
-  m_Layer: 2
+  m_Layer: 10
   m_Name: Upper_Arm_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24714,7 +24714,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 757319461}
-  m_Layer: 2
+  m_Layer: 10
   m_Name: Lower_Leg_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26725,7 +26725,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 804068001}
-  m_Layer: 2
+  m_Layer: 10
   m_Name: Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26851,7 +26851,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 812508682}
-  m_Layer: 2
+  m_Layer: 10
   m_Name: Upper_Arm_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28364,7 +28364,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 859941498}
-  m_Layer: 2
+  m_Layer: 10
   m_Name: Neck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32899,7 +32899,7 @@ GameObject:
   - component: {fileID: 997416917}
   - component: {fileID: 997416916}
   - component: {fileID: 997416915}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34398,7 +34398,7 @@ Prefab:
     - target: {fileID: 224436298904660304, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 433.21558
+      value: 433.21918
       objectReference: {fileID: 0}
     - target: {fileID: 224436298904660304, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
@@ -34428,7 +34428,7 @@ Prefab:
     - target: {fileID: 224030328752118524, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 433.21558
+      value: 433.21918
       objectReference: {fileID: 0}
     - target: {fileID: 224030328752118524, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
@@ -34458,7 +34458,7 @@ Prefab:
     - target: {fileID: 224234438484536726, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 533.2156
+      value: 533.2192
       objectReference: {fileID: 0}
     - target: {fileID: 224234438484536726, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
@@ -34468,7 +34468,7 @@ Prefab:
     - target: {fileID: 224234438484536726, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 1066.4312
+      value: 1066.4384
       objectReference: {fileID: 0}
     - target: {fileID: 224518959944274550, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
@@ -34483,7 +34483,7 @@ Prefab:
     - target: {fileID: 224518959944274550, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 66.65195
+      value: 66.6524
       objectReference: {fileID: 0}
     - target: {fileID: 224518959944274550, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
@@ -34508,7 +34508,7 @@ Prefab:
     - target: {fileID: 224561857236209480, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 199.95584
+      value: 199.95718
       objectReference: {fileID: 0}
     - target: {fileID: 224561857236209480, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
@@ -34533,7 +34533,7 @@ Prefab:
     - target: {fileID: 224655157698004352, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 333.25974
+      value: 333.262
       objectReference: {fileID: 0}
     - target: {fileID: 224655157698004352, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
@@ -34558,7 +34558,7 @@ Prefab:
     - target: {fileID: 224030191413974032, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 466.56363
+      value: 466.56677
       objectReference: {fileID: 0}
     - target: {fileID: 224030191413974032, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
@@ -34583,7 +34583,7 @@ Prefab:
     - target: {fileID: 224580992381246166, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 599.86755
+      value: 599.8716
       objectReference: {fileID: 0}
     - target: {fileID: 224580992381246166, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
@@ -34608,7 +34608,7 @@ Prefab:
     - target: {fileID: 224961939683550432, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 733.1714
+      value: 733.1764
       objectReference: {fileID: 0}
     - target: {fileID: 224961939683550432, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
@@ -34633,7 +34633,7 @@ Prefab:
     - target: {fileID: 224647533324537108, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 866.47534
+      value: 866.4812
       objectReference: {fileID: 0}
     - target: {fileID: 224647533324537108, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
@@ -34658,7 +34658,7 @@ Prefab:
     - target: {fileID: 224526494002961386, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 999.7792
+      value: 999.786
       objectReference: {fileID: 0}
     - target: {fileID: 224526494002961386, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
@@ -34688,7 +34688,7 @@ Prefab:
     - target: {fileID: 224106777454854378, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 533.2156
+      value: 533.2192
       objectReference: {fileID: 0}
     - target: {fileID: 224106777454854378, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
@@ -34698,7 +34698,7 @@ Prefab:
     - target: {fileID: 224106777454854378, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 1066.4312
+      value: 1066.4384
       objectReference: {fileID: 0}
     - target: {fileID: 114964989026022620, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
@@ -42077,7 +42077,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1198447034}
-  m_Layer: 2
+  m_Layer: 10
   m_Name: Hand_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43496,7 +43496,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1240428046}
-  m_Layer: 2
+  m_Layer: 10
   m_Name: Upper_Leg_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46404,7 +46404,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1341111404}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Sabie
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49325,9 +49325,9 @@ GameObject:
   - component: {fileID: 1422809199}
   - component: {fileID: 1422809198}
   - component: {fileID: 1422809197}
-  m_Layer: 2
+  m_Layer: 10
   m_Name: LeaderUnit
-  m_TagString: Untagged
+  m_TagString: Unit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -50943,7 +50943,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1466889112}
   - component: {fileID: 1466889113}
-  m_Layer: 2
+  m_Layer: 10
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59240,7 +59240,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1687269900}
-  m_Layer: 2
+  m_Layer: 10
   m_Name: Upper_Leg_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62652,7 +62652,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1784816957}
-  m_Layer: 2
+  m_Layer: 10
   m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -66033,7 +66033,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1894771963}
-  m_Layer: 2
+  m_Layer: 10
   m_Name: Armature
   m_TagString: Untagged
   m_Icon: {fileID: 0}
