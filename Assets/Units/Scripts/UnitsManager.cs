@@ -80,23 +80,25 @@ public class UnitsManager : MonoBehaviour
             spawnPoints[randomIndex] = temp;
         }
     }
-    private void SetUpDrawingAgents()
-    {
-        foreach (Transform t in transform)
-            drawing.allAgents.Add(t.GetComponent<Agent>());
-
-        foreach (Agent a in drawing.allAgents)
-            drawing.selectedAgents.Add(a);
-    }
     private void PopulateUnitsControllers()
     {
         int spawnIndex = 0;
         foreach (Unit unit in units)
         {
             for (int i = 0; i < unit.count; i++)
-                unitsControllers.Add(Instantiate(unit.prefab, spawnPoints[spawnIndex++].position, Quaternion.identity, transform).GetComponent<UnitController>());
+                Instantiate(unit.prefab, spawnPoints[spawnIndex++].position, Quaternion.identity, transform);
         }
 
+		UnitController[] controllers = FindObjectsOfType<UnitController> ();
+		unitsControllers.AddRange (controllers);
     }
+	private void SetUpDrawingAgents()
+	{
+		foreach (Transform t in transform)
+			drawing.allAgents.Add(t.GetComponent<Agent>());
+
+		foreach (Agent a in drawing.allAgents)
+			drawing.selectedAgents.Add(a);
+	}
     #endregion
 }

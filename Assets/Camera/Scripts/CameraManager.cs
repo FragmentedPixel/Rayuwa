@@ -48,7 +48,8 @@ public class CameraManager : MonoBehaviour {
 
         camera_list[index].gameObject.SetActive(true);
     }
-    void Leader()
+
+    public void Leader()
     {
         isLeader = !isLeader;
         camera_list[index].gameObject.SetActive(!isLeader);

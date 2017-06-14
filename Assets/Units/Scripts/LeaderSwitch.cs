@@ -20,6 +20,9 @@ public class LeaderSwitch : MonoBehaviour {
 
 	void Update ()
     {
+		if (unit == null)
+			Destroy (gameObject);
+
         if (!isLeader)
             leader.transform.position = unit.transform.position;
         else
@@ -47,7 +50,11 @@ public class LeaderSwitch : MonoBehaviour {
             unit.transform.rotation = leader.transform.rotation;
 			unit.GetComponentInChildren<UnitHealth> ().currentHealth = leader.GetComponent<UnitHealth> ().currentHealth;
         }
-
-        
     }
+
+	public void OnDestroy()
+	{
+		if(isLeader)
+			FindObjectOfType<CameraManager> ().Leader ();
+	}
 }
