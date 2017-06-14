@@ -94,8 +94,8 @@ public class UnitsManager : MonoBehaviour
     }
 	private void SetUpDrawingAgents()
 	{
-		foreach (Transform t in transform)
-			drawing.allAgents.Add(t.GetComponent<Agent>());
+		foreach (UnitController contoller in unitsControllers)
+			drawing.allAgents.Add(contoller.GetComponent<Agent>());
 
 		foreach (Agent a in drawing.allAgents)
 			drawing.selectedAgents.Add(a);
