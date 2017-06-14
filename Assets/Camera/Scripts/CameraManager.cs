@@ -29,7 +29,8 @@ public class CameraManager : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.K))
         {
-            Leader();
+            if(ls!=null)
+                Leader();
         }
     }
 

@@ -129,9 +129,9 @@ public class Drawing : MonoBehaviour
                 selectedAgents.Add(agent);
         }
 
-        if (Input.GetKeyDown(KeyCode.K))
+        if (Input.GetKey(KeyCode.K))
             if (selectedAgents.Contains(allAgents[0]))
-                selectedAgents.Remove(allAgents[0]);
+                selectedAgents.Clear();
 
     }
     private void UpdateBox()
