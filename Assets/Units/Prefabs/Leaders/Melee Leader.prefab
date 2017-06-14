@@ -2063,11 +2063,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5c974bdbca0db641b0400feec7c6761, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackImage: {fileID: 0}
   movementSpeed: 200
   cameraHorizontalSpeed: 2
   cameraVerticalSpeed: 1
   unit: {fileID: 114659651870772174}
   anim: {fileID: 95716495230887196}
+  rb: {fileID: 0}
 --- !u!114 &114659651870772174
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2118,6 +2120,7 @@ MonoBehaviour:
   leader: {fileID: 114499747269877018}
   unit: {fileID: 114659651870772174}
   leaderCanvas: {fileID: 0}
+  isLeader: 0
 --- !u!114 &114789640251708868
 MonoBehaviour:
   m_ObjectHideFlags: 1
