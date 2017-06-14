@@ -43,7 +43,7 @@ public class LightningTrap : Trap
         audioS.PlayDelayed(1f);
         yield return new WaitForSeconds(3f);
 
-        renderer.enabled = true;
+        renderer.enabled = false;
         yield return new WaitForSeconds(warnningTime);
 
         collider.enabled = true;

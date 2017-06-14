@@ -116,12 +116,6 @@ public class Drawing : MonoBehaviour
             SelectRangedUnits();
 
         if (Input.GetKeyDown(KeyCode.Alpha3))
-            SelectAoeUnits();
-
-        if (Input.GetKeyDown(KeyCode.Alpha0))
-            SelectLeaderUnit();
-
-        if (Input.GetKeyDown(KeyCode.Alpha4))
         {
             selectedAgents.Clear();
 
@@ -129,9 +123,20 @@ public class Drawing : MonoBehaviour
                 selectedAgents.Add(agent);
         }
 
+        /*
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+            SelectAoeUnits();
+
+        if (Input.GetKeyDown(KeyCode.Alpha0))
+            SelectLeaderUnit();
+        */
+        /*
         if (Input.GetKey(KeyCode.K))
             if (selectedAgents.Contains(allAgents[0]))
                 selectedAgents.Clear();
+        */
+
+
 
     }
     private void UpdateBox()
