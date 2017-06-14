@@ -86,7 +86,7 @@ LightmapSettings:
     m_PVRFilteringAtrousColorSigma: 1
     m_PVRFilteringAtrousNormalSigma: 1
     m_PVRFilteringAtrousPositionSigma: 1
-  m_LightingDataAsset: {fileID: 112000002, guid: a891c37dd5de84d428c552d53ed34932,
+  m_LightingDataAsset: {fileID: 112000002, guid: 73464a15fdd5fbe4aa7196cf6a3413f4,
     type: 2}
   m_ShadowMaskMode: 2
 --- !u!196 &4
@@ -6900,8 +6900,8 @@ Transform:
   - {fileID: 2038183717}
   - {fileID: 803342484}
   - {fileID: 1987942887}
-  - {fileID: 1955738210}
   - {fileID: 1985249502}
+  - {fileID: 1955738210}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
