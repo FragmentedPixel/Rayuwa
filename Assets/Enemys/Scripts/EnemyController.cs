@@ -62,6 +62,8 @@ public abstract class  EnemyController : MonoBehaviour
 
     private void Start()
     {
+        if (wayPointsParent == null)
+            target = transform;
         anim = GetComponent<Animator>();
         agent = GetComponent<Agent>();
         audioS = GetComponent<AudioSource>();
