@@ -42,10 +42,18 @@ public class LeaderController : MonoBehaviour {
             }
 			try
 			{
-                Invoke("Hit", 2f);
+                if (unit is MeleeUnitController)
+                    anim.SetTrigger("MeleeAttack");
+                else if (unit is RangedUnitController)
+                    anim.SetTrigger("RangedAttack");
+                else if (unit is AoeUnitController)
+                    anim.SetTrigger("AoeAttack");
+
+                
             }
 
 			catch{}
+            Invoke("Hit", 1f);
         }
     }
 
@@ -86,12 +94,8 @@ public class LeaderController : MonoBehaviour {
     }
     private void Hit()
     {
-        if(unit is MeleeUnitController)
-            anim.SetTrigger("MeleeAttack");
-        else if (unit is RangedUnitController)
-            anim.SetTrigger("RangedAttack");
-        else if (unit is AoeUnitController)
-            anim.SetTrigger("AoeAttack");
+        if (unit.target == null)
+            return;
 
         if (unit.DistanceToTarget() > unit.fightRange)
             return;
