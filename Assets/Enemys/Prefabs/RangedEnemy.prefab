@@ -1041,7 +1041,7 @@ MonoBehaviour:
   audioS: {fileID: 0}
   target: {fileID: 0}
   lastTarget: {fileID: 0}
-  WayPointParent: {fileID: 0}
+  wayPointsParent: {fileID: 0}
   attackRange: 16
   attackSpeed: 1
   attackDmg: 17
@@ -1131,7 +1131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb31f5e8b03883d45b2cc981fb05e278, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 70
+  MaxHealth: 80
   enemyValue: 10
   background: {fileID: 114002076316368526}
   healthImage: {fileID: 114802023657248434}

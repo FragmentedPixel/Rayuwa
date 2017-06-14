@@ -1138,7 +1138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb31f5e8b03883d45b2cc981fb05e278, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 50
+  MaxHealth: 100
   enemyValue: 10
   background: {fileID: 114292721079804196}
   healthImage: {fileID: 114389730620866664}
@@ -1154,7 +1154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackRange: 30
-  damage: 56
+  damage: 80
   castTime: 8
   castBar: {fileID: 114254576791961074}
   bridge: {fileID: 0}

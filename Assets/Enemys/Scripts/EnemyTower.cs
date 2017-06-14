@@ -34,7 +34,7 @@ public class EnemyTower : MonoBehaviour
     {
         spawnParticules.Clear();
         spawnParticules.Stop();
-        int index = Random.Range(0, enemiesToSpawn.Length - 1);
+        int index = Random.Range(0, enemiesToSpawn.Length);
         GameObject enemy = Instantiate(enemiesToSpawn[index], spawnParticules.transform.position, transform.rotation, transform.parent);
 
         enemy.GetComponent<EnemyController>().wayPointsParent = wayPointsParent;
