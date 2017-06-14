@@ -20,7 +20,7 @@ public class CameraManager : MonoBehaviour {
         leaderCamera = GetComponentInChildren<Camera>();
     }
 
-    void Update ()
+    private void Update ()
     {
 		if(Input.GetKeyDown(KeyCode.C))
         {

@@ -1,8 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LeaderController : MonoBehaviour {
+
+    public Image attackImage;
 
     public float movementSpeed = 2f;
     public float cameraHorizontalSpeed = 2f;
@@ -10,17 +13,19 @@ public class LeaderController : MonoBehaviour {
 
     [HideInInspector] public UnitController unit;
     [HideInInspector] public Animator anim;
-    private Rigidbody rb;
+    [HideInInspector] public Rigidbody rb;
 
     void Start ()
     {
-        unit = transform.parent.GetComponentInChildren<UnitController>();
+        unit = transform.parent.GetComponentInChildren<UnitController>(true);
         rb = GetComponent<Rigidbody>();
 		anim = GetComponent<Animator> ();
     }
 
     private void Update()
     {
+        attackImage.fillAmount = (Time.time - unit.fightState.lastAttack) / (unit.fightState.lastAttack + unit.fightSpeed);
+
         if (Input.GetMouseButtonDown(0) && (unit.fightState.lastAttack + unit.fightSpeed < Time.time))
         {
             unit.fightState.lastAttack = Time.time;
