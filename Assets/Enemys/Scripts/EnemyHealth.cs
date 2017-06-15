@@ -49,7 +49,10 @@ public class EnemyHealth : MonoBehaviour
         
         if (controller != null && controller.Ammo())
         {
-            if(!controller.target.CompareTag("Unit") || (Vector3.Distance(controller.target.position, transform.position) > Vector3.Distance(transform.position, attacker.position)+controller.targetTreshold))
+            if (controller.target == null)
+                controller.target = attacker;
+
+            else if (!controller.target.CompareTag("Unit") || (Vector3.Distance(controller.target.position, transform.position) > Vector3.Distance(transform.position, attacker.position) + controller.targetTreshold))
                 controller.target = attacker;
 
             if (controller.DistanceToTarget() < controller.attackRange)
