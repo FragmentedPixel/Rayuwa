@@ -28703,7 +28703,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49e7bd60ca4ca7a428e1929c23caca39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxUnits: 8
+  maxUnits: 9
   unitsRangeThreshold: 15
   spawnPointsParent: {fileID: 1156182096}
 --- !u!4 &923606563
