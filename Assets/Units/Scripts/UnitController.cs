@@ -216,13 +216,13 @@ public abstract class UnitController : MonoBehaviour
             yield return null;
         }
 
-        if (!reloading)
-            yield break;
-        
-        UnitHealth health = GetComponentInChildren<UnitHealth>();
-        
-        health.Heal(1);
-        ammo = maxAmmo;
+        if (reloading)
+        {
+            UnitHealth health = GetComponentInChildren<UnitHealth>();
+
+            health.Heal(1);
+            ammo = maxAmmo;
+        }
 
         reloading = false;
 

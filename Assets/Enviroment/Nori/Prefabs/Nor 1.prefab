@@ -383,7 +383,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69406201c32e78643be71ee8653c0108, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 80
+  damage: 40
   cooldown: 12
   warnningTime: 1.5
   duration: 1

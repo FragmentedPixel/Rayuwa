@@ -1154,7 +1154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackRange: 55
-  damage: 80
+  damage: 50
   castTime: 8
   castBar: {fileID: 114254576791961074}
   bridge: {fileID: 0}
