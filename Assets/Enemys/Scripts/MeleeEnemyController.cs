@@ -17,10 +17,13 @@ public class MeleeEnemyController : EnemyController {
             return;
 
         audioS.PlayOneShot(attackSound);
+        target.GetComponent<UnitHealth>().Hit(attackDmg, transform);
+
+        /*Miss
         if (UnityEngine.Random.Range(0, 100) < 90)
-            target.GetComponent<UnitHealth>().Hit(attackDmg, transform);
         else
             Debug.Log("Miss");
+        */
     }
 
     public override bool Ammo()

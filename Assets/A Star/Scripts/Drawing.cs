@@ -62,7 +62,10 @@ public class Drawing : MonoBehaviour
         DrawSelectedPaths();
         UpdateDragging();
         KeyBoardSelecting();
+    }
 
+    private void FixedUpdate()
+    {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (!Physics.Raycast(ray, out hit))
             return;
@@ -70,6 +73,7 @@ public class Drawing : MonoBehaviour
         UpdateSelecting();
         UpdatePathing();
     }
+
     private void LateUpdate()
     {
         agentsInDrag.Clear();

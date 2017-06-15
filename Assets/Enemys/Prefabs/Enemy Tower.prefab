@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4397657545828098}
   - component: {fileID: 198658463634119584}
   - component: {fileID: 199356496367585772}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Golem Spawn Particules
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 33724570240245828}
   - component: {fileID: 23804274869985820}
   - component: {fileID: 95116763907288790}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -143,7 +143,7 @@ GameObject:
   - component: {fileID: 33650423849067496}
   - component: {fileID: 23792969216256514}
   - component: {fileID: 95190642137036516}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Sight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,7 +178,7 @@ GameObject:
   - component: {fileID: 4122975413039440}
   - component: {fileID: 33362184483782982}
   - component: {fileID: 23756927367706368}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -195,7 +195,7 @@ GameObject:
   - component: {fileID: 4209795366140432}
   - component: {fileID: 114651010255481384}
   - component: {fileID: 135268321128130136}
-  m_Layer: 11
+  m_Layer: 2
   m_Name: Enemy Tower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -710,7 +710,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1412989541
+  randomSeed: 291103918
   InitialModule:
     serializedVersion: 3
     enabled: 1

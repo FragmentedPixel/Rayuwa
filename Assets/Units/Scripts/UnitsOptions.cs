@@ -58,11 +58,11 @@ public class UnitsOptions : MonoBehaviour
 
         unitsCountText.text = value.ToString() + "/" + UnitsData.instance.maxUnits.ToString();
         unitsCountText.color = Color.Lerp(Color.yellow, Color.red, value / UnitsData.instance.maxUnits);
-
+        
         gameManager.bonusPercent = Mathf.Lerp(0f, maxBonusPercent, (UnitsData.instance.maxUnits - value) / UnitsData.instance.maxUnits);
 
         if (value != 0 && value != UnitsData.instance.maxUnits && gameManager.bonusPercent != 0)
-            bonusText.text = "Bonus: " + gameManager.bonusPercent + "%";
+            bonusText.text = "Bonus: " + Mathf.RoundToInt( gameManager.bonusPercent * 100 ) / 100f + "%";
         else
             bonusText.text = "";
 

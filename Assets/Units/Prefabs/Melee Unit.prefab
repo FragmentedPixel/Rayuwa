@@ -1171,7 +1171,7 @@ MonoBehaviour:
   healthPercent: 0.1
   ammoToAdd: 1
   ammo: 0
-  maxAmmo: 20
+  maxAmmo: 15
   reloadTime: 2
   reloading: 0
 --- !u!135 &135269286591990720
