@@ -194,9 +194,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4209795366140432}
   - component: {fileID: 114651010255481384}
+  - component: {fileID: 135268321128130136}
   m_Layer: 11
   m_Name: Enemy Tower
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -221,7 +222,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1846422443151296}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -21, y: 0, z: 33.04}
+  m_LocalPosition: {x: 24, y: 0, z: 33.04}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4397657545828098}
@@ -555,7 +556,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb31f5e8b03883d45b2cc981fb05e278, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 300
+  MaxHealth: 150
   enemyValue: 10
   background: {fileID: 114319922634567162}
   healthImage: {fileID: 114080078022853376}
@@ -612,7 +613,7 @@ MonoBehaviour:
   - {fileID: 1444080983380518, guid: 20ba8e337e4a29a408e0fb66b4238fec, type: 2}
   wayPointsParent: {fileID: 0}
   castBar: {fileID: 114994105023225550}
-  cooldown: 25
+  cooldown: 20
 --- !u!114 &114994105023225550
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -640,6 +641,18 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!135 &135268321128130136
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1846422443151296}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 30
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!198 &198658463634119584
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -647,7 +660,7 @@ ParticleSystem:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1374529789686058}
   serializedVersion: 5
-  lengthInSec: 25
+  lengthInSec: 20
   simulationSpeed: 1
   looping: 1
   prewarm: 0
@@ -697,14 +710,14 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1330512292
+  randomSeed: 1412989541
   InitialModule:
     serializedVersion: 3
     enabled: 1
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 25
+      scalar: 20
       minScalar: 0
       maxCurve:
         serializedVersion: 2

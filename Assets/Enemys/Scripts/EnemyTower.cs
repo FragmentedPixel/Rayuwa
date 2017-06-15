@@ -11,6 +11,7 @@ public class EnemyTower : MonoBehaviour
     public Image castBar;
     public float cooldown;
 
+    private bool triggered = false;
     private float currentTime;
     private ParticleSystem spawnParticules;
 
@@ -18,10 +19,14 @@ public class EnemyTower : MonoBehaviour
     private void Start()
     {
         spawnParticules = GetComponentInChildren<ParticleSystem>();
+        spawnParticules.Stop();
     }
 
     private void Update()
     {
+        if (!triggered)
+            return;
+
         if (cooldown > currentTime)
             currentTime += Time.deltaTime;
         else
@@ -41,6 +46,17 @@ public class EnemyTower : MonoBehaviour
 
         currentTime = 0f;
         spawnParticules.Play();
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        UnitHealth unit = other.GetComponent<UnitHealth>();
+
+        if (unit != null && !triggered)
+        {
+            spawnParticules.Play();
+            triggered = true;
+        }
     }
 
 }

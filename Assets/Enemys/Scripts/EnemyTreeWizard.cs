@@ -45,6 +45,9 @@ public class EnemyTreeWizard : MonoBehaviour
     #region Updates
     private void Update()
     {
+        if (!triggered)
+            return;
+
         if (target == null)
             FindNewTarget();
 
