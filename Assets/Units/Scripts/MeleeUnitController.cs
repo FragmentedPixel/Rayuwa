@@ -17,10 +17,11 @@ public class MeleeUnitController : UnitController
     }
     public void SwordHit()
     {
-        if(target != null)
-            target.GetComponent<EnemyHealth>().Hit(fightDmg,transform);
-
-        audioS.PlayOneShot(fightSound);
+        if (target != null && transform != null)
+        {
+            audioS.PlayOneShot(fightSound);
+            target.GetComponent<EnemyHealth>().Hit(fightDmg, transform);
+        }
     }
     #endregion
 }

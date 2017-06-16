@@ -46,6 +46,7 @@ ModelImporter:
     7400002: Idle
     7400004: Run
     7400006: Attack
+    7400008: Death
     9500000: //RootNode
     13700000: Cylinder
   materials:

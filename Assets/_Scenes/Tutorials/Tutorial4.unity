@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1477479803}
-  m_IndirectSpecularColor: {r: 0.45140457, g: 0.50089717, b: 0.5723151, a: 1}
+  m_IndirectSpecularColor: {r: 0.45140088, g: 0.50089335, b: 0.5723178, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -86,7 +86,7 @@ LightmapSettings:
     m_PVRFilteringAtrousColorSigma: 1
     m_PVRFilteringAtrousNormalSigma: 1
     m_PVRFilteringAtrousPositionSigma: 1
-  m_LightingDataAsset: {fileID: 112000002, guid: fae0ef16bc855fe49bf0f894dc33fea3,
+  m_LightingDataAsset: {fileID: 112000002, guid: e3b4ea38944caf4488791f0b592ead21,
     type: 2}
   m_ShadowMaskMode: 2
 --- !u!196 &4
@@ -6734,12 +6734,12 @@ Prefab:
     - target: {fileID: 224204166953150124, guid: 13c67f4ed06527d4c81521c4a63c528c,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 515.4804
+      value: 433.45068
       objectReference: {fileID: 0}
     - target: {fileID: 224204166953150124, guid: 13c67f4ed06527d4c81521c4a63c528c,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -145
       objectReference: {fileID: 0}
     - target: {fileID: 224204166953150124, guid: 13c67f4ed06527d4c81521c4a63c528c,
         type: 2}
@@ -6749,7 +6749,7 @@ Prefab:
     - target: {fileID: 224204166953150124, guid: 13c67f4ed06527d4c81521c4a63c528c,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 114922821184944764, guid: 13c67f4ed06527d4c81521c4a63c528c,
         type: 2}
@@ -13039,7 +13039,6 @@ MonoBehaviour:
   maxUnits: 8
   unitsRangeThreshold: 5
   spawnPointsParent: {fileID: 1658933794}
-  startButton: {fileID: 530285319}
 --- !u!4 &962155433
 Transform:
   m_ObjectHideFlags: 0

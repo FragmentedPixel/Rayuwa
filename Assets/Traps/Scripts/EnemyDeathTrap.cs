@@ -10,11 +10,12 @@ public class EnemyDeathTrap : MonoBehaviour
 
     public void OnDestroy()
     {
-            SpawnEnemies();
+        SpawnEnemies();
     }
+
     private void SpawnEnemies()
     {
-        EnemyController controller = GetComponent<EnemyController>();
+        EnemyController controller = GetComponentInParent<EnemyController>();
 
         for (int i = 0; i < count; i++)
         {
@@ -27,6 +28,7 @@ public class EnemyDeathTrap : MonoBehaviour
             spawnedEnemy.GetComponent<Collider>().enabled = true;
 
             spawnedEnemy.GetComponent<EnemyController>().wayPointsParent = controller.wayPointsParent;
+            spawnedEnemy.GetComponent<EnemyController>().targetsInRange = controller.targetsInRange;
         }
         try { FindObjectOfType<UnitsManager>().ResetUnitsColliders(); }
         catch { }

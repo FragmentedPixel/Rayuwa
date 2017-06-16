@@ -13,7 +13,7 @@ public abstract class  EnemyController : MonoBehaviour
     [HideInInspector] public AudioSource audioS;
     public Transform target;
     [HideInInspector] public Transform lastTarget;
-    private List<Transform> targetsInRange = new List<Transform>();
+    [HideInInspector] public List<Transform> targetsInRange = new List<Transform>();
     #endregion
 
     #region Parameters

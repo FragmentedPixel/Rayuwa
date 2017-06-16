@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1477479803}
-  m_IndirectSpecularColor: {r: 0.45140457, g: 0.50089717, b: 0.5723151, a: 1}
+  m_IndirectSpecularColor: {r: 0.45140088, g: 0.50089335, b: 0.5723178, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -86,7 +86,7 @@ LightmapSettings:
     m_PVRFilteringAtrousColorSigma: 1
     m_PVRFilteringAtrousNormalSigma: 1
     m_PVRFilteringAtrousPositionSigma: 1
-  m_LightingDataAsset: {fileID: 112000002, guid: ebaae08ccc27fa040b32734427c434ff,
+  m_LightingDataAsset: {fileID: 112000002, guid: 1906ac10b8560324cbf41f5401b910d6,
     type: 2}
   m_ShadowMaskMode: 2
 --- !u!196 &4
@@ -14662,7 +14662,6 @@ MonoBehaviour:
   maxUnits: 8
   unitsRangeThreshold: 5
   spawnPointsParent: {fileID: 1658933794}
-  startButton: {fileID: 1074648485}
 --- !u!4 &962155433
 Transform:
   m_ObjectHideFlags: 0
@@ -19595,6 +19594,7 @@ MonoBehaviour:
   cameraOffsets: []
   scc: {fileID: 0}
   ccc: {fileID: 0}
+  ls: {fileID: 0}
 --- !u!4 &1303774504
 Transform:
   m_ObjectHideFlags: 0

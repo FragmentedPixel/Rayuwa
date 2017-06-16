@@ -43,6 +43,8 @@ public class ReloadState : iUnitState
             }
         }
 
+        controller.SetNewReloadPoint(controller.reloadPoint);
+
     }
     #endregion
 }

@@ -68,8 +68,23 @@ public class EnemyHealth : MonoBehaviour
             if(gameManager!= null)
                 gameManager.levelResources += enemyValue;
 
-            Destroy(transform.parent.gameObject);
+            Die();
         }
 	}
+
+    private void Die()
+    {
+        if (controller != null)
+        {
+            controller.anim.SetTrigger("DeathTrigger");
+            Destroy(controller.gameObject, 3f);
+
+            Destroy(controller.agent);
+            Destroy(controller);
+            Destroy(gameObject);
+        }
+        else
+            Destroy(transform.parent.gameObject);
+    }
     #endregion
 }

@@ -48,6 +48,7 @@ ModelImporter:
     7400006: Walk
     7400008: Arc_Attack
     7400010: Topor_Attack
+    7400012: Death
     9500000: //RootNode
     13700000: Cylinder
   materials:
