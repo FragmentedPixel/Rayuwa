@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public int winBonus = 100;
 
     [Header("UI")]
+    public Canvas enemiesShowCanvas;
     public Canvas unitsCanavas;
     public Canvas playerCanvas;
     public Canvas winCanvas;
@@ -31,6 +32,7 @@ public class GameManager : MonoBehaviour
     }
     private IEnumerator GameLoopCR()
     {
+        yield return ShowEnemiesCR();
         yield return SelectUnitsCR();
         yield return StartLevelCR();
         yield return GameCR();
@@ -39,6 +41,18 @@ public class GameManager : MonoBehaviour
     #endregion
 
     #region Phases
+    private IEnumerator ShowEnemiesCR()
+    {
+        enemiesShowCanvas.enabled = true;
+
+        //TODO: Add code to see when finished.
+        //TODO: escape if no enemies inside.
+        while (true)
+            yield return null;
+
+        enemiesShowCanvas.enabled = false;
+    }
+
     private IEnumerator SelectUnitsCR()
     {
         unitsCanavas.enabled = true;
