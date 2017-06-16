@@ -10,7 +10,6 @@ public class Tutorial2 : MonoBehaviour
     public Text tutorialText;
     public Button battleButton;
 
-    private bool battleStarted;
     private Drawing drawing;
     #endregion
 
@@ -118,10 +117,4 @@ public class Tutorial2 : MonoBehaviour
     }
     #endregion
 
-    #region Methods
-    public void BattleStart()
-    {
-        battleStarted = true;
-    }
-    #endregion
 }

@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class EnemiesOverview : MonoBehaviour
 {
     [Header("UI")]
-    public Text name;
+    public Text enemyName;
     public Text strongPoints;
     public Text weakPoints;
     public Text description;
@@ -70,7 +70,7 @@ public class EnemiesOverview : MonoBehaviour
 
     private void FillInformation(EnemyOverview currentEnemy)
     {
-        name.text = "Name: " + currentEnemy.enemy.name;
+        enemyName.text = "Name: " + currentEnemy.enemy.name;
         strongPoints.text = currentEnemy.strongPoints;
         weakPoints.text = currentEnemy.weakPoints;
         description.text = "Description: " + currentEnemy.description;

@@ -9,7 +9,6 @@ public class CameraManager : MonoBehaviour {
     public SideCameraController scc;
     public CenterCameraController ccc;
     private int index = 0;
-    private Camera leaderCamera;
     private bool isLeader=false;
     [HideInInspector] public LeaderSwitch ls;
 
@@ -17,7 +16,6 @@ public class CameraManager : MonoBehaviour {
     {
         camera_list = transform.GetComponentsInChildren<Camera>(true);
         ls = FindObjectOfType<LeaderSwitch>();
-        leaderCamera = GetComponentInChildren<Camera>();
     }
 
     private void Update ()
