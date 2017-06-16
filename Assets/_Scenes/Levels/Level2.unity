@@ -3586,7 +3586,7 @@ Prefab:
     - target: {fileID: 224518959944274550, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 66.666664
+      value: 66.66666
       objectReference: {fileID: 0}
     - target: {fileID: 224518959944274550, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
@@ -21390,7 +21390,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1846422443151296, guid: 881fd05e7b130cd48ad593663eaf6401, type: 2}
       propertyPath: m_Name
-      value: Enemy Tower (1)
+      value: Stone Tower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 881fd05e7b130cd48ad593663eaf6401, type: 2}

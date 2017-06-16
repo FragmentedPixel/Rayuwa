@@ -196,7 +196,7 @@ GameObject:
   - component: {fileID: 114651010255481384}
   - component: {fileID: 135268321128130136}
   m_Layer: 2
-  m_Name: Enemy Tower
+  m_Name: Stone Tower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -710,7 +710,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 291103918
+  randomSeed: -1769156891
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -3709,7 +3709,7 @@ ParticleSystemRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: e9853e7817297574d80bebe1787afff1, type: 2}
+  - {fileID: 2100000, guid: 9ce78c40a00965d4083aec04e3a0216d, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0

@@ -357,7 +357,7 @@ GameObject:
   - component: {fileID: 114037005553802640}
   - component: {fileID: 114789273651607486}
   m_Layer: 2
-  m_Name: Small Enemy
+  m_Name: Golem Defender
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -444,7 +444,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1888181325017428}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.2760334, y: 0.24411774, z: 42.757328}
+  m_LocalPosition: {x: 4.3, y: 0, z: 21}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4270230776772938}
@@ -515,7 +515,7 @@ Transform:
   m_GameObject: {fileID: 1184352542315338}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4302860454305242}
   - {fileID: 4564563787699570}
@@ -963,8 +963,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb31f5e8b03883d45b2cc981fb05e278, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 75
-  enemyValue: 5
+  MaxHealth: 300
+  enemyValue: 10
   background: {fileID: 114508878081113110}
   healthImage: {fileID: 114141413873169116}
 --- !u!114 &114037005553802640
@@ -979,7 +979,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destination: {x: 14.7, y: 0, z: -40.9}
-  speed: 3
+  speed: 2.7
   turnSpeed: 2
   turnDst: 0
   stoppingDst: 0
@@ -1080,8 +1080,8 @@ MonoBehaviour:
   targetsInRange: []
   wayPointsParent: {fileID: 0}
   attackRange: 4
-  attackSpeed: 1
-  attackDmg: 4
+  attackSpeed: 2
+  attackDmg: 25
   attackSound: {fileID: 8300000, guid: 6aee50330fe344246ae88f2fc990a3e1, type: 3}
   targetTreshold: 5
   agroRange: 15
@@ -1129,7 +1129,7 @@ SkinnedMeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: bbd9d48aad92c634a9fb8fb008a0552d, type: 2}
+  - {fileID: 2100000, guid: 59ba61919e16fee478fce53d137c0383, type: 2}
   - {fileID: 2100000, guid: 090f7e24091692a44b9090ae8ddaf384, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0

@@ -70,7 +70,7 @@ GameObject:
   - component: {fileID: 114268444985238308}
   - component: {fileID: 114742713276553030}
   m_Layer: 2
-  m_Name: TrapEnemy
+  m_Name: Trap Golem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
