@@ -10,6 +10,7 @@ public class PlayerPrefsManager : MonoBehaviour
     const string RESOLUTION_KEY = "resolution_choice";
     const string FULLSCREEN_KEY = "fullscreen_choice";
     const string SCROLL_BOUNDRAY_KEY = "scroll_boundray";
+    const string INVERSE_SCROLL_KEY = "inverse_scroll";
     #endregion
 
     #region Methods 
@@ -74,9 +75,23 @@ public class PlayerPrefsManager : MonoBehaviour
         return PlayerPrefs.GetFloat(SCROLL_BOUNDRAY_KEY, 0f);
     }
     #endregion
+
+    #region InverseScroll
+    public static void SetInverseScroll(bool value)
+    {
+        int intValue = value ? 1 : 0;
+        PlayerPrefs.SetInt(INVERSE_SCROLL_KEY, intValue);
+    }
+
+    public static bool GetInverseScroll()
+    {
+        return (PlayerPrefs.GetInt(INVERSE_SCROLL_KEY, 1) == 1);
+    }
     #endregion
 
-	private void OnEnable()
+    #endregion
+
+    private void OnEnable()
 	{
 		Resolution startRes = Screen.resolutions [PlayerPrefsManager.GetResolution ()];
 		Screen.SetResolution (startRes.width, startRes.height, GetFullScreen());

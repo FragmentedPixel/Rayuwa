@@ -42,7 +42,7 @@ public class SideCameraController : MonoBehaviour {
         
         float movementH = Input.GetAxis("Horizontal");
         float movementV = -Input.GetAxis("Vertical");
-        float movementY = Input.GetAxis("Mouse ScrollWheel");
+        float movementY = (PlayerPrefsManager.GetInverseScroll() ? (-1) : (1)) * Input.GetAxis("Mouse ScrollWheel"); 
 
         movementH *= Time.deltaTime * speed;
         movementH += transform.position.z;

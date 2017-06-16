@@ -74,6 +74,8 @@ public class EnemyHealth : MonoBehaviour
 
     private void Die()
     {
+        Destroy(canvas);
+
         if (controller != null)
         {
             controller.anim.SetTrigger("DeathTrigger");

@@ -45,7 +45,9 @@ public class CenterCameraController : MonoBehaviour
 
 		float movementH = Input.GetAxis("Vertical");
         float movementV = Input.GetAxis("Horizontal");
-        float movementY = Input.GetAxis("Mouse ScrollWheel");
+        float movementY = (PlayerPrefsManager.GetInverseScroll() ? (-1) : (1) ) * Input.GetAxis("Mouse ScrollWheel");
+
+        Debug.Log(movementY);
 
         movementH *= Time.deltaTime * speed;
         movementH += transform.position.z;

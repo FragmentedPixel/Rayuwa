@@ -12,11 +12,13 @@ public class SettingsManager : MonoBehaviour
     public Dropdown resolutionsDropDown;
     public Toggle fullScreenCheckBox;
     public Slider scrollSlider;
+    public Toggle inverseScrollCheckBox;
 
     [Header("Default Values")]
     public float defaultVolume = .8f;
     public bool defaultFullscreen;
     public float scrollValue = .15f;
+    public bool defaultInverseScroll;
     #endregion
 
     #region Initialization
@@ -25,6 +27,7 @@ public class SettingsManager : MonoBehaviour
         volumeSlider.value = PlayerPrefsManager.GetMasterVolume();
         scrollSlider.value = PlayerPrefsManager.GetScrollBoundray();
         fullScreenCheckBox.isOn = PlayerPrefsManager.GetFullScreen();
+        inverseScrollCheckBox.isOn = PlayerPrefsManager.GetInverseScroll();
 
         SetUpQuality();
         SetUpResolutions();
@@ -83,6 +86,11 @@ public class SettingsManager : MonoBehaviour
     {
         float value = scrollSlider.value;
         PlayerPrefsManager.SetScrollBoundray(value);
+    }
+    public void OnInverseScrollChanged()
+    {
+        bool newInverse = inverseScrollCheckBox.isOn;
+        PlayerPrefsManager.SetInverseScroll(newInverse);
     }
     #endregion
 
