@@ -71,8 +71,8 @@ public class EnemiesOverview : MonoBehaviour
     private void FillInformation(EnemyOverview currentEnemy)
     {
         name.text = "Name: " + currentEnemy.enemy.name;
-        strongPoints.text = "Strong Points: " +  currentEnemy.strongPoints;
-        weakPoints.text = "Weak Points: " + currentEnemy.weakPoints;
+        strongPoints.text = currentEnemy.strongPoints;
+        weakPoints.text = currentEnemy.weakPoints;
         description.text = "Description: " + currentEnemy.description;
     }
     private void LookAtEnemy(EnemyOverview currentEnemy)
@@ -95,7 +95,7 @@ public class EnemyOverview
     public Transform enemy;
     public string strongPoints;
     public string weakPoints;
-    public string description;
+    [TextArea] public string description;
 
     public Transform lookPoint { get { return enemy.GetComponentInChildren<EnemyHealth>().transform; } }
 }
