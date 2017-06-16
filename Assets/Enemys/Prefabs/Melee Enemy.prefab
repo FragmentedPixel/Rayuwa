@@ -1077,6 +1077,7 @@ MonoBehaviour:
   audioS: {fileID: 0}
   target: {fileID: 0}
   lastTarget: {fileID: 0}
+  targetsInRange: []
   wayPointsParent: {fileID: 0}
   attackRange: 4
   attackSpeed: 2
@@ -1128,7 +1129,7 @@ SkinnedMeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: bbd9d48aad92c634a9fb8fb008a0552d, type: 2}
+  - {fileID: 2100000, guid: 59ba61919e16fee478fce53d137c0383, type: 2}
   - {fileID: 2100000, guid: 090f7e24091692a44b9090ae8ddaf384, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
