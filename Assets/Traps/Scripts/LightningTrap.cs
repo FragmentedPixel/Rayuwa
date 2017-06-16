@@ -14,13 +14,11 @@ public class LightningTrap : Trap
     public ParticleSystem rainParticules;
 
     private new BoxCollider collider;
-    private new Renderer renderer;
     private AudioSource audioS;
 
     private void Start()
     {
         collider = GetComponent<BoxCollider>();
-        renderer = GetComponent<Renderer>();
         audioS = GetComponent<AudioSource>();
         audioS.volume = PlayerPrefsManager.GetMasterVolume();
 
@@ -43,7 +41,6 @@ public class LightningTrap : Trap
         audioS.PlayDelayed(1f);
         yield return new WaitForSeconds(3f);
 
-        renderer.enabled = false;
         yield return new WaitForSeconds(warnningTime);
 
         collider.enabled = true;
@@ -54,7 +51,6 @@ public class LightningTrap : Trap
         lightningParticules.Stop();
 
         collider.enabled = false;
-        renderer.enabled = false;
 
         yield return new WaitForSeconds(.3f);
         rainParticules.Stop();

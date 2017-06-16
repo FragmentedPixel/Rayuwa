@@ -21,8 +21,6 @@ GameObject:
   - component: {fileID: 4765883704479380}
   - component: {fileID: 65140281603712404}
   - component: {fileID: 114929891491168826}
-  - component: {fileID: 23944570801434940}
-  - component: {fileID: 33802230903909574}
   - component: {fileID: 82903761717402846}
   m_Layer: 2
   m_Name: Fulgere
@@ -200,38 +198,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!23 &23944570801434940
-MeshRenderer:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1317576926378192}
-  m_Enabled: 0
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_Materials:
-  - {fileID: 2100000, guid: c3e8d8a99dd707d4b849091313fc8243, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 1
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
 --- !u!33 &33445969593887900
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -239,13 +205,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1865680642572464}
   m_Mesh: {fileID: 4300000, guid: dca13a4aa5393d54c997b1bc6ea4d8c4, type: 3}
---- !u!33 &33802230903909574
-MeshFilter:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1317576926378192}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!65 &65140281603712404
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -3478,7 +3437,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 166038585
+  randomSeed: -1782999726
   InitialModule:
     serializedVersion: 3
     enabled: 1

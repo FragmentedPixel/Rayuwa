@@ -97,5 +97,14 @@ public class EnemyOverview
     public string weakPoints;
     [TextArea] public string description;
 
-    public Transform lookPoint { get { return enemy.GetComponentInChildren<EnemyHealth>().transform; } }
+    public Transform lookPoint
+    { get
+        {
+            EnemyHealth enemyhealth = enemy.GetComponentInChildren<EnemyHealth>();
+            if (enemyhealth != null)
+                return enemyhealth.transform;
+            else
+                return enemy.GetComponentInChildren<MeshRenderer>().transform;
+        }
+    }
 }
