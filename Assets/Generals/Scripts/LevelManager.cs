@@ -51,5 +51,12 @@ public class LevelManager : MonoBehaviour
         string currentScene = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene(currentScene);
     }
+
+    public void LoadNextLevel()
+    {
+        int index = SceneManager.GetActiveScene().buildIndex;
+        index++;
+        SceneManager.LoadScene(index);
+    }
     #endregion
 }

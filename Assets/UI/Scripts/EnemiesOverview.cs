@@ -4,7 +4,7 @@ using UnityEngine;
 using System;
 using UnityEngine.UI;
 
-public class GameOverview : MonoBehaviour
+public class EnemiesOverview : MonoBehaviour
 {
     [Header("UI")]
     public Text name;
@@ -14,19 +14,27 @@ public class GameOverview : MonoBehaviour
 
     [Header("Parameters")]
     public float offset = 30f;
-    private bool pressed;
-
+    
     [Header("Enemmies")]
     public EnemyOverview[] enemies;
 
+    private bool pressed;
+    private bool finished;
+    private Vector3 cameraStartPosition;
+    private Quaternion cameraStartRotation;
 
     private void Start()
     {
-        StartCoroutine(ShowEnemiesCR());
+        if (enemies.Length == 0)
+            finished = true;
+        else
+            StartCoroutine(ShowEnemiesCR());
     }
-
     private IEnumerator ShowEnemiesCR()
     {
+        cameraStartPosition = Camera.main.transform.position;
+        cameraStartRotation = Camera.main.transform.rotation;
+
         for(int i = 0; i < enemies.Length; i++)
         {
             EnemyOverview current = enemies[i];
@@ -53,16 +61,20 @@ public class GameOverview : MonoBehaviour
             yield return null;
             pressed = false;
         }
+
+        Camera.main.transform.position = cameraStartPosition;
+        Camera.main.transform.rotation = cameraStartRotation;
+
+        finished = true;
     }
 
     private void FillInformation(EnemyOverview currentEnemy)
     {
-        name.text = currentEnemy.enemy.name;
-        strongPoints.text = currentEnemy.strongPoints;
-        weakPoints.text = currentEnemy.weakPoints;
-        description.text = currentEnemy.description;
+        name.text = "Name: " + currentEnemy.enemy.name;
+        strongPoints.text = "Strong Points: " +  currentEnemy.strongPoints;
+        weakPoints.text = "Weak Points: " + currentEnemy.weakPoints;
+        description.text = "Description: " + currentEnemy.description;
     }
-
     private void LookAtEnemy(EnemyOverview currentEnemy)
     {
         Quaternion startRot = Camera.main.transform.rotation;
@@ -70,12 +82,11 @@ public class GameOverview : MonoBehaviour
 
         Camera.main.transform.rotation = Quaternion.Slerp(startRot, endRot, Time.deltaTime);
     }
-
     public void ShowNext()
     {
         pressed = true;
     }
-
+    public bool isFinished { get { return finished; } }
 }
 
 [Serializable]

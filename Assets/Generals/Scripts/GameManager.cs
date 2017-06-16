@@ -44,12 +44,11 @@ public class GameManager : MonoBehaviour
     private IEnumerator ShowEnemiesCR()
     {
         enemiesShowCanvas.enabled = true;
+        EnemiesOverview overview = GetComponent<EnemiesOverview>();
 
-        //TODO: Add code to see when finished.
-        //TODO: escape if no enemies inside.
-        while (true)
+        while (!overview.isFinished)
             yield return null;
-
+        
         enemiesShowCanvas.enabled = false;
     }
 
