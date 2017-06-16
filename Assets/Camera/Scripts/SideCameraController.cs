@@ -7,16 +7,17 @@ public class SideCameraController : MonoBehaviour {
 	private Vector3 startPosition;
     private float screenMoveSize;
 
-    public bool isEnabled;
-
     [Header("Speeds")]
     public float speed = 10.0F;
+    public float Yspeed = 100.0F;
     public float rot_speed = 10.0F;
     
     [Header("Boundaries")]
     [Range(0, 0.5f)]
     public float screenPercent = 0.1f;
     public float Z_Boundary = 50f;
+    public float X_Boundary = 20f;
+    public float Y_Boundary = 20f;
     [Range(0, 360f)]
     public float Y_Rot_Min = 240f;
     [Range(0, 360f)]
@@ -39,15 +40,22 @@ public class SideCameraController : MonoBehaviour {
 	public void Update() 
 	{
         
-        float movement = Input.GetAxis("Horizontal");
-        if (movement != 0)
-        {
-            movement *= Time.deltaTime * speed;
-            movement += transform.position.z;
+        float movementH = Input.GetAxis("Horizontal");
+        float movementV = -Input.GetAxis("Vertical");
+        float movementY = Input.GetAxis("Mouse ScrollWheel");
 
-            if (movement > startPosition.z && movement < startPosition.z + Z_Boundary)
-                transform.position += new Vector3(0, 0, movement - transform.position.z);
-        }
+        movementH *= Time.deltaTime * speed;
+        movementH += transform.position.z;
+        movementV *= Time.deltaTime * speed;
+        movementV += transform.position.x;
+        movementY *= Time.deltaTime * Yspeed;
+        movementY += transform.position.y;
+
+        movementH = Mathf.Clamp(movementH, startPosition.z, startPosition.z + Z_Boundary);
+        movementV = Mathf.Clamp(movementV, startPosition.x - X_Boundary, startPosition.x);
+        movementY = Mathf.Clamp(movementY, startPosition.y - Y_Boundary, startPosition.y);
+
+        transform.position = new Vector3(movementV , movementY, movementH );
 
         float rotate=0;
         if (Input.mousePosition.x < screenMoveSize)
