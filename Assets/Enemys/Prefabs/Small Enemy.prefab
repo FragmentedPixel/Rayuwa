@@ -963,7 +963,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb31f5e8b03883d45b2cc981fb05e278, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 50
+  MaxHealth: 75
   enemyValue: 5
   background: {fileID: 114508878081113110}
   healthImage: {fileID: 114141413873169116}
@@ -1077,6 +1077,7 @@ MonoBehaviour:
   audioS: {fileID: 0}
   target: {fileID: 0}
   lastTarget: {fileID: 0}
+  targetsInRange: []
   wayPointsParent: {fileID: 0}
   attackRange: 4
   attackSpeed: 1
