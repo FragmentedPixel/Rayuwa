@@ -489,9 +489,11 @@ MonoBehaviour:
   - prefab: {fileID: 1794585903509742, guid: ccd4db20c3cd25749ad7c3e177324b0a, type: 2}
     unlocked: 1
     count: 0
+    strongPoints: Strong unit with lots of hitpoints and high damage.
   - prefab: {fileID: 1752354336571878, guid: 330fadf4d7349424398c008d675773f2, type: 2}
     unlocked: 1
     count: 0
+    strongPoints: Fast moving unit with high attackspeed.
 --- !u!4 &1299864684
 Transform:
   m_ObjectHideFlags: 0

@@ -41,6 +41,13 @@ public class UnitsData : MonoBehaviour
 [Serializable]
 public class Unit
 {
+    public GameObject prefab;
+    public bool unlocked;
+    public int count;
+
+    [TextArea]
+    public string strongPoints;
+
     public Unit()
     {
         prefab = null;
@@ -48,7 +55,4 @@ public class Unit
         count = 0;
     }
 
-    public GameObject prefab;
-    public bool unlocked;
-    public int count;
 }
