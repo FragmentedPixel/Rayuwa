@@ -12,25 +12,28 @@ public class EnemyManager : MonoBehaviour
     private void Start()
     {
         instance = this;
-        foreach (Transform child in transform)
-            SetSightAndRange(child);
+        EnemyHealth[] enemies = FindObjectsOfType<EnemyHealth>();
+        foreach (EnemyHealth enemey in enemies)
+            SetSightAndRange(enemey);
     }
 
-    private void SetSightAndRange(Transform enemy)
+    private void SetSightAndRange(EnemyHealth enemy)
     {   
-        EnemyController enemyController = enemy.GetComponent<EnemyController>();
         EnemyHealth enemyHealth = enemy.GetComponentInChildren<EnemyHealth>();
+        enemyHealth.transform.parent.GetComponentInChildren<Outline>().enabled = false;
+
+        EnemyController enemyController = enemy.GetComponent<EnemyController>();
 
         if (enemyController == null)
             return;
-        enemyList.Add(enemy);
+
+        enemyList.Add(enemy.transform);
         Transform range = enemyHealth.transform.GetChild(0);
         Transform sight = enemyHealth.transform.GetChild(1);
 
         range.transform.localScale = Vector3.one * enemyController.attackRange;
         sight.transform.localScale = Vector3.one * enemyController.GetComponent<SphereCollider>().radius ;
 
-        enemyHealth.transform.parent.GetComponentInChildren<Outline>().enabled = false;
     }
     #endregion
 }
