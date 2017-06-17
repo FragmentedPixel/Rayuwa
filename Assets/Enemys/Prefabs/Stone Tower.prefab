@@ -178,6 +178,7 @@ GameObject:
   - component: {fileID: 4122975413039440}
   - component: {fileID: 33362184483782982}
   - component: {fileID: 23756927367706368}
+  - component: {fileID: 114639167465767752}
   m_Layer: 2
   m_Name: Mesh
   m_TagString: Untagged
@@ -597,6 +598,21 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+--- !u!114 &114639167465767752
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1831908884422356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbf3575480402db40813e763382412fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: 0
+  eraseRenderer: 0
+  originalLayer: 0
+  originalMaterials: []
 --- !u!114 &114651010255481384
 MonoBehaviour:
   m_ObjectHideFlags: 1

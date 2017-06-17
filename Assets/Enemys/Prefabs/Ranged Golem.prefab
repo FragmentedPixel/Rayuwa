@@ -80,6 +80,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4181023668050252}
   - component: {fileID: 137526304698201730}
+  - component: {fileID: 114542131861017776}
   m_Layer: 0
   m_Name: Icosphere_001
   m_TagString: Untagged
@@ -1094,6 +1095,21 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+--- !u!114 &114542131861017776
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1231633940271772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbf3575480402db40813e763382412fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: 0
+  eraseRenderer: 0
+  originalLayer: 0
+  originalMaterials: []
 --- !u!114 &114802023657248434
 MonoBehaviour:
   m_ObjectHideFlags: 1

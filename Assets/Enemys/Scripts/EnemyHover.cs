@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using cakeslice;
 
 public class EnemyHover : MonoBehaviour
 {
@@ -31,9 +32,9 @@ public class EnemyHover : MonoBehaviour
             return;
         MeshRenderer[] renderers = trans.GetComponentsInChildren<MeshRenderer>();
         foreach (MeshRenderer renderer in renderers)
-        {
             renderer.enabled = value;
-        }
+        
+        trans.parent.GetComponentInChildren<Outline>().enabled = value;
     }
     #endregion
 }

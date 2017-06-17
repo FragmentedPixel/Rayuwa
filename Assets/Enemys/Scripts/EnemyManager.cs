@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using cakeslice;
 
 public class EnemyManager : MonoBehaviour
 {
@@ -17,8 +17,7 @@ public class EnemyManager : MonoBehaviour
     }
 
     private void SetSightAndRange(Transform enemy)
-    {
-        
+    {   
         EnemyController enemyController = enemy.GetComponent<EnemyController>();
         EnemyHealth enemyHealth = enemy.GetComponentInChildren<EnemyHealth>();
 
@@ -30,6 +29,8 @@ public class EnemyManager : MonoBehaviour
 
         range.transform.localScale = Vector3.one * enemyController.attackRange;
         sight.transform.localScale = Vector3.one * enemyController.GetComponent<SphereCollider>().radius ;
+
+        enemyHealth.transform.parent.GetComponentInChildren<Outline>().enabled = false;
     }
     #endregion
 }
