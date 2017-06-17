@@ -91,8 +91,10 @@ public class Agent : MonoBehaviour
     #endregion
 
     #region Gizmos
-    private void OnDrawGizmos()
+    private void OnDrawGizmosSelected()
     {
+        return;
+
         for (int i = 0; i < waypoints.Length - 1; i++)
             Gizmos.DrawLine(waypoints[i], waypoints[i + 1]);
     }

@@ -251,6 +251,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cb17bc9fa74d0a4bba8d5c1b6a0d2ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraOffsets: []
+  scc: {fileID: 0}
+  ccc: {fileID: 0}
+  ls: {fileID: 0}
 --- !u!114 &114360295025584472
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -263,9 +267,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  Yspeed: 100
   rot_speed: 10
   screenPercent: 0.1
   Z_Boundary: 100
+  X_Boundary: 20
+  Y_Boundary: 20
   Y_Rot_Min: 240
   Y_Rot_Max: 300
 --- !u!114 &114603049122005198
@@ -303,7 +310,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  screenPercent: 0.15
+  Yspeed: 100
+  X_Boundary: 50
+  Y_Boundary: 10
   Z_Boundary: 140
   lookAtOffset: 22
   lookAt: {fileID: 4889245176932188}

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.SceneManagement;
 
 public class UnitsData : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class UnitsData : MonoBehaviour
     {
         instance = this;
         DontDestroyOnLoad(this);
+        SceneManager.sceneLoaded += OnLevelLoaded;
     }
     #endregion
 
@@ -30,7 +32,7 @@ public class UnitsData : MonoBehaviour
         return value;
     }
 
-    private void OnLevelWasLoaded(int level)
+    private void OnLevelLoaded(Scene scene, LoadSceneMode sceneMode)
     {
         foreach(Unit unit in unitsList)
             unit.count = 0;

@@ -7,13 +7,10 @@ public class Tutorial3 : MonoBehaviour
 {
     #region Variabiles
     public Text tutorialText;
-    public Button battleButton;
-
-    private bool battleStarted;
-    private Drawing drawing;
-
     public Transform enemyManager;
     public Transform gates;
+
+    private Drawing drawing;
     #endregion
 
     #region Initialization
@@ -24,7 +21,6 @@ public class Tutorial3 : MonoBehaviour
 
         FindObjectOfType<UnitsManager>().StartLevel();
         FindObjectOfType<UnitsHud>().SetUpHud();
-        battleButton.gameObject.SetActive(false);
 
         FindObjectOfType<UnitsManager>().UpdateControllersList();
     }
@@ -39,15 +35,12 @@ public class Tutorial3 : MonoBehaviour
         yield return waitTime;
         yield return StartCoroutine(SendToReloadPointCR());
         yield return waitTime;
-        yield return StartCoroutine(StartBattleCR());
-        yield return waitTime;
         yield return StartCoroutine(WaitToReachReloadCR());
         yield return waitTime;
         yield return StartCoroutine(TargetEnemyCR());
         yield return waitTime;
         yield return StartCoroutine(WaitForEnemyKill());
 
-        //Auto reload.
         tutorialText.text = "Now that you have killed all the enemyes go to the crystal";
 
     }
@@ -76,15 +69,6 @@ public class Tutorial3 : MonoBehaviour
 
             yield return null;
         }
-    }
-    private IEnumerator StartBattleCR()
-    {
-        tutorialText.text = "Press the battle button and start the fight.";
-        battleButton.gameObject.SetActive(true);
-
-        while (!battleStarted)
-            yield return null;
-
     }
     private IEnumerator WaitToReachReloadCR()
     {
@@ -126,7 +110,6 @@ public class Tutorial3 : MonoBehaviour
         }
         tutorialText.text = "Take good care of your units, they are your only hope to save Rayuwa.";
     }
-
     private IEnumerator WaitForEnemyKill()
     {
         
@@ -144,11 +127,6 @@ public class Tutorial3 : MonoBehaviour
     #endregion
 
     #region Methods
-    public void BattleStart()
-    {
-        battleStarted = true;
-    }
-
     private bool HasReachedReloadPoint(Agent[] agents, ReloadPoint[] points)
     {
         for (int i = 0; i < agents.Length; i++)

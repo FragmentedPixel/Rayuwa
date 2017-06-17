@@ -7,11 +7,8 @@ public class Tutorial1 : MonoBehaviour
 {
     #region Variabiles
     public Text tutorialText;
-    public Button battleButton;
-
-    private bool battleStarted;
-    private Drawing drawing;
     
+    private Drawing drawing;
     private Grid grid;
     private bool candraw = false;
     #endregion
@@ -33,7 +30,6 @@ public class Tutorial1 : MonoBehaviour
         grid = drawing.GetComponentInParent<Grid>();
         FindObjectOfType<UnitsManager>().StartLevel();
         FindObjectOfType<UnitsHud>().SetUpHud();
-        battleButton.gameObject.SetActive(false);
         foreach (Node node in grid.grid)
             node.Deactivate();
         FindObjectOfType<UnitsManager>().UpdateControllersList();
@@ -55,8 +51,6 @@ public class Tutorial1 : MonoBehaviour
         yield return StartCoroutine(DragCR());
         yield return waitTime;
         yield return StartCoroutine(SetPathCR());
-        yield return waitTime;
-        yield return StartCoroutine(StartBattleCR());
         tutorialText.text = "Well done. Now go to the crystal.";
     }
     #endregion
@@ -129,24 +123,6 @@ public class Tutorial1 : MonoBehaviour
 
             yield return null;
         }
-    }
-    private IEnumerator StartBattleCR()
-    {
-        tutorialText.text = "Start the battle by pressing the battle button in the top middle portion of the screen.";
-        battleButton.gameObject.SetActive(true);
-
-        while(!battleStarted)
-        {
-            yield return null;
-        }
-
-    }
-    #endregion
-
-    #region Methods
-    public void BattleStart()
-    {
-        battleStarted = true;
     }
     #endregion
 }

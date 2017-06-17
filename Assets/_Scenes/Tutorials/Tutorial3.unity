@@ -18350,7 +18350,6 @@ MonoBehaviour:
   maxUnits: 8
   unitsRangeThreshold: 5
   spawnPointsParent: {fileID: 1658933794}
-  startButton: {fileID: 1074648485}
 --- !u!4 &962155433
 Transform:
   m_ObjectHideFlags: 0
@@ -18939,6 +18938,7 @@ MonoBehaviour:
   cameraOffsets: []
   scc: {fileID: 0}
   ccc: {fileID: 0}
+  ls: {fileID: 0}
 --- !u!4 &1000974827
 Transform:
   m_ObjectHideFlags: 0
@@ -19910,12 +19910,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4716242456434306, guid: 7b63bd1eb60d61b478a30de5b4c6da2e,
     type: 2}
   m_PrefabInternal: {fileID: 1070989235}
---- !u!114 &1074648485 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114118035103745010, guid: b6890b5c135de3a41aa21144a80f6102,
-    type: 2}
-  m_PrefabInternal: {fileID: 1829618041}
-  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1001 &1077848287
 Prefab:
   m_ObjectHideFlags: 0
@@ -30747,7 +30741,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tutorialText: {fileID: 2081064691}
-  battleButton: {fileID: 1074648485}
   enemyManager: {fileID: 1830315062}
   gates: {fileID: 1599755034}
 --- !u!4 &1731697248
@@ -34627,6 +34620,11 @@ Prefab:
       propertyPath: attackDmg
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 114789273651607486, guid: ed2fe6da22748d64fa7c7e8dee6c2838,
+        type: 2}
+      propertyPath: wayPointsParent
+      value: 
+      objectReference: {fileID: 2107522472}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ed2fe6da22748d64fa7c7e8dee6c2838, type: 2}
   m_IsPrefabParent: 0
@@ -36980,7 +36978,7 @@ Prefab:
       objectReference: {fileID: 2107522472}
     - target: {fileID: 1888181325017428, guid: ed2fe6da22748d64fa7c7e8dee6c2838, type: 2}
       propertyPath: m_Name
-      value: Melee Enemy (1)
+      value: Golem Defender
       objectReference: {fileID: 0}
     - target: {fileID: 114017139128389158, guid: ed2fe6da22748d64fa7c7e8dee6c2838,
         type: 2}
@@ -36992,6 +36990,11 @@ Prefab:
       propertyPath: attackDmg
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 114789273651607486, guid: ed2fe6da22748d64fa7c7e8dee6c2838,
+        type: 2}
+      propertyPath: wayPointsParent
+      value: 
+      objectReference: {fileID: 2107522472}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ed2fe6da22748d64fa7c7e8dee6c2838, type: 2}
   m_IsPrefabParent: 0

@@ -1114,9 +1114,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitsCountText: {fileID: 114292984567235950}
+  bonusText: {fileID: 0}
+  maxBonusPercent: 300
   panel: {fileID: 224800355704157892}
   unitRowPrefab: {fileID: 1557121231369484, guid: 250361c1a46a48a418694e697caba3f3,
     type: 2}
+  fightButton: {fileID: 0}
   clickSound: {fileID: 8300000, guid: bae016cbe56624b419c5c730bb2813a1, type: 3}
 --- !u!114 &114128233574385368
 MonoBehaviour:
@@ -1675,9 +1678,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f836a0fa94317042ae3413980331dbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelIndex: 0
+  winBonus: 100
+  enemiesShowCanvas: {fileID: 0}
   unitsCanavas: {fileID: 223989057115047834}
   playerCanvas: {fileID: 223856918709713696}
+  winCanvas: {fileID: 0}
   looseCanvas: {fileID: 223018841667943122}
+  resourcesCanvas: {fileID: 0}
+  levelResources: 0
+  bonusPercent: 0
+  won: 0
 --- !u!114 &114517189722460578
 MonoBehaviour:
   m_ObjectHideFlags: 1

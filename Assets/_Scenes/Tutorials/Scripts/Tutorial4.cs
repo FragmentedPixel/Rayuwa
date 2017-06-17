@@ -7,16 +7,16 @@ public class Tutorial4 : MonoBehaviour
 {
     #region Variabiles
     public Text tutorialText;
-    public Button battleButton;
+    public Canvas unitsCanvas;
 
+    private CameraManager cm;
     private bool selectedUnits;
-    public CameraManager cm;
     #endregion
 
     #region Initialization
     private void Start()
     {
-        battleButton.gameObject.SetActive(false);
+        cm = FindObjectOfType<CameraManager>();
         cm.enabled = false;
         
         StartCoroutine(TutorialCR());
@@ -42,8 +42,6 @@ public class Tutorial4 : MonoBehaviour
         yield return waitTime;
         yield return StartCoroutine(AmmoBlinkCR());
         yield return waitTime;
-        yield return StartCoroutine(GoodLuckCR());
-        yield return waitTime;
 
         tutorialText.transform.GetComponentInParent<Canvas>().enabled = false;
 		LevelsData.instance.levels [1] = true;
@@ -59,9 +57,9 @@ public class Tutorial4 : MonoBehaviour
             yield return null;
 
     }
-
     private IEnumerator MoveCamera1CR()
     {
+        unitsCanvas.enabled = false;
         tutorialText.text = "On large battlegrounds you will be able to move the camera. Move it by pressing A or D.";
         bool moved_a = false;
         bool moved_d = false;
@@ -77,7 +75,6 @@ public class Tutorial4 : MonoBehaviour
         }
         cm.enabled = true;
     }
-
     private IEnumerator ChangeCameraCR()
     {
         tutorialText.text = "Change the camera by using C.";
@@ -110,7 +107,6 @@ public class Tutorial4 : MonoBehaviour
         }
         cm.enabled = true;
     }
-
     private IEnumerator HUDCR()
     {
         tutorialText.text = "On the bottom of your screen you can see your units. Below each one you can see their Health and Ammo. Click to continue";
@@ -131,18 +127,9 @@ public class Tutorial4 : MonoBehaviour
 
         while (!Input.GetMouseButton(0) && !Input.GetKey(KeyCode.Space))
             yield return null;
+
+        unitsCanvas.enabled = true;
     }
-    private IEnumerator GoodLuckCR()
-    {
-        tutorialText.text = "Good luck and save Rayuwa !";
-
-        while (!Input.GetMouseButton(0) && !Input.GetKey(KeyCode.Space))
-            yield return null;
-        battleButton.gameObject.SetActive(true);
-    }
-
-
-
     #endregion
 
     #region Methods

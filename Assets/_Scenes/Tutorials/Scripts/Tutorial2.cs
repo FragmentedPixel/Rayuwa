@@ -8,7 +8,6 @@ public class Tutorial2 : MonoBehaviour
 {
     #region Variabiles
     public Text tutorialText;
-    public Button battleButton;
 
     private Drawing drawing;
     #endregion
@@ -21,7 +20,6 @@ public class Tutorial2 : MonoBehaviour
 
         FindObjectOfType<UnitsManager>().StartLevel();
         FindObjectOfType<UnitsHud>().SetUpHud();
-        battleButton.gameObject.SetActive(false);
         FindObjectOfType<UnitsManager>().UpdateControllersList();
     }
     #endregion
@@ -84,7 +82,6 @@ public class Tutorial2 : MonoBehaviour
 
             yield return null;
         }
-        battleButton.gameObject.SetActive(true);
     }
     private IEnumerator WaitForRangeCR()
     {
