@@ -14,7 +14,11 @@ public class CameraManager : MonoBehaviour {
 
     private void Start()
     {
-        camera_list = transform.GetComponentsInChildren<Camera>(true);
+        //camera_list = transform.GetComponentsInChildren<Camera>(true);c
+        camera_list = new Camera[2];
+        camera_list[0] = scc.GetComponent<Camera>();
+        camera_list[1] = ccc.GetComponent<Camera>();
+
         ls = FindObjectOfType<LeaderSwitch>();
     }
 
