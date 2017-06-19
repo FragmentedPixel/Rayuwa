@@ -67,6 +67,7 @@ public class UnitsOptions : MonoBehaviour
             bonusText.text = "";
 
         fightButton.enabled = !(value == 0);
+        fightButton.GetComponent<Image>().color = (value == 0) ? Color.grey : Color.white;
     }
 
     public void PlaySound()

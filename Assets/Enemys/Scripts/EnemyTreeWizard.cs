@@ -45,6 +45,8 @@ public class EnemyTreeWizard : MonoBehaviour
     #region Updates
     private void Update()
     {
+        allTrees[0].transform.position = transform.position + transform.forward * 3f;
+
         if (!triggered)
             return;
 
@@ -53,7 +55,6 @@ public class EnemyTreeWizard : MonoBehaviour
 
         if (currentCastTime < castTime)
             currentCastTime += Time.deltaTime;
-
         else
             Throw();
 

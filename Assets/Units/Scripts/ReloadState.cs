@@ -18,6 +18,7 @@ public class ReloadState : iUnitState
         if (controller.reloadPoint == null)
             FindClosestReloadPoint();
 
+        controller.destination = controller.reloadPoint.transform.position;
         controller.agent.MoveToDestination(controller.reloadPoint.transform.position);
     }
 

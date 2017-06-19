@@ -20,7 +20,7 @@ public class WinCondition : MonoBehaviour
     {
         EnemyHealth[] enemys = FindObjectsOfType<EnemyHealth>();
         foreach (EnemyHealth enemy in enemys)
-            Destroy(enemy.gameObject);
+            enemy.Hit(enemy.MaxHealth, null);
 
         if(FindObjectOfType<GameManager>()!=null)
             FindObjectOfType<GameManager>().WonGame();
