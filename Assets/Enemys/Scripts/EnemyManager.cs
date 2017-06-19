@@ -22,7 +22,7 @@ public class EnemyManager : MonoBehaviour
         EnemyHealth enemyHealth = enemy.GetComponentInChildren<EnemyHealth>();
         enemyHealth.transform.parent.GetComponentInChildren<Outline>().enabled = false;
 
-        EnemyController enemyController = enemy.GetComponent<EnemyController>();
+        EnemyController enemyController = enemy.GetComponentInParent<EnemyController>();
 
         if (enemyController == null)
             return;
