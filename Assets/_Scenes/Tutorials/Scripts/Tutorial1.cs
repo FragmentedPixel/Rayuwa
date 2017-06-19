@@ -7,32 +7,37 @@ public class Tutorial1 : MonoBehaviour
 {
     #region Variabiles
     public Text tutorialText;
-    
+    public bool canMove=false;
+    private Agent[] agents;
     private Drawing drawing;
     private Grid grid;
     private bool candraw = false;
     #endregion
 
     #region Initialization
-
-    private void Update()
-    {
-        if(!candraw)
-        drawing.isdragging = false;
-    }
-
     private void OnEnable()
     {
         LevelsData.instance.levels[0] = true;
-
         drawing = FindObjectOfType<Drawing>();
-        StartCoroutine(TutorialCR());
+        agents = FindObjectsOfType<Agent>();
+
         grid = drawing.GetComponentInParent<Grid>();
         FindObjectOfType<UnitsManager>().StartLevel();
         FindObjectOfType<UnitsHud>().SetUpHud();
         foreach (Node node in grid.grid)
             node.Deactivate();
+
         FindObjectOfType<UnitsManager>().UpdateControllersList();
+        StartCoroutine(TutorialCR());
+    }
+
+    private void Update()
+    {
+        if (!candraw)
+            drawing.isdragging = false;
+        if (!canMove)
+            foreach (Agent agent in agents)
+                agent.Stop();
     }
     #endregion
 
@@ -105,7 +110,7 @@ public class Tutorial1 : MonoBehaviour
 
             yield return null;
         }
-
+        canMove = true;
     }
     private IEnumerator SetPathCR()
     {
