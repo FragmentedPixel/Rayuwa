@@ -1134,7 +1134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a54a29682ff2124e9f96c27aea33d8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 180
+  MaxHealth: 240
   currentHealth: 0
   background: {fileID: 114268287294116970}
   healthImage: {fileID: 114349502728771306}
@@ -1160,7 +1160,7 @@ MonoBehaviour:
   color: {r: 0.02032874, g: 0.55238056, b: 0.6911765, a: 1}
   fightRange: 4
   fightSpeed: 2.5
-  fightDmg: 32
+  fightDmg: 16
   fightSound: {fileID: 8300000, guid: bd219e5fcc44dda459c64d6c8a165a9e, type: 3}
   speedIndex: 1
   damageIndex: 3
@@ -1171,7 +1171,7 @@ MonoBehaviour:
   healthPercent: 0.1
   ammoToAdd: 1
   ammo: 0
-  maxAmmo: 20
+  maxAmmo: 12
   reloadTime: 2
   reloading: 0
 --- !u!135 &135269286591990720

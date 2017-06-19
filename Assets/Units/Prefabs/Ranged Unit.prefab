@@ -1024,7 +1024,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a54a29682ff2124e9f96c27aea33d8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 60
+  MaxHealth: 120
   currentHealth: 0
   background: {fileID: 114089942114005922}
   healthImage: {fileID: 114422963005775804}

@@ -38,15 +38,14 @@ public class EnemiesOverview : MonoBehaviour
         for(int i = 0; i < enemies.Length; i++)
         {
             EnemyOverview current = enemies[i];
-            Vector3 velocity = Vector3.zero;
-            float smoothTime = .25f;
+            Vector3 targetPos = current.lookPoint.position;
 
-            float distanceToTarget = Vector3.Distance(Camera.main.transform.position, current.lookPoint.position);
+            float distanceToTarget = Vector3.Distance(Camera.main.transform.position, targetPos);
 
             while (distanceToTarget > offset)
             {
-                distanceToTarget = Vector3.Distance(Camera.main.transform.position, current.lookPoint.position);
-                Camera.main.transform.position = Vector3.SmoothDamp(Camera.main.transform.position, current.lookPoint.position, ref velocity, smoothTime);
+                distanceToTarget = Vector3.Distance(Camera.main.transform.position, targetPos);
+                Camera.main.transform.position = Vector3.Slerp(Camera.main.transform.position, targetPos, Time.deltaTime);
 
                 LookAtEnemy(current);
                 yield return null;
