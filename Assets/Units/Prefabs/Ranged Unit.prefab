@@ -1117,7 +1117,7 @@ MonoBehaviour:
   destination: {x: 0, y: 0, z: 0}
   reloadPoint: {fileID: 0}
   image: {fileID: 21300000, guid: ee9adeaafe7b4fc4e8f9d60c5ba0469b, type: 3}
-  color: {r: 0.004811856, g: 0.6544118, b: 0.6275317, a: 1}
+  color: {r: 0.013300186, g: 0.9044118, b: 0.24068715, a: 1}
   fightRange: 15
   fightSpeed: 1
   fightDmg: 15
