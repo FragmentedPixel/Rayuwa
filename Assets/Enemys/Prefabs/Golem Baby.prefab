@@ -358,7 +358,7 @@ GameObject:
   - component: {fileID: 114037005553802640}
   - component: {fileID: 114789273651607486}
   m_Layer: 2
-  m_Name: Small Golem
+  m_Name: Golem Baby
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
