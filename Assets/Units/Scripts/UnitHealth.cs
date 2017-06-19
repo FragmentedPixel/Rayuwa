@@ -72,8 +72,8 @@ public class UnitHealth : MonoBehaviour
         controller.anim.SetTrigger("DeathTrigger");
         Destroy(controller.gameObject, 3f);
 
-        Destroy(controller.agent);
         Destroy(controller);
+        Destroy(controller.agent);
         Destroy(gameObject);
     }
     #endregion

@@ -52,6 +52,10 @@ public class CameraManager : MonoBehaviour {
             ccc.Clamp(zPos);
 
         camera_list[index].gameObject.SetActive(true);
+
+        cakeslice.Outline[] outlines = FindObjectsOfType<cakeslice.Outline>();
+        foreach (cakeslice.Outline outline in outlines)
+            outline.enabled = false;
     }
 
     public void Leader()
