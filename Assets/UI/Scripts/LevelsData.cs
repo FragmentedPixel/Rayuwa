@@ -20,7 +20,7 @@ public class LevelsData : MonoBehaviour
         instance = this;
         DontDestroyOnLoad(this);
         fileLocation = Application.persistentDataPath + "/levels.data";
-        Load();
+        //Load();
     }
     private void Save()
     {
