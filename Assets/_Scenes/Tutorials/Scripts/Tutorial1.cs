@@ -19,11 +19,12 @@ public class Tutorial1 : MonoBehaviour
     {
         LevelsData.instance.levels[0] = true;
         drawing = FindObjectOfType<Drawing>();
-        agents = FindObjectsOfType<Agent>();
+        
 
         grid = drawing.GetComponentInParent<Grid>();
         FindObjectOfType<UnitsManager>().StartLevel();
         FindObjectOfType<UnitsHud>().SetUpHud();
+        agents = FindObjectsOfType<Agent>();
         foreach (Node node in grid.grid)
             node.Deactivate();
 

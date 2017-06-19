@@ -8,7 +8,8 @@ public class Tutorial2 : MonoBehaviour
 {
     #region Variabiles
     public Text tutorialText;
-
+    public Agent[] agents;
+    public bool canMove =false;
     private Drawing drawing;
     #endregion
 
@@ -17,10 +18,16 @@ public class Tutorial2 : MonoBehaviour
     {
         drawing = FindObjectOfType<Drawing>();
         StartCoroutine(TutorialCR());
-
+        agents = FindObjectOfType<UnitsManager>().GetComponentsInChildren<Agent>();
         FindObjectOfType<UnitsManager>().StartLevel();
         FindObjectOfType<UnitsHud>().SetUpHud();
         FindObjectOfType<UnitsManager>().UpdateControllersList();
+    }
+    private void Update()
+    {
+        if (!canMove)
+            foreach (Agent agent in agents)
+                agent.Stop();
     }
     #endregion
 
@@ -66,6 +73,7 @@ public class Tutorial2 : MonoBehaviour
 
             yield return null;
         }
+        canMove = true;
     }
     private IEnumerator SightAndAttack()
     {
