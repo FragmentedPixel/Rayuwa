@@ -1120,7 +1120,7 @@ MonoBehaviour:
   color: {r: 0.013300186, g: 0.9044118, b: 0.24068715, a: 1}
   fightRange: 15
   fightSpeed: 1
-  fightDmg: 15
+  fightDmg: 16
   fightSound: {fileID: 8300000, guid: 4fd59a20cad78ca4b949c6bc91727bab, type: 3}
   speedIndex: 1
   damageIndex: 3
@@ -1131,7 +1131,7 @@ MonoBehaviour:
   healthPercent: 0.1
   ammoToAdd: 1
   ammo: 0
-  maxAmmo: 15
+  maxAmmo: 12
   reloadTime: 4
   reloading: 0
   projectile: {fileID: 1845533052663576, guid: be68677877c817947959fd3d82ba5de2, type: 2}
@@ -1148,7 +1148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destination: {x: 0, y: 0, z: 0}
-  speed: 3.4
+  speed: 4
   turnSpeed: 2.5
   turnDst: 0
   stoppingDst: 0

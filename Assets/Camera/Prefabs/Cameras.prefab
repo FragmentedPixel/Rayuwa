@@ -107,7 +107,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1865262889730024}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10, y: 0, z: -40}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4800816851394848}
@@ -318,7 +318,7 @@ MonoBehaviour:
   Yspeed: 100
   X_Boundary: 50
   Y_Boundary: 10
-  Z_Boundary: 170
+  Z_Boundary: 130
   lookAtOffset: 22
   lookAt: {fileID: 4366106552554674}
 --- !u!114 &114697639704220934
@@ -379,8 +379,8 @@ MonoBehaviour:
   Yspeed: 100
   rot_speed: 10
   screenPercent: 0.1
-  Z_Boundary: 150
-  X_Boundary: 30
+  Z_Boundary: 100
+  X_Boundary: 40
   Y_Boundary: 10
   Y_Rot_Min: 240
   Y_Rot_Max: 300

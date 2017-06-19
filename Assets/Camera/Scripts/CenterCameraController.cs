@@ -22,7 +22,9 @@ public class CenterCameraController : MonoBehaviour
 	{
         if (startPosition == Vector3.zero)
             startPosition = transform.position;
-        transform.position -= new Vector3(-Z_Boundary/2, 0, 0); 
+        Debug.Log(transform.position);
+        transform.position -= new Vector3(20, 0, 0);
+        Debug.Log(transform.position);
         transform.LookAt(lookAt);
         transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x + lookAtOffset, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
     }

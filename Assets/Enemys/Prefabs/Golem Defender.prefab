@@ -980,7 +980,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destination: {x: 14.7, y: 0, z: -40.9}
-  speed: 2.7
+  speed: 3
   turnSpeed: 2
   turnDst: 0
   stoppingDst: 0
@@ -1096,8 +1096,8 @@ MonoBehaviour:
   targetsInRange: []
   wayPointsParent: {fileID: 0}
   attackRange: 4
-  attackSpeed: 2
-  attackDmg: 25
+  attackSpeed: 2.5
+  attackDmg: 32
   attackSound: {fileID: 8300000, guid: 6aee50330fe344246ae88f2fc990a3e1, type: 3}
   targetTreshold: 5
   agroRange: 15
