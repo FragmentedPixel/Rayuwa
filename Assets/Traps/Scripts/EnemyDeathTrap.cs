@@ -26,7 +26,7 @@ public class EnemyDeathTrap : MonoBehaviour
             Vector3 spawnOffSet = Random.insideUnitSphere * 2f;
             spawnOffSet.y = 0f;
 
-            GameObject spawnedEnemy = Instantiate(enemy, spawnPosition + spawnOffSet, transform.rotation, transform.parent);
+            GameObject spawnedEnemy = Instantiate(enemy, spawnPosition + spawnOffSet, transform.rotation, transform.parent.parent);
 
             spawnedEnemy.GetComponent<Collider>().enabled = false;
             spawnedEnemy.GetComponent<Collider>().enabled = true;
