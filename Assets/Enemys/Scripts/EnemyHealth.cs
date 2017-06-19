@@ -35,7 +35,8 @@ public class EnemyHealth : MonoBehaviour
     #region Bilboard
     private void Update () 
 	{
-		canvas.transform.LookAt (Camera.main.transform);
+        if (canvas != null)
+		    canvas.transform.LookAt (Camera.main.transform);
 	}
     #endregion
 
@@ -78,6 +79,7 @@ public class EnemyHealth : MonoBehaviour
         {
             controller.anim.SetTrigger("DeathTrigger");
             Destroy(controller.gameObject, 3f);
+            Destroy(canvas.gameObject);
 
             if (GetComponent<EnemyDeathTrap>() != null)
                 GetComponent<EnemyDeathTrap>().SpawnSmallGolems();

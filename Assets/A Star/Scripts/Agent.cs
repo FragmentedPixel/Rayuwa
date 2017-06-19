@@ -93,8 +93,7 @@ public class Agent : MonoBehaviour
     #region Gizmos
     private void OnDrawGizmosSelected()
     {
-        int index = waypoints.Length;
-        return;
+        
     }
 
     public void DisplaySelected(bool value)

@@ -70,10 +70,10 @@ public class EnemiesOverview : MonoBehaviour
 
     private void FillInformation(EnemyOverview currentEnemy)
     {
-        enemyName.text = "Name: " + currentEnemy.enemy.name;
+        enemyName.text = currentEnemy.enemy.name;
         strongPoints.text = currentEnemy.strongPoints;
         weakPoints.text = currentEnemy.weakPoints;
-        description.text = "Description: " + currentEnemy.description;
+        description.text = currentEnemy.description;
     }
     private void LookAtEnemy(EnemyOverview currentEnemy)
     {
