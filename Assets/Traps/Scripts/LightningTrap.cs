@@ -13,12 +13,12 @@ public class LightningTrap : Trap
     public AudioClip rainSound;
     public ParticleSystem rainParticules;
 
-    private new BoxCollider collider;
+    private new CapsuleCollider collider;
     private AudioSource audioS;
 
     private void Start()
     {
-        collider = GetComponent<BoxCollider>();
+        collider = GetComponent<CapsuleCollider>();
         audioS = GetComponent<AudioSource>();
         audioS.volume = PlayerPrefsManager.GetMasterVolume();
 
