@@ -10,7 +10,9 @@ public class EnemyTower : MonoBehaviour
     public Transform wayPointsParent;
     public Image castBar;
     public float cooldown;
+    public int maxSpawns;
 
+    private int currentSpawns;
     private bool triggered = false;
     private float currentTime;
     private ParticleSystem spawnParticules;
@@ -29,7 +31,7 @@ public class EnemyTower : MonoBehaviour
 
         if (cooldown > currentTime)
             currentTime += Time.deltaTime;
-        else
+        else if(currentSpawns < maxSpawns)
             SpawnEnemy();
 
         castBar.fillAmount = currentTime / cooldown;
@@ -37,6 +39,7 @@ public class EnemyTower : MonoBehaviour
 
     private void SpawnEnemy()
     {
+        currentSpawns++;
         spawnParticules.Clear();
         spawnParticules.Stop();
         int index = Random.Range(0, enemiesToSpawn.Length);
