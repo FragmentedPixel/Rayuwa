@@ -964,7 +964,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb31f5e8b03883d45b2cc981fb05e278, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 300
+  MaxHealth: 240
   enemyValue: 10
   background: {fileID: 114508878081113110}
   healthImage: {fileID: 114141413873169116}
@@ -980,7 +980,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destination: {x: 14.7, y: 0, z: -40.9}
-  speed: 3
+  speed: 2
   turnSpeed: 2
   turnDst: 0
   stoppingDst: 0

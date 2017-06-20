@@ -8,10 +8,12 @@ public class EnemyHealth : MonoBehaviour
     #region Variabiles
     #region Health
     public float MaxHealth=500;
-	private float currentHealth;
+    public int enemyValue = 10;
+
+    private float currentHealth;
+    private bool dead;
     private EnemyController controller;
 
-    public int enemyValue=10;
 
     #endregion
     #region UI
@@ -75,15 +77,17 @@ public class EnemyHealth : MonoBehaviour
 
     private void Die()
     {
+        if (dead)
+            return;
+
+        dead = true;
+
         if (controller != null)
         {
             EnemyDeathTrap trap = GetComponent<EnemyDeathTrap>();
 
             if (trap != null)
-            {
                 trap.SpawnSmallGolems();
-                DestroyImmediate(trap);
-            }
 
             controller.anim.SetTrigger("DeathTrigger");
             Destroy(controller.gameObject, 3f);
