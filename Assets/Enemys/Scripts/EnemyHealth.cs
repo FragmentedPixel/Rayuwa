@@ -77,17 +77,17 @@ public class EnemyHealth : MonoBehaviour
     {
         if (controller != null)
         {
-            controller.anim.SetTrigger("DeathTrigger");
-            Destroy(controller.gameObject, 3f);
-            Destroy(canvas.gameObject);
-
             EnemyDeathTrap trap = GetComponent<EnemyDeathTrap>();
 
             if (trap != null)
             {
                 trap.SpawnSmallGolems();
-                Destroy(trap);
+                DestroyImmediate(trap);
             }
+
+            controller.anim.SetTrigger("DeathTrigger");
+            Destroy(controller.gameObject, 3f);
+            Destroy(canvas.gameObject);
 
             Destroy(controller);
             Destroy(controller.agent);

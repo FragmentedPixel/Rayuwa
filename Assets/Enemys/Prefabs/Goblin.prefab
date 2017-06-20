@@ -1106,7 +1106,7 @@ MonoBehaviour:
   attackDmg: 24
   attackSound: {fileID: 8300000, guid: 769e37b1d38115446a7dd4cf7b1533b7, type: 3}
   targetTreshold: 2
-  agroRange: 10
+  agroRange: 30
   maxAmmo: 100
   currentAmmo: 0
   refillPlace: {fileID: 0}
