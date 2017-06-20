@@ -5,7 +5,7 @@ using cakeslice;
 
 public class EnemyManager : MonoBehaviour
 {
-    public List<Transform> enemyList= new List<Transform>();
+    //private List<Transform> enemyList= new List<Transform>();
     public static EnemyManager instance;
 
     #region Initialization
@@ -15,6 +15,20 @@ public class EnemyManager : MonoBehaviour
         EnemyHealth[] enemies = FindObjectsOfType<EnemyHealth>();
         foreach (EnemyHealth enemey in enemies)
             SetSightAndRange(enemey);
+    }
+
+    public List<Transform> enemyList
+    {
+        get
+        {
+            List<Transform> list = new List<Transform>();
+            EnemyHealth[] enemies = FindObjectsOfType<EnemyHealth>();
+            foreach (EnemyHealth enemy in enemies)
+                if(enemy.GetComponentInParent<EnemyController>() != null)
+                    list.Add(enemy.transform);
+
+            return list;
+        }
     }
 
     private void SetSightAndRange(EnemyHealth enemy)
@@ -33,7 +47,7 @@ public class EnemyManager : MonoBehaviour
             sight.transform.localScale = enemyHealth.GetComponentInParent<SphereCollider>().radius * Vector3.one;
             return;
         }
-        enemyList.Add(enemy.transform);
+        //enemyList.Add(enemy.transform);
 
         range.transform.localScale = Vector3.one * enemyController.attackRange;
         sight.transform.localScale = Vector3.one * enemyController.GetComponent<SphereCollider>().radius ;
