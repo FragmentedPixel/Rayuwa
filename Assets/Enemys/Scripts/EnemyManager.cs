@@ -24,12 +24,16 @@ public class EnemyManager : MonoBehaviour
 
         EnemyController enemyController = enemy.GetComponentInParent<EnemyController>();
 
-        if (enemyController == null)
-            return;
-
-        enemyList.Add(enemy.transform);
         Transform range = enemyHealth.transform.GetChild(0);
         Transform sight = enemyHealth.transform.GetChild(1);
+
+        if (enemyController == null)
+        {
+            Destroy(range.gameObject);
+            sight.transform.localScale = enemyHealth.GetComponentInParent<SphereCollider>().radius * Vector3.one;
+            return;
+        }
+        enemyList.Add(enemy.transform);
 
         range.transform.localScale = Vector3.one * enemyController.attackRange;
         sight.transform.localScale = Vector3.one * enemyController.GetComponent<SphereCollider>().radius ;

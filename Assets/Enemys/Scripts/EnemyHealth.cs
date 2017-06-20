@@ -49,7 +49,7 @@ public class EnemyHealth : MonoBehaviour
             attacker = attacker.GetComponentInChildren<UnitHealth>().transform;
         currentHealth -= damage;
 		healthImage.fillAmount = currentHealth / MaxHealth;
-        
+        EnemyTower et;
         if (controller != null && controller.Ammo())
         {
             if (controller.target == null)
@@ -62,6 +62,38 @@ public class EnemyHealth : MonoBehaviour
                 controller.currentState.ToAttackState();
             else
                 controller.currentState.ToChaseState();
+
+            List<Transform> enemyList = EnemyManager.instance.enemyList;
+
+            for (int i = 0; i < enemyList.Count; i++)
+            {
+                if (enemyList[i] == null || enemyList[i] == controller.transform)
+                {
+                    enemyList.Remove(enemyList[i]);
+                    i--;
+                }
+                else if (Vector3.Distance(controller.transform.position, enemyList[i].position) < controller.agroRange&&damage!=0)
+                {
+                    enemyList[i].GetComponentInChildren<EnemyHealth>().Hit(0, controller.target);
+                }
+            }
+        }  
+        else if(controller==null&&damage!=0&&(et=GetComponentInParent<EnemyTower>()))
+        {
+            List<Transform> enemyList = EnemyManager.instance.enemyList;
+
+            for (int i = 0; i < enemyList.Count; i++)
+            {
+                if (enemyList[i] == null)
+                {
+                    enemyList.Remove(enemyList[i]);
+                    i--;
+                }
+                else if (Vector3.Distance(et.transform.position, enemyList[i].position) < et.agroRange)
+                {
+                    enemyList[i].GetComponentInChildren<EnemyHealth>().Hit(0, attacker);
+                }
+            }
         }
 
         if (healthImage.fillAmount < 0.2)

@@ -16,6 +16,7 @@ public class EnemyTower : MonoBehaviour
     private bool triggered = false;
     private float currentTime;
     private ParticleSystem spawnParticules;
+    public float agroRange = 15f;
 
 
     private void Start()
