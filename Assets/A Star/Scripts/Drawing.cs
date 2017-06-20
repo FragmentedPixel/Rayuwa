@@ -163,7 +163,7 @@ public class Drawing : MonoBehaviour
     }
 
     private float lastClickTime = 0f;
-    private float catchTime = .25f;
+    private float catchTime = .1f;
 
     private void UpdateSelecting()
     {
