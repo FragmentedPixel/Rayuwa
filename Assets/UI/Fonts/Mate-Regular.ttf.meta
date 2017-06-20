@@ -12,7 +12,8 @@ TrueTypeFontImporter:
   fontName: Mate
   fontNames:
   - Mate
-  fallbackFontReferences: []
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: d335add511b0bcc41b7c080e35ac7389, type: 3}
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1
