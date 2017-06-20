@@ -221,7 +221,7 @@ public abstract class UnitController : MonoBehaviour
         {
             UnitHealth health = GetComponentInChildren<UnitHealth>();
 
-            health.Heal(1);
+            health.Heal(.5f);
             ammo = maxAmmo;
         }
 

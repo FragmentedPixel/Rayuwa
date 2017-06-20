@@ -45,7 +45,7 @@ public class EnemyTreeWizard : MonoBehaviour
     #region Updates
     private void Update()
     {
-        allTrees[0].transform.position = transform.position + transform.forward * 3f;
+        allTrees[0].transform.position = transform.position - transform.forward * 3f;
 
         if (!triggered)
             return;

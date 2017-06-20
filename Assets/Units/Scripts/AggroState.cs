@@ -15,7 +15,9 @@ public class AggroState : iUnitState
     {
         controller.anim.SetBool("Walking", true);
 
-        if (controller.target != null)
+        if (controller.ammo <= 0)
+            ToReloadState();
+        else if (controller.target != null)
             AggroTarget();
         else
             controller.CheckForNearbyEnemies();
