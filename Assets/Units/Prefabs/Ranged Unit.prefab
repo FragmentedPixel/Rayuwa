@@ -1118,7 +1118,7 @@ MonoBehaviour:
   reloadPoint: {fileID: 0}
   image: {fileID: 21300000, guid: ee9adeaafe7b4fc4e8f9d60c5ba0469b, type: 3}
   color: {r: 0.013300186, g: 0.9044118, b: 0.24068715, a: 1}
-  fightRange: 15
+  fightRange: 16
   fightSpeed: 1
   fightDmg: 16
   fightSound: {fileID: 8300000, guid: 4fd59a20cad78ca4b949c6bc91727bab, type: 3}
@@ -1148,7 +1148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destination: {x: 0, y: 0, z: 0}
-  speed: 4
+  speed: 3
   turnSpeed: 2.5
   turnDst: 0
   stoppingDst: 0

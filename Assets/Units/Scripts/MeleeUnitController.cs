@@ -9,6 +9,7 @@ public class MeleeUnitController : UnitController
     public override void FightTarget()
     {
         anim.SetTrigger("MeleeAttack");
+        targetToAttack = target;
     }
     public override string GetAmmoText()
     {
@@ -17,10 +18,10 @@ public class MeleeUnitController : UnitController
     }
     public void SwordHit()
     {
-        if (target != null && transform != null)
+        if (targetToAttack != null && transform != null)
         {
             audioS.PlayOneShot(fightSound);
-            target.GetComponent<EnemyHealth>().Hit(fightDmg, transform);
+            targetToAttack.GetComponent<EnemyHealth>().Hit(fightDmg, transform);
         }
     }
     #endregion

@@ -1025,7 +1025,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destination: {x: 0, y: 0, z: 0}
-  speed: 3
+  speed: 4
   turnSpeed: 3
   turnDst: 0
   stoppingDst: 0
@@ -1160,7 +1160,7 @@ MonoBehaviour:
   color: {r: 0.02032874, g: 0.55238056, b: 0.6911765, a: 1}
   fightRange: 4
   fightSpeed: 2.5
-  fightDmg: 16
+  fightDmg: 24
   fightSound: {fileID: 8300000, guid: bd219e5fcc44dda459c64d6c8a165a9e, type: 3}
   speedIndex: 1
   damageIndex: 3

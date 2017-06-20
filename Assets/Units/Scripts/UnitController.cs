@@ -16,6 +16,7 @@ public abstract class UnitController : MonoBehaviour
 
     #region Targeting
     [HideInInspector] public Transform target;
+    [HideInInspector] public Transform targetToAttack;
     [HideInInspector] public Vector3 destination;
     [HideInInspector] public ReloadPoint reloadPoint;
     #endregion

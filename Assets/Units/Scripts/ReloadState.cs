@@ -13,6 +13,7 @@ public class ReloadState : iUnitState
     #region State Methods
     public override void Update()
     {
+        controller.target = null;
         controller.anim.SetBool("Walking", !controller.reloading);
 
         if (controller.reloadPoint == null)

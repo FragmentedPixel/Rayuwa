@@ -15,6 +15,7 @@ public class RangedUnitController : UnitController
     public override void FightTarget()
     {
         anim.SetTrigger("RangedAttack");
+        targetToAttack = target;
     }
     public override string GetAmmoText()
     {
@@ -25,7 +26,7 @@ public class RangedUnitController : UnitController
     {
         audioS.PlayOneShot(fightSound);
         GameObject projectileGO = Instantiate(projectile, shootingPoint.position, shootingPoint.rotation);
-        projectileGO.GetComponent<UnitProjectile>().FireProjectile(target, fightDmg, transform);
+        projectileGO.GetComponent<UnitProjectile>().FireProjectile(targetToAttack, fightDmg, transform);
     }
     #endregion
 }

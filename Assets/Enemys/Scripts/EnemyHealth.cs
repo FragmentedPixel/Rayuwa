@@ -81,8 +81,13 @@ public class EnemyHealth : MonoBehaviour
             Destroy(controller.gameObject, 3f);
             Destroy(canvas.gameObject);
 
-            if (GetComponent<EnemyDeathTrap>() != null)
-                GetComponent<EnemyDeathTrap>().SpawnSmallGolems();
+            EnemyDeathTrap trap = GetComponent<EnemyDeathTrap>();
+
+            if (trap != null)
+            {
+                trap.SpawnSmallGolems();
+                Destroy(trap);
+            }
 
             Destroy(controller);
             Destroy(controller.agent);
