@@ -164,9 +164,13 @@ public abstract class UnitController : MonoBehaviour
     }
     public void SetNewTarget(Transform newTarget)
     {
-        reloading = false;
         target = newTarget;
-        
+
+        if (currentState == reloadState)
+            return;
+
+        reloading = false;
+
         if (DistanceToTarget() < fightRange)
             currentState.ToFightState();
         else

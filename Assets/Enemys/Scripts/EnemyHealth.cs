@@ -11,7 +11,7 @@ public class EnemyHealth : MonoBehaviour
     public int enemyValue = 10;
 
     private float currentHealth;
-    private bool dead;
+    private bool dead = false;
     private EnemyController controller;
 
 
