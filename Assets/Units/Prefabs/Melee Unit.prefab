@@ -1154,12 +1154,13 @@ MonoBehaviour:
   audioS: {fileID: 0}
   nearbyEnemies: []
   target: {fileID: 0}
+  targetToAttack: {fileID: 0}
   destination: {x: 0, y: 0, z: 0}
   reloadPoint: {fileID: 0}
   image: {fileID: 21300000, guid: 2dba3d65781bbd249aa56e83db7bfd92, type: 3}
   color: {r: 0.02032874, g: 0.55238056, b: 0.6911765, a: 1}
   fightRange: 4
-  fightSpeed: 2.5
+  fightSpeed: 1.6
   fightDmg: 24
   fightSound: {fileID: 8300000, guid: bd219e5fcc44dda459c64d6c8a165a9e, type: 3}
   speedIndex: 1

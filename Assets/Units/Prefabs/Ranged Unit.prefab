@@ -1114,6 +1114,7 @@ MonoBehaviour:
   audioS: {fileID: 0}
   nearbyEnemies: []
   target: {fileID: 0}
+  targetToAttack: {fileID: 0}
   destination: {x: 0, y: 0, z: 0}
   reloadPoint: {fileID: 0}
   image: {fileID: 21300000, guid: ee9adeaafe7b4fc4e8f9d60c5ba0469b, type: 3}
@@ -1131,7 +1132,7 @@ MonoBehaviour:
   healthPercent: 0.1
   ammoToAdd: 1
   ammo: 0
-  maxAmmo: 12
+  maxAmmo: 16
   reloadTime: 4
   reloading: 0
   projectile: {fileID: 1845533052663576, guid: be68677877c817947959fd3d82ba5de2, type: 2}
