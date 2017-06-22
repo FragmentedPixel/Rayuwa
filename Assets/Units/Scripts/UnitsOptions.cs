@@ -7,6 +7,7 @@ public class UnitsOptions : MonoBehaviour
 {
 
     #region Variabiles
+    public int minUnits = 0;
     public Text unitsCountText;
     public Text bonusText;
     public float maxBonusPercent = 300;
@@ -61,13 +62,15 @@ public class UnitsOptions : MonoBehaviour
         
         gameManager.bonusPercent = Mathf.Lerp(0f, maxBonusPercent, (UnitsData.instance.maxUnits - value) / UnitsData.instance.maxUnits);
 
-        if (value != 0 && value != UnitsData.instance.maxUnits && gameManager.bonusPercent != 0)
+        bool canStart = (value >= minUnits);
+
+        if (canStart && value != UnitsData.instance.maxUnits && gameManager.bonusPercent != 0)
             bonusText.text = "Bonus: " + Mathf.RoundToInt( gameManager.bonusPercent * 100 ) / 100f + "%";
         else
             bonusText.text = "";
 
-        fightButton.enabled = !(value == 0);
-        fightButton.GetComponent<Image>().color = (value == 0) ? Color.grey : Color.white;
+        fightButton.enabled = canStart;
+        fightButton.GetComponent<Image>().color = (canStart) ? Color.white : Color.grey;
     }
 
     public void PlaySound()

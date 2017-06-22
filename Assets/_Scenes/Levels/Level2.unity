@@ -46072,7 +46072,7 @@ Prefab:
     - target: {fileID: 114972603058727742, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
       propertyPath: enemies.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4099086617679532, guid: 7e8a1abe9c989894cbcdf5d2863a5776, type: 2}
       propertyPath: m_LocalPosition.x
@@ -46184,7 +46184,7 @@ Prefab:
     - target: {fileID: 224518959944274550, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -25
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224561857236209480, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
@@ -46204,7 +46204,7 @@ Prefab:
     - target: {fileID: 224561857236209480, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -25
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224655157698004352, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
@@ -46224,7 +46224,7 @@ Prefab:
     - target: {fileID: 224655157698004352, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -25
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224030191413974032, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
@@ -46244,7 +46244,7 @@ Prefab:
     - target: {fileID: 224030191413974032, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -25
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224580992381246166, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
@@ -46264,7 +46264,7 @@ Prefab:
     - target: {fileID: 224580992381246166, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -25
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224961939683550432, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
@@ -46284,7 +46284,7 @@ Prefab:
     - target: {fileID: 224961939683550432, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -25
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224647533324537108, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
@@ -46299,12 +46299,12 @@ Prefab:
     - target: {fileID: 224647533324537108, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 855.8334
+      value: 855.8333
       objectReference: {fileID: 0}
     - target: {fileID: 224647533324537108, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -25
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224526494002961386, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
@@ -46319,12 +46319,12 @@ Prefab:
     - target: {fileID: 224526494002961386, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 987.50006
+      value: 987.5001
       objectReference: {fileID: 0}
     - target: {fileID: 224526494002961386, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -25
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224234438484536726, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
@@ -46409,12 +46409,12 @@ Prefab:
     - target: {fileID: 224727877704891536, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -15
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224727877704891536, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 30
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224930405577039886, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
@@ -46434,12 +46434,12 @@ Prefab:
     - target: {fileID: 224930405577039886, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -15
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224930405577039886, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 30
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224244861500360212, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
@@ -46459,12 +46459,12 @@ Prefab:
     - target: {fileID: 224244861500360212, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -15
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224244861500360212, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 30
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224413174023757488, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
@@ -46484,39 +46484,39 @@ Prefab:
     - target: {fileID: 224413174023757488, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -15
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224413174023757488, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 30
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114972603058727742, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
       propertyPath: enemies.Array.data[1].strongPoints
-      value: Damage
+      value: Range/Damage
       objectReference: {fileID: 0}
     - target: {fileID: 114972603058727742, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
       propertyPath: enemies.Array.data[1].weakPoints
-      value: Cooldown
+      value: Cast time/Hitpoints
       objectReference: {fileID: 0}
     - target: {fileID: 114972603058727742, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
       propertyPath: enemies.Array.data[1].description
-      value: Even the clouds are controlled by the power inside the crystal. The rain
-        forsees the lightning.
+      value: He is a powerful force of the nature. It controls the trees all over
+        Rayuwa. Make sure to avoid them.
       objectReference: {fileID: 0}
     - target: {fileID: 114972603058727742, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
       propertyPath: enemies.Array.data[0].enemy
       value: 
-      objectReference: {fileID: 1306639470}
+      objectReference: {fileID: 1840299684}
     - target: {fileID: 114972603058727742, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
       propertyPath: enemies.Array.data[1].enemy
       value: 
-      objectReference: {fileID: 391461148}
+      objectReference: {fileID: 1306639470}
     - target: {fileID: 224966971003806692, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
       propertyPath: m_AnchorMin.y
@@ -46620,18 +46620,43 @@ Prefab:
     - target: {fileID: 114972603058727742, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
       propertyPath: enemies.Array.data[0].strongPoints
-      value: Range/Damage
+      value: Hitpoints/ Damage
       objectReference: {fileID: 0}
     - target: {fileID: 114972603058727742, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
       propertyPath: enemies.Array.data[0].weakPoints
-      value: Cast time/Hitpoints
+      value: Attackspeed/ Movementspeed
       objectReference: {fileID: 0}
     - target: {fileID: 114972603058727742, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
         type: 2}
       propertyPath: enemies.Array.data[0].description
-      value: He is a powerful force of the nature. It controls the trees all over
-        Rayuwa. Make sure to avoid them.
+      value: Upon it's death the stones left form smaller golems.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114972603058727742, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
+        type: 2}
+      propertyPath: enemies.Array.data[2].enemy
+      value: 
+      objectReference: {fileID: 391461148}
+    - target: {fileID: 114972603058727742, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
+        type: 2}
+      propertyPath: enemies.Array.data[2].strongPoints
+      value: Damage
+      objectReference: {fileID: 0}
+    - target: {fileID: 114972603058727742, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
+        type: 2}
+      propertyPath: enemies.Array.data[2].weakPoints
+      value: Cooldown
+      objectReference: {fileID: 0}
+    - target: {fileID: 114972603058727742, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
+        type: 2}
+      propertyPath: enemies.Array.data[2].description
+      value: Even the clouds are controlled by the power inside the crystal. The rain
+        forsees the lightning.
+      objectReference: {fileID: 0}
+    - target: {fileID: 114964989026022620, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
+        type: 2}
+      propertyPath: minUnits
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e8a1abe9c989894cbcdf5d2863a5776, type: 2}
