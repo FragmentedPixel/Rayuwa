@@ -1161,7 +1161,7 @@ MonoBehaviour:
   color: {r: 0.02032874, g: 0.55238056, b: 0.6911765, a: 1}
   fightRange: 4
   fightSpeed: 1.6
-  fightDmg: 24
+  fightDmg: 16
   fightSound: {fileID: 8300000, guid: bd219e5fcc44dda459c64d6c8a165a9e, type: 3}
   speedIndex: 1
   damageIndex: 3

@@ -117,7 +117,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1796609327213586}
   m_LocalRotation: {x: -0, y: -0.92387927, z: -0, w: 0.38268423}
-  m_LocalPosition: {x: 11.46, y: 23, z: 56.7}
+  m_LocalPosition: {x: 11.46, y: 23, z: 41.52}
   m_LocalScale: {x: 1.0000007, y: 1, z: 1.0000007}
   m_Children:
   - {fileID: 4722887674598450}
@@ -330,7 +330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69406201c32e78643be71ee8653c0108, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 40
+  damage: 60
   cooldown: 7
   warnningTime: 0
   duration: 1

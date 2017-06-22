@@ -659,7 +659,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1444080983380518}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 38.69, y: 0, z: -32.28}
+  m_LocalPosition: {x: 27.87, y: 0.14952087, z: -23.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4316783250288552}
@@ -1163,7 +1163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb31f5e8b03883d45b2cc981fb05e278, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 120
+  MaxHealth: 60
   enemyValue: 5
   background: {fileID: 114002076316368526}
   healthImage: {fileID: 114802023657248434}
@@ -1177,7 +1177,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 20
+  m_Radius: 14
   m_Center: {x: 0, y: 1, z: 0}
 --- !u!137 &137585501662642502
 SkinnedMeshRenderer:

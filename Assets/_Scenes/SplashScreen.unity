@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59927ae26714a8a4f8e770b001bbcbc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Level6
+  sceneName: Menu
   introSound: {fileID: 8300000, guid: bfe0a5e05741cd147aa44854ef322697, type: 3}
 --- !u!82 &109644231
 AudioSource:
