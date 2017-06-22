@@ -11,12 +11,9 @@ public class CrystalDefense : MonoBehaviour
         if (unit == null)
             return;
 
-        //Aggro every enemy.
-        /*
         EnemyHealth[] enemies = FindObjectsOfType<EnemyHealth>();
         foreach (EnemyHealth enemy in enemies)
-            enemy.Hit(0, unit);
-        */
+            enemy.Hit(0, unit.transform);
     }
 
 }

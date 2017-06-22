@@ -558,7 +558,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHealth: 400
-  enemyValue: 10
+  enemyValue: 1
   background: {fileID: 114319922634567162}
   healthImage: {fileID: 114080078022853376}
 --- !u!114 &114507781595330456

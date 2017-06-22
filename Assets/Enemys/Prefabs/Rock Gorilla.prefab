@@ -1149,7 +1149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHealth: 60
-  enemyValue: 10
+  enemyValue: 7
   background: {fileID: 114002076316368526}
   healthImage: {fileID: 114802023657248434}
 --- !u!135 &135216886391286618
