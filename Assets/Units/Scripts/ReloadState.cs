@@ -19,6 +19,9 @@ public class ReloadState : iUnitState
         if (controller.reloadPoint == null)
             FindClosestReloadPoint();
 
+        if (DistanceToReloadPoint() < 3f && !controller.reloading)
+            controller.Reload();
+
         controller.destination = controller.reloadPoint.transform.position;
         controller.agent.MoveToDestination(controller.reloadPoint.transform.position);
     }
@@ -46,7 +49,19 @@ public class ReloadState : iUnitState
         }
 
         controller.SetNewReloadPoint(controller.reloadPoint);
+    }
+    private float DistanceToReloadPoint()
+    {
+        if (controller.reloadPoint == null)
+            return 0f;
 
+        Vector3 playerPos = controller.transform.position;
+        Vector3 targetPos = controller.reloadPoint.transform.position;
+
+        playerPos.y = targetPos.y = 0f;
+
+        float distance = Vector3.Distance(playerPos, targetPos);
+        return distance;
     }
     #endregion
 }
