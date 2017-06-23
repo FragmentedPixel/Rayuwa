@@ -62,14 +62,9 @@ public class Drawing : MonoBehaviour
         DrawSelectedPaths();
         UpdateDragging();
         KeyBoardSelecting();
-    }
-
-    private void FixedUpdate()
-    {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (!Physics.Raycast(ray, out hit))
             return;
-
         UpdateSelecting();
         UpdatePathing();
     }
@@ -163,12 +158,13 @@ public class Drawing : MonoBehaviour
     }
 
     private float lastClickTime = 0f;
-    private float catchTime = .1f;
+    private float catchTime = .3f;
 
     private void UpdateSelecting()
     {
         if (Input.GetMouseButtonDown(0))
         {
+            Debug.Log("Click");
             Agent hitAgent = GetAgentFromTransform(hit.transform);
 
             if (Time.time - lastClickTime < catchTime)
@@ -198,6 +194,7 @@ public class Drawing : MonoBehaviour
     }
     private void DoubleClickSelection(Agent agent)
     {
+        Debug.Log("Double CCC");
         if (agent != null)
         {
             UnitController controller = agent.GetComponent<UnitController>();
