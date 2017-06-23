@@ -45504,6 +45504,11 @@ Prefab:
       value: Defeners are very strong creatures. They move very slow, but hit very
         hard.
       objectReference: {fileID: 0}
+    - target: {fileID: 114964989026022620, guid: 7e8a1abe9c989894cbcdf5d2863a5776,
+        type: 2}
+      propertyPath: minUnits
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e8a1abe9c989894cbcdf5d2863a5776, type: 2}
   m_IsPrefabParent: 0
